@@ -7,8 +7,8 @@
    }
     #section {
      width:1100px;
-     height:500px; 안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕
-     margin:auto;
+     height:500px; 
+     margin:auto;   랄랄라~ㄴㅇㄴㅇㄴㅇㅋㅊㅋㅊㄴ
      margin-top:50px;
    }
    #section table tr td {
