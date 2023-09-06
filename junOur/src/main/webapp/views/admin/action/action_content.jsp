@@ -8,7 +8,7 @@
     #section {
      width:1100px;
      height:500px; 
-     margin:auto;   ㅇㄴㅇ3434324324324234
+     margin:auto;   ㅇㄴㅇ989898989898
      margin-top:50px;
    }
    #section table tr td {
