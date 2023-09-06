@@ -258,7 +258,7 @@ section #first #mainimg img {
      </div>  
      
      <div id="remenu">  
-       <div id="rsdate">${contentDetail.rsdate}</div>
+       <div id="rsdate">${contentDetail.rsdate}ㅁㄴㅇㅁㄴ</div>
        <div id="inwon">${contentDetail.inwon}</div>
        <div id="jongmok">${contentDetail.jongmok}</div>
        <div id="rstime">${contentDetail.rstime}</div>
