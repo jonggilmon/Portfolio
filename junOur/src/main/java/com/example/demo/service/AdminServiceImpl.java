@@ -140,9 +140,7 @@ public class AdminServiceImpl implements AdminService{
 		return "redirect:/gongji/list";
 	}
 
-	ddddddddddddddddddddddddddddddddddd
 
-	이준환 체크
 
 	
 }
