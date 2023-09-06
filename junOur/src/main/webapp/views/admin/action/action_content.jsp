@@ -8,7 +8,7 @@
     #section {
      width:1100px;
      height:500px; 
-     margin:auto;   랄랄라~ㄴㅇㄴㅇㄴㅇㅋㅊㅋㅊㄴ
+     margin:auto;   ㅇㄴㅇ3434324324324234
      margin-top:50px;
    }
    #section table tr td {
