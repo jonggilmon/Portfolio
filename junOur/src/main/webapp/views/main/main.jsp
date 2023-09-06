@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>모션 메이트</title> 이준환 변경사항
+<title>모션 메이트</title> 
   <style>
   
  
