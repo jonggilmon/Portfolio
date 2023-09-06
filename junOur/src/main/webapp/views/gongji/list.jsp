@@ -16,6 +16,6 @@
 	  <div> 조회수 : ${map.readnum }</div>
 	  <div> 작성일 : ${map.writeday }</div>
 	</c:forEach>
-	<div>김김김</div>
+	<div>김김김czczczc</div>
 </body>
 </html>
