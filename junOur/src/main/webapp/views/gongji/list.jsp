@@ -16,6 +16,6 @@
 	  <div> 조회수 : ${map.readnum }</div>
 	  <div> 작성일 : ${map.writeday }</div>
 	</c:forEach>
-	<div> <a href="../main/main"> 메인 화면 </a></div>
+	<div>1234</div>
 </body>
 </html>
