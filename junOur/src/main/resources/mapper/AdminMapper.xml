@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.mapper.AdminMapper">
+	<insert id="contentAddOk" parameterType="com.example.demo.vo.AdminVo">
+	  insert into reserve(img,rsdate,sogae,jinhang,rule,inwon,jongmok,rstime,title,jongmok_id, writeday)
+	  values(#{img},#{rsdate},#{sogae},#{jinhang},#{rule},#{inwon},#{jongmok},#{rstime},#{title},#{jongmok_id},now())
+	</insert>
+	
+	<select id="memberView" parameterType="com.example.demo.vo.AdminVo">
+	  SELECT no, userid, name, pwd, phone, email, writeday, gender, birth
+        FROM member
+	
+	</select>
+	
+	<insert id="action_write_ok">
+		insert into action(title,content,img,writeday)
+		values(#{title},#{content},#{img},now())
+	</insert>
+	
+	<select id="action_list">
+		select * from action order by no desc
+	</select>
+	
+	<update id="action_readnum">
+		update action set readnum=readnum+1 where no=#{no}
+	</update>
+	
+	<select id="action_content" resultType="com.example.demo.vo.ActionVo">
+		select * from action where no=#{no}
+	</select>
+	
+	<delete id="action_delete">
+		delete from action where no=#{no}
+	</delete>
+	
+	<select id="action_update" resultType="com.example.demo.vo.ActionVo">
+		select * from action where no=#{no}
+	</select>
+	
+	<update id="action_update_ok">
+		update action set title=#{title},img=#{img},content=#{content}
+	</update>
+	
+	<insert id="gongjiAddOk" parameterType="com.example.demo.vo.GongjiVo">
+	  insert into gongji(title,userid,content,writeday)
+	  values(#{title},#{userid},#{content},now())
+	</insert>
+</mapper>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.mapper.MainMapper">
+
+   <select id="main" resultType="com.example.demo.vo.ActionVo">
+		select * from action order by no desc limit 3
+   </select>
+   
+   <select id="glist" resultType="com.example.demo.vo.GongjiVo">
+	  select * from gongji
+	</select>
+</mapper>

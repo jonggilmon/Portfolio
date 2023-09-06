@@ -1,0 +1,56 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+        <%@ include file="../../admin/menu.jsp" %>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+  <style>
+    section div{
+    
+      display:flex;
+      width:500px;
+      margin:auto;
+      
+    }
+  </style>
+</head>
+<body>
+  <section>
+	<form name="cform" method="post" action="contentAddOk" enctype="multipart/form-data">
+	    <div width="100"> <a href="/../admin/menu">관리자 창</a></div>
+		<div> <input type="file" name="img"> 이미지 </div>
+		<div> <input type="text" name="rsdate"> 예약날짜(int) </div>
+		<div> <textarea name="sogae" rows="15" cols="50"></textarea>소개</div>
+		<div> <textarea name="jinhang" rows="15" cols="50"></textarea>진행</div>
+		<div> <textarea name="rule" rows="15" cols="50"></textarea>룰</div>
+		<div> <input type="text" name="inwon">인원(int)</div>
+		<div> <input type="text" name="jongmok">jongmok</div>
+		<div> <input type="text" name="rstime">예약시간(int)</div><div text-align="center" width="1000" height="10"></div>
+		<div> <input type="text" name="title">제목 </div>
+	
+        <div><input type="submit" value="입력"></div>
+		
+		<div>
+   <label for="jongmok_id">스포츠 종목:</label>
+   <select name="jongmok_id">
+      <option value="1">축구</option>
+      <option value="2">농구</option>
+      <option value="3">배구</option>
+      <option value="4">야구</option>
+      <option value="5">당구</option>
+      <option value="6">볼링</option>
+      <option value="7">골프</option>
+      <option value="8">테니스</option>
+      <option value="9">수영</option>
+      <option value="10">배드민턴</option>
+      <option value="11">탁구</option>
+      <option value="12">족구</option>
+     
+   </select>
+</div>
+	</form>
+  </section>
+</body>
+</html>

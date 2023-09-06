@@ -1,0 +1,28 @@
+package com.example.demo.service;
+
+import java.util.List;
+
+import javax.servlet.http.HttpServletRequest;
+
+import org.springframework.ui.Model;
+
+import com.example.demo.vo.ActionVo;
+import com.example.demo.vo.AdminVo;
+import com.example.demo.vo.GongjiVo;
+
+public interface AdminService {
+	public String contentadd();
+	public String contentAddOk(HttpServletRequest request);
+	public List<AdminVo> memberView();
+	public String action_write();
+	public String action_write_ok(HttpServletRequest request);
+	public String action_list(Model model);
+	public String action_readnum(HttpServletRequest request, ActionVo avo);
+	public String action_content(Model model, ActionVo avo);
+	public String action_delete(ActionVo avo);
+	public String action_update(ActionVo avo,Model model);
+	public String action_update_ok(HttpServletRequest request, ActionVo avo);
+	public String gongjiAddOk(GongjiVo gvo);
+
+	
+}

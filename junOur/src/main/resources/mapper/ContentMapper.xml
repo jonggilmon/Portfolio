@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.mapper.ContentMapper">
+   <select id="getAllReserve" resultType="com.example.demo.vo.ContentVo">
+        SELECT no, title, rsdate, jinhang, writeday
+        FROM reserve
+    </select>
+    
+    <select id="getContentByNo" resultType="com.example.demo.vo.ContentVo">
+    SELECT * FROM reserve WHERE no = #{no}
+</select>
+
+<select id="getReservesByJongmokId" resultType="com.example.demo.vo.ContentVo">
+    SELECT * FROM reserve WHERE jongmok_Id = #{jongmok_Id}
+</select>
+
+
+<select id="resung" resultType="com.example.demo.vo.ContentVo">
+    SELECT * FROM reserve_info 
+</select>
+
+
+</mapper>
