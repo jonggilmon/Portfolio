@@ -12,8 +12,8 @@
 <body>
   <section>
   	<form method="post" action="action_write_ok" enctype="multipart/form-data">
-  	<div><input type="hidden" name="userid"></div>
   	<div> <a href="/../admin/menu">관리자 창으로 이동</a> </div>
+  	 <div><input type="text" name="userid" value="admin123">아이디</div>
   	<div><input type="text" name="title">제목</div>
   	<div><textarea name="content"></textarea>내용(최대 200자)</div>
   	<div><input type="file" name="img">이미지 등록</div>

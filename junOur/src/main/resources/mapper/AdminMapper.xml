@@ -15,8 +15,8 @@
 	</select>
 	
 	<insert id="action_write_ok">
-		insert into action(title,content,img,writeday)
-		values(#{title},#{content},#{img},now())
+		insert into action(title,content,img,writeday,userid)
+		values(#{title},#{content},#{img},now(),#{userid})
 	</insert>
 	
 	<select id="action_list">

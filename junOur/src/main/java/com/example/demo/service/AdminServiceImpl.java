@@ -4,6 +4,7 @@ import java.io.FileNotFoundException;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -81,6 +82,7 @@ public class AdminServiceImpl implements AdminService{
 			MultipartRequest mul = new MultipartRequest(request, path,size,"utf-8",new DefaultFileRenamePolicy());
 			ActionVo acvo = new ActionVo();
 			
+			acvo.setUserid(mul.getParameter("userid"));
 			acvo.setTitle(mul.getParameter("title"));
 			acvo.setContent(mul.getParameter("content"));
 			acvo.setImg(mul.getFilesystemName("img"));
@@ -109,7 +111,8 @@ public class AdminServiceImpl implements AdminService{
 	}
 
 	@Override
-	public String action_content(Model model, ActionVo avo) {
+	public String action_content(Model model, ActionVo avo,HttpSession session) {
+		String userid = session.getAttribute("userid").toString();
 		model.addAttribute("avo",mapper.action_content(avo));
 		return "/admin/action/action_content";
 	}
@@ -139,8 +142,6 @@ public class AdminServiceImpl implements AdminService{
 		
 		return "redirect:/gongji/list";
 	}
-
-
 
 	
 }

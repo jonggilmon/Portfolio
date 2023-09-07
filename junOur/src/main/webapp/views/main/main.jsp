@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>모션 메이트</title> 윤호형 체크
+<title>모션 메이트</title> 
   <style>
   
  
