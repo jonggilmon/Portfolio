@@ -214,7 +214,8 @@
         var pnum = document.mform.phone.value;
         var chk = new XMLHttpRequest();
 
-        chk.onload = function() {
+        chk.onload = function() 
+        {
             if (chk.responseText == 0) 
             {
                 alert("오류가 발생했습니다");
