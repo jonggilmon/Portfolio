@@ -207,7 +207,18 @@
     	     
     	
     }
-
+    
+	function numSend()
+	{
+		var pnum=document.mform.phone.value;
+		location="numSend?pnum="+pnum;
+	}
+	
+	function numChk()
+	{
+		
+	}
+	
   </script>
   
 </head>
@@ -233,7 +244,10 @@
          <input type="text" name="birth" placeholder="생년월일 ex) 19960309"> <br><span id="rk"></span>
       </div>
   
-      <div> <input type="text" name="phone" placeholder="전화번호"> </div>  
+      <div> <input type="text" name="phone" placeholder="전화번호">
+       <input type="button" value="인증번호 받기" onclick="numSend()"> 
+       <input type="button" value="인증번호 확인" onclick="numChk()">
+       </div>  
       <div> <input type="text" name="email" placeholder="이메일"> </div> 
       <div> <input type="submit" value="회원 가입"> </div>
     </form>
