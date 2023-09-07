@@ -3,7 +3,7 @@
  <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
   <style>
      #del {
-     display:none;
+     display:none;  25565546hhojoo
    }
     #section {
      width:1100px;
