@@ -207,17 +207,41 @@
     	     
     	
     }
-    
-	function numSend()
-	{
-		var pnum=document.mform.phone.value;
-		location="numSend?pnum="+pnum;
-	}
-	
-	function numChk()
-	{
-		
-	}
+    	
+    var snum; // server 인증번호
+
+    function numSend() {
+        var pnum = document.mform.phone.value;
+        var chk = new XMLHttpRequest();
+
+        chk.onload = function() {
+            if (chk.responseText == 0) 
+            {
+                alert("오류가 발생했습니다");
+            } 
+            else 
+            {
+                snum = chk.responseText;
+            }
+        }
+
+        chk.open("get", "numSend?pnum=" + pnum);
+        chk.send();
+    }
+
+    function numChk() 
+    {
+        var userNum = document.mform.userNum.value;
+        
+        if (userNum === snum) 
+        {
+            alert("인증 성공했습니다.");
+        }
+        else 
+        {
+            alert("인증번호가 틀렸습니다, 다시 입력해주세요");
+        }
+    }
 	
   </script>
   
@@ -245,7 +269,8 @@
       </div>
   
       <div> <input type="text" name="phone" placeholder="전화번호">
-       <input type="button" value="인증번호 받기" onclick="numSend()"> 
+       <input type="button" value="인증번호 받기" onclick="numSend()">
+       	<input type="text" name="userNum" placeholder="인증번호 확인">
        <input type="button" value="인증번호 확인" onclick="numChk()">
        </div>  
       <div> <input type="text" name="email" placeholder="이메일"> </div> 
