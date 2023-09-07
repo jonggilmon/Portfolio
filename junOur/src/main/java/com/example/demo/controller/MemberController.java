@@ -1,6 +1,7 @@
 package com.example.demo.controller;
 
 import javax.annotation.PostConstruct;
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -68,7 +69,12 @@ public class MemberController {
 		
 		 return service.logout(session);
 	 }
-	
+	 
+	 @RequestMapping("/member/numSend")
+	 public @ResponseBody String numSend(HttpServletRequest request)
+	 {
+		 return service.numSend(request);
+	 }
 }
 
 
