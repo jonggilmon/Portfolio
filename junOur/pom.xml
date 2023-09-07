@@ -82,6 +82,18 @@
 		  <version>05Nov2002</version>
 		</dependency> 
 		
+		<!-- 문자 인증 관련 -->
+		 <dependency>
+			<groupId>net.nurigo</groupId>
+			<artifactId>javaSDK</artifactId>
+			<version>2.2</version>
+         </dependency>
+		
+		<dependency>  <!-- 로그 이벤트 저장(Message용) -->
+         <groupId>org.apache.logging.log4j</groupId>
+         <artifactId>log4j-api</artifactId>
+         <version>2.17.1</version> <!-- Log4j 2의 버전을 지정하세요. -->
+        </dependency>
 		
 	</dependencies>
 
