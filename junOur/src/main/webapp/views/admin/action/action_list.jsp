@@ -34,6 +34,10 @@
     .title {
         text-align: center;
     }
+    a{
+    	text-decoration: none;
+    	margin-bottom: 50px;
+    }
 </style>
 </head>
 <body>
@@ -46,6 +50,7 @@
             </div>
         </c:forEach>
     </div>
+    <div><a href="/admin/action/action_write"> 글 등록 </a></div>
 </section>
 </body>
 </html>
