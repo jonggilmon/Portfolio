@@ -4,6 +4,7 @@ import java.net.http.HttpRequest;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -66,9 +67,9 @@ public class AdminController {
 		return service.action_readnum(request,avo);
 	}
 	@RequestMapping("/admin/action/action_content")
-	public String action_content(Model model,ActionVo avo)
+	public String action_content(Model model,ActionVo avo,HttpSession session)
 	{
-		return service.action_content(model,avo);
+		return service.action_content(model,avo,session);
 	}
 	@RequestMapping("/admin/action/action_delete")
 	public String action_delete(ActionVo avo)
