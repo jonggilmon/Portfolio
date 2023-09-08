@@ -21,7 +21,7 @@
 	<form name="cform" method="post" action="contentAddOk" enctype="multipart/form-data">
 	    <div width="100"> <a href="/../admin/menu">관리자 창</a></div>
 		<div> <input type="file" name="img"> 이미지 </div>
-		<div> <input type="text" name="rsdate"> 예약날짜(int) </div>
+		<div><input type="text" name="rsdate" placeholder="예: 2018년 3월 9일"> 예약날짜 </div>
 		<div> <textarea name="sogae" rows="15" cols="50"></textarea>소개</div>
 		<div> <textarea name="jinhang" rows="15" cols="50"></textarea>진행</div>
 		<div> <textarea name="rule" rows="15" cols="50"></textarea>룰</div>

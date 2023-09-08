@@ -11,4 +11,13 @@
         SELECT * FROM reserve_info WHERE reserve_id = #{reserve_id}
     </select>
     
+    <select id="inwonCount" resultType="int">
+    SELECT COUNT(*) FROM reserve_info WHERE reserve_no = #{no}
+</select>
+
+<select id="getReserveInfoByUserId" resultType="com.example.demo.vo.ReserveInfoVo">
+    SELECT * FROM reserve_info 
+    WHERE user_id = #{userid} AND reserve_no = #{reserveNo}
+</select>
+
 </mapper>

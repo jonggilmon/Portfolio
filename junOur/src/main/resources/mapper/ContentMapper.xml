@@ -4,21 +4,34 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.example.demo.mapper.ContentMapper">
    <select id="getAllReserve" resultType="com.example.demo.vo.ContentVo">
-        SELECT no, title, rsdate, jinhang, writeday
-        FROM reserve
-    </select>
+    SELECT r.no, r.title, r.rsdate, r.jinhang, r.writeday, r.inwon, 
+           COUNT(ri.reserve_id) as currentCount
+    FROM reserve r
+    LEFT JOIN reserve_info ri on r.no = ri.reserve_id
+    GROUP BY r.no, r.title, r.rsdate, r.jinhang, r.writeday, r.inwon
+</select>
+
     
     <select id="getContentByNo" resultType="com.example.demo.vo.ContentVo">
     SELECT * FROM reserve WHERE no = #{no}
 </select>
 
 <select id="getReservesByJongmokId" resultType="com.example.demo.vo.ContentVo">
-    SELECT * FROM reserve WHERE jongmok_Id = #{jongmok_Id}
+   SELECT r.no, r.title, r.rsdate, r.jinhang, r.writeday, r.inwon, 
+           COUNT(ri.reserve_id) as currentCount
+    FROM reserve r
+    LEFT JOIN reserve_info ri on r.no = ri.reserve_id
+    WHERE r.jongmok_Id = #{jongmok_Id}
+    GROUP BY r.no, r.title, r.rsdate, r.jinhang, r.writeday, r.inwon 
 </select>
 
 
 <select id="resung" resultType="com.example.demo.vo.ContentVo">
     SELECT * FROM reserve_info 
+</select>
+
+<select id="getMaxinwonNo" resultType="int">
+    SELECT inwon FROM reserve WHERE no = #{no}
 </select>
 
 

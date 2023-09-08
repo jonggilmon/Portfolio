@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.sql.Date;
 import java.util.List;
 import java.util.Random;
 
@@ -62,9 +63,23 @@ public class ContentController {
 	      
 	         reserves = service.getAllReserve();
 	     }
+	     for (ContentVo reserve : reserves) {
+	    	
+	         int reserveNo = reserve.getNo(); 
+	         int currentReserveCount = reserveInfoMapper.inwonCount(reserveNo);
+	         int maxInwon = contentMapper.getMaxinwonNo(reserveNo);
+
+	         reserve.setCurrentCount(currentReserveCount);
+	         reserve.setMaxCount(maxInwon);
+	     }
+	    
 	     
 	     model.addAttribute("AllReserves", reserves);
 	     
+	
+	    	    
+	    
+	    
 	     return "/main/rlist"; 
 	 }
 	 @RequestMapping("/main/content/resung")
@@ -95,12 +110,28 @@ public class ContentController {
 	     MemberVo member = memberMapper.getMemberByUserId(userid);
 	     int reserveNo = (int) session.getAttribute("no");
 	  
+	     // 이미 예약된 아이디인지 확인
+	     ReserveInfoVo existingReserveInfo = reserveInfoMapper.getReserveInfoByUserId(userid, reserveNo);
+	     if (existingReserveInfo != null) {
+	         model.addAttribute("errorMessage", "이미 예약되어 있는 아이디입니다.");
+	         return "main/content/pwdAgree";
+	     }
+	     
+	     int currentReserveCount = reserveInfoMapper.inwonCount(reserveNo); 
+	     int maxinwon = contentMapper.getMaxinwonNo(reserveNo);
+	     
+	     if(currentReserveCount >= maxinwon) {
+	         model.addAttribute("errorMessage", "이 컨텐츠의 예약이 가득 찼습니다.");
+	         return "main/content/pwdAgree";
+	     }
+
 
 	     if (member != null && service.scanPassword(member, password)) {
 	         ReserveInfoVo reserveInfo = new ReserveInfoVo();
 	         reserveInfo.setUser_id(member.getUserid());
 	         reserveInfo.setUser_name(member.getName());
 	         reserveInfo.setReserve_no(reserveNo); 
+	         reserveInfo.setReserve_date(new Date(System.currentTimeMillis()));
 
 	         // 8자리 랜덤 값 생성
 	         Random random = new Random();

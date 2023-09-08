@@ -43,7 +43,18 @@ public class AdminServiceImpl implements AdminService{
 	        AdminVo avo=new AdminVo();
 
 	        avo.setImg(multi.getFilesystemName("img"));
-	        avo.setRsdate(Integer.parseInt(multi.getParameter("rsdate")));
+	        
+	        
+	        // 날짜 처리
+	        String rsdateStr = multi.getParameter("rsdate");
+
+	        // 입력 포맷 검증 (예: "2018년 3월 9일"이 올바른 형식인지 확인)
+	        if(!rsdateStr.matches("\\d{4}년 \\d{1,2}월 \\d{1,2}일")) {
+	            // 올바르지 않은 포맷이면 예외를 발생시키거나 다른 처리를 수행
+	            throw new Exception("Invalid date format!");
+	        }
+	        avo.setRsdate(rsdateStr);
+	        
 	        avo.setSogae(multi.getParameter("sogae"));
 	        avo.setJinhang(multi.getParameter("jinhang"));
 	        avo.setRule(multi.getParameter("rule"));
