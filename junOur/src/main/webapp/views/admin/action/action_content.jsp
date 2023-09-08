@@ -5,7 +5,7 @@
 <!DOCTYPE html>
 <html>
  <%@ include file="../../main/top_bottom/header.jsp" %>
-<head>
+<head>              
     <meta charset="UTF-8">
     <title>${avo.title}</title>
     <style>
@@ -115,5 +115,4 @@
     </div>
 </body>
 </html>
->>>>>>> origin/feature/jonggil
    <%@ include file="../../main/top_bottom/footer.jsp" %>
