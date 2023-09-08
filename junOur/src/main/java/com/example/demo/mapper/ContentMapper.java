@@ -18,6 +18,9 @@ public interface ContentMapper {
 	public List<ContentVo> getReservesByJongmokId(int jongmokId);
 	
 	public List<ContentVo> resung();
+	
+	public int getMaxinwonNo(int no);
+
 
 
 	

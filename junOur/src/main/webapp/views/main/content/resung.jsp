@@ -36,6 +36,10 @@
         <tr>
             <td>신청자 닉네임</td>
             <td>${recentReserveInfo.user_name}</td>
+        </tr>     
+         <tr>
+            <td>신청자 닉네임</td>
+            <td>${recentReserveInfo.reserve_date}</td>
         </tr>
 	</c:if>
     </table>

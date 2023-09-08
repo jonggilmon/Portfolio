@@ -158,7 +158,7 @@
         .actions a:hover {
             background-color: #333;
             color: #fff;
-        }
+        }u
 
         #del {
             display: none;
