@@ -197,14 +197,34 @@
         
       	}
     }
-    var userNum;
+    var chknum;  // submit 중복 핸드폰 번호 확인용
+    var userNum;  // 사용자의 인증번호
     function numChk() 
     {
         userNum = document.mform.userNum.value;
         
         if (userNum === snum) 
         {
-            alert("인증 성공했습니다.");
+            
+            var chk=new XMLHttpRequest();
+            chk.onload=function()
+            {
+            	alert(chk.responseText);
+            	if(chk.responseText=="1")
+            	{
+            		alert("인증 성공했습니다.");
+            	}
+            	else if(chk.responseText=="0");
+            	{
+            		chknum=chk.responseText;
+            		alert("이미 가입된 번호입니다");
+            		
+            	}
+            		
+            }
+            chk.open("get","samePnum?pnum="+pnum);
+            chk.send();
+            
         }
         else 
         {
@@ -254,12 +274,16 @@
     	        	      my.phone.focus();
     	        	      return false;
     	        	   }
-    	          else if(snum!=userNum)
+    	          	  else if(snum!=userNum)
     	        	  {
-    	        	  	alert("인증번호를 입력하세요")
+    	        	  	alert("인증번호를 입력하세요");
     	        	  	my.userNum.focus();
     	        	  	return false;
-    	        	  	
+    	        	  }
+    	          	  else if(chknum==0)
+    	        	  {
+    	        	    alert("이미 가입된 전화번호입니다");
+    	        	    return false;
     	        	  }
     	               else if(my.email.value.trim()=="")
     	            	    {

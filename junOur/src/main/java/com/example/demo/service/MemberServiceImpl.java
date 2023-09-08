@@ -78,7 +78,8 @@ public class MemberServiceImpl  implements MemberService{
 	}
 
 	@Override
-	public String numSend(HttpServletRequest request) {
+	public String numSend(HttpServletRequest request)
+	{
 		
 		String pnum=request.getParameter("pnum"); //폰 번호
 		Random ran=new Random(); // 랜덤 인증번호 생성
@@ -113,6 +114,27 @@ public class MemberServiceImpl  implements MemberService{
 		}
 		
 		
+	}
+
+	@Override
+	public String samePnum(HttpServletRequest request) {
+		String pnum=request.getParameter("pnum");
+		System.out.println(mapper.samePnum(pnum));
+		try
+		{
+			if(mapper.samePnum(pnum)==null)
+			{
+				return "1";
+			}
+			else
+			{
+				return "0";
+			}
+		}
+		catch(Exception e)
+		{
+			return "2";
+		}
 	}
 	
 

@@ -20,6 +20,10 @@
     <select id="getMemberByUserId" resultType="com.example.demo.vo.MemberVo">
         SELECT * FROM member WHERE userid = #{userid}
     </select>
+    
+    <select id="samePnum" resultType="String">
+      select * from member where phone=#{pnum}
+    </select>
 </mapper>
 
 

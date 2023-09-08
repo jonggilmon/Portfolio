@@ -13,4 +13,5 @@ public interface MemberService {
      public String loginOk(MemberVo mvo, HttpSession session);
      public String logout(HttpSession session);
      public String numSend(HttpServletRequest request);
+     public String samePnum(HttpServletRequest request);
 }

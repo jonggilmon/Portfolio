@@ -10,4 +10,5 @@ public interface MemberMapper {
     public void memberOk(MemberVo mvo);
     public String loginOk(MemberVo mvo);
     public MemberVo getMemberByUserId(String userid);
+    public String samePnum(String pnum);
 }

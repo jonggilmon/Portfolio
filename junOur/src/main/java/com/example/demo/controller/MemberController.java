@@ -75,6 +75,12 @@ public class MemberController {
 	 {
 		 return service.numSend(request);
 	 }
+	 
+	 @RequestMapping("/member/samePnum")
+	 public @ResponseBody String samePnum(HttpServletRequest request)
+	 {
+		 return service.samePnum(request);
+	 }
 }
 
 
