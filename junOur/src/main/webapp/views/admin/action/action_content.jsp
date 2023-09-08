@@ -5,7 +5,7 @@
 <!DOCTYPE html>
 <html>
  <%@ include file="../../main/top_bottom/header.jsp" %>
-<head>
+<head>               현재 윤호 확인용
     <meta charset="UTF-8">
     <title>${avo.title}</title>
     <style>
@@ -102,7 +102,7 @@
         <div class="actions">
             <a href="action_list">목록</a>
             <c:if test="${avo.userid==userid}">
-                <a href="action_update?no=${avo.no}">수정</a>
+                <a href="action_update?no=${avo.no}"> 수정</a>
                 <a href="#" onclick="del()">삭제</a>
             </c:if>
         </div>
@@ -115,4 +115,5 @@
     </div>
 </body>
 </html>
+>>>>>>> origin/feature/jonggil
    <%@ include file="../../main/top_bottom/footer.jsp" %>
