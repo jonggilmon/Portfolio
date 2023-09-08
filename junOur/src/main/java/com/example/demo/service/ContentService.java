@@ -15,21 +15,23 @@ public interface ContentService {
 	
 	public ContentVo getContentByNo(int no);
 
-	public List<ContentVo> getAllReserve();
+	
 	public List<ContentVo> resung();
 
 	
 	List<ContentVo> getReservesByJongmokId(int jongmokId);
 
+	public List<ContentVo> getAllReserve();
+
+	public List<ContentVo> getReservesByDate(String date);
 	
-
-
-
 	public int insertAndGenerateReserveInfo(ReserveInfoVo reserveInfo);
 
-
+	 
 
 	boolean scanPassword(MemberVo user, String inputPassword);
+
+	
 
 
 

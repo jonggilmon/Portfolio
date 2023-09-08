@@ -35,7 +35,7 @@ public class AdminController {
 	@RequestMapping("/admin/content/contentAddOk")
 	public String contentAddOk(@ModelAttribute AdminVo adminVo, HttpServletRequest request)
 	{	
-		System.out.println("jongmok_id value: " + adminVo.getJongmok());	
+		System.out.println("jongmok_id value: " + adminVo.getAddress());	
 		return service.contentAddOk(request);
 	}
 	@RequestMapping("/admin/member/memberView")
