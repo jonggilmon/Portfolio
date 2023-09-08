@@ -82,7 +82,7 @@ public class MemberServiceImpl  implements MemberService{
 		
 		String pnum=request.getParameter("pnum"); //폰 번호
 		Random ran=new Random(); // 랜덤 인증번호 생성
-		String num=" ";
+		String num="";
 		for(int i=0;i<6;i++)  // 6자리 인증번호
 		{
 			String imsi=Integer.toString(ran.nextInt(10)); // 0부터 9까지의 랜덤변수
@@ -91,25 +91,25 @@ public class MemberServiceImpl  implements MemberService{
 		
 		String api_key="NCSKEQIFI4D0KO7Z";
 		String api_secret="40FQYG9WIY8KHQ5YLYUGOCOSIEDDOTLA";
-		Message coolsms = new Message(api_key, api_secret);
+		Message coolsms=new Message(api_key, api_secret); // api=외부 소프트웨어 이용 개념?
 		
 		HashMap<String, String> params =new HashMap<String, String>(); // 장바구니
 		
 		params.put("to",pnum ); // 수신 전화번호
 		params.put("from","010-7720-7661" ); // 송신 전화번호
 		params.put("type","SMS" ); // 보내는 형식? 문자로 보내기
-		params.put("text","Motion Mate : 인증번호는["+num+"]입니다." ); // 메시지 내용
+		params.put("text","Motion Mate:인증번호는"+num+"입니다."); // 메시지 내용
 		params.put("app_version","test app 1.2" ); // 쓰는 application name and version
 		
 		try 
 		{
-			JSONObject obj=(JSONObject) coolsms.send(params);
-			return "redirect/member/member";
+			coolsms.send(params); // Message 라이브러리를 통해 문자 메시지 전송
+			
+			return num; // 보낸 인증번호 확인용
 		}
 		catch(Exception e)
 		{
-			System.out.println("오류입니다");
-			return "redirect/member/member";
+			return "0";
 		}
 		
 		

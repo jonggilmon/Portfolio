@@ -1,5 +1,7 @@
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<<<<<<< HEAD
 <<<<<<< HEAD
  <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
   <style>
@@ -76,11 +78,13 @@
             <a href="#" onclick="del()"> 삭제 </a>
            </c:if>
 =======
+=======
+>>>>>>> d7c2689842de8e3917f0c720d2f8224c86ecda36
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
  <%@ include file="../../main/top_bottom/header.jsp" %>
-<head>
+<head>              
     <meta charset="UTF-8">
     <title>${avo.title}</title>
     <style>
@@ -90,7 +94,11 @@
             margin: 0;
             padding: 0;
         }
+<<<<<<< HEAD
 >>>>>>> feature/yoon
+=======
+
+>>>>>>> d7c2689842de8e3917f0c720d2f8224c86ecda36
 
         .container {
             max-width: 1100px;
@@ -168,7 +176,7 @@
             <h3>${avo.title}</h3>
         </div>
         <div class="writeday">작성일자 : ${avo.writeday}</div>
-        <div class="writeday">조회수: ${avo.readnum}</div>
+        <div class="writeday">조회수 : ${avo.readnum}</div>
         <div class="content">
             <img src="/static/action/${avo.img}" width="650" height="600">
             
@@ -177,7 +185,7 @@
         <div class="actions">
             <a href="action_list">목록</a>
             <c:if test="${avo.userid==userid}">
-                <a href="action_update?no=${avo.no}">수정</a>
+                <a href="action_update?no=${avo.no}"> 수정</a>
                 <a href="#" onclick="del()">삭제</a>
             </c:if>
         </div>
