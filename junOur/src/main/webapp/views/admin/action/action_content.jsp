@@ -5,7 +5,7 @@
 <!DOCTYPE html>
 <html>
  <%@ include file="../../main/top_bottom/header.jsp" %>
-<head>               현재 윤호 확인용
+<head>
     <meta charset="UTF-8">
     <title>${avo.title}</title>
     <style>
