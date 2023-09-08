@@ -115,5 +115,4 @@
     </div>
 </body>
 </html>
->>>>>>> origin/feature/jonggil
    <%@ include file="../../main/top_bottom/footer.jsp" %>
