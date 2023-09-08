@@ -58,7 +58,7 @@
 	    
 	  <c:forEach items="${glist}" var="map">
 	    <tr>
-	      <td> ${map.title} </td>
+	      <td> <a href="readnum?no=${map.no}"> ${map.title} </a> </td>
 	      <td> ${map.userid} </td>
 	      <td> ${map.readnum} </td>
 	      <td> ${map.writeday} </td>
@@ -66,7 +66,7 @@
 	  </c:forEach>
 	  
 	    <tr>
-	      <td colspan="4" align="center"> <a href="write"> 글 등록 </a> </td>
+	      <td colspan="4" align="center"> <a href="../gongji/gongjiadd"> 글 등록 </a> </td>
 	    </tr>
 	  </table>
   </table>
