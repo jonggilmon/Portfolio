@@ -92,7 +92,7 @@
             <h3>${avo.title}</h3>
         </div>
         <div class="writeday">작성일자 : ${avo.writeday}</div>
-        <div class="writeday">조회수: ${avo.readnum}</div>
+        <div class="writeday">조회수 : ${avo.readnum}</div>
         <div class="content">
             <img src="/static/action/${avo.img}" width="650" height="600">
             
