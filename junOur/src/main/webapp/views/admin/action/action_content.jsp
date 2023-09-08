@@ -101,7 +101,7 @@
         <div class="actions">
             <a href="action_list">목록</a>
             <c:if test="${avo.userid==userid}">
-                <a href="action_update?no=${avo.no}">수정</a>
+                <a href="action_update?no=${avo.no}"> 수정</a>
                 <a href="#" onclick="del()">삭제</a>
             </c:if>
         </div>
