@@ -72,6 +72,13 @@
     font-size: 11px;
     color: red;
   }
+  
+  #intxt {
+  	visibility:hidden;
+  }
+  #inbtn{
+  	visibility:hidden;
+  }
   </style>
   <script >
  
@@ -196,6 +203,13 @@
     	        	      my.phone.focus();
     	        	      return false;
     	        	   }
+    	          else if(my.userNum.value.trim().length!=6 && snum!=pnum)
+    	        	  {
+    	        	  	alert("인증번호를 입력하세요")
+    	        	  	my.userNum.focus();
+    	        	  	return false;
+    	        	  	
+    	        	  }
     	               else if(my.email.value.trim()=="")
     	            	    {
     	            	        alert("이메일을 입력하세요");
@@ -207,18 +221,117 @@
     	     
     	
     }
-    
-	function numSend()
-	{
-		var pnum=document.mform.phone.value;
-		location="numSend?pnum="+pnum;
-	}
-	
-	function numChk()
-	{
-		
-	}
-	
+    	
+    var snum; // server 인증번호
+	var pnum; // user 인증번호
+    function numSend() {
+        pnum = document.mform.phone.value;
+      	if(pnum.length!=11)
+      		{
+      			alert("번호를 입력하세요");
+      		}
+      	else
+      	{
+      		
+      	
+        document.getElementById("intxt").style.visibility="visible"
+        document.getElementById("inbtn").style.visibility="visible"
+        
+        var chk = new XMLHttpRequest();
+
+        chk.onload = function() 
+        {
+            if (chk.responseText == 0) 
+            {
+                alert("오류가 발생했습니다.");
+            } 
+            else 
+            {
+                snum = chk.responseText;
+                alert("인증번호를 보냈습니다.")
+            }
+        }
+
+        chk.open("get", "numSend?pnum=" + pnum);
+        chk.send();
+        
+      	}
+    }
+
+    function numChk() 
+    {
+        var userNum = document.mform.userNum.value;
+        
+        if (userNum === snum) 
+        {
+            alert("인증 성공했습니다.");
+        }
+        else 
+        {
+            alert("인증번호가 틀렸습니다, 다시 입력해주세요.");
+        }
+    }
+    function check(my) 
+    {
+
+    	if(uidchk==0)
+    	{
+    		alert("아이디가 잘못 되었습니다");
+    		my.userid.focus();
+    		return false;
+    	}	
+    	else if(pchk==0)
+    		 {
+    		    alert("비밀번호가 잘못 되었습니다");
+    		    my.pwd.value="";
+    		    my.pwd2.value="";
+    		    my.pwd.focus();
+    		    return false;
+    		 }
+    	     else if(my.name.value.trim()=="") 
+    	    	  {
+    	    	      alert("이름을 입력하세요");
+    	    	      my.name.focus();
+    	    	      return false;
+    	    	  }
+    	     
+    	     else if(my.gender.value.trim()=="선택하세요") 
+	    	  {
+	    	      alert("성별을 고르세요");
+	    	      my.gender.focus();
+	    	      return false;
+	    	  }
+    	     else if(my.birth.value.trim().length<=7) 
+	    	  {
+	    	      alert("생년월일을 입력하세요 ex)19960309");
+	    	      my.birth.focus();
+	    	      return false;
+	    	  }
+    	
+    	          else if(my.phone.value.trim().length==0)
+    	        	   {
+    	        	      alert("전화번호를 입력하세요");
+    	        	      my.phone.focus();
+    	        	      return false;
+    	        	   }
+    	          else if(snum!=pnum)
+    	        	  {
+    	        	  	alert("인증번호를 입력하세요")
+    	        	  	my.userNum.focus();
+    	        	  	return false;
+    	        	  	
+    	        	  }
+    	               else if(my.email.value.trim()=="")
+    	            	    {
+    	            	        alert("이메일을 입력하세요");
+    	            	        my.email.focus();
+    	            	        return false;
+    	            	    }
+    	                    else
+    	                    	return true;
+    	     
+    	
+    }
   </script>
   
 </head>
@@ -243,10 +356,12 @@
       <div>
          <input type="text" name="birth" placeholder="생년월일 ex) 19960309"> <br><span id="rk"></span>
       </div>
-  
-      <div> <input type="text" name="phone" placeholder="전화번호">
-       <input type="button" value="인증번호 받기" onclick="numSend()"> 
-       <input type="button" value="인증번호 확인" onclick="numChk()">
+  	  
+  	  
+      <div> <input type="text" name="phone" placeholder="전화번호는 - 빼고 입력하세요.">
+       <input type="button" value="인증번호 받기" onclick="numSend()">
+       	<input type="text" name="userNum" placeholder="인증번호 확인" id="intxt">
+       <input type="button" value="인증번호 확인" onclick="numChk()" id="inbtn">
        </div>  
       <div> <input type="text" name="email" placeholder="이메일"> </div> 
       <div> <input type="submit" value="회원 가입"> </div>
