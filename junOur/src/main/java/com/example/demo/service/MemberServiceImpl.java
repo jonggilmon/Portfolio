@@ -82,7 +82,7 @@ public class MemberServiceImpl  implements MemberService{
 		
 		String pnum=request.getParameter("pnum"); //폰 번호
 		Random ran=new Random(); // 랜덤 인증번호 생성
-		String num=" ";
+		String num="";
 		for(int i=0;i<6;i++)  // 6자리 인증번호
 		{
 			String imsi=Integer.toString(ran.nextInt(10)); // 0부터 9까지의 랜덤변수
@@ -98,7 +98,7 @@ public class MemberServiceImpl  implements MemberService{
 		params.put("to",pnum ); // 수신 전화번호
 		params.put("from","010-7720-7661" ); // 송신 전화번호
 		params.put("type","SMS" ); // 보내는 형식? 문자로 보내기
-		params.put("text","Motion Mate:인증번호는"+"["+num+"]"+"입니다." ); // 메시지 내용
+		params.put("text","Motion Mate:인증번호는"+num+"입니다."); // 메시지 내용
 		params.put("app_version","test app 1.2" ); // 쓰는 application name and version
 		
 		try 
