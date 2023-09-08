@@ -22,15 +22,15 @@
     </select>
     
     <select id="samePnum" resultType="String">
-      select * from member where phone=#{pnum}
+      select userid from member where phone=#{pnum} limit 1
     </select>
     
     <select id="chkPnum" resultType="String">
-      select * from member where phone=#{pnum}
+      select * from member where phone=#{pnum} limit 1
     </select>
     
     <select id="getUserid" resultType="String">
-      select userid from member where phone=#{dbpnum}
+      select userid from member where phone=#{pnum} limit 1
     </select>
 </mapper>
 

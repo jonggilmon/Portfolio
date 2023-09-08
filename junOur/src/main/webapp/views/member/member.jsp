@@ -211,12 +211,16 @@
             	if(chk.responseText=="1")
             	{
             		alert("인증 성공했습니다.");
+            		 	return true;
+            		
             	}
             	else if(chk.responseText=="0");
             	{
-            		chknum=chk.responseText;
-            		alert("이미 가입된 번호입니다");
             		
+            		alert("이미 가입된 번호입니다");
+            		chknum=chk.responseText;
+            		
+            			return false;
             	}
             		
             }
@@ -268,28 +272,34 @@
     	
     	          else if(my.phone.value.trim().length==0)
     	        	   {
-    	        	      alert("전화번호를 입력하세요");
-    	        	      my.phone.focus();
-    	        	      return false;
+    	        	     alert("전화번호를 입력하세요.");
+    	        	     my.phone.focus();
+    	        	     return false;
     	        	   }
     	          	  else if(snum!=userNum)
     	        	  {
-    	        	  	alert("인증번호를 입력하세요");
+    	        	  	alert("인증번호를 입력하세요.");
+    	        	  	alert(snum);
     	        	  	my.userNum.focus();
     	        	  	return false;
     	        	  }
-    	          	  else if(chknum==0)
-    	        	  {
-    	        	    alert("이미 가입된 전화번호입니다");
-    	        	    return false;
-    	        	  }
-    	               else if(my.email.value.trim()=="")
+    	          	  else if(snum==null)
+    	          		  {
+    	          		    alert("인증번호를 받으세요.");
+    	          		    return false;
+    	          		  }
+    	          	   	  else if(chknum==0)
+    	        	      {
+    	        	        alert("이미 가입된 전화번호입니다.");
+    	        	        return false;
+    	        	      }
+    	                    else if(my.email.value.trim()=="")
     	            	    {
-    	            	        alert("이메일을 입력하세요");
+    	            	        alert("이메일을 입력하세요.");
     	            	        my.email.focus();
     	            	        return false;
     	            	    }
-    	                    else
+    	                      else
     	                    	return true;
     	     
     	
