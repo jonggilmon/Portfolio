@@ -6,6 +6,7 @@ import java.util.Random;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
+import org.apache.maven.model.Model;
 import org.json.simple.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -135,6 +136,35 @@ public class MemberServiceImpl  implements MemberService{
 		{
 			return "2";
 		}
+	}
+
+	@Override
+	public String idfind() {
+		
+		
+		return "/member/idfind";
+	}
+
+	@Override
+	public String chkPnum(HttpServletRequest request) {
+		String pnum=request.getParameter("pnum");
+		
+		if(mapper.chkPnum(pnum) == null)
+		{
+			return "0";
+		}
+		else
+		{
+			return "1";
+		}
+		
+	}
+
+	@Override
+	public String getUserid(HttpServletRequest request) {
+		String dbnum=request.getParameter("dbnum");
+		String userid=mapper.getUserid("dbnum");
+		return "userid";
 	}
 	
 

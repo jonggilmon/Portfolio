@@ -24,6 +24,14 @@
     <select id="samePnum" resultType="String">
       select * from member where phone=#{pnum}
     </select>
+    
+    <select id="chkPnum" resultType="String">
+      select * from member where phone=#{pnum}
+    </select>
+    
+    <select id="getUserid" resultType="String">
+      select userid member where phone=#{dbnum}
+    </select>
 </mapper>
 
 

@@ -172,14 +172,12 @@
       		}
       	else
       	{
-      		
-      	
-        document.getElementById("intxt").style.visibility="visible"
-        document.getElementById("inbtn").style.visibility="visible"
+          document.getElementById("intxt").style.visibility="visible"
+          document.getElementById("inbtn").style.visibility="visible"
         
-        var chk = new XMLHttpRequest();
+          var chk = new XMLHttpRequest();
 
-        chk.onload = function() 
+          chk.onload = function() 
         {
             if (chk.responseText == 0) 
             {
@@ -209,7 +207,7 @@
             var chk=new XMLHttpRequest();
             chk.onload=function()
             {
-            	alert(chk.responseText);
+            	
             	if(chk.responseText=="1")
             	{
             		alert("인증 성공했습니다.");
