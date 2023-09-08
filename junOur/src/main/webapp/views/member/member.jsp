@@ -159,71 +159,10 @@
     }
     var birthcheck=0;
    
-  
-    function check(my) 
-    {
-
-    	if(uidchk==0)
-    	{
-    		alert("아이디가 잘못 되었습니다");
-    		my.userid.focus();
-    		return false;
-    	}	
-    	else if(pchk==0)
-    		 {
-    		    alert("비밀번호가 잘못 되었습니다");
-    		    my.pwd.value="";
-    		    my.pwd2.value="";
-    		    my.pwd.focus();
-    		    return false;
-    		 }
-    	     else if(my.name.value.trim()=="") 
-    	    	  {
-    	    	      alert("이름을 입력하세요");
-    	    	      my.name.focus();
-    	    	      return false;
-    	    	  }
-    	     
-    	     else if(my.gender.value.trim()=="선택하세요") 
-	    	  {
-	    	      alert("성별을 고르세요");
-	    	      my.gender.focus();
-	    	      return false;
-	    	  }
-    	     else if(my.birth.value.trim().length<=7) 
-	    	  {
-	    	      alert("생년월일을 입력하세요 ex)19960309");
-	    	      my.birth.focus();
-	    	      return false;
-	    	  }
-    	
-    	          else if(my.phone.value.trim().length==0)
-    	        	   {
-    	        	      alert("전화번호를 입력하세요");
-    	        	      my.phone.focus();
-    	        	      return false;
-    	        	   }
-    	          else if(my.userNum.value.trim().length!=6 && snum!=pnum)
-    	        	  {
-    	        	  	alert("인증번호를 입력하세요")
-    	        	  	my.userNum.focus();
-    	        	  	return false;
-    	        	  	
-    	        	  }
-    	               else if(my.email.value.trim()=="")
-    	            	    {
-    	            	        alert("이메일을 입력하세요");
-    	            	        my.email.focus();
-    	            	        return false;
-    	            	    }
-    	                    else
-    	                    	return true;
-    	     
-    	
-    }
+  ㄴ
     	
     var snum; // server 인증번호
-	var pnum; // user 인증번호
+	var pnum; 
     function numSend() {
         pnum = document.mform.phone.value;
       	if(pnum.length!=11)
@@ -257,10 +196,10 @@
         
       	}
     }
-
+    var userNum;
     function numChk() 
     {
-        var userNum = document.mform.userNum.value;
+        userNum = document.mform.userNum.value;
         
         if (userNum === snum) 
         {
@@ -314,7 +253,7 @@
     	        	      my.phone.focus();
     	        	      return false;
     	        	   }
-    	          else if(snum!=pnum)
+    	          else if(snum!=userNum)
     	        	  {
     	        	  	alert("인증번호를 입력하세요")
     	        	  	my.userNum.focus();
