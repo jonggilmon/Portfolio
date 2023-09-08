@@ -30,7 +30,7 @@
     </select>
     
     <select id="getUserid" resultType="String">
-      select userid member where phone=#{dbnum}
+      select userid from member where phone=#{dbpnum}
     </select>
 </mapper>
 
