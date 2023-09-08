@@ -1,15 +1,15 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<<<<<<< HEAD
+
  <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
   <style>
      #del {
-     display:none;  25565546hhojoo
+     display:none; 
    }
     #section {
      width:1100px;
      height:500px; 
-     margin:auto;   ㅇㄴㅇ989898989898
+     margin:auto;   
      margin-top:50px;
    }
    #section table tr td {
