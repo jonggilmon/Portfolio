@@ -172,14 +172,12 @@
       		}
       	else
       	{
-      		
-      	
-        document.getElementById("intxt").style.visibility="visible"
-        document.getElementById("inbtn").style.visibility="visible"
+          document.getElementById("intxt").style.visibility="visible"
+          document.getElementById("inbtn").style.visibility="visible"
         
-        var chk = new XMLHttpRequest();
+          var chk = new XMLHttpRequest();
 
-        chk.onload = function() 
+          chk.onload = function() 
         {
             if (chk.responseText == 0) 
             {
@@ -197,14 +195,38 @@
         
       	}
     }
-    var userNum;
+    var chknum;  // submit 중복 핸드폰 번호 확인용
+    var userNum;  // 사용자의 인증번호
     function numChk() 
     {
         userNum = document.mform.userNum.value;
         
         if (userNum === snum) 
         {
-            alert("인증 성공했습니다.");
+            
+            var chk=new XMLHttpRequest();
+            chk.onload=function()
+            {
+            	
+            	if(chk.responseText=="1")
+            	{
+            		alert("인증 성공했습니다.");
+            		 	return true;
+            		
+            	}
+            	else if(chk.responseText=="0");
+            	{
+            		
+            		alert("이미 가입된 번호입니다");
+            		chknum=chk.responseText;
+            		
+            			return false;
+            	}
+            		
+            }
+            chk.open("get","samePnum?pnum="+pnum);
+            chk.send();
+            
         }
         else 
         {
@@ -250,24 +272,34 @@
     	
     	          else if(my.phone.value.trim().length==0)
     	        	   {
-    	        	      alert("전화번호를 입력하세요");
-    	        	      my.phone.focus();
-    	        	      return false;
+    	        	     alert("전화번호를 입력하세요.");
+    	        	     my.phone.focus();
+    	        	     return false;
     	        	   }
-    	          else if(snum!=userNum)
+    	          	  else if(snum!=userNum)
     	        	  {
-    	        	  	alert("인증번호를 입력하세요")
+    	        	  	alert("인증번호를 입력하세요.");
+    	        	  	alert(snum);
     	        	  	my.userNum.focus();
     	        	  	return false;
-    	        	  	
     	        	  }
-    	               else if(my.email.value.trim()=="")
+    	          	  else if(snum==null)
+    	          		  {
+    	          		    alert("인증번호를 받으세요.");
+    	          		    return false;
+    	          		  }
+    	          	   	  else if(chknum==0)
+    	        	      {
+    	        	        alert("이미 가입된 전화번호입니다.");
+    	        	        return false;
+    	        	      }
+    	                    else if(my.email.value.trim()=="")
     	            	    {
-    	            	        alert("이메일을 입력하세요");
+    	            	        alert("이메일을 입력하세요.");
     	            	        my.email.focus();
     	            	        return false;
     	            	    }
-    	                    else
+    	                      else
     	                    	return true;
     	     
     	

@@ -4,6 +4,7 @@ import javax.annotation.PostConstruct;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
+import org.apache.maven.model.Model;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
@@ -74,6 +75,30 @@ public class MemberController {
 	 public @ResponseBody String numSend(HttpServletRequest request)
 	 {
 		 return service.numSend(request);
+	 }
+	 
+	 @RequestMapping("/member/samePnum")
+	 public @ResponseBody String samePnum(HttpServletRequest request)
+	 {
+		 return service.samePnum(request);
+	 }
+	 
+	 @RequestMapping("/member/idfind")
+	 public String idfind()
+	 {
+		 return service.idfind();
+	 }
+	 
+	 @RequestMapping("/member/chkPnum")
+	 public @ResponseBody String chkPnum(HttpServletRequest request)
+	 {
+		 return service.chkPnum(request);
+	 }
+	 
+	 @RequestMapping("/member/getUserid")
+	 public @ResponseBody String getUserid(HttpServletRequest request)
+	 {
+		 return service.getUserid(request);
 	 }
 }
 

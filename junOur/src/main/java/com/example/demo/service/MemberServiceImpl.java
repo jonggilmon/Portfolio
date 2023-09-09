@@ -6,6 +6,7 @@ import java.util.Random;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
+import org.apache.maven.model.Model;
 import org.json.simple.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -78,7 +79,8 @@ public class MemberServiceImpl  implements MemberService{
 	}
 
 	@Override
-	public String numSend(HttpServletRequest request) {
+	public String numSend(HttpServletRequest request)
+	{
 		
 		String pnum=request.getParameter("pnum"); //폰 번호
 		Random ran=new Random(); // 랜덤 인증번호 생성
@@ -113,6 +115,58 @@ public class MemberServiceImpl  implements MemberService{
 		}
 		
 		
+	}
+
+	@Override
+	public String samePnum(HttpServletRequest request) {
+		String pnum=request.getParameter("pnum");
+		System.out.println(mapper.samePnum(pnum));
+		try
+		{
+			if(mapper.samePnum(pnum)==null)
+			{
+				return "1";
+			}
+			else
+			{
+				return "0";
+			}
+		}
+		catch(Exception e)
+		{
+			return "2";
+		}
+	}
+
+	@Override
+	public String idfind() {
+		
+		
+		return "/member/idfind";
+	}
+
+	@Override
+	public String chkPnum(HttpServletRequest request) {
+		String pnum=request.getParameter("pnum");
+		
+		if(mapper.chkPnum(pnum) == null)
+		{
+			return "0";
+		}
+		else
+		{
+			return "1";
+		}
+		
+	}
+
+	@Override
+	public String getUserid(HttpServletRequest request) {
+		String pnum=request.getParameter("pnum");
+		String userid=mapper.getUserid(pnum);
+		
+		
+	    return userid;
 	}
 	
 
