@@ -50,7 +50,9 @@
             </div>
         </c:forEach>
     </div>
-    <div><a href="/admin/action/action_write"> 글 등록 </a></div>
+    <c:if test="${userid eq 'admin123'}">
+    	<div><a href="/admin/action/action_write"> 글 등록 </a></div>
+    </c:if>
 </section>
 </body>
 </html>

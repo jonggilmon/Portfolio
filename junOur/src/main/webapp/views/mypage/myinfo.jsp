@@ -155,9 +155,9 @@
    {
    	var len=my.length; // pwd의 길이
    	
-   	if(len < 8)
+   	if(len < 6)
    	{
-   		document.getElementById("msg").innerText="비밀번호는 8자 이상 입력하세요";
+   		document.getElementById("msg").innerText="비밀번호는 6자 이상 입력하세요";
    		document.getElementById("msg").style.color="red";
    		document.mform.pwd.focus();
    		pchk=0;

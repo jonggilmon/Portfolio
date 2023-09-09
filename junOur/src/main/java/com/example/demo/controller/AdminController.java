@@ -57,9 +57,9 @@ public class AdminController {
 		return service.action_write_ok(request);
 	}
 	@RequestMapping("admin/action/action_list")
-	public String action_list(Model model)
+	public String action_list(Model model,HttpSession session)
 	{
-		return service.action_list(model);
+		return service.action_list(model,session);
 	}
 	@RequestMapping("/admin/action/action_readnum")
 	public String action_readnum(HttpServletRequest request, ActionVo avo)
