@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
         <%@ include file="../../admin/menu.jsp" %>
+        
+        
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,18 +17,36 @@
       
     }
   </style>
+  <script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+  <script>
+function searchAddress() {
+   new daum.Postcode({
+       oncomplete: function(data) {
+           // 결과값에서 주소 가져와서 출력
+           document.getElementById('address').value = data.roadAddress;
+       }
+   }).open();
+}
+</script>
 </head>
 <body>
   <section>
 	<form name="cform" method="post" action="contentAddOk" enctype="multipart/form-data">
 	    <div width="100"> <a href="/../admin/menu">관리자 창</a></div>
 		<div> <input type="file" name="img"> 이미지 </div>
-		<div><input type="text" name="rsdate" placeholder="예: 2018년 3월 9일"> 예약날짜 </div>
+		<div><input type="date" name="rsdate"> 예약날짜 </div>
 		<div> <textarea name="sogae" rows="15" cols="50"></textarea>소개</div>
 		<div> <textarea name="jinhang" rows="15" cols="50"></textarea>진행</div>
 		<div> <textarea name="rule" rows="15" cols="50"></textarea>룰</div>
 		<div> <input type="text" name="inwon">인원(int)</div>
-		<div> <input type="text" name="jongmok">jongmok</div>
+		<div>
+   <label for="address">주소:</label>
+   <input type="text" name="address" id="address" readonly="readonly" placeholder="주소 검색을 통해 입력">
+   <button type="button" onclick="searchAddress()">주소 찾기</button>
+</div>
+<div>
+   <input type="text" name="detailAddress" id="detailAddress" placeholder="상세주소">
+</div>
 		<div> <input type="text" name="rstime">예약시간(int)</div><div text-align="center" width="1000" height="10"></div>
 		<div> <input type="text" name="title">제목 </div>
 	

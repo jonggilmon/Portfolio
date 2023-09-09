@@ -23,7 +23,6 @@ public interface ContentService {
 
 	public List<ContentVo> getAllReserve();
 
-	public List<ContentVo> getReservesByDate(String date);
 	
 	public int insertAndGenerateReserveInfo(ReserveInfoVo reserveInfo);
 

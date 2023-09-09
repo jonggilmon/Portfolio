@@ -4,10 +4,12 @@ import lombok.Data;
 
 @Data
 public class AdminVo {
-	private int no,readnum,inwon,rstime, jongmok_id;
-	private String img,sogae,jinhang,rule,jongmok,title,writeday,rsdate;
+	private int no,readnum,inwon, jongmok_id, rstime;
+	private String img,sogae,jinhang,rule,address,title,writeday,rsdate;
 	private String userid,name,pwd,phone,email,gender,birth;
-	public String getAddress() ;
+
+	
+	
 		
 	
 }

@@ -49,8 +49,7 @@ public class AdminServiceImpl implements AdminService{
 	        String rsdateStr = multi.getParameter("rsdate");
 
 	        // 입력 포맷 검증 (예: "2018년 3월 9일"이 올바른 형식인지 확인)
-	        if(!rsdateStr.matches("\\d{4}년 \\d{1,2}월 \\d{1,2}일")) {
-	            // 올바르지 않은 포맷이면 예외를 발생시키거나 다른 처리를 수행
+	        if(!rsdateStr.matches("\\d{4}-\\d{2}-\\d{2}")) {
 	            throw new Exception("Invalid date format!");
 	        }
 	        avo.setRsdate(rsdateStr);
@@ -59,16 +58,18 @@ public class AdminServiceImpl implements AdminService{
 	        avo.setJinhang(multi.getParameter("jinhang"));
 	        avo.setRule(multi.getParameter("rule"));
 	        avo.setInwon(Integer.parseInt(multi.getParameter("inwon")));
-	        avo.setJongmok(multi.getParameter("jongmok"));
-	        avo.setRstime(Integer.parseInt(multi.getParameter("rstime")));
+	        avo.setAddress(multi.getParameter("address"));
+
+	        // "rstime" 값 변환: 예) "11:00" -> 1100
+	        String timeStr = multi.getParameter("rstime").replace(":", "");
+	        avo.setRstime(Integer.parseInt(timeStr));
+
 	        avo.setTitle(multi.getParameter("title"));
 	        avo.setJongmok_id(Integer.parseInt(multi.getParameter("jongmok_id")));
 
 	        mapper.contentAddOk(avo);
-	        
-	    } 
-	    catch (Exception e)
-	    {
+
+	    } catch (Exception e) {
 	        e.printStackTrace();
 	    }
 	    return "redirect:/admin/content/contentadd";
@@ -77,6 +78,14 @@ public class AdminServiceImpl implements AdminService{
 	public List<AdminVo> memberView() {
 		return mapper.memberView();
 	}
+	
+    @Override
+    public boolean banMember(String userid) {
+        int result = mapper.banMemberById(userid);
+        return result > 0;  // 삭제된 레코드가 1개 이상이면 true, 그렇지 않으면 false 반환
+    }
+
+
 	
 	@Override
 	public String action_write() {

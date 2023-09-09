@@ -34,10 +34,7 @@ public class ContentServiceImpl implements ContentService {
         return mapper.getAllReserve();
     }
     
-    @Override
-    public List<ContentVo> getReservesByDate(String date) {
-        return mapper.selectReservesByDate(date);
-    }
+  
     
    
 	@Override

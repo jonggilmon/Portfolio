@@ -11,8 +11,11 @@
 	<select id="memberView" parameterType="com.example.demo.vo.AdminVo">
 	  SELECT no, userid, name, pwd, phone, email, writeday, gender, birth
         FROM member
-	
 	</select>
+	
+ <delete id="banMemberById" parameterType="string">
+    DELETE FROM member WHERE userid=#{userid}
+</delete>
 	
 	<insert id="action_write_ok">
 		insert into action(title,content,img,writeday,userid)

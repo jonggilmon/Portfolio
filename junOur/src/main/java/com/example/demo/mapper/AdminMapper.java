@@ -30,5 +30,7 @@ public interface AdminMapper {
 	public void action_update_ok(ActionVo avo);
 	
 	public void gongjiAddOk(GongjiVo gvo);
+
+	public int banMemberById(String userid);
 	
 }
