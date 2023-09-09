@@ -151,7 +151,7 @@ public class AdminServiceImpl implements AdminService{
 		
 		mapper.gongjiAddOk(gvo);
 		
-		return "redirect:/gongji/list";
+		return "redirect:/admin/gongji/gongji_list";
 	}
 
 	
