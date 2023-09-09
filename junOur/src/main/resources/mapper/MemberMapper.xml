@@ -32,6 +32,10 @@
     <select id="getUserid" resultType="String">
       select userid from member where phone=#{pnum} limit 1
     </select>
+    
+    <select id="chkUserid" resultType="String">
+      select * from member where userid=#{userid} limit 1
+    </select>
 </mapper>
 
 

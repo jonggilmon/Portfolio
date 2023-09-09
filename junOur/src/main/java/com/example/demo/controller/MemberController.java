@@ -100,6 +100,18 @@ public class MemberController {
 	 {
 		 return service.getUserid(request);
 	 }
+	 
+	 @RequestMapping("/member/pwdfind")
+	 public String pwdfind()
+	 {
+		 return service.pwdfind();
+	 }
+	 
+	 @RequestMapping("/member/chkUserid")
+	 public @ResponseBody String chkUserid(HttpServletRequest request)
+	 {
+		 return service.chkUserid(request);
+	 }
 }
 
 
