@@ -142,10 +142,10 @@
           <!-- 예: subReserve 객체에 현재 인원 수를 나타내는 currentCount와 최대 인원 수를 나타내는 maxCount 프로퍼티가 있다고 가정 -->
          <c:choose>
                 <c:when test="${subReserve.currentCount < subReserve.maxCount}">
-                    <a href="/main/content/content?no=${subReserve.no}" class="myButton">신청하기</a>
+                    <a href="/main/content/content?no=${subReserve.no}" class="myButton">모집중</a>
                 </c:when>
                 <c:otherwise>
-                    <a class="myButton" style="opacity: 0.5; pointer-events: none;">신청하기</a>
+                    <a class="myButton" style="opacity: 0.5; pointer-events: none;">모집마감</a>
                 </c:otherwise>
             </c:choose>
         </td>
