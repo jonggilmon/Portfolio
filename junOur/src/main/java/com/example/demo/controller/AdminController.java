@@ -86,6 +86,7 @@ public class AdminController {
 	{
 		return service.action_update_ok(request,avo);
 	}
+	
 	@RequestMapping("/admin/gongji/gongjiadd")
 	public String gongji()
 	{
