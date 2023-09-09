@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
- <%@ include file="top_bottom/header.jsp" %>
+<%@ include file="top_bottom/header.jsp" %>
 <title>Insert title here</title>
 <style>
    #banner{
@@ -122,15 +122,13 @@
 }
 
 </style>
-
 </head>
 <body>
-
 <div id="banner"><img src="/static/photos/soccer.jpg" width="1100" height="400"></div>
+<!-- 달력 추가 -->
 
-  <table width="1100" align="center" id="aa" border="0" border-collapse:collapse>
-  
-  
+
+<table width="1100" align="center" id="aa" border="0" border-collapse:collapse>
 <c:forEach items="${AllReserves}" var="subReserve">
     <tr>
         <td width="350">${subReserve.title}</td>
@@ -151,9 +149,8 @@
         </td>
     </tr>
 </c:forEach>
+</table>
 
-  
-  </table>
- </body>
+</body>
+<%@ include file="top_bottom/footer.jsp" %>
 </html>
-   <%@ include file="top_bottom/footer.jsp" %>
