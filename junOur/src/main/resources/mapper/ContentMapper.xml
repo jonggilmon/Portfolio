@@ -35,4 +35,10 @@
 </select>
 
 
+<select id="findReservesByRsDate" resultType="com.example.demo.vo.ContentVo">
+    SELECT * FROM reserve WHERE rsdate = #{rsdate}
+</select>
+
+
+
 </mapper>

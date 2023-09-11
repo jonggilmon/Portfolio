@@ -9,7 +9,8 @@ import com.example.demo.vo.MemberVo;
 import com.example.demo.vo.ReserveInfoVo;
 
 import org.springframework.beans.factory.annotation.Autowired;
-
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -75,13 +76,19 @@ public class ContentController {
 	    
 	     
 	     model.addAttribute("AllReserves", reserves);
-	     
-	
-	    	    
-	    
+	     	   
 	    
 	     return "/main/rlist"; 
 	 }
+	 
+	 @GetMapping("/getReservationsByDate")
+	 public ResponseEntity<List<ContentVo>> getReservesByDate(@RequestParam String rsdate) {
+	     List<ContentVo> reservesByDate = contentMapper.findReservesByRsDate(rsdate);
+	     return new ResponseEntity<>(reservesByDate, HttpStatus.OK);
+	 }
+	 
+	 
+	 
 	 @RequestMapping("/main/content/resung")
 	 public String resung(Model model, HttpSession session) {
 	     List<ContentVo> reserveInfos = service.resung();
