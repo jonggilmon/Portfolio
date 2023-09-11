@@ -105,7 +105,7 @@ public class MemberServiceImpl  implements MemberService{
 		
 		try 
 		{
-			coolsms.send(params); // Message 라이브러리를 통해 문자 메시지 전송
+			//coolsms.send(params); // Message 라이브러리를 통해 문자 메시지 전송
 			
 			return num; // 보낸 인증번호 확인용
 		}
@@ -187,6 +187,13 @@ public class MemberServiceImpl  implements MemberService{
 			return "1";
 		}
 
+	}
+
+	@Override
+	public String PnUchk(HttpServletRequest request) {
+		String userid=request.getParameter("userid");
+		String pwd=mapper.PnUchk(userid);
+		return pwd;
 	}
 	
 

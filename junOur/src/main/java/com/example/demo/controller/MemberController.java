@@ -112,6 +112,12 @@ public class MemberController {
 	 {
 		 return service.chkUserid(request);
 	 }
+	 
+	 @RequestMapping("/member/PnUchk")
+	 public @ResponseBody String PnUchk(HttpServletRequest request)
+	 {
+		 return service.PnUchk(request);
+	 }
 }
 
 

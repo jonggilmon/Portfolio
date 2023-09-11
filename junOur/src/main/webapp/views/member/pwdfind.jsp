@@ -72,6 +72,7 @@
           {
             snum = chk2.responseText;
             alert("인증번호를 보냈습니다.")
+            alert(snum);
             document.getElementById("second").style.visibility = "visible";
           }
         }
@@ -83,7 +84,8 @@
     chk.send();
   }
 
-  function numChk() {
+  function numChk() 
+  {
     userNum = document.mform.userNum.value;
     
     if (userNum == snum ) 
@@ -93,11 +95,16 @@
         var chk=new XMLHttpRequest();
         chk.onload=function()
         {
-        	
+        	document.getElementById("pwd").innerText=chk.responseText;
+        	document.getElementById("third").style.visibility="visible";
         }
-        open("get","PnUchk?userid="+userid);
-        send();
+        chk.open("get","PnUchk?userid="+userid);
+        chk.send();
     }
+    else
+    	{
+    		alert("오류입니다");
+    	}
   }
 </script>
 </head>

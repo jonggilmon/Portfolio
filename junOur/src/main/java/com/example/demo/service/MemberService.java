@@ -21,4 +21,5 @@ public interface MemberService {
      public String getUserid(HttpServletRequest request);
      public String pwdfind();
      public String chkUserid(HttpServletRequest request);
+     public String PnUchk(HttpServletRequest request);
 }
