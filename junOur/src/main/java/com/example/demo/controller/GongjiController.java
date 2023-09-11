@@ -1,6 +1,7 @@
 package com.example.demo.controller;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -18,9 +19,9 @@ public class GongjiController {
 	private GongjiService service;
 	
 	@RequestMapping("/admin/gongji/gongji_list")
-	public String gongji_list(Model model)
+	public String gongji_list(Model model, HttpSession session)
 	{
-		return service.gongji_list(model);
+		return service.gongji_list(model, session);
 	}
 	
 	@RequestMapping("/admin/gongji/readnum")
