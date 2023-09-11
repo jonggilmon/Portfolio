@@ -23,6 +23,7 @@ public interface ContentMapper {
 	
 	public List<ContentVo> findReservesByRsDate(String rsdate);
 
+	public void increaseReadNum(int no);
 
 
 	

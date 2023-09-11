@@ -58,9 +58,10 @@ public class AdminServiceImpl implements AdminService{
 	        avo.setInwon(Integer.parseInt(multi.getParameter("inwon")));
 	        avo.setAddress(multi.getParameter("address"));
 
-	        // "rstime" 값 변환: 예) "11:00" -> 1100
-	        String timeStr = multi.getParameter("rstime").replace(":", "");
-	        avo.setRstime(Integer.parseInt(timeStr));
+	        // "rstime" 값 변환: 예) "11:00" -> 1100, "09:00" -> 0900
+	        String[] timeParts = multi.getParameter("rstime").split(":");
+	        String timeStr = String.format("%02d%02d", Integer.parseInt(timeParts[0]), Integer.parseInt(timeParts[1]));
+	        avo.setRstime(timeStr);
 
 	        avo.setTitle(multi.getParameter("title"));
 

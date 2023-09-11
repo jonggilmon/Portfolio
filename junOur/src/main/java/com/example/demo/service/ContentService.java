@@ -30,6 +30,9 @@ public interface ContentService {
 
 	boolean scanPassword(MemberVo user, String inputPassword);
 
+
+	public void increaseReadNum(int no);
+
 	
 
 

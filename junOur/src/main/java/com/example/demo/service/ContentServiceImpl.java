@@ -34,6 +34,10 @@ public class ContentServiceImpl implements ContentService {
         return mapper.getAllReserve();
     }
     
+    @Override
+    public void increaseReadNum(int no) {
+        mapper.increaseReadNum(no);
+    }
   
     
    

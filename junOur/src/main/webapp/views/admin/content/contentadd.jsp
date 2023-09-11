@@ -38,7 +38,14 @@ function searchAddress() {
 		<div> <textarea name="sogae" rows="15" cols="50"></textarea>소개</div>
 		<div> <textarea name="jinhang" rows="15" cols="50"></textarea>진행</div>
 		<div> <textarea name="rule" rows="15" cols="50"></textarea>룰</div>
-		<div> <input type="text" name="inwon">인원(int)</div>
+		<div>
+        <label for="inwon">인원:</label>
+        <select name="inwon" id="inwon">
+          <% for(int i=1; i<=30; i++) { %>
+         <option value="<%= i %>"><%= i %>명</option>
+           <% } %>
+        </select>
+      </div>
 		<div>
    <label for="address">주소:</label>
    <input type="text" name="address" id="address" readonly="readonly" placeholder="주소 검색을 통해 입력">
@@ -47,7 +54,18 @@ function searchAddress() {
 <div>
    <input type="text" name="detailAddress" id="detailAddress" placeholder="상세주소">
 </div>
-		<div> <input type="text" name="rstime">예약시간(int)</div><div text-align="center" width="1000" height="10"></div>
+		<div>
+		<label for="rstime">예약시간:</label>
+		<select name="rstime" id="rstime">
+		<% for(int i=0; i<24; i++) { %>
+		<option value="<%= String.format("%02d", i) %>:00"><%= String.format("%02d", i) %>:00</option>
+		<option value="<%= String.format("%02d", i) %>:30"><%= String.format("%02d", i) %>:30</option>
+		<% } %>
+		</select>
+		</div>
+		
+		
+		
 		<div> <input type="text" name="title">제목 </div>
 	
         <div><input type="submit" value="입력"></div>

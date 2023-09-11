@@ -179,10 +179,13 @@
 </table>
 <script>
 window.onload = function() {
+	 var currentDate = new Date();
     var calendar = new Pikaday({
         field: document.getElementById('calendar'),
         showOn: 'always',
         bound: false,
+        defaultDate: currentDate, // 달력 초기화 시 현재 날짜를 기본 값으로 설정
+        setDefaultDate: true, // 현재 날짜를 달력에 설정
         toString(date, format) {
             return moment(date).format('YYYY년 MM월 DD일 dddd');
         },
@@ -199,6 +202,8 @@ window.onload = function() {
         },
         firstDay: 0
     });
+    
+    fetchDataForDate(moment(currentDate).format('YYYY-MM-DD')); // 페이지 로드 시 현재 날짜의 데이터를 가져옵니다.
 };
 
 function fetchDataForDate(date) {
@@ -216,11 +221,11 @@ function updateTableWithData(data) {
         table.innerHTML = ''; 
         data.forEach(item => {
             var row = table.insertRow();
-            row.insertCell(0).innerText = item.no;
-            row.insertCell(1).innerText = item.img;
-            row.insertCell(2).innerText = item.rsdate;
+            row.insertCell(0).innerText = item.rsdate;
+            row.insertCell(1).innerText = item.rstime;
+            row.insertCell(2).innerText = item.title;
             row.insertCell(3).innerText = item.inwon;
-            row.insertCell(4).innerText = item.rstime;
+            row.insertCell(4).innerText = item.readnum;
             
             
             const btnCell = row.insertCell(5);

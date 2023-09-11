@@ -59,9 +59,22 @@ public class AdminController {
 	        // rsdateStr 값이 null이거나 빈 문자열인 경우에 대한 처리 (예: 오류 메시지 출력)
 	        System.err.println("rsdate value is empty or not provided!");
 	    }
+	    
+	    
 
+	    // "rstime" 값 변환: 예) "11:00" -> 1100
+	    String rstime = request.getParameter("rstime");
+	    if (rstime != null) {
+	        adminVo.setRstime(rstime); // AdminVo에 rstime 값을 그대로 설정
+	    } else {
+	        // rstime 값이 null일 때 처리
+	        System.err.println("rstime value is missing!");
+	    }
+	    
 	    return service.contentAddOk(request);
 	}
+	
+	
 	@RequestMapping("/admin/member/memberView")
 	public String memberview(Model model) {
 		  System.out.println("memberview method is called!");

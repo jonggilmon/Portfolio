@@ -43,6 +43,8 @@ public class ContentController {
 
 	 @GetMapping("/main/content/content")
 	 public String view(@RequestParam("no") int no, Model model, HttpSession session) {
+		 
+		   service.increaseReadNum(no);  // 조회수 1 증가
 	     
 	     ContentVo contentDetail = service.getContentByNo(no);
 	     session.setAttribute("no", no);
@@ -84,6 +86,15 @@ public class ContentController {
 	 @GetMapping("/getReservationsByDate")
 	 public ResponseEntity<List<ContentVo>> getReservesByDate(@RequestParam String rsdate) {
 	     List<ContentVo> reservesByDate = contentMapper.findReservesByRsDate(rsdate);
+	     
+	     for (ContentVo reserve : reservesByDate) {
+	         int reserveNo = reserve.getNo(); 
+	         int currentReserveCount = reserveInfoMapper.inwonCount(reserveNo);
+	         int maxInwon = contentMapper.getMaxinwonNo(reserveNo);
+
+	         reserve.setCurrentCount(currentReserveCount);
+	         reserve.setMaxCount(maxInwon);
+	     }
 	     return new ResponseEntity<>(reservesByDate, HttpStatus.OK);
 	 }
 	 
