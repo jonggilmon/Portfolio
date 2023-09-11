@@ -35,15 +35,13 @@ public class AdminServiceImpl implements AdminService{
 	@Override
 	public String contentAddOk(HttpServletRequest request) {
 	    int size=1024*1024*100;
-	    try
-	    {
+	    try {
 	        String path=ResourceUtils.getFile("classpath:static/content").toPath().toString();
 	        System.out.println(path);
 	        MultipartRequest multi=new MultipartRequest(request,path,size,"utf-8",new DefaultFileRenamePolicy());
 	        AdminVo avo=new AdminVo();
 
 	        avo.setImg(multi.getFilesystemName("img"));
-	        
 	        
 	        // 날짜 처리
 	        String rsdateStr = multi.getParameter("rsdate");
@@ -65,7 +63,13 @@ public class AdminServiceImpl implements AdminService{
 	        avo.setRstime(Integer.parseInt(timeStr));
 
 	        avo.setTitle(multi.getParameter("title"));
-	        avo.setJongmok_id(Integer.parseInt(multi.getParameter("jongmok_id")));
+
+	        // jongmok_id 처리
+	        String jongmokIdStr = multi.getParameter("jongmok_id");
+	        if(jongmokIdStr == null || jongmokIdStr.trim().isEmpty()) {
+	            throw new Exception("jongmok_id is missing or null!");
+	        }
+	        avo.setJongmok_id(Integer.parseInt(jongmokIdStr));
 
 	        mapper.contentAddOk(avo);
 
