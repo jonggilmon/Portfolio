@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
@@ -15,6 +14,7 @@
             margin: 0;
             padding: 0;
         }
+
         .container {
             max-width: 1100px;
             margin: 20px auto;
@@ -30,12 +30,12 @@
             padding: 5px;
         }
         .writeday{
-        	margin-left:900px;
-        	margin-top: 20px;
+           margin-left:900px;
+           margin-top: 20px;
         }
         .readnum{
-        	margin-left:900px;
-        	margin-top: 20px;
+           margin-left:900px;
+           margin-top: 20px;
         }
 
         .content {
@@ -73,7 +73,7 @@
         .actions a:hover {
             background-color: #333;
             color: #fff;
-        }u
+        }
 
         #del {
             display: none;
