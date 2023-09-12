@@ -34,6 +34,12 @@ public class ContentServiceImpl implements ContentService {
         return mapper.getAllReserve();
     }
     
+    @Override
+    public void increaseReadNum(int no) {
+        mapper.increaseReadNum(no);
+    }
+  
+    
    
 	@Override
     public List<ContentVo> getReservesByJongmokId(int jongmokId) {
@@ -46,6 +52,7 @@ public class ContentServiceImpl implements ContentService {
 	        return mapper.resung(); 
 	    }
 	
+	 
 	
 
 	@Override

@@ -78,7 +78,7 @@ section #first #mainimg img {
       border: 1px solid black;
     }
 
-    section #second #remenu #juso, section #second #remenu #jongmok {
+    section #second #remenu #juso, section #second #remenu #address {
       width: 400px;
       height: 40px;
       border: 1px solid black;
@@ -260,7 +260,7 @@ section #first #mainimg img {
      <div id="remenu">  
        <div id="rsdate">${contentDetail.rsdate}</div>
        <div id="inwon">${contentDetail.inwon}</div>
-       <div id="jongmok">${contentDetail.jongmok}</div>
+       <div id="address">${contentDetail.address}</div>
        <div id="rstime">${contentDetail.rstime}</div>
        <div id="title">${contentDetail.title}</div> 
      </div>  
@@ -290,7 +290,7 @@ section #first #mainimg img {
    <div class="btndong" onclick="redirectToCorrectPage()">동의하기</div>
   </div>
 </div> 
-  </table>
+ 
   <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
 <script>
 $("#btn2").click(function(

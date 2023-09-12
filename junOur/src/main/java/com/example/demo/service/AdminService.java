@@ -24,6 +24,7 @@ public interface AdminService {
 	public String action_update(ActionVo avo,Model model);
 	public String action_update_ok(HttpServletRequest request, ActionVo avo);
 	public String gongjiAddOk(GongjiVo gvo);
+	public boolean banMember(String userid);
 
 	
 }
