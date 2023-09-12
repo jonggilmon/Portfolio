@@ -25,4 +25,10 @@
     update member set pwd=#{pwd} where userid=#{userid}
   </update>
   
+  <insert id="mtmOk" parameterType="com.example.demo.vo.MtmVo">
+  	    insert into mtm(title,content,answer,userid,writeday)
+    values (#{title},#{content},#{answer},#{userid},now())
+  </insert>
+  
+  
   </mapper>

@@ -1,6 +1,7 @@
 package com.example.demo.mapper;
 
 import com.example.demo.vo.MemberVo;
+import com.example.demo.vo.MtmVo;
 
 public interface MypageMapper {
 	public MemberVo myinfo(String userid);
@@ -14,4 +15,6 @@ public interface MypageMapper {
 	public boolean isPwd(String pwd, String userid);
 
 	public void pwdChange(String pwd, String userid);
+	
+	public void mtmOk(MtmVo mvo);
 }

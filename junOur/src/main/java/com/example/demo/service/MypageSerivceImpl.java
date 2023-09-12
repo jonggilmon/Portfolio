@@ -10,6 +10,7 @@ import org.springframework.ui.Model;
 
 import com.example.demo.mapper.MypageMapper;
 import com.example.demo.vo.MemberVo;
+import com.example.demo.vo.MtmVo;
 
 @Service
 @Qualifier("mys")
@@ -65,5 +66,20 @@ public class MypageSerivceImpl implements MypageService{
 		{
 			return "redirect:/mypage/myinfo?err=1";
 		}
+	}
+
+	@Override
+	public String mtm() 
+	{
+		return "/mypage/mtm";
+	}
+
+	@Override
+	public String mtmOk(MtmVo mvo, HttpSession session) {
+		String userid=session.getAttribute("userid").toString();
+		mvo.setUserid(userid);
+		mapper.mtmOk(mvo);
+		
+		return "/mypage/mtmOk";
 	}
 }

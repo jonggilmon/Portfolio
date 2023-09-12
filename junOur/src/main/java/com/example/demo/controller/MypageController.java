@@ -10,6 +10,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.example.demo.service.MypageService;
+import com.example.demo.vo.MtmVo;
 
 @Controller
 public class MypageController {
@@ -42,4 +43,15 @@ public class MypageController {
 	{ 
 		return service.pwdChange(request,session);
 	}
+	@RequestMapping("/mypage/mtm")
+	public String mtm()
+	{
+		return service.mtm();
+	}
+	@RequestMapping("/mypage/mtmOk")
+	public String mtmOk(MtmVo mvo,HttpSession session)
+	{
+		return service.mtmOk(mvo,session);
+	}
+	
 }

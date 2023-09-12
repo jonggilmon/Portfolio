@@ -5,6 +5,8 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.ui.Model;
 
+import com.example.demo.vo.MtmVo;
+
 public interface MypageService {
 
 	public String myinfo(HttpSession session, Model model,HttpServletRequest request);
@@ -16,5 +18,8 @@ public interface MypageService {
 	public String chgEmail(HttpSession session, HttpServletRequest request);
 
 	public String pwdChange(HttpServletRequest request, HttpSession session);
-
+	
+	public String mtm();
+	
+	public String mtmOk(MtmVo mvo,HttpSession session);
 }
