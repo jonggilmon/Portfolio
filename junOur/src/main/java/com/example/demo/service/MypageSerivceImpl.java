@@ -70,8 +70,8 @@ public class MypageSerivceImpl implements MypageService{
 	}
 
 	@Override
-	public String myreserve(Model model, ReserveInfoVo rvo) {
-		model.addAttribute("rlist",mapper.myreserve(rvo));
+	public String myreserve(Model model) {
+		model.addAttribute("rlist",mapper.myreserve());
 		
 		return "/mypage/myreserve";
 	}

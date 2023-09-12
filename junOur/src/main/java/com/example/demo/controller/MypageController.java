@@ -50,8 +50,8 @@ public class MypageController {
 		return "/mypage/mypage";
 	}
 	@RequestMapping("/mypage/myreserve")
-	public String myreserve(Model model,ReserveInfoVo rvo)
+	public String myreserve(Model model)
 	{
-		return service.myreserve(model,rvo);
+		return service.myreserve(model);
 	}
 }

@@ -19,7 +19,7 @@ public interface MypageMapper {
 
 	public void pwdChange(String pwd, String userid);
 
-	public ArrayList<ReserveInfoVo> myreserve(ReserveInfoVo rvo);
+	public ArrayList<ReserveInfoVo> myreserve();
 
 	
 

@@ -20,6 +20,6 @@ public interface MypageService {
 
 	public String pwdChange(HttpServletRequest request, HttpSession session);
 
-	public String myreserve(Model model, ReserveInfoVo rvo);
+	public String myreserve(Model model);
 
 }
