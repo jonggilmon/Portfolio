@@ -74,7 +74,7 @@
                 </c:when>
                 <c:otherwise>
                     <li>문의사항</li>
-                    <li>마이페이지</li>
+                    <li><a href="/mypage/mypage">마이페이지</a></li>
                 </c:otherwise>
             </c:choose>
             <li>${sessionScope.name}</li>

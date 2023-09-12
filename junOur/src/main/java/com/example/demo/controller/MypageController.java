@@ -42,4 +42,9 @@ public class MypageController {
 	{ 
 		return service.pwdChange(request,session);
 	}
+	@RequestMapping("/mypage/mypage")
+	public String mypage()
+	{
+		return "/mypage/mypage";
+	}
 }
