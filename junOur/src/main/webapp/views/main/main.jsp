@@ -134,26 +134,7 @@
     overflow: hidden;
 }
 
-.sport-item i.fas.fa-futbol::after {
-    content: '\f1e3'; /* FontAwesome의 축구공 아이콘 코드 */
-    font-family: "Font Awesome 5 Free"; /* FontAwesome의 폰트 패밀리 */
-    font-weight: 900; /* FontAwesome의 아이콘을 위한 폰트 두께 */
-    position: absolute;
-    bottom: 100%; /* 아래에서부터 시작 */
-    left: 0;
-    height: 0; /* 초기 높이 0 설정 */
-    width: 100%; /* 너비 100% 유지 */
-    color: black;
-    overflow: hidden;
-    transition: height 0.5s; /* 높이 변경에 대한 전환 효과 적용 */
-    white-space: nowrap;
-    z-index: 2;
-    
-}
 
-.sport-item:hover i.fas.fa-futbol::after {
-     bottom: 0; /* hover 상태에서 높이 100%로 설정 */
-}
 
 
 
