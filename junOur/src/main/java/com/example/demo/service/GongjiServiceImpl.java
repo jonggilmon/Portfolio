@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -20,8 +21,9 @@ public class GongjiServiceImpl implements GongjiService {
 		private GongjiMapper mapper;
 
 		@Override
-		public String gongji_list(Model model) {
+		public String gongji_list(Model model, HttpSession session) {
 			ArrayList<HashMap> glist=mapper.glist();
+			String userid=session.getAttribute("userid").toString();
 			model.addAttribute("glist",glist);
 			return "/admin/gongji/gongji_list";
 		}
