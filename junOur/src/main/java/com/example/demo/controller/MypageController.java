@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.example.demo.service.MypageService;
 import com.example.demo.vo.ContentVo;
+import com.example.demo.vo.ReserveInfoVo;
 
 @Controller
 public class MypageController {
@@ -49,8 +50,8 @@ public class MypageController {
 		return "/mypage/mypage";
 	}
 	@RequestMapping("/mypage/myreserve")
-	public String myreserve(Model model,ContentVo cvo)
+	public String myreserve(Model model,ReserveInfoVo rvo)
 	{
-		return service.myreserve(model,cvo);
+		return service.myreserve(model,rvo);
 	}
 }

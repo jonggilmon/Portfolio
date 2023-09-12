@@ -11,6 +11,7 @@ import org.springframework.ui.Model;
 import com.example.demo.mapper.MypageMapper;
 import com.example.demo.vo.ContentVo;
 import com.example.demo.vo.MemberVo;
+import com.example.demo.vo.ReserveInfoVo;
 
 @Service
 @Qualifier("mys")
@@ -69,9 +70,9 @@ public class MypageSerivceImpl implements MypageService{
 	}
 
 	@Override
-	public String myreserve(Model model, ContentVo cvo) {
-		model.addAttribute("clist",mapper.myreserve(cvo));
+	public String myreserve(Model model, ReserveInfoVo rvo) {
+		model.addAttribute("rlist",mapper.myreserve(rvo));
 		
-		return null;
+		return "/mypage/myreserve";
 	}
 }

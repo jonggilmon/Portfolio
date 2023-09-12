@@ -31,7 +31,7 @@
 <body>
 	<section>
 		<div><a href="myinfo">내 정보 수정</a></div><p>
-		<div><a href="#">내 예약 현황</a></div><p>
+		<div><a href="myreserve">내 예약 현황</a></div><p>
 		<div><a href="#">1:1 문의하기</a></div><p>
 	</section>
 </body>

@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import com.example.demo.vo.ContentVo;
 import com.example.demo.vo.MemberVo;
+import com.example.demo.vo.ReserveInfoVo;
 
 public interface MypageMapper {
 	public MemberVo myinfo(String userid);
@@ -18,7 +19,9 @@ public interface MypageMapper {
 
 	public void pwdChange(String pwd, String userid);
 
-	public ArrayList<ContentVo> myreserve(ContentVo cvo);
+	public ArrayList<ReserveInfoVo> myreserve(ReserveInfoVo rvo);
+
+	
 
 
 }

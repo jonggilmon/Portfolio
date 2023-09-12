@@ -6,6 +6,7 @@ import javax.servlet.http.HttpSession;
 import org.springframework.ui.Model;
 
 import com.example.demo.vo.ContentVo;
+import com.example.demo.vo.ReserveInfoVo;
 
 public interface MypageService {
 
@@ -19,6 +20,6 @@ public interface MypageService {
 
 	public String pwdChange(HttpServletRequest request, HttpSession session);
 
-	public String myreserve(Model model, ContentVo cvo);
+	public String myreserve(Model model, ReserveInfoVo rvo);
 
 }
