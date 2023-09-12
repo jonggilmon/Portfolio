@@ -1,5 +1,8 @@
 package com.example.demo.mapper;
 
+import java.util.ArrayList;
+
+import com.example.demo.vo.ContentVo;
 import com.example.demo.vo.MemberVo;
 
 public interface MypageMapper {
@@ -14,4 +17,8 @@ public interface MypageMapper {
 	public boolean isPwd(String pwd, String userid);
 
 	public void pwdChange(String pwd, String userid);
+
+	public ArrayList<ContentVo> myreserve(ContentVo cvo);
+
+
 }

@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
 
 import com.example.demo.mapper.MypageMapper;
+import com.example.demo.vo.ContentVo;
 import com.example.demo.vo.MemberVo;
 
 @Service
@@ -65,5 +66,12 @@ public class MypageSerivceImpl implements MypageService{
 		{
 			return "redirect:/mypage/myinfo?err=1";
 		}
+	}
+
+	@Override
+	public String myreserve(Model model, ContentVo cvo) {
+		model.addAttribute("clist",mapper.myreserve(cvo));
+		
+		return null;
 	}
 }

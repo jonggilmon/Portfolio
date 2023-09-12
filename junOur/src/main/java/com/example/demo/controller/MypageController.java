@@ -10,6 +10,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.example.demo.service.MypageService;
+import com.example.demo.vo.ContentVo;
 
 @Controller
 public class MypageController {
@@ -46,5 +47,10 @@ public class MypageController {
 	public String mypage()
 	{
 		return "/mypage/mypage";
+	}
+	@RequestMapping("/mypage/myreserve")
+	public String myreserve(Model model,ContentVo cvo)
+	{
+		return service.myreserve(model,cvo);
 	}
 }
