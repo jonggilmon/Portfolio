@@ -43,7 +43,7 @@
 	</select>
 	
 	<update id="action_update_ok">
-		update action set title=#{title},img=#{img},content=#{content}
+		update action set title=#{title},img=#{img},content=#{content} where no=#{no}
 	</update>
 	
 	<insert id="gongjiAddOk" parameterType="com.example.demo.vo.GongjiVo">
