@@ -45,11 +45,42 @@
     border: 1px solid #ccc;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
     transition: transform 0.2s ease-in-out;
+     position: relative;
 }
 
-.sport-item:hover {
+.sport-item a {
+    display: block;
+    position: relative;
+}
+
+.sport-item.special-effect a::before {
+    content: "";
+    position: absolute;
+    width: 67%;          /* 원하는 폭으로 조정 */
+    height: 67%;         /* 원하는 높이로 조정 */
+    left: 50%;           /* 왼쪽에서 50% 위치에 중앙 정렬하기 위한 설정 */
+    top: 50%;            /* 위에서 50% 위치에 중앙 정렬하기 위한 설정 */
+    transform: translate(-50%, -50%); /* 위치를 더욱 정확하게 중앙으로 조정 */
+    background: linear-gradient(to bottom, skyblue, skyblue); /* 선형 그라데이션 방향 수정 */
+    background-size: 100% 0%; /* 처음에는 높이가 0% */
+    background-repeat: no-repeat;
+    opacity: 0;
+    transition: opacity 0.3s, background-size 0.3s ease-in-out;
+    border-radius: 50%;  
+    z-index: -1;
+}
+
+.sport-item.special-effect:hover a::before {
+    opacity: 1;
+    background-size: 100% 100%; /* 호버 시 100% 높이로 채우기 */
+}
+
+.sport-item.special-effect:hover {
     transform: scale(1.05);
 }
+
+
+
  .notice-weather {
         display: flex;
         justify-content: space-between;
@@ -116,33 +147,29 @@
         height: 400px;       
     }
    .photo-item img {
-    width: 100%;           /* 너비를 100%로 설정 */
-    height: 100%;          /* 높이를 100%로 설정 */
-    object-fit: contain;   /* 이미지가 컨테이너 안에 꽉 차게 표시되도록 설정 */
+    width: 100%;           
+    height: 100%;          
+    object-fit: contain;   
     display: block;
     margin: 0 auto;
-    }
-    
-  
-.sport-item i.fas.fa-futbol {
-    font-size: 5em;
-    width: 100%;
-    text-align: center; 
-    position: relative; 
-    z-index: 1;
-    color: gray;  
-    overflow: hidden;
-}
-
-
-
-
+    }   
 
     a {
     	text-decoration: none;
     }
 
-    
+
+
+
+.sport-item img {
+    width: 100%;       /* 이미지의 폭을 부모 요소의 100%로 설정 */
+    height: auto;      /* 이미지의 높이를 원래 비율에 맞게 자동으로 설정 */
+    display: block;    /* 이미지를 블록 요소로 설정 */
+    margin: 0 auto;    /* 이미지를 가운데 정렬 */
+     transition: filter 0.9s ease-in-out;
+       position: relative;
+  
+}
 
   
   </style>
@@ -173,9 +200,11 @@
     </div>
 
       <div class="sports-grid">
-     <div class="sport-item">
-        <a href="rlist?jongmok_id=1"><i class="fas fa-futbol"></i></a>
-        </div>
+        <div class="sport-item special-effect">
+   <a href="rlist?jongmok_id=1">
+       <img src="/static/photos/ball.png" alt="Soccer Ball" />                
+   </a>
+</div>
         <div class="sport-item">
            <a href="rlist?jongmok_id=2">  <h2>농구</h2> </a>
         </div>
@@ -231,7 +260,9 @@
         <!-- Slick JS + jQuery -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
-    <script>
+   
+   
+      <script>
         $(document).ready(function(){
             $('.photo-slider').slick({
                 infinite: true,

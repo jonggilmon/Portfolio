@@ -49,4 +49,11 @@
 </update>
 
 
+<select id="findReservesByRsDateAndJongmokId" resultType="com.example.demo.vo.ContentVo">
+    SELECT * FROM reserve 
+    WHERE rsdate = #{rsdate} AND jongmok_id = #{jongmok_id}
+    ORDER BY rstime asc
+</select>
+
+
 </mapper>
