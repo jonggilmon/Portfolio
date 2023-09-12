@@ -6,6 +6,14 @@
 <head>
 <meta charset="UTF-8">
 <title>모션 메이트</title> 
+
+  <!-- Slick CSS -->
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
+    <!-- Optional theme -->
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/>
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+  
   <style>
   
  
@@ -111,12 +119,45 @@
         padding: 10px;
         text-align: center;
         box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+        position: relative;  
+        overflow: hidden;    
+        height: 400px;       
     }
+   .photo-item img {
+    width: 100%;           /* 너비를 100%로 설정 */
+    height: 100%;          /* 높이를 100%로 설정 */
+    object-fit: contain;   /* 이미지가 컨테이너 안에 꽉 차게 표시되도록 설정 */
+    display: block;
+    margin: 0 auto;
+    }
+    
+  
+.sport-item i.fas.fa-futbol {
+    font-size: 5em;
+    width: 100%;
+    text-align: center; 
+    position: relative; 
+    z-index: 1;
+    color: #000;  /* 아이콘의 기본 색상을 검은색(또는 원하는 색상)으로 설정 */
+}
 
-    .photo-item img {
-        max-width: 100%;
-        height: auto;
-    }
+.sport-item i.fas.fa-futbol::before {
+    content: ""; 
+    position: absolute;
+    top: 100%;  /* 초기 상태에서는 화면 밖에 위치 */
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #000; /* 아이콘 색상과 동일한 배경색 설정 */
+    z-index: -1;
+    transition: top 2s;  /* 2초 동안 위로 이동하는 애니메이션 */
+}
+
+.sport-item i.fas.fa-futbol:hover::before {
+    top: 0;  /* hover 시 화면 내로 이동 */
+}
+
+
     a {
     	text-decoration: none;
     }
@@ -152,8 +193,8 @@
     </div>
 
       <div class="sports-grid">
-        <div class="sport-item">
-           <a href="rlist?jongmok_id=1"> <h2>축구</h2> </a>
+     <div class="sport-item">
+        <a href="rlist?jongmok_id=1"><i class="fas fa-futbol"></i></a>
         </div>
         <div class="sport-item">
            <a href="rlist?jongmok_id=2">  <h2>농구</h2> </a>
@@ -196,13 +237,30 @@
         
       <div class="M_photo">
         활동사진
-        <c:forEach items="${alist}" var="avo">
-        	<div class="photo-item"><img src="/static/action/${avo.img}"></div>
-        </c:forEach>
-            	
+        <div class="photo-slider">
+            <c:forEach items="${alist}" var="avo">
+                <div class="photo-item"><img src="/static/action/${avo.img}"></div>
+            </c:forEach>
         </div>
+    </div>
         
    
        <%@ include file="top_bottom/footer.jsp" %>
+       
+       
+        <!-- Slick JS + jQuery -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('.photo-slider').slick({
+                infinite: true,
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                autoplay: true,          
+                autoplaySpeed: 3000     
+            });
+        });
+    </script>
 </body>
 </html>
