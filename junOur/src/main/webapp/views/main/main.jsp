@@ -380,7 +380,7 @@
     top: 50%;
     transform: translate(-50%, -50%);
     /* radial 그라데이션 사용 */
-     background: radial-gradient(circle, #CCFF00, #BCE55C);
+     background: radial-gradient(circle, #CCFF00, #FAED7D);
     background-size: 100% 0%;
     background-repeat: no-repeat;
     background-position: bottom;
@@ -389,7 +389,7 @@
     border-radius: 50%;  
     z-index: -1;
     /* 입체감을 높이기 위한 그림자 추가 */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8); 
 }
 
 .sport-item.special-effect:nth-child(8):hover a::before {
