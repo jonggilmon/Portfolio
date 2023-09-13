@@ -303,6 +303,100 @@
     background-size: 100% 100%; 
 }
 
+
+ .sport-item.special-effect:nth-child(4)::before {
+            background-color:  #D6F0FF;       
+        }      
+  .sport-item.special-effect:nth-child(4) a::before {
+    /* 두 번째 항목의 스타일 */
+     content: "";
+    position: absolute;
+    width: 94%;
+    height: 94%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    /* radial 그라데이션 사용 */
+     background: radial-gradient(circle, #BBBBBB, #FFFFF8);
+    background-size: 100% 0%;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    opacity: 0;
+    transition: opacity 0.5s, background-size 0.5s ease-in-out;
+    border-radius: 50%;  
+    z-index: -1;
+    /* 입체감을 높이기 위한 그림자 추가 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); 
+}
+
+.sport-item.special-effect:nth-child(4):hover a::before {
+   opacity: 1;
+    background-size: 100% 100%; 
+}
+
+
+
+ .sport-item.special-effect:nth-child(6)::before {
+            background-color:  #D6F0FF;       
+        }      
+  .sport-item.special-effect:nth-child(6) a::before {
+    /* 두 번째 항목의 스타일 */
+     content: "";
+    position: absolute;
+    width: 92%;
+    height: 92%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    /* radial 그라데이션 사용 */
+     background: radial-gradient(circle, white, black);
+    background-size: 100% 0%;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    opacity: 0;
+    transition: opacity 0.5s, background-size 0.5s ease-in-out;
+    border-radius: 50%;  
+    z-index: -1;
+    /* 입체감을 높이기 위한 그림자 추가 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); 
+}
+
+.sport-item.special-effect:nth-child(6):hover a::before {
+   opacity: 1;
+    background-size: 100% 100%; 
+}
+
+
+.sport-item.special-effect:nth-child(8)::before {
+            background-color:  #D6F0FF;       
+        }      
+  .sport-item.special-effect:nth-child(8) a::before {
+    /* 두 번째 항목의 스타일 */
+     content: "";
+    position: absolute;
+    width: 92%;
+    height: 92%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    /* radial 그라데이션 사용 */
+     background: radial-gradient(circle, #CCFF00, #BCE55C);
+    background-size: 100% 0%;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    opacity: 0;
+    transition: opacity 0.5s, background-size 0.5s ease-in-out;
+    border-radius: 50%;  
+    z-index: -1;
+    /* 입체감을 높이기 위한 그림자 추가 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); 
+}
+
+.sport-item.special-effect:nth-child(8):hover a::before {
+   opacity: 1;
+    background-size: 100% 100%; 
+}
+
   
   </style>
 
@@ -353,21 +447,35 @@
         
         
         
-         <div class="sport-item special-effect">
-            <a href="rlist?jongmok_id=4"><h2>야구</h2></a>
+         
+        <div class="sport-item special-effect">
+            <a href="rlist?jongmok_id=4"><img src="/static/photos/ball4.png" alt="Baseball" />
+          <span class="sport-label">BaseBall</span></a>
         </div>
+        
+        
         <div class="sport-item">
           <a href="rlist?jongmok_id=5">   <h2>당구</h2> </a>
         </div>
-         <div class="sport-item special-effect">
-            <a href="rlist?jongmok_id=6"><h2>볼링</h2></a>
+        
+        
+        <div class="sport-item special-effect">
+            <a href="rlist?jongmok_id=6"><img src="/static/photos/ball6.png" alt="Bowling" />
+          <span class="sport-label">Bowling</span></a>
         </div>
+        
+        
         <div class="sport-item">
           <a href="rlist?jongmok_id=7">   <h2>골프</h2> </a>
         </div>
+        
+        
          <div class="sport-item special-effect">
-            <a href="rlist?jongmok_id=8"><h2>테니스</h2></a>
+            <a href="rlist?jongmok_id=8"><img src="/static/photos/ball8.png" alt="Tennis" />
+          <span class="sport-label">Tennis</span></a>
         </div>
+        
+        
         <div class="sport-item">
         <a href="rlist?jongmok_id=9">     <h2>수영</h2> </a>
         </div>
