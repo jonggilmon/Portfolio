@@ -9,7 +9,9 @@ import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
 
 import com.example.demo.mapper.MypageMapper;
+import com.example.demo.vo.ContentVo;
 import com.example.demo.vo.MemberVo;
+import com.example.demo.vo.ReserveInfoVo;
 
 @Service
 @Qualifier("mys")
@@ -66,4 +68,24 @@ public class MypageSerivceImpl implements MypageService{
 			return "redirect:/mypage/myinfo?err=1";
 		}
 	}
+
+	@Override
+	public String myreserve(Model model,HttpSession session) {
+		//if(session.getAttribute("user_id")==null)
+	//	{
+		//	return "redirect:/member/login";
+		//}
+		//else
+	//	{
+		String userid = session.getAttribute("userid").toString();
+		model.addAttribute("rlist",mapper.myreserve(userid));
+		//}
+		return "/mypage/myreserve";
+	}
 }
+
+
+
+
+
+

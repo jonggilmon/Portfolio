@@ -25,4 +25,8 @@
     update member set pwd=#{pwd} where userid=#{userid}
   </update>
   
+  <select id="myreserve" resultType="com.example.demo.vo.ReserveInfoVo">
+  	select * from reserve_info where user_id=#{userid} order by reserve_date asc
+  </select>
+  
   </mapper>

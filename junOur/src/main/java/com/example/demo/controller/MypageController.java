@@ -10,6 +10,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.example.demo.service.MypageService;
+import com.example.demo.vo.ContentVo;
+import com.example.demo.vo.ReserveInfoVo;
 
 @Controller
 public class MypageController {
@@ -41,5 +43,15 @@ public class MypageController {
 	public String pwdChange(HttpServletRequest request,HttpSession session)
 	{ 
 		return service.pwdChange(request,session);
+	}
+	@RequestMapping("/mypage/mypage")
+	public String mypage()
+	{
+		return "/mypage/mypage";
+	}
+	@RequestMapping("/mypage/myreserve")
+	public String myreserve(Model model,HttpSession session)
+	{
+		return service.myreserve(model,session);
 	}
 }
