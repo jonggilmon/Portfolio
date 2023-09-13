@@ -70,9 +70,22 @@ public class MypageSerivceImpl implements MypageService{
 	}
 
 	@Override
-	public String myreserve(Model model) {
-		model.addAttribute("rlist",mapper.myreserve());
-		
+	public String myreserve(Model model,HttpSession session) {
+		//if(session.getAttribute("user_id")==null)
+	//	{
+		//	return "redirect:/member/login";
+		//}
+		//else
+	//	{
+		String userid = session.getAttribute("userid").toString();
+		model.addAttribute("rlist",mapper.myreserve(userid));
+		//}
 		return "/mypage/myreserve";
 	}
 }
+
+
+
+
+
+

@@ -50,8 +50,8 @@ public class MypageController {
 		return "/mypage/mypage";
 	}
 	@RequestMapping("/mypage/myreserve")
-	public String myreserve(Model model)
+	public String myreserve(Model model,HttpSession session)
 	{
-		return service.myreserve(model);
+		return service.myreserve(model,session);
 	}
 }

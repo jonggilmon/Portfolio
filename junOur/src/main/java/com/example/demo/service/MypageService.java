@@ -20,6 +20,6 @@ public interface MypageService {
 
 	public String pwdChange(HttpServletRequest request, HttpSession session);
 
-	public String myreserve(Model model);
+	public String myreserve(Model model,HttpSession session);
 
 }
