@@ -53,5 +53,10 @@ public class MypageController {
 	{
 		return service.mtmOk(mvo,session);
 	}
+	@RequestMapping("/mypage/inquiry_content")
+	public String inquiry_content(Model model,HttpServletRequest request)
+	{
+		return service.inquiry_content(model,request);
+	}
 	
 }

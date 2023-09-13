@@ -17,4 +17,6 @@ public interface MypageMapper {
 	public void pwdChange(String pwd, String userid);
 	
 	public void mtmOk(MtmVo mvo);
+	
+	public MtmVo inquiry_content(String no);
 }

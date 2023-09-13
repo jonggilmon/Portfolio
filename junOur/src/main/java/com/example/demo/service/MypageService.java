@@ -22,4 +22,6 @@ public interface MypageService {
 	public String mtm();
 	
 	public String mtmOk(MtmVo mvo,HttpSession session);
+	
+	public String inquiry_content(Model model,HttpServletRequest request);
 }

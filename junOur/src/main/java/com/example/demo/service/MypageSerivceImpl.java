@@ -82,4 +82,12 @@ public class MypageSerivceImpl implements MypageService{
 		
 		return "/mypage/mtmOk";
 	}
+
+	@Override
+	public String inquiry_content(Model model,HttpServletRequest request) {
+		String no=request.getParameter("no");
+		MtmVo mvo=mapper.inquiry_content(no);
+		model.addAttribute("mvo",mvo);
+		return "/inquiry_content";
+	}
 }

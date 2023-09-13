@@ -30,5 +30,8 @@
     values (#{title},#{content},#{answer},#{userid},now())
   </insert>
   
+  <select id="inquiry_content" resultType="com.example.demo.vo.MtmVo">
+  	 select * from mtm where no=#{no}
+  </select>
   
   </mapper>
