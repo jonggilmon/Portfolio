@@ -6,6 +6,9 @@
 <head>
 <meta charset="UTF-8">
 <title>모션 메이트</title> 
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.min.js"></script>
+
   <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
   <!-- Slick CSS -->
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
@@ -29,12 +32,17 @@
  
 }
 
+.sports-slider-wrapper  {
+   text-align:center;
+}
+
       
 .sports-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    width: 100%;         /* 가로 크기를 최대로 */
+    box-sizing: border-box;
+     display: inline-block;
+    grid-template-columns: repeat(12, 1fr);
     grid-gap: 10px;
-    max-width: 800px;
     margin: 0 auto;
     padding:40px;
 }
@@ -212,6 +220,7 @@
     }
 
 .sport-item img {
+ max-width: 100%;
     width: 100%;       /* 이미지의 폭을 부모 요소의 100%로 설정 */
     height: auto;      /* 이미지의 높이를 원래 비율에 맞게 자동으로 설정 */
     display: block;    /* 이미지를 블록 요소로 설정 */
@@ -237,11 +246,43 @@
                 -2px 2px 0px #000;  /* 글씨에 테두리 효과를 줍니다 */
 }
 
-
- .sport-item.special-effect:nth-child(2)::before {
+ .sport-item.special-effect.soccer::before {
             background-color:  #D6F0FF;       
         }      
-  .sport-item.special-effect:nth-child(2) a::before {
+  .sport-item.special-effect.soccer a::before {
+    /* 두 번째 항목의 스타일 */
+     content: "";
+    position: absolute;
+    width: 90%;
+    height: 90%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    /* radial 그라데이션 사용 */
+     background: radial-gradient(circle, white, #A2A2A2);
+    background-size: 100% 0%;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    opacity: 0;
+    transition: opacity 0.5s, background-size 0.5s ease-in-out;
+    border-radius: 50%;  
+    z-index: -1;
+    /* 입체감을 높이기 위한 그림자 추가 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); 
+}
+
+.sport-item.special-effect.soccer:hover a::before {
+   opacity: 1;
+    background-size: 100% 100%; 
+}
+
+
+
+
+ .sport-item.special-effect.basketball::before {
+            background-color:  #D6F0FF;       
+        }      
+  .sport-item.special-effect.basketball a::before {
     /* 두 번째 항목의 스타일 */
      content: "";
     position: absolute;
@@ -263,21 +304,16 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); 
 }
 
-.sport-item.special-effect:nth-child(2):hover a::before {
+.sport-item.special-effect.basketball:hover a::before {
    opacity: 1;
     background-size: 100% 100%; 
 }
 
-
-
-
-
-
- .sport-item.special-effect:nth-child(3)::before {
+ .sport-item.special-effect.volleyball::before {
             background-color:  #A0BAED;
             
         }
-  .sport-item.special-effect:nth-child(3) a::before {
+  .sport-item.special-effect.volleyball a::before {
  
      content: "";
     position: absolute;
@@ -298,16 +334,16 @@
     /* 입체감을 높이기 위한 그림자 추가 */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); 
 }
-.sport-item.special-effect:nth-child(3):hover a::before {
+.sport-item.special-effect.volleyball a::before {
    opacity: 1;
     background-size: 100% 100%; 
 }
 
 
- .sport-item.special-effect:nth-child(4)::before {
+ .sport-item.special-effect.baseball::before {
             background-color:  #D6F0FF;       
         }      
-  .sport-item.special-effect:nth-child(4) a::before {
+  .sport-item.special-effect.baseball a::before {
     /* 두 번째 항목의 스타일 */
      content: "";
     position: absolute;
@@ -329,17 +365,17 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); 
 }
 
-.sport-item.special-effect:nth-child(4):hover a::before {
+.sport-item.special-effect.baseball:hover a::before {
    opacity: 1;
     background-size: 100% 100%; 
 }
 
 
 
- .sport-item.special-effect:nth-child(6)::before {
+ .sport-item.special-effect.bowling::before {
             background-color:  #D6F0FF;       
         }      
-  .sport-item.special-effect:nth-child(6) a::before {
+  .sport-item.special-effect.bowling a::before {
     /* 두 번째 항목의 스타일 */
      content: "";
     position: absolute;
@@ -361,16 +397,16 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); 
 }
 
-.sport-item.special-effect:nth-child(6):hover a::before {
+.sport-item.special-effect.bowling:hover a::before {
    opacity: 1;
     background-size: 100% 100%; 
 }
 
 
-.sport-item.special-effect:nth-child(8)::before {
+.sport-item.special-effect.tennis::before {
             background-color:  #D6F0FF;       
         }      
-  .sport-item.special-effect:nth-child(8) a::before {
+  .sport-item.special-effect.tennis a::before {
     /* 두 번째 항목의 스타일 */
      content: "";
     position: absolute;
@@ -392,10 +428,11 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8); 
 }
 
-.sport-item.special-effect:nth-child(8):hover a::before {
+.sport-item.special-effect.tennis:hover a::before {
    opacity: 1;
     background-size: 100% 100%; 
 }
+
 
   
   </style>
@@ -425,70 +462,73 @@
         </div>
     </div>
 
-      <div class="sports-grid">
-        <div class="sport-item special-effect">
-   <a href="rlist?jongmok_id=1">
-       <img src="/static/photos/ball.png" alt="Soccer Ball" />
-          <span class="sport-label">Soccer</span></a>
+
+<div class="sports-slider-wrapper">
+    <div class="sports-grid">
+        <div class="sport-item special-effect soccer">
+            <a href="rlist?jongmok_id=1">
+                <img src="/static/photos/ball.png" alt="Soccer Ball" />
+                <span class="sport-label">Soccer</span>
+            </a>
         </div>
-        
-        
-        <div class="sport-item special-effect">
-            <a href="rlist?jongmok_id=2"><img src="/static/photos/ball2.png" alt="BasketBall" />
-          <span class="sport-label">Basketball</span></a>
+        <div class="sport-item special-effect basketball">
+            <a href="rlist?jongmok_id=2">
+                <img src="/static/photos/ball2.png" alt="BasketBall" />
+                <span class="sport-label">Basketball</span>
+            </a>
         </div>
-        
-        
-        
-        <div class="sport-item special-effect">
-            <a href="rlist?jongmok_id=3"><img src="/static/photos/ball3.png" alt="Volleyball" />
+        <div class="sport-item special-effect volleyball">
+            <a href="rlist?jongmok_id=3">
+            <img src="/static/photos/ball3.png" alt="Volleyball" />
           <span class="sport-label">Volleyball</span></a>
-        </div>
-        
-        
-        
-         
-        <div class="sport-item special-effect">
-            <a href="rlist?jongmok_id=4"><img src="/static/photos/ball4.png" alt="Baseball" />
+        </div>     
+        <div class="sport-item special-effect baseball">
+            <a href="rlist?jongmok_id=4">
+            <img src="/static/photos/ball4.png" alt="Baseball" />
           <span class="sport-label">BaseBall</span></a>
-        </div>
-        
-        
-        <div class="sport-item">
-          <a href="rlist?jongmok_id=5">   <h2>당구</h2> </a>
-        </div>
-        
-        
-        <div class="sport-item special-effect">
-            <a href="rlist?jongmok_id=6"><img src="/static/photos/ball6.png" alt="Bowling" />
+        </div> 
+       <div class="sport-item special-effect dangu">
+            <a href="rlist?jongmok_id=5">
+            <img src="/static/photos/ball3.png" alt="Dangu" />
+          <span class="sport-label">당구</span></a>
+        </div>    
+        <div class="sport-item special-effect bowling">
+            <a href="rlist?jongmok_id=6">
+            <img src="/static/photos/ball6.png" alt="Bowling" />
           <span class="sport-label">Bowling</span></a>
-        </div>
-        
-        
-        <div class="sport-item">
-          <a href="rlist?jongmok_id=7">   <h2>골프</h2> </a>
-        </div>
-        
-        
-         <div class="sport-item special-effect">
-            <a href="rlist?jongmok_id=8"><img src="/static/photos/ball8.png" alt="Tennis" />
+        </div>    
+        <div class="sport-item special-effect golf">
+            <a href="rlist?jongmok_id=7">
+            <img src="/static/photos/ball3.png" alt="Golf" />
+          <span class="sport-label">골프</span></a>
+        </div>    
+         <div class="sport-item special-effect tennis">
+            <a href="rlist?jongmok_id=8">
+            <img src="/static/photos/ball8.png" alt="Tennis" />
           <span class="sport-label">Tennis</span></a>
+        </div>   
+        <div class="sport-item special-effect swim">
+            <a href="rlist?jongmok_id=9">
+            <img src="/static/photos/ball3.png" alt="Swim" />
+          <span class="sport-label">수영</span></a>
         </div>
-        
-        
-        <div class="sport-item">
-        <a href="rlist?jongmok_id=9">     <h2>수영</h2> </a>
+        <div class="sport-item special-effect badmin">
+            <a href="rlist?jongmok_id=10">
+            <img src="/static/photos/ball3.png" alt="Badmin" />
+          <span class="sport-label">배트민턴</span></a>
         </div>
-        <div class="sport-item">
-         <a href="rlist?jongmok_id=10">    <h2>배트민턴</h2> </a>
+        <div class="sport-item special-effect tacgu">
+            <a href="rlist?jongmok_id=11">
+            <img src="/static/photos/ball3.png" alt="Tacgu" />
+          <span class="sport-label">탁구</span></a>
         </div>
-        <div class="sport-item">
-         <a href="rlist?jongmok_id=11">    <h2>탁구</h2> </a>
-        </div>
-        <div class="sport-item">
-          <a href="rlist?jongmok_id=12">   <h2>족구</h2> </a>
+        <div class="sport-item special-effect guocgu">
+            <a href="rlist?jongmok_id=12">
+            <img src="/static/photos/ball3.png" alt="Guocgu" />
+          <span class="sport-label">족구</span></a>
         </div>
     </div>
+   </div>
     
     <div class="hugi">
             후기글
@@ -512,36 +552,43 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
    
    
-      <script>
-        $(document).ready(function(){
-            $('.photo-slider').slick({
-                infinite: true,
-                slidesToShow: 1,
-                slidesToScroll: 1,
-                autoplay: true,          
-                autoplaySpeed: 3000     
-            });
-        });
-        
-        
-        $(document).ready(function(){
-            $('.sport-item.special-effect').hover(
-                function() {  // 마우스 오버
-                    $(this).find('.sport-label').css('opacity', '1');
-                },
-                function() {  // 마우스 아웃
-                    $(this).find('.sport-label').css('opacity', '0');
-                }
-            );
-            
-            $('.photo-slider').slick({
-                infinite: true,
-                slidesToShow: 1,
-                slidesToScroll: 1,
-                autoplay: true,
-                autoplaySpeed: 3000
-            });
-        });
-    </script>
+     <script>
+$(document).ready(function(){
+    $('.photo-slider').slick({
+        infinite: true,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        autoplay: true,          
+        autoplaySpeed: 3000     
+    });
+
+    // 이 부분을 수정했습니다.
+    $('.sports-grid').slick({
+        infinite: true, 
+        slidesToShow: 7, // 한 번에 보여질 아이템 수
+        slidesToScroll: 1,
+        draggable: true // 마우스 드래그 허용
+    });
+    
+    // 이 부분을 수정했습니다.
+    $('.sports-grid').on('wheel', function(e) {
+        if(e.originalEvent.deltaY > 0) {
+            $(this).slick('slickNext');
+        } else {
+            $(this).slick('slickPrev');
+        }
+        e.preventDefault();
+    });
+
+    $('.sport-item.special-effect').hover(
+        function() {  
+            $(this).find('.sport-label').css('opacity', '1');
+        },
+        function() {
+            $(this).find('.sport-label').css('opacity', '0');
+        }
+    );
+});
+</script>
 </body>
 </html>
