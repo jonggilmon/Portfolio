@@ -58,5 +58,9 @@ public class MypageController {
 	{
 		return service.inquiry_content(model,request);
 	}
-	
+	@RequestMapping("/mypage/inquiryUpdate")
+	public String inquiryUpdate(HttpServletRequest request)
+	{
+		return
+	}
 }

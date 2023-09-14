@@ -88,6 +88,6 @@ public class MypageSerivceImpl implements MypageService{
 		String no=request.getParameter("no");
 		MtmVo mvo=mapper.inquiry_content(no);
 		model.addAttribute("mvo",mvo);
-		return "/inquiry_content";
+		return "/mypage/inquiry_content";
 	}
 }
