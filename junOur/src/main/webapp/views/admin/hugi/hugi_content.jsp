@@ -18,7 +18,7 @@ function showDeleteButton() {
 <body>
   <div id="section">
     <table width="600" align="center">
-      <caption> <h2> 공지사항 </h2> </caption>
+      <caption> <h2> 후기글 </h2> </caption>
       <tr>
         <td width="100"> 제목 </td>
         <td> ${hvo.title} </td>
@@ -38,10 +38,8 @@ function showDeleteButton() {
       <tr>
         <td colspan="2" align="center">
           <a href="hugi_list"> 목록 </a>
-         <c:if test="${hvo.userid==userid}">
           <a href="hugi_update?no=${hvo.no}"> 수정 </a>
           <a href="#" onclick="showDeleteButton(); return false;"> 삭제 </a> <!-- return false;는 링크를 클릭했을 때 브라우저가 해당 링크의 기본 동작을 실행하지 않도록 하는 역할을 합니다.  -->
-         </c:if>
         </td>
       </tr>
       <tr id="del" style="display:none;">

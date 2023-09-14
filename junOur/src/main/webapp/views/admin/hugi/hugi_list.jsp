@@ -65,11 +65,10 @@
 	  </c:forEach>
 	  
 	    <tr>
-	     <c:if test="${userid eq 'admin123'}"> 
-	      <td colspan="4" align="center"> <a href="../hugi_list/hugiadd"> 글 등록 </a> </td>
-	     </c:if>
+
+	      <td colspan="4" align="center"> <a href="../hugi/hugiadd"> 글 등록 </a> </td>
+	   
 	    </tr>
 	  </table>
-  </table>
 </body>
 </html>

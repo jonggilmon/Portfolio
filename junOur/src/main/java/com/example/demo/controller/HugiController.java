@@ -19,21 +19,21 @@ public class HugiController {
 	private HugiService service;
 	
 	@RequestMapping("/admin/hugi/hugi_list")
-	public String hugi_list(Model model, HttpSession session)
+	public String hugi_list(Model model)
 	{
-		return service.hugi_list(model, session);
+		return service.hugi_list(model);
 	}
 	
-	@RequestMapping("/admin/hugi_list/hugiadd")
+	@RequestMapping("/admin/hugi/hugiadd")
 	public String hugiadd()
 	{
-		return service.hugiadd();
+		return "/admin/hugi/hugiadd";
 	}
 	
-	@RequestMapping("/admin/hugi_list/hugiadd_ok")
-	public String hugiadd_ok(HugiVo hvo, HttpServletRequest request)
+	@RequestMapping("/admin/hugi/hugiadd_ok")
+	public String hugiadd_ok(HugiVo hvo)
 	{
-		return service.hugiadd_ok(hvo, request);
+		return service.hugiadd_ok(hvo);
 	}
 	
 	@RequestMapping("/admin/hugi/hugi_content")
@@ -48,6 +48,23 @@ public class HugiController {
 		return service.readnum(hvo, request);
 	}
 	
+	@RequestMapping("/admin/hugi/delete")
+	public String delete(HugiVo hvo)
+	{
+		return service.delete(hvo);
+	}
+	
+	@RequestMapping("/admin/hugi/hugi_update")
+	public String hugi_update(HugiVo hvo, Model model)
+	{
+		return service.hugi_update(hvo, model);
+	}
+	
+	@RequestMapping("/admin/hugi/hugi_update_ok")
+	public String hugi_update_ok(HttpServletRequest request, HugiVo hvo)
+	{
+		return service.hugi_update_ok(request, hvo);
+	}
 }
 
 
