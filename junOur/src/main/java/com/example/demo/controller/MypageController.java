@@ -83,7 +83,7 @@ public class MypageController {
 	public String inquiryDelete(HttpServletRequest request)
 	{
 		return service.inquiryDelete(request);
-
+	}
 	@RequestMapping("/mypage/mypage")
 	public String mypage()
 	{
