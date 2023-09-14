@@ -73,7 +73,7 @@
                     <li><a href="/admin/menu">관리자 페이지</a></li>
                 </c:when>
                 <c:otherwise>
-                    <li>문의사항</li>
+                    <li><a href="../../mypage/inquiry_select">문의사항</a></li>
                     <li>마이페이지</li>
                 </c:otherwise>
             </c:choose>

@@ -58,9 +58,24 @@ public class MypageController {
 	{
 		return service.inquiry_content(model,request);
 	}
-	@RequestMapping("/mypage/inquiryUpdate")
-	public String inquiryUpdate(HttpServletRequest request)
+	@RequestMapping("/mypage/inquiry_list")
+	public String inquiry_list(Model model,HttpSession session)
 	{
-		return
+		return service.inquiry_list(model,session);
+	}
+	@RequestMapping("/mypage/inquiry_select")
+	public String inquiry_select()
+	{
+		return "/mypage/inquiry_select";
+	}
+	@RequestMapping("/mypage/inquiryUpdate")
+	public String inquiryUpdate(HttpServletRequest request, Model model)
+	{
+		return service.inquiryUpdate(request,model);
+	}
+	@RequestMapping("/mypage/inquiryDelete")
+	public String inquiryDelete(HttpServletRequest request)
+	{
+		return service.inquiryDelete(request);
 	}
 }

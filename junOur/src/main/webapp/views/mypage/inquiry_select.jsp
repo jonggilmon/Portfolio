@@ -7,10 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<section>
-		<div>${name}님이 문의하신 글이 접수가 되었습니다.</div>
-		<div> <a href="inquiry_list">내 문의 가기</a> </div>
-		
-	</section>
+	<div> <a href="inquiry_list">내 문의글</a></div>
+	<div> <a href="mtm"> 문의하기 </a></div>
 </body>
 </html>

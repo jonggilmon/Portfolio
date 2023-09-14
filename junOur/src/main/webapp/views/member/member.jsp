@@ -187,6 +187,7 @@
             {
                 snum = chk.responseText;
                 alert("인증번호를 보냈습니다.")
+                alert(snum);
             }
         }
 

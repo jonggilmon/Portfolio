@@ -11,6 +11,7 @@ import org.springframework.ui.Model;
 import com.example.demo.mapper.MypageMapper;
 import com.example.demo.vo.MemberVo;
 import com.example.demo.vo.MtmVo;
+import com.example.demo.vo.QuestVo;
 
 @Service
 @Qualifier("mys")
@@ -88,6 +89,32 @@ public class MypageSerivceImpl implements MypageService{
 		String no=request.getParameter("no");
 		MtmVo mvo=mapper.inquiry_content(no);
 		model.addAttribute("mvo",mvo);
+		
+		
+		QuestVo qvo=mapper.getQuest(no);
+		model.addAttribute("qvo" ,qvo);
 		return "/mypage/inquiry_content";
+	}
+
+	@Override
+	public String inquiry_list(Model model, HttpSession session) {
+		String userid=session.getAttribute("userid").toString();
+		model.addAttribute("ilist",mapper.inquiry_list(userid));
+		return "/mypage/inquiry_list";
+	}
+
+	@Override
+	public String inquiryUpdate(HttpServletRequest request, Model model) {
+		String no=request.getParameter("no");
+		model.addAttribute("ivo",mapper.inquiryUpdate(no));
+		return "/mypage/inquiryUpdate";
+		
+	}
+
+	@Override
+	public String inquiryDelete(HttpServletRequest request) {
+		String no=request.getParameter("no");
+		mapper.inquiryDelete(no);
+		return "redirect:/mypage/inquiry_list";
 	}
 }

@@ -1,7 +1,10 @@
 package com.example.demo.mapper;
 
+import java.util.ArrayList;
+
 import com.example.demo.vo.MemberVo;
 import com.example.demo.vo.MtmVo;
+import com.example.demo.vo.QuestVo;
 
 public interface MypageMapper {
 	public MemberVo myinfo(String userid);
@@ -19,4 +22,12 @@ public interface MypageMapper {
 	public void mtmOk(MtmVo mvo);
 	
 	public MtmVo inquiry_content(String no);
+	
+	public ArrayList<MtmVo> inquiry_list(String userid);
+	
+	public MtmVo inquiryUpdate(String no);
+	
+	public void inquiryDelete(String no);
+	
+	public QuestVo getQuest(String no);
 }
