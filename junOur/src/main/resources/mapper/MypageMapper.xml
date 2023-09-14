@@ -25,6 +25,7 @@
     update member set pwd=#{pwd} where userid=#{userid}
   </update>
   
+
   <insert id="mtmOk" parameterType="com.example.demo.vo.MtmVo">
   	    insert into mtm(title,content,answer,userid,writeday)
     values (#{title},#{content},#{answer},#{userid},now())
@@ -49,4 +50,10 @@
   <select id="getQuest" resultType="com.example.demo.vo.QuestVo">
   	select * from quest where no=#{no}
   </select>
+
+  <select id="myreserve" resultType="com.example.demo.vo.ReserveInfoVo">
+  	select * from reserve_info where user_id=#{userid} order by reserve_date asc
+  </select>
+  
+
   </mapper>

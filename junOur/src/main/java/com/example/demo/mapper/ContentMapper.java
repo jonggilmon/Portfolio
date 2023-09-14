@@ -25,6 +25,8 @@ public interface ContentMapper {
 
 	public void increaseReadNum(int no);
 
+	public List<ContentVo> findReservesByRsDateAndJongmokId(String rsdate, String jongmok_id);
+
 
 	
 

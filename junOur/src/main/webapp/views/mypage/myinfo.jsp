@@ -7,6 +7,10 @@
 <meta charset="UTF-8">
 <title>내 정보 수정</title>
  <style>
+   body{
+   	 margin: 0;
+   	 padding: 0;
+   }
    section #txt {
      display:inline-block;
      width:180px;
@@ -192,6 +196,7 @@
    }
  </script>
 </head>
+<%@ include file="../main/top_bottom/header.jsp" %>
 <body>
   <section>
     <table width="1000" align="center" cellspacing="0">
@@ -261,3 +266,4 @@
   </section>
 </body>
 </html>
+<%@ include file="../main/top_bottom/footer.jsp" %>

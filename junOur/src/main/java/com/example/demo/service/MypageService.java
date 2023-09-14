@@ -5,7 +5,12 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.ui.Model;
 
+
 import com.example.demo.vo.MtmVo;
+
+import com.example.demo.vo.ContentVo;
+import com.example.demo.vo.ReserveInfoVo;
+
 
 public interface MypageService {
 
@@ -18,6 +23,7 @@ public interface MypageService {
 	public String chgEmail(HttpSession session, HttpServletRequest request);
 
 	public String pwdChange(HttpServletRequest request, HttpSession session);
+
 	
 	public String mtm();
 	
@@ -30,4 +36,9 @@ public interface MypageService {
 	public String inquiryUpdate(HttpServletRequest request, Model model);
 	
 	public String inquiryDelete(HttpServletRequest request);
+
+
+	public String myreserve(Model model,HttpSession session);
+
+
 }

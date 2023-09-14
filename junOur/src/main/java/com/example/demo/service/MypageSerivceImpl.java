@@ -9,9 +9,14 @@ import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
 
 import com.example.demo.mapper.MypageMapper;
+import com.example.demo.vo.ContentVo;
 import com.example.demo.vo.MemberVo;
+
 import com.example.demo.vo.MtmVo;
 import com.example.demo.vo.QuestVo;
+
+import com.example.demo.vo.ReserveInfoVo;
+>>>>>>> origin/feature/jonggil
 
 @Service
 @Qualifier("mys")
@@ -70,6 +75,7 @@ public class MypageSerivceImpl implements MypageService{
 	}
 
 	@Override
+
 	public String mtm() 
 	{
 		return "/mypage/mtm";
@@ -116,5 +122,24 @@ public class MypageSerivceImpl implements MypageService{
 		String no=request.getParameter("no");
 		mapper.inquiryDelete(no);
 		return "redirect:/mypage/inquiry_list";
+
+	public String myreserve(Model model,HttpSession session) {
+		//if(session.getAttribute("user_id")==null)
+	//	{
+		//	return "redirect:/member/login";
+		//}
+		//else
+	//	{
+		String userid = session.getAttribute("userid").toString();
+		model.addAttribute("rlist",mapper.myreserve(userid));
+		//}
+		return "/mypage/myreserve";
+
 	}
 }
+
+
+
+
+
+

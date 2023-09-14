@@ -8,7 +8,9 @@
 <meta charset="UTF-8">
 <%@ include file="top_bottom/header.jsp" %>
 <title>Insert title here</title>
-
+<%
+    String jongmok_id = request.getParameter("jongmok_id");
+%>
 
 <style>
 
@@ -207,7 +209,8 @@ window.onload = function() {
 };
 
 function fetchDataForDate(date) {
-    fetch('/getReservationsByDate?rsdate=' + date)
+	  let jongmokId = '<%= jongmok_id %>';
+	  fetch('/getReservationsByDate?rsdate=' + date + '&jongmok_id=' + jongmokId)
         .then(response => response.json())
         .then(data => {
         	 console.log(data);

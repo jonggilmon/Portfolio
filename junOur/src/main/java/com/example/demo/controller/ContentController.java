@@ -84,8 +84,8 @@ public class ContentController {
 	 }
 	 
 	 @GetMapping("/getReservationsByDate")
-	 public ResponseEntity<List<ContentVo>> getReservesByDate(@RequestParam String rsdate) {
-	     List<ContentVo> reservesByDate = contentMapper.findReservesByRsDate(rsdate);
+	 public ResponseEntity<List<ContentVo>> getReservesByDate(@RequestParam String rsdate,  @RequestParam String jongmok_id) {
+		 List<ContentVo> reservesByDate = contentMapper.findReservesByRsDateAndJongmokId(rsdate, jongmok_id);
 	     
 	     for (ContentVo reserve : reservesByDate) {
 	         int reserveNo = reserve.getNo(); 
