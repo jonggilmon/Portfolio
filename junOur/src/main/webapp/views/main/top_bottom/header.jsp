@@ -98,7 +98,7 @@
 						<li><a href="/admin/menu">관리자 페이지</a></li>
 					</c:when>
 					<c:otherwise>
-						<li><a href="#">문의사항</a></li>
+						<li><a href="/mypage/inquiry_select">문의사항</a></li>
 						<li><a href="#">마이페이지</a>
 							<ul class="submenu">
 								<li><a href="/mypage/myinfo">내 정보</a></li>
