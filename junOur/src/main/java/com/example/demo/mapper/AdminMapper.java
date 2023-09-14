@@ -8,6 +8,8 @@ import org.apache.ibatis.annotations.Mapper;
 import com.example.demo.vo.ActionVo;
 import com.example.demo.vo.AdminVo;
 import com.example.demo.vo.GongjiVo;
+import com.example.demo.vo.MtmVo;
+import com.example.demo.vo.QuestVo;
 
 @Mapper
 public interface AdminMapper {
@@ -33,4 +35,9 @@ public interface AdminMapper {
 
 	public int banMemberById(String userid);
 	
+	public ArrayList<MtmVo> list();
+	
+	public MtmVo answer(String no);
+	
+	public void questOk(QuestVo qvo);
 }

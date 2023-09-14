@@ -50,4 +50,16 @@
 	  insert into gongji(title,userid,content,writeday)
 	  values(#{title},#{userid},#{content},now())
 	</insert>
+	
+	<select id="list" resultType="com.example.demo.vo.MtmVo">
+		select * from mtm order by writeday asc
+	</select>
+	
+	<select id="answer" resultType="com.example.demo.vo.MtmVo">
+		select * from mtm where no=#{no}
+	</select>
+	
+	<insert id="questOk">
+		insert into quest(title,content,writeday)
+	</insert>
 </mapper>
