@@ -24,13 +24,13 @@ public class HugiController {
 		return service.hugi_list(model, session);
 	}
 	
-	@RequestMapping("/admin/hugi/hugiadd")
+	@RequestMapping("/admin/hugi_list/hugiadd")
 	public String hugiadd()
 	{
 		return service.hugiadd();
 	}
 	
-	@RequestMapping("/admin/hugi/hugiadd_ok")
+	@RequestMapping("/admin/hugi_list/hugiadd_ok")
 	public String hugiadd_ok(HugiVo hvo, HttpServletRequest request)
 	{
 		return service.hugiadd_ok(hvo, request);

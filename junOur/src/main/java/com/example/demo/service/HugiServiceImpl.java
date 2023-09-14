@@ -30,13 +30,13 @@ public class HugiServiceImpl implements HugiService {
 
 	@Override
 	public String hugiadd() {
-		return "/admin/hugi/hugi_list";
+		return "/admin/hugi/hugiadd";
 	}
 
 	@Override
 	public String hugiadd_ok(HugiVo hvo, HttpServletRequest request) {
-		mapper.hugiadd_ok(hvo, request);
-		return "redirect:/admin/hugi/hugi_list";
+		
+		return "redirect:/admin/hugi_list/hugiadd_ok";
 	}
 
 	@Override
@@ -49,7 +49,7 @@ public class HugiServiceImpl implements HugiService {
 	public String readnum(HugiVo hvo, HttpServletRequest request) {
 		String no=request.getParameter("no");
 		mapper.readnum(hvo);
-		return "redirect:/admin/hugi/hugi_list";
+		return "redirect:/admin/hugi/hugi_content?no="+no;
 	}
 	
 	
