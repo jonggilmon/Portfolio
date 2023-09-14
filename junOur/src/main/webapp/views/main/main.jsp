@@ -7,6 +7,8 @@
 <meta charset="UTF-8">
 <title>모션 메이트</title> 
 
+
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.min.js"></script>
 
   <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
@@ -38,6 +40,7 @@
 
       
 .sports-grid {
+ 
     width: 100%;         /* 가로 크기를 최대로 */
     box-sizing: border-box;
      display: inline-block;
@@ -55,10 +58,14 @@
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
     transition: transform 0.2s ease-in-out;
      position: relative;
+     z-index: -1;
+    
+    
     
 }
 
 .sport-item a {
+
     display: block;
     position: relative;
     
@@ -88,7 +95,7 @@
 
 .sport-item.special-effect {
     
-    background-color: #fff; /* 기본 배경색은 흰색 */
+    /* 기본 배경색은 흰색 */
     transition: background-color 0.5s ease-in-out; /* 배경색이 부드럽게 변하도록 설정 */
     overflow: hidden;
 }
@@ -98,14 +105,15 @@
     bottom: 0; 
     left: 0;
     width: 100%;
-    height: 0%; /* 처음에는 높이를 0%로 설정하여 보이지 않게 합니다 */
-    background-color: #A0BAED; /* 배경색을 노란색으로 설정 */
+    height: 100%; /* 처음에는 높이를 0%로 설정하여 보이지 않게 합니다 */
+    background-color: #D6F0FF; 
     z-index: -1; 
      animation: waveEffect 0.5s forwards;
-    animation-play-state: paused; /* 높이가 부드럽게 변하도록 설정 */
+    animation-play-state: running; 
 }
 
 .sport-item.special-effect a::before {
+     
     content: "";
     position: absolute;
     width: 87%;
@@ -118,7 +126,7 @@
     background-size: 100% 0%;
     background-repeat: no-repeat;
     background-position: bottom;
-    opacity: 0;
+    opacity: 1;
     transition: opacity 0.5s, background-size 0.5s ease-in-out;
     border-radius: 50%;  
     z-index: -1;
@@ -128,8 +136,9 @@
 
 
 .sport-item.special-effect:hover a::before {
-    opacity: 1;
+    opacity: 0.7;
     background-size: 100% 100%; /* 호버 시 100% 높이로 채우기 */
+    
 }
 
 .sport-item.special-effect:hover {
@@ -137,7 +146,7 @@
     
 }
 .sport-item.special-effect:hover::before {
-  animation: waveEffect 0.5s forwards; /* 마우스 오버시 높이를 100%로 설정하여 전체를 노란색으로 채웁니다 */
+  animation: waveEffect 0.5s forwards; 
 }
 
 
@@ -246,11 +255,13 @@
                 -2px 2px 0px #000;  /* 글씨에 테두리 효과를 줍니다 */
 }
 
+
+
  .sport-item.special-effect.soccer::before {
-            background-color:  #D6F0FF;       
+            background-color:  #D6F0FF; 
+            z-index: -3;      
         }      
-  .sport-item.special-effect.soccer a::before {
-    /* 두 번째 항목의 스타일 */
+  .sport-item.special-effect.soccer a::before {   
      content: "";
     position: absolute;
     width: 90%;
@@ -258,32 +269,42 @@
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    /* radial 그라데이션 사용 */
-     background: radial-gradient(circle, white, #A2A2A2);
+    background: radial-gradient(circle, white, black);
     background-size: 100% 0%;
     background-repeat: no-repeat;
     background-position: bottom;
-    opacity: 0;
+    opacity: 1;
     transition: opacity 0.5s, background-size 0.5s ease-in-out;
     border-radius: 50%;  
     z-index: -1;
-    /* 입체감을 높이기 위한 그림자 추가 */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); 
 }
-
-.sport-item.special-effect.soccer:hover a::before {
-   opacity: 1;
+.sport-item.special-effect.soccer a::after {   
+    content: "";
+    position: absolute;
+    width: 90%;
+    height: 90%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background: radial-gradient(circle, white, #A2A2A2);
+    border-radius: 50%;  
+    z-index: -2;
+}
+.sport-item.special-effect.soccer:hover a::before {  
     background-size: 100% 100%; 
 }
+
+
 
 
 
 
  .sport-item.special-effect.basketball::before {
-            background-color:  #D6F0FF;       
+            background-color:  #D6F0FF;   
+             z-index: -3;     
         }      
   .sport-item.special-effect.basketball a::before {
-    /* 두 번째 항목의 스타일 */
      content: "";
     position: absolute;
     width: 94%;
@@ -291,30 +312,42 @@
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    /* radial 그라데이션 사용 */
      background: radial-gradient(circle, #F29661, #983C07);
     background-size: 100% 0%;
     background-repeat: no-repeat;
     background-position: bottom;
-    opacity: 0;
+    opacity: 1;
     transition: opacity 0.5s, background-size 0.5s ease-in-out;
     border-radius: 50%;  
     z-index: -1;
-    /* 입체감을 높이기 위한 그림자 추가 */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); 
 }
-
+.sport-item.special-effect.basketball a::after {   
+    content: "";
+    position: absolute;
+    width: 94%;
+    height: 94%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background: radial-gradient(circle, white, #A2A2A2);
+    border-radius: 50%;  
+    z-index: -2;
+}
 .sport-item.special-effect.basketball:hover a::before {
-   opacity: 1;
     background-size: 100% 100%; 
 }
+
+
+
+
+
 
  .sport-item.special-effect.volleyball::before {
-            background-color:  #A0BAED;
-            
+            background-color:  #D6F0FF;    
+            z-index: -3;    
         }
   .sport-item.special-effect.volleyball a::before {
- 
      content: "";
     position: absolute;
     width: 94%;
@@ -322,29 +355,41 @@
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-
-    background: radial-gradient(circle, white, #FFFFE9);
+    background: radial-gradient(circle, white, white);
     background-size: 100% 0%;
     background-repeat: no-repeat;
     background-position: bottom;
-    opacity: 0;
+    opacity: 1;
     transition: opacity 0.5s, background-size 0.5s ease-in-out;
     border-radius: 50%;  
     z-index: -1;
-    /* 입체감을 높이기 위한 그림자 추가 */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); 
 }
-.sport-item.special-effect.volleyball a::before {
-   opacity: 1;
+.sport-item.special-effect.volleyball a::after {   
+    content: "";
+    position: absolute;
+    width: 94%;
+    height: 94%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background: radial-gradient(circle, white, #A2A2A2);
+    border-radius: 50%;  
+    z-index: -2;
+}
+.sport-item.special-effect.volleyball:hover a::before {
     background-size: 100% 100%; 
 }
 
 
- .sport-item.special-effect.baseball::before {
-            background-color:  #D6F0FF;       
+
+
+
+   .sport-item.special-effect.baseball::before {
+            background-color:  #D6F0FF; 
+            z-index: -3;      
         }      
   .sport-item.special-effect.baseball a::before {
-    /* 두 번째 항목의 스타일 */
      content: "";
     position: absolute;
     width: 94%;
@@ -352,31 +397,88 @@
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    /* radial 그라데이션 사용 */
-     background: radial-gradient(circle, #BBBBBB, #FFFFF8);
+     background: radial-gradient(circle, red, white);
     background-size: 100% 0%;
     background-repeat: no-repeat;
     background-position: bottom;
-    opacity: 0;
+    opacity: 1;
     transition: opacity 0.5s, background-size 0.5s ease-in-out;
     border-radius: 50%;  
     z-index: -1;
-    /* 입체감을 높이기 위한 그림자 추가 */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); 
 }
-
+.sport-item.special-effect.baseball a::after {   
+    content: "";
+    position: absolute;
+    width: 94%;
+    height: 94%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background: radial-gradient(circle, white, #A2A2A2);
+    border-radius: 50%;  
+    z-index: -2;
+}
 .sport-item.special-effect.baseball:hover a::before {
+    background-size: 100% 100%; 
+}
+
+
+
+
+
+
+.sport-item.special-effect.dangu::before {
+            background-color:  #D6F0FF;      
+            z-index:-3; 
+        }      
+  .sport-item.special-effect.dangu a::before {
+     content: "";
+    position: absolute;
+    width: 92%;
+    height: 92%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+     background: radial-gradient(circle, white 30%, #424242 20.5%, #424242 20%, black 60.5%);
+    background-size: 100% 0%;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    opacity: 1;
+    transition: opacity 0.5s, background-size 0.5s ease-in-out;
+    border-radius: 50%;  
+    z-index: -1;
+   
+}
+.sport-item.special-effect.dangu a::after {   
+    content: "";
+    position: absolute;
+    width: 90%;
+    height: 90%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background: radial-gradient(circle, white, #A2A2A2);
+    border-radius: 50%;  
+    z-index: -2;
+}
+.sport-item.special-effect.dangu:hover a::before {
    opacity: 1;
     background-size: 100% 100%; 
 }
+
+
+
+
+
 
 
 
  .sport-item.special-effect.bowling::before {
-            background-color:  #D6F0FF;       
+            background-color:  #D6F0FF;  
+            z-index: -3;     
         }      
   .sport-item.special-effect.bowling a::before {
-    /* 두 번째 항목의 스타일 */
      content: "";
     position: absolute;
     width: 92%;
@@ -384,30 +486,42 @@
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    /* radial 그라데이션 사용 */
      background: radial-gradient(circle, white, black);
     background-size: 100% 0%;
     background-repeat: no-repeat;
     background-position: bottom;
-    opacity: 0;
+    opacity: 1;
     transition: opacity 0.5s, background-size 0.5s ease-in-out;
     border-radius: 50%;  
     z-index: -1;
     /* 입체감을 높이기 위한 그림자 추가 */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); 
 }
-
+.sport-item.special-effect.bowling a::after {   
+    content: "";
+    position: absolute;
+    width: 92%;
+    height: 92%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background: radial-gradient(circle, white, #A2A2A2);
+    border-radius: 50%;  
+    z-index: -2;
+}
 .sport-item.special-effect.bowling:hover a::before {
-   opacity: 1;
     background-size: 100% 100%; 
 }
 
 
+
+
+
 .sport-item.special-effect.tennis::before {
-            background-color:  #D6F0FF;       
+            background-color:  #D6F0FF;      
+            z-index:-3; 
         }      
   .sport-item.special-effect.tennis a::before {
-    /* 두 번째 항목의 스타일 */
      content: "";
     position: absolute;
     width: 92%;
@@ -415,19 +529,28 @@
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    /* radial 그라데이션 사용 */
-     background: radial-gradient(circle, #CCFF00, #FAED7D);
+     background: radial-gradient(circle, #E8DB6B, #FAED7D);
     background-size: 100% 0%;
     background-repeat: no-repeat;
     background-position: bottom;
-    opacity: 0;
+    opacity: 1;
     transition: opacity 0.5s, background-size 0.5s ease-in-out;
     border-radius: 50%;  
     z-index: -1;
-    /* 입체감을 높이기 위한 그림자 추가 */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8); 
 }
-
+.sport-item.special-effect.tennis a::after {   
+    content: "";
+    position: absolute;
+    width: 90%;
+    height: 90%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background: radial-gradient(circle, white, #A2A2A2);
+    border-radius: 50%;  
+    z-index: -2;
+}
 .sport-item.special-effect.tennis:hover a::before {
    opacity: 1;
     background-size: 100% 100%; 
@@ -489,7 +612,7 @@
         </div> 
        <div class="sport-item special-effect dangu">
             <a href="rlist?jongmok_id=5">
-            <img src="/static/photos/ball3.png" alt="Dangu" />
+            <img src="/static/photos/ball5.png" alt="Dangu" />
           <span class="sport-label">당구</span></a>
         </div>    
         <div class="sport-item special-effect bowling">
@@ -559,18 +682,23 @@ $(document).ready(function(){
         slidesToShow: 1,
         slidesToScroll: 1,
         autoplay: true,          
-        autoplaySpeed: 3000     
+        autoplaySpeed:3000
     });
 
-    // 이 부분을 수정했습니다.
+
+    
     $('.sports-grid').slick({
         infinite: true, 
-        slidesToShow: 7, // 한 번에 보여질 아이템 수
+        slidesToShow: 7,
         slidesToScroll: 1,
-        draggable: true // 마우스 드래그 허용
+        draggable: true, 
+        autoplay: true,
+        autoplaySpeed: 2000, // 이 값을 크게 조절해주세요. 예를 들어 슬라이드 한 개가 화면에 30초 동안 머무를 경우
+        speed: 1000, // 슬라이드 전환 속도를 느리게 조절
+  
     });
     
-    // 이 부분을 수정했습니다.
+   
     $('.sports-grid').on('wheel', function(e) {
         if(e.originalEvent.deltaY > 0) {
             $(this).slick('slickNext');
@@ -579,6 +707,16 @@ $(document).ready(function(){
         }
         e.preventDefault();
     });
+    
+    $('.sports-grid').on('mouseenter', function(){
+        $(this).slick('slickPause');
+    });
+
+  
+    $('.sports-grid').on('mouseleave', function(){
+        $(this).slick('slickPlay');
+    });
+    
 
     $('.sport-item.special-effect').hover(
         function() {  
