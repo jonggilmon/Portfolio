@@ -4,15 +4,18 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.example.demo.mapper.AdminMapper">
 	<insert id="contentAddOk" parameterType="com.example.demo.vo.AdminVo">
-	  insert into reserve(img,rsdate,sogae,jinhang,rule,inwon,jongmok,rstime,title,jongmok_id, writeday)
-	  values(#{img},#{rsdate},#{sogae},#{jinhang},#{rule},#{inwon},#{jongmok},#{rstime},#{title},#{jongmok_id},now())
+	  insert into reserve(img,rsdate,sogae,jinhang,rule,inwon,address,rstime,title,jongmok_id, writeday)
+	  values(#{img},#{rsdate},#{sogae},#{jinhang},#{rule},#{inwon},#{address},#{rstime},#{title},#{jongmok_id},now())
 	</insert>
 	
 	<select id="memberView" parameterType="com.example.demo.vo.AdminVo">
 	  SELECT no, userid, name, pwd, phone, email, writeday, gender, birth
         FROM member
-	
 	</select>
+	
+ <delete id="banMemberById" parameterType="string">
+    DELETE FROM member WHERE userid=#{userid}
+</delete>
 	
 	<insert id="action_write_ok">
 		insert into action(title,content,img,writeday,userid)
@@ -40,7 +43,7 @@
 	</select>
 	
 	<update id="action_update_ok">
-		update action set title=#{title},img=#{img},content=#{content}
+		update action set title=#{title},img=#{img},content=#{content} where no=#{no}
 	</update>
 	
 	<insert id="gongjiAddOk" parameterType="com.example.demo.vo.GongjiVo">

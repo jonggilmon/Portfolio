@@ -13,4 +13,6 @@ public interface MemberMapper {
     public String samePnum(String pnum);
     public String chkPnum(String pnum);
     public String getUserid(String pnum);
+    public String chkUserid(String userid);
+    public String PnUchk(String userid);
 }

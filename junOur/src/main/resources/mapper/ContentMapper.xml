@@ -9,6 +9,7 @@
     FROM reserve r
     LEFT JOIN reserve_info ri on r.no = ri.reserve_id
     GROUP BY r.no, r.title, r.rsdate, r.jinhang, r.writeday, r.inwon
+    ORDER BY r.rstime asc
 </select>
 
     
@@ -23,6 +24,7 @@
     LEFT JOIN reserve_info ri on r.no = ri.reserve_id
     WHERE r.jongmok_Id = #{jongmok_Id}
     GROUP BY r.no, r.title, r.rsdate, r.jinhang, r.writeday, r.inwon 
+    ORDER BY r.rstime asc
 </select>
 
 
@@ -32,6 +34,25 @@
 
 <select id="getMaxinwonNo" resultType="int">
     SELECT inwon FROM reserve WHERE no = #{no}
+</select>
+
+
+<select id="findReservesByRsDate" resultType="com.example.demo.vo.ContentVo">
+    SELECT * FROM reserve WHERE rsdate = #{rsdate}
+    ORDER BY rstime asc
+</select>
+
+<update id="increaseReadNum">
+    UPDATE reserve
+    SET readnum = readnum + 1
+    WHERE no = #{no}
+</update>
+
+
+<select id="findReservesByRsDateAndJongmokId" resultType="com.example.demo.vo.ContentVo">
+    SELECT * FROM reserve 
+    WHERE rsdate = #{rsdate} AND jongmok_id = #{jongmok_id}
+    ORDER BY rstime asc
 </select>
 
 

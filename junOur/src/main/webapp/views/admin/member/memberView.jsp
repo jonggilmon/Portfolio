@@ -39,6 +39,7 @@
         <th>가입일</th>
         <th>성별</th>
         <th>생년월일</th>
+          <th>추방</th>
     </tr>
     <!-- 아래는 예시 데이터입니다. 실제 데이터로 바꿔주세요 -->
     
@@ -52,10 +53,18 @@
             <td>${member.writeday}</td>
             <td>${member.gender}</td>
             <td>${member.birth}</td>
+            <td><button onclick="banMember('${member.userid}');">추방</button></td>
         </tr>
     </c:forEach>
 
 </table>
+<script>
+    function banMember(userid) {
+        if(confirm("정말로 이 회원을 추방하시겠습니까?")) {
+            location.href = "/admin/member/banMember?userid=" + userid;
+        }
+    }
+</script>
 
 </body>
 </html>

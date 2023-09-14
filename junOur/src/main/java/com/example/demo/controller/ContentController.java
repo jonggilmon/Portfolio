@@ -9,7 +9,8 @@ import com.example.demo.vo.MemberVo;
 import com.example.demo.vo.ReserveInfoVo;
 
 import org.springframework.beans.factory.annotation.Autowired;
-
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -42,6 +43,8 @@ public class ContentController {
 
 	 @GetMapping("/main/content/content")
 	 public String view(@RequestParam("no") int no, Model model, HttpSession session) {
+		 
+		   service.increaseReadNum(no);  // 조회수 1 증가
 	     
 	     ContentVo contentDetail = service.getContentByNo(no);
 	     session.setAttribute("no", no);
@@ -75,13 +78,28 @@ public class ContentController {
 	    
 	     
 	     model.addAttribute("AllReserves", reserves);
-	     
-	
-	    	    
-	    
+	     	   
 	    
 	     return "/main/rlist"; 
 	 }
+	 
+	 @GetMapping("/getReservationsByDate")
+	 public ResponseEntity<List<ContentVo>> getReservesByDate(@RequestParam String rsdate,  @RequestParam String jongmok_id) {
+		 List<ContentVo> reservesByDate = contentMapper.findReservesByRsDateAndJongmokId(rsdate, jongmok_id);
+	     
+	     for (ContentVo reserve : reservesByDate) {
+	         int reserveNo = reserve.getNo(); 
+	         int currentReserveCount = reserveInfoMapper.inwonCount(reserveNo);
+	         int maxInwon = contentMapper.getMaxinwonNo(reserveNo);
+
+	         reserve.setCurrentCount(currentReserveCount);
+	         reserve.setMaxCount(maxInwon);
+	     }
+	     return new ResponseEntity<>(reservesByDate, HttpStatus.OK);
+	 }
+	 
+	 
+	 
 	 @RequestMapping("/main/content/resung")
 	 public String resung(Model model, HttpSession session) {
 	     List<ContentVo> reserveInfos = service.resung();

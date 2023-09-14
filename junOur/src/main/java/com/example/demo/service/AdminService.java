@@ -17,13 +17,14 @@ public interface AdminService {
 	public List<AdminVo> memberView();
 	public String action_write();
 	public String action_write_ok(HttpServletRequest request);
-	public String action_list(Model model);
+	public String action_list(Model model,HttpSession session);
 	public String action_readnum(HttpServletRequest request, ActionVo avo);
 	public String action_content(Model model, ActionVo avo,HttpSession session);
 	public String action_delete(ActionVo avo);
 	public String action_update(ActionVo avo,Model model);
 	public String action_update_ok(HttpServletRequest request, ActionVo avo);
 	public String gongjiAddOk(GongjiVo gvo);
+	public boolean banMember(String userid);
 
 	
 }

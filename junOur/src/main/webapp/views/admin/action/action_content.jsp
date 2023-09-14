@@ -109,7 +109,7 @@
                 <input type="hidden" name="no" value="${avo.no}">
                 <input type="submit" value="삭제">
             </form>
-        </div>
+        </div>	
     </div>
 </body>
 </html>

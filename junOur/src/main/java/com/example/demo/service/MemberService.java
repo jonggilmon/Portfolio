@@ -19,4 +19,7 @@ public interface MemberService {
      public String idfind();
      public String chkPnum(HttpServletRequest request);
      public String getUserid(HttpServletRequest request);
+     public String pwdfind();
+     public String chkUserid(HttpServletRequest request);
+     public String PnUchk(HttpServletRequest request);
 }

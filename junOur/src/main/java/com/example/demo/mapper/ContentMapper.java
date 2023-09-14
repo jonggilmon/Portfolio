@@ -20,7 +20,12 @@ public interface ContentMapper {
 	public List<ContentVo> resung();
 	
 	public int getMaxinwonNo(int no);
+	
+	public List<ContentVo> findReservesByRsDate(String rsdate);
 
+	public void increaseReadNum(int no);
+
+	public List<ContentVo> findReservesByRsDateAndJongmokId(String rsdate, String jongmok_id);
 
 
 	
