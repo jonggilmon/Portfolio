@@ -7,7 +7,7 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <style>
-* {
+body {
 	list-style: none;
 }
 
@@ -82,10 +82,10 @@
 		<div class="logo">
 			<a href="/main/main"> <img src="/static/main/mm.png"></a>
 		</div>
-		<div class="search">
+		<!-- <div class="search">
 			<input type="text" placeholder="검색어를 입력하세요" id="searchSub">
 			<button id="searchbutton">검색</button>
-		</div>
+		</div> -->
 		<ul class="navi">
 			<c:if test="${userid==null}">
 				<li><a href="/member/login">로그인</a></li>
