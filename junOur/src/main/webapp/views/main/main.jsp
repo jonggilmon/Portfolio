@@ -245,7 +245,7 @@
     transform: translateX(-50%);
     opacity: 0;     /* 처음에는 투명하게 설정 */
     transition: opacity 0.5s ease-in-out;   /* 부드럽게 나타나게 하기 위한 트랜지션 */
-    font-size: 45px; /* 글자 크기 조절 */
+    font-size: 38px; /* 글자 크기 조절 */
     font-weight: bold; /* 글씨를 굵게 만듭니다 */
     z-index: 1;     
     color: white; /* 글씨 색을 흰색으로 변경합니다 */
@@ -253,6 +253,7 @@
                 -2px -2px 0px #000,  /* left, up */
                 2px -2px 0px #000,   /* right, up */
                 -2px 2px 0px #000;  /* 글씨에 테두리 효과를 줍니다 */
+                 white-space: nowrap;
 }
 
 
@@ -684,6 +685,82 @@
 }
 
 
+.sport-item.special-effect.tacgu::before {
+    background-color:  #D6F0FF;      
+    z-index:-3; 
+}      
+.sport-item.special-effect.tacgu a::before {
+    content: "";
+    position: absolute;
+    width: 0%;    
+    height: 0%;
+    left: 45%;     /* 중앙에서 시작하도록 조정 */
+    top: 55%;   /* 중앙에서 시작하도록 조정 */
+    background: linear-gradient(to top right, #E4F7BA, #FFC6C6);
+    opacity: 1;
+    transition: width 0.5s, height 0.5s ease-in-out;
+    z-index: -1;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8); 
+}
+.sport-item.special-effect.tacgu a::after {   
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 45%;
+    top: 55%;
+    transform: translate(-50%, -50%);
+    background: radial-gradient(circle, white, #C6C6C6);
+    border-radius: 50%;  
+    z-index: -2;
+}
+.sport-item.special-effect.tacgu:hover a::before {
+    width: 100%; 
+   height: 100%;
+}
+
+
+
+
+ .sport-item.special-effect.joggu::before {
+            background-color:  #D6F0FF; 
+            z-index: -3;      
+        }      
+  .sport-item.special-effect.joggu a::before {   
+     content: "";
+    position: absolute;
+    width: 82%;
+    height: 82%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background: radial-gradient(circle, white, #A2A2A2);
+    background-size: 100% 0%;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    opacity: 1;
+    transition: opacity 0.5s, background-size 0.5s ease-in-out;
+    border-radius: 50%;  
+    z-index: -1;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); 
+}
+.sport-item.special-effect.joggu a::after {   
+    content: "";
+    position: absolute;
+    width: 82%;
+    height: 82%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background: radial-gradient(circle, white, black);
+    border-radius: 50%;  
+    z-index: -2;
+}
+.sport-item.special-effect.joggu:hover a::before {  
+    background-size: 100% 100%; 
+}
+
+
   
   </style>
 
@@ -718,24 +795,24 @@
         <div class="sport-item special-effect soccer">
             <a href="rlist?jongmok_id=1">
                 <img src="/static/photos/ball.png" alt="Soccer Ball" />
-                <span class="sport-label">Soccer</span>
+                <span class="sport-label">축구</span>
             </a>
         </div>
         <div class="sport-item special-effect basketball">
             <a href="rlist?jongmok_id=2">
                 <img src="/static/photos/ball2.png" alt="BasketBall" />
-                <span class="sport-label">Basketball</span>
+                <span class="sport-label">농구</span>
             </a>
         </div>
         <div class="sport-item special-effect volleyball">
             <a href="rlist?jongmok_id=3">
             <img src="/static/photos/ball3.png" alt="Volleyball" />
-          <span class="sport-label">Volleyball</span></a>
+          <span class="sport-label">배구</span></a>
         </div>     
         <div class="sport-item special-effect baseball">
             <a href="rlist?jongmok_id=4">
             <img src="/static/photos/ball4.png" alt="Baseball" />
-          <span class="sport-label">BaseBall</span></a>
+          <span class="sport-label">야구</span></a>
         </div> 
        <div class="sport-item special-effect dangu">
             <a href="rlist?jongmok_id=5">
@@ -745,17 +822,17 @@
         <div class="sport-item special-effect bowling">
             <a href="rlist?jongmok_id=6">
             <img src="/static/photos/ball6.png" alt="Bowling" />
-          <span class="sport-label">Bowling</span></a>
+          <span class="sport-label">볼링</span></a>
         </div>    
         <div class="sport-item special-effect golf">
             <a href="rlist?jongmok_id=7">
             <img src="/static/photos/ball7.png" alt="Golf" />
-          <span class="sport-label">golf</span></a>
+          <span class="sport-label">골프</span></a>
         </div>    
          <div class="sport-item special-effect tennis">
             <a href="rlist?jongmok_id=8">
             <img src="/static/photos/ball8.png" alt="Tennis" />
-          <span class="sport-label">Tennis</span></a>
+          <span class="sport-label">테니스</span></a>
         </div>   
         <div class="sport-item special-effect swim">
             <a href="rlist?jongmok_id=9">
@@ -769,12 +846,12 @@
         </div>
         <div class="sport-item special-effect tacgu">
             <a href="rlist?jongmok_id=11">
-            <img src="/static/photos/ball3.png" alt="Tacgu" />
+            <img src="/static/photos/ball11.png" alt="Tacgu" />
           <span class="sport-label">탁구</span></a>
         </div>
-        <div class="sport-item special-effect guocgu">
+        <div class="sport-item special-effect joggu">
             <a href="rlist?jongmok_id=12">
-            <img src="/static/photos/ball3.png" alt="Guocgu" />
+            <img src="/static/photos/ball12.png" alt="Joggu" />
           <span class="sport-label">족구</span></a>
         </div>
     </div>
