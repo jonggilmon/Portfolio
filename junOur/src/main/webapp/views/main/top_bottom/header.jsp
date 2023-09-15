@@ -7,7 +7,7 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <style>
-* {
+body {
 	list-style: none;
 }
 
@@ -39,7 +39,7 @@
 }
 
 .navi {
-	width: 460px; /* 로그인 시 주메뉴가 4개니까 한 놈당 100씩 .navi li랑 연동 서브메뉴도 맞춰줘야함 */
+	width: 360px; /* 로그인 시 주메뉴가 4개니까 한 놈당 100씩 .navi li랑 연동 서브메뉴도 맞춰줘야함 */
 	height: 40px;
 	line-height: 40px;
 	background: #333;
@@ -49,7 +49,7 @@
 }
 
 .navi li {
-	width: 115px;
+	width: 120px;
 	text-align: center;
 }
 
@@ -63,7 +63,7 @@
 }
 
 .submenu {
-	width: 115px;
+	width: 120px;
 	height: 120px;
 	background: black;
 	display:none; 
@@ -82,10 +82,10 @@
 		<div class="logo">
 			<a href="/main/main"> <img src="/static/main/mm.png"></a>
 		</div>
-		<div class="search">
+		<!-- <div class="search">
 			<input type="text" placeholder="검색어를 입력하세요" id="searchSub">
 			<button id="searchbutton">검색</button>
-		</div>
+		</div> -->
 		<ul class="navi">
 			<c:if test="${userid==null}">
 				<li><a href="/member/login">로그인</a></li>
@@ -98,12 +98,14 @@
 						<li><a href="/admin/menu">관리자 페이지</a></li>
 					</c:when>
 					<c:otherwise>
+
 						<li><a href="/mypage/inquiry_select">문의사항</a></li>
+
 						<li><a href="#">마이페이지</a>
 							<ul class="submenu">
 								<li><a href="/mypage/myinfo">내 정보</a></li>
 								<li><a href="/mypage/myreserve">예약내역</a></li>
-								<li><a href="#">1:1 문의하기</a></li>
+								<li><a href="#">문의하기</a></li>
 							</ul>
 						</li>
 
