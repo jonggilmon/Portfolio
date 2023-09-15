@@ -47,7 +47,7 @@
 <body>
 	<div id="section">
 	  <table width="800" align="center">
-	    <caption> <h2> 후기글 </h2> </caption>
+	    <caption> <h2> 자유게시판 </h2> </caption>
 	    <tr align="center" id="pkc">
 	      <td> 제목 </td>
 	      <td> 작성자 </td>
@@ -55,7 +55,7 @@
 	      <td> 작성일 </td>
 	    </tr>
 	    
-	  <c:forEach items="${hlist}" var="map">
+	  <c:forEach items="${flist}" var="map">
 	    <tr>
 	      <td> <a href="readnum?no=${map.no}"> ${map.title} </a> </td>
 	      <td> ${map.userid} </td>
@@ -66,9 +66,10 @@
 	  
 	    <tr>
 
-	      <td colspan="4" align="center"> <a href="../hugi/hugiadd"> 글 등록 </a> </td>
+	      <td colspan="4" align="center"> <a href="../free/freeadd"> 글 등록 </a> </td>
 	   
 	    </tr>
 	  </table>
+	</div>  
 </body>
 </html>

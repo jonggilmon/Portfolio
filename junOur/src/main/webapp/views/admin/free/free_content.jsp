@@ -18,34 +18,34 @@ function showDeleteButton() {
 <body>
   <div id="section">
     <table width="600" align="center">
-      <caption> <h2> 후기글 </h2> </caption>
+      <caption> <h2> 자유게시판 </h2> </caption>
       <tr>
         <td width="100"> 제목 </td>
-        <td> ${hvo.title} </td>
+        <td> ${fvo.title} </td>
       </tr>
       <tr>
         <td> 작성자 </td>
-        <td> ${hvo.userid} </td>
+        <td> ${fvo.userid} </td>
       </tr>
       <tr>
         <td> 조회수 </td>
-        <td> ${hvo.readnum} </td>
+        <td> ${fvo.readnum} </td>
       </tr>
       <tr>
         <td> 내용 </td>
-        <td> <div id="inner"> ${hvo.content} </div> </td>
+        <td> <div id="inner"> ${fvo.content} </div> </td>
       </tr>
       <tr>
         <td colspan="2" align="center">
-          <a href="hugi_list"> 목록 </a>
-          <a href="hugi_update?no=${hvo.no}"> 수정 </a>
+          <a href="free_list"> 목록 </a>
+          <a href="free_update?no=${fvo.no}"> 수정 </a>
           <a href="#" onclick="showDeleteButton(); return false;"> 삭제 </a> <!-- return false;는 링크를 클릭했을 때 브라우저가 해당 링크의 기본 동작을 실행하지 않도록 하는 역할을 합니다.  -->
         </td>
       </tr>
       <tr id="del" style="display:none;">
         <td colspan="2" align="center" style="border:none;">
           <form method="post" action="delete">
-            <input type="hidden" name="no" value="${hvo.no}">
+            <input type="hidden" name="no" value="${fvo.no}">
             <input type="submit" value="삭제">
           </form>
         </td>
