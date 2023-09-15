@@ -22,8 +22,12 @@
         }
 
         footer {
+        	position : absolute;
             width: 100%;
             background: #333;
+            height: 200px;
+            top: 1550px;
+            
         }
 
         .bottomlogo {
@@ -72,6 +76,7 @@
 
         .link li:last-child a::after {
             content: none;
+            margin: 0;
         } 
         .link a {
         	color : white;

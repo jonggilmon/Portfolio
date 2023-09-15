@@ -27,6 +27,7 @@ body {
 	align-items: center;
 	background-color: #333;
 	color: #fff;
+	height: 150px;
 }
 
 .logo {
