@@ -39,7 +39,7 @@ body {
 }
 
 .navi {
-	width: 460px; /* 로그인 시 주메뉴가 4개니까 한 놈당 100씩 .navi li랑 연동 서브메뉴도 맞춰줘야함 */
+	width: 360px; /* 로그인 시 주메뉴가 4개니까 한 놈당 100씩 .navi li랑 연동 서브메뉴도 맞춰줘야함 */
 	height: 40px;
 	line-height: 40px;
 	background: #333;
@@ -49,7 +49,7 @@ body {
 }
 
 .navi li {
-	width: 115px;
+	width: 120px;
 	text-align: center;
 }
 
@@ -63,7 +63,7 @@ body {
 }
 
 .submenu {
-	width: 115px;
+	width: 120px;
 	height: 120px;
 	background: black;
 	display:none; 
@@ -98,12 +98,11 @@ body {
 						<li><a href="/admin/menu">관리자 페이지</a></li>
 					</c:when>
 					<c:otherwise>
-						<li><a href="#">문의사항</a></li>
 						<li><a href="#">마이페이지</a>
 							<ul class="submenu">
 								<li><a href="/mypage/myinfo">내 정보</a></li>
 								<li><a href="/mypage/myreserve">예약내역</a></li>
-								<li><a href="#">1:1 문의하기</a></li>
+								<li><a href="#">문의하기</a></li>
 							</ul>
 						</li>
 
