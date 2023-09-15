@@ -38,9 +38,21 @@
             <td>${recentReserveInfo.user_name}</td>
         </tr>     
          <tr>
-            <td>신청자 닉네임</td>
+            <td>예약신청한 날짜</td>
             <td>${recentReserveInfo.reserve_date}</td>
         </tr>
+           <tr>
+            <td>예약 날짜</td>
+            <td>${recentReserveInfo.rs_date}</td>
+        </tr>
+           <tr>
+            <td>예약 장소</td>
+            <td>${recentReserveInfo.add_ress}</td>
+        </tr>
+           <tr>
+            <td>예약한 시간</td>
+            <td>${recentReserveInfo.rs_time}</td>
+        </tr>    
 	</c:if>
     </table>
 </body>

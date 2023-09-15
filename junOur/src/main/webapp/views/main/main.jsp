@@ -38,6 +38,8 @@
    text-align:center;
 }
 
+
+
       
 .sports-grid {
  
@@ -47,7 +49,7 @@
     grid-template-columns: repeat(12, 1fr);
     grid-gap: 10px;
     margin: 0 auto;
-    padding:40px;
+   
 }
 
 .sport-item {
@@ -154,7 +156,7 @@
  .notice-weather {
         display: flex;
         justify-content: space-between;
-        max-width: 900px;
+        width:100%;
         margin: 0 auto;
         padding: 20px;
     }
@@ -165,8 +167,8 @@
         background-color: #eeeeee;
         padding: 10px;
         border: 1px solid #ccc;
-        flex: 2;
-        margin-right: 10px;
+        flex: 1;
+        margin-right: 300px;
         height:120px;
      
     }
@@ -175,8 +177,8 @@
         background-color: #eeeeee;
         padding: 10px;
         border: 1px solid #ccc;
-        flex: 3;
-        margin-left: 10px;
+        flex: 1;
+        margin-left: 300px;
         height:120px;
       
     }
