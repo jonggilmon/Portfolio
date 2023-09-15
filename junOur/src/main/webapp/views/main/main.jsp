@@ -154,27 +154,31 @@
  .notice-weather {
         display: flex;
         justify-content: space-between;
-        max-width: 800px;
+        max-width: 900px;
         margin: 0 auto;
         padding: 20px;
     }
 
     .notice {
        
-        background-color: #fff;
+        font-size:20px;
+        background-color: #eeeeee;
         padding: 10px;
         border: 1px solid #ccc;
         flex: 2;
         margin-right: 10px;
+        height:120px;
+     
     }
 
     .weather {
-        background-color: #fff;
+        background-color: #eeeeee;
         padding: 10px;
         border: 1px solid #ccc;
-        flex: 1;
+        flex: 3;
         margin-left: 10px;
-        height:100px;
+        height:120px;
+      
     }
 
    .hugi {
@@ -761,6 +765,7 @@
 }
 
 
+
   
   </style>
 
@@ -777,15 +782,15 @@
 <div class="notice-weather">
          <div class="notice">
             <c:forEach items="${glist }" var="gvo">
-              <div>제목 : ${gvo.title } </div>
-              <div> 이름 : ${gvo.userid } </div>
-              <div> 조회수 : ${gvo.readnum }</div>
-              <div> 작성일 : ${gvo.writeday } </div>
+              <div>${gvo.title } || ${gvo.writeday }</div>                          
+              
               <hr>
             </c:forEach>
         </div>
         <div class="weather">
-           날씨 하지말까 ㅅㅂ
+       <a href="https://www.accuweather.com/ko/kr/seoul/226081/current-weather/226081" target="_blank" class="aw-widget-legal"></a>
+      <div id="awcc" class="aw-widget-current"  data-locationkey="226081" data-unit="c" data-language="ko-kr" data-useip="false" data-uid="awcc..."></div>
+       <script type="text/javascript" src="https://oap.accuweather.com/launch.js"></script>
         </div>
     </div>
 
