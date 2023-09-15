@@ -95,4 +95,9 @@ public class MypageController {
 		return service.myreserve(model,session);
 
 	}
+	@RequestMapping("/mypage/inquiryUpdateOk")
+	public String inquiryUpdateOk(MtmVo mvo)
+	{
+		return service.inquiryUpdateOk(mvo);
+	}
 }

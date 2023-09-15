@@ -41,8 +41,7 @@ public interface MypageMapper {
 
 	public ArrayList<ReserveInfoVo> myreserve(String userid);
 
+	public void inquiryUpdateOk(MtmVo mvo);
 	
-
-
-
+	public void seqOk(MtmVo mvo);
 }

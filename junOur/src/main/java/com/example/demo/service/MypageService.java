@@ -39,6 +39,6 @@ public interface MypageService {
 
 
 	public String myreserve(Model model,HttpSession session);
-
-
+	
+	public String inquiryUpdateOk(MtmVo vo);
 }

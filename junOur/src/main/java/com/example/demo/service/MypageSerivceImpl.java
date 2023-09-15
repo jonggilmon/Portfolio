@@ -86,6 +86,7 @@ public class MypageSerivceImpl implements MypageService{
 		String userid=session.getAttribute("userid").toString();
 		mvo.setUserid(userid);
 		mapper.mtmOk(mvo);
+		mapper.seqOk(mvo);
 		
 		return "/mypage/mtmOk";
 	}
@@ -137,6 +138,15 @@ public class MypageSerivceImpl implements MypageService{
 		return "/mypage/myreserve";
 
 	}
+
+	@Override
+	public String inquiryUpdateOk(MtmVo mvo) {
+		mapper.inquiryUpdateOk(mvo);
+		return "redirect:/mypage/inquiry_content?no="+mvo.getNo();
+	}
+	
+	
+	
 }
 
 
