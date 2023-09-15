@@ -59,7 +59,12 @@
   	update mtm set title=#{title},content=#{content} where no=#{no}
   </update>
   
-  <update id="seqOk">
-  	update mtm 
-  </update>
+  <select id="inquiry_all" resultType="com.example.demo.vo.MtmVo">
+		select * from mtm order by writeday asc
+  </select>
+  
+  <select id="inquiry_all_content" resultType="com.example.demo.vo.MtmVo">
+  	 select * from mtm where no=#{no}
+  </select>
+  
   </mapper>

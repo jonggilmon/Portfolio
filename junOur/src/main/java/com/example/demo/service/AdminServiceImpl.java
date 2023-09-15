@@ -191,8 +191,10 @@ public class AdminServiceImpl implements AdminService{
 	@Override
 	public String questOk(HttpServletRequest request,QuestVo qvo) {
 		String no=request.getParameter("no");
+		
 		mapper.questOk(qvo);
-		mapper.seqUp(no);
+		
+		mapper.seqUp(qvo);
 		return "redirect:/admin/inquiry/list";
 	}
 

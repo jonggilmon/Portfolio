@@ -1,5 +1,7 @@
 package com.example.demo.service;
 
+import java.util.ArrayList;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
@@ -86,7 +88,7 @@ public class MypageSerivceImpl implements MypageService{
 		String userid=session.getAttribute("userid").toString();
 		mvo.setUserid(userid);
 		mapper.mtmOk(mvo);
-		mapper.seqOk(mvo);
+
 		
 		return "/mypage/mtmOk";
 	}
@@ -143,6 +145,25 @@ public class MypageSerivceImpl implements MypageService{
 	public String inquiryUpdateOk(MtmVo mvo) {
 		mapper.inquiryUpdateOk(mvo);
 		return "redirect:/mypage/inquiry_content?no="+mvo.getNo();
+	}
+
+	@Override
+	public String inquiry_all(Model model) {
+		ArrayList<MtmVo> mlist=mapper.inquiry_all();
+		model.addAttribute("mlist",mlist);
+		return "/mypage/inquiry_all";
+	}
+
+	@Override
+	public String inquiry_all_content(Model model, HttpServletRequest request) {
+		String no=request.getParameter("no");
+		MtmVo mvo=mapper.inquiry_all_content(no);
+		model.addAttribute("mvo",mvo);
+		
+		
+		QuestVo qvo=mapper.getQuest(no);
+		model.addAttribute("qvo" ,qvo);
+		return "/mypage/inquiry_all_content";
 	}
 	
 	

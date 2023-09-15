@@ -15,6 +15,7 @@
 		<hr>
 		
 		<form method="post" action="questOk">
+			<input type="hidden" name="no" value="${mvo.no }">
 			<div> 답변 내용 : <textarea name="content"> </textarea> </div>
 			<div> <input type="submit" value="답변"> </div>
 		</form>

@@ -13,6 +13,7 @@
 			<div> <input type="text" name="title" placeholder="문의 제목"> </div>
 			<div> <textarea name="content" placeholder="문의 내용"></textarea></div>
 			<div> <input type="submit" value="문의하기"> </div>
+			<div> <input type="checkbox" value="1">비밀글로 등록하시겠습니다? </div>
 		</form>
 	</section>
 </body>

@@ -43,5 +43,7 @@ public interface MypageMapper {
 
 	public void inquiryUpdateOk(MtmVo mvo);
 	
-	public void seqOk(MtmVo mvo);
+	public ArrayList<MtmVo> inquiry_all();
+	
+	public MtmVo inquiry_all_content(String no);
 }

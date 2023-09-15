@@ -65,7 +65,7 @@
 	</insert>
 	
 	<update id="seqUp">
-		update quest set seq=seq+1 where no=#{no}
+		update mtm set seq=seq+1 where no=#{no}
 	</update>
 	
 </mapper>

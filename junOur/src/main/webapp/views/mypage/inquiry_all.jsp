@@ -9,11 +9,11 @@
 </head>
 <body>
 	<section>
-		<caption><h3>대기중인 문의사항들</h3></caption>
+		<caption><h3>모든 문의사항</h3></caption>
 		<c:forEach items="${mlist }" var="mvo">
-			<c:if test="${mvo.seq==0 }">
-				<div><a href="answer?no=${mvo.no}">제목 : ${mvo.title } | 작성자 : ${mvo.userid } | 작성일 : ${mvo.writeday}</a></div>
-			</c:if>
+
+				<div><a href="inquiry_all_content?no=${mvo.no}">제목 : ${mvo.title } | 작성자 : ${mvo.userid } | 작성일 : ${mvo.writeday}</a></div>
+		
 		</c:forEach>
 	</section>
 </body>

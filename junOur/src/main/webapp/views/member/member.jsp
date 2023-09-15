@@ -212,6 +212,7 @@
             	if(chk.responseText=="1")
             	{
             		alert("인증 성공했습니다.");
+            		chknum=chk.responseText;
             		 	return true;
             		
             	}

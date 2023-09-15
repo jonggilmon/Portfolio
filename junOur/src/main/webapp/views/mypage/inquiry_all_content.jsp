@@ -14,12 +14,12 @@
 			
 		</div>
 		<div> 내 용 : ${mvo.content }</div>
-		<c:if test="${mvo.seq == 0 }">
-			<div> <a href="inquiryUpdate?no=${mvo.no}"> 수정 </a> <a href="inquiryDelete?no=${mvo.no}"> 삭제 </a></div>
-		</c:if>
-		
+		<c:if test="${mvo.seq == 1 }">
 			<div><caption><h3> 답변 </h3></caption></div>
 			<div> 내 용 : ${qvo.content }</div>
+		</c:if>
+		
+			
 				
 	</section>
 </body>

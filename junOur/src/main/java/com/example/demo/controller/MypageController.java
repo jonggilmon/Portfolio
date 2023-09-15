@@ -100,4 +100,15 @@ public class MypageController {
 	{
 		return service.inquiryUpdateOk(mvo);
 	}
+	@RequestMapping("mypage/inquiry_all")
+	public String inquiry_all(Model model)
+	{
+		return service.inquiry_all(model);
+	}
+	@RequestMapping("mypage/inquiry_all_content")
+	public String inquiry_all_content(Model model,HttpServletRequest request)
+	{
+		return service.inquiry_all_content(model,request);
+	}
+	
 }

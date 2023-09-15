@@ -41,4 +41,8 @@ public interface MypageService {
 	public String myreserve(Model model,HttpSession session);
 	
 	public String inquiryUpdateOk(MtmVo vo);
+	
+	public String inquiry_all(Model model);
+	
+	public String inquiry_all_content(Model model,HttpServletRequest request);
 }
