@@ -31,9 +31,9 @@ public class HugiController {
 	}
 	
 	@RequestMapping("/admin/hugi/hugiadd_ok")
-	public String hugiadd_ok(HugiVo hvo)
+	public String hugiadd_ok(HugiVo hvo, HttpSession session)
 	{
-		return service.hugiadd_ok(hvo);
+		return service.hugiadd_ok(hvo, session);
 	}
 	
 	@RequestMapping("/admin/hugi/hugi_content")

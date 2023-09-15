@@ -33,8 +33,13 @@ public class HugiServiceImpl implements HugiService {
 	}
 
 	@Override
-	public String hugiadd_ok(HugiVo hvo) {
+	public String hugiadd_ok(HugiVo hvo, HttpSession session) {
 		mapper.hugiadd_ok(hvo);
+		
+		if(session.getAttribute("userid")==null)
+			return "redirect:/member.login";
+		hvo.setUserid(session.getAttribute("userid").toString());
+		
 		return "redirect:/admin/hugi/hugi_list";
 	}
 
