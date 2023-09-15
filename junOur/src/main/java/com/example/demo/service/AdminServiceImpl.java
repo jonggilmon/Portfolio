@@ -1,6 +1,7 @@
 package com.example.demo.service;
 
 import java.io.FileNotFoundException;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -16,6 +17,8 @@ import com.example.demo.mapper.AdminMapper;
 import com.example.demo.vo.ActionVo;
 import com.example.demo.vo.AdminVo;
 import com.example.demo.vo.GongjiVo;
+import com.example.demo.vo.MtmVo;
+import com.example.demo.vo.QuestVo;
 import com.oreilly.servlet.MultipartRequest;
 import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 
@@ -167,6 +170,28 @@ public class AdminServiceImpl implements AdminService{
 		mapper.gongjiAddOk(gvo);
 		
 		return "redirect:/admin/gongji/gongji_list";
+	}
+
+	@Override
+	public String list(Model model) {
+		ArrayList<MtmVo> mlist=mapper.list();
+		model.addAttribute("mlist",mlist);
+		return "/admin/inquiry/list";
+	}
+
+	@Override
+	public String answer(HttpServletRequest request,Model model) {
+		String no=request.getParameter("no");
+		MtmVo mvo=mapper.answer(no);
+		model.addAttribute("mvo",mvo);
+		
+		return "/admin/inquiry/answer";
+	}
+
+	@Override
+	public String questOk(QuestVo qvo) {
+		mapper.questOk(qvo);
+		return null;
 	}
 
 	

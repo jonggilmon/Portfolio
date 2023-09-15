@@ -39,7 +39,7 @@
 }
 
 .navi {
-	width: 400px; /* 로그인 시 주메뉴가 4개니까 한 놈당 100씩 .navi li랑 연동 서브메뉴도 맞춰줘야함 */
+	width: 460px; /* 로그인 시 주메뉴가 4개니까 한 놈당 100씩 .navi li랑 연동 서브메뉴도 맞춰줘야함 */
 	height: 40px;
 	line-height: 40px;
 	background: #333;
@@ -49,7 +49,7 @@
 }
 
 .navi li {
-	width: 100px;
+	width: 115px;
 	text-align: center;
 }
 
@@ -63,7 +63,7 @@
 }
 
 .submenu {
-	width: 100px;
+	width: 115px;
 	height: 120px;
 	background: black;
 	display:none; 
@@ -98,7 +98,7 @@
 						<li><a href="/admin/menu">관리자 페이지</a></li>
 					</c:when>
 					<c:otherwise>
-						<li><a href="#">문의사항</a></li>
+						<li><a href="/mypage/inquiry_select">문의사항</a></li>
 						<li><a href="#">마이페이지</a>
 							<ul class="submenu">
 								<li><a href="/mypage/myinfo">내 정보</a></li>

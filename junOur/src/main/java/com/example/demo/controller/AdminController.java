@@ -23,6 +23,7 @@ import com.example.demo.service.ContentService;
 import com.example.demo.vo.ActionVo;
 import com.example.demo.vo.AdminVo;
 import com.example.demo.vo.GongjiVo;
+import com.example.demo.vo.QuestVo;
 
 @Controller
 public class AdminController {
@@ -146,5 +147,23 @@ public class AdminController {
 	public String gongjiAddOk(GongjiVo gvo)
 	{
 		return service.gongjiAddOk(gvo);
+	}
+	
+	@RequestMapping("/admin/inquiry/list")
+	public String admin_inquiry_list(Model model)
+	{
+		return service.list(model);
+	}
+	
+	@RequestMapping("/admin/inquiry/answer")
+	public String answer(HttpServletRequest request, Model model)
+	{
+		return service.answer(request,model);
+	}
+	
+	@RequestMapping("/admin/inquiry/questOk")
+	public String questOk(QuestVo qvo)
+	{
+		return service.questOk(qvo);
 	}
 }

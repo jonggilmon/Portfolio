@@ -10,8 +10,12 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.example.demo.service.MypageService;
+
+import com.example.demo.vo.MtmVo;
+
 import com.example.demo.vo.ContentVo;
 import com.example.demo.vo.ReserveInfoVo;
+
 
 @Controller
 public class MypageController {
@@ -44,6 +48,42 @@ public class MypageController {
 	{ 
 		return service.pwdChange(request,session);
 	}
+
+	@RequestMapping("/mypage/mtm")
+	public String mtm()
+	{
+		return service.mtm();
+	}
+	@RequestMapping("/mypage/mtmOk")
+	public String mtmOk(MtmVo mvo,HttpSession session)
+	{
+		return service.mtmOk(mvo,session);
+	}
+	@RequestMapping("/mypage/inquiry_content")
+	public String inquiry_content(Model model,HttpServletRequest request)
+	{
+		return service.inquiry_content(model,request);
+	}
+	@RequestMapping("/mypage/inquiry_list")
+	public String inquiry_list(Model model,HttpSession session)
+	{
+		return service.inquiry_list(model,session);
+	}
+	@RequestMapping("/mypage/inquiry_select")
+	public String inquiry_select()
+	{
+		return "/mypage/inquiry_select";
+	}
+	@RequestMapping("/mypage/inquiryUpdate")
+	public String inquiryUpdate(HttpServletRequest request, Model model)
+	{
+		return service.inquiryUpdate(request,model);
+	}
+	@RequestMapping("/mypage/inquiryDelete")
+	public String inquiryDelete(HttpServletRequest request)
+	{
+		return service.inquiryDelete(request);
+	}
 	@RequestMapping("/mypage/mypage")
 	public String mypage()
 	{
@@ -53,5 +93,6 @@ public class MypageController {
 	public String myreserve(Model model,HttpSession session)
 	{
 		return service.myreserve(model,session);
+
 	}
 }

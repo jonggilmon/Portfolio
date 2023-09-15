@@ -10,6 +10,7 @@ import org.springframework.ui.Model;
 import com.example.demo.vo.ActionVo;
 import com.example.demo.vo.AdminVo;
 import com.example.demo.vo.GongjiVo;
+import com.example.demo.vo.QuestVo;
 
 public interface AdminService {
 	public String contentadd();
@@ -25,6 +26,7 @@ public interface AdminService {
 	public String action_update_ok(HttpServletRequest request, ActionVo avo);
 	public String gongjiAddOk(GongjiVo gvo);
 	public boolean banMember(String userid);
-
-	
+	public String list(Model model);
+	public String answer(HttpServletRequest request,Model model);
+	public String questOk(QuestVo qvo);
 }
