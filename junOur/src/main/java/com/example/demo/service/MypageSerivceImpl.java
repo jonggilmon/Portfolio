@@ -84,11 +84,24 @@ public class MypageSerivceImpl implements MypageService{
 	}
 
 	@Override
-	public String mtmOk(MtmVo mvo, HttpSession session) {
+	public String mtmOk(MtmVo mvo, HttpSession session,HttpServletRequest request) {
 		String userid=session.getAttribute("userid").toString();
 		mvo.setUserid(userid);
-		mapper.mtmOk(mvo);
-
+		
+		
+		
+		String hide=request.getParameter("hide");
+		
+		boolean isHide="on".equals(hide);
+		if(isHide==false)
+		{
+			mapper.mtmOk(mvo);
+		}
+		else
+		{
+			mapper.mtmOk2(mvo);
+		}
+		
 		
 		return "/mypage/mtmOk";
 	}

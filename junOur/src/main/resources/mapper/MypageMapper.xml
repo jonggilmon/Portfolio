@@ -31,6 +31,11 @@
     values (#{title},#{content},#{answer},#{userid},now())
   </insert>
   
+  <insert id="mtmOk2" parameterType="com.example.demo.vo.MtmVo">
+  	    insert into mtm(title,content,answer,userid,writeday,hide)
+    values (#{title},#{content},#{answer},#{userid},now(),1)
+  </insert>
+  
   <select id="inquiry_content" resultType="com.example.demo.vo.MtmVo">
   	 select * from mtm where no=#{no}
   </select>
@@ -67,4 +72,7 @@
   	 select * from mtm where no=#{no}
   </select>
   
+  <update id="hideUp" parameterType="com.example.demo.vo.MtmVo">
+  	 update mtm set hide=hide+1 where no=#{no}
+  </update>
   </mapper>

@@ -55,9 +55,9 @@ public class MypageController {
 		return service.mtm();
 	}
 	@RequestMapping("/mypage/mtmOk")
-	public String mtmOk(MtmVo mvo,HttpSession session)
+	public String mtmOk(MtmVo mvo,HttpSession session,HttpServletRequest request)
 	{
-		return service.mtmOk(mvo,session);
+		return service.mtmOk(mvo,session,request);
 	}
 	@RequestMapping("/mypage/inquiry_content")
 	public String inquiry_content(Model model,HttpServletRequest request)
