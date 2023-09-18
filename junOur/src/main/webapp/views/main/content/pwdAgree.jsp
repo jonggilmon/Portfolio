@@ -19,9 +19,21 @@
     <p>Session User's Password: ${sessionScope.user.pwd}</p>
 </c:if>
 
+<%
+    String captcha = java.util.UUID.randomUUID().toString().substring(0, 6).toUpperCase();
+    session.setAttribute("captcha", captcha);
+%>
+
 <form action="/content/pwdAgree" method="post">
     비밀번호 확인: <input type="password" name="password">
+    
+     <!-- 보안 문자 출력 및 입력 필드 추가 -->
+    <p>보안 문자: ${captcha}</p>
+    <input type="text" name="userCaptcha" placeholder="위의 보안 문자를 입력하세요">
+    
     <input type="submit" value="확인">
 </form>
 </body>
 </html>
+
+<%@ include file="../top_bottom/footer.jsp" %>

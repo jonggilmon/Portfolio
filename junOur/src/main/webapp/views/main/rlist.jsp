@@ -132,7 +132,7 @@
     justify-content: center;
     align-items: center;
     border:1px solid black;
-    height: 300px; /* 높이는 필요에 따라 조정 */
+    height: 600px; /* 높이는 필요에 따라 조정 */
 }
 
 .pika-single {
@@ -140,7 +140,45 @@
     top: 0 !important;
     left: 0 !important;
     margin: auto !important;
+      width: 550px !important;  /* 달력의 너비 조정 */
+    height: 480px !important; /* 달력의 높이 조정 */
+     font-size: 1.5em; 
 }
+.pika-single th, .pika-single td {
+    padding: 20px !important;
+    font-size: 1.5em !important;  /* 글자 크기 조정 */
+}
+
+.pika-single th {
+    font-size: 1.8em;  /* 헤더 글자 크기 조정 */
+}
+
+.pika-single td.pika-today:before {
+    top: 15px;
+    left: 15px;
+    width: 5px;
+    height: 5px;
+}
+
+.pika-single td.is-today {
+    font-weight: bold;  /* 오늘 날짜를 두껍게 */
+}
+
+.pika-single .pika-prev, .pika-single .pika-next {
+    font-size: 1.5em !important;  /* 이전, 다음 버튼 크기 조정 */
+    margin-top: 5px;
+}
+
+.pika-single .pika-select {
+    display: none;  /* 월/년 변경 드롭다운을 숨김 (선택적으로 사용) */
+}
+
+.pika-single .pika-title {
+    font-size: 2em;  /* 제목 크기 조정 */
+}
+
+
+
 #calendar {
     margin: 0 auto 20px; /* 아래쪽 마진을 추가 */
 }
@@ -156,6 +194,7 @@
 
 <div id="calendarContainer">
     <input type="text" id="calendar">
+    
 </div>
 <table width="1100" align="center" id="aa" border="0" border-collapse:collapse>
 <c:forEach items="${AllReserves}" var="subReserve">
