@@ -22,11 +22,9 @@
         }
 
         footer {
-        	position : absolute;
             width: 100%;
             background: #333;
             height: 200px;
-            top: 1550px;
             
         }
 

@@ -17,13 +17,10 @@
         }
 
         .wrap {
- 			position : absolute;
- 			top : 550;
- 			left : 50%; 
+        	margin: 0 auto;
             display: flex;
             background: #F2F5F7;
- 		    height: 600px; 
-            transform: translateX(-50%);
+            width:965px
         }
 
         .content {
@@ -54,6 +51,7 @@
             height: 250px;
             background: #fff;
             border-bottom: 20px solid #F2F5F7;
+            
         
         }
         .cimg{
@@ -63,7 +61,7 @@
         /* 예약 하기 */
         .d {
             float: right;
-            width: 400px;
+            width: 450px;
             height: 350px;
             background: #fff;
             padding: 25px;
@@ -83,6 +81,7 @@
         }
 
         .address {
+        padding:0;
             display: flex;
         }
 
@@ -93,6 +92,7 @@
 
 
         .data {
+        padding:0;
             display: flex;
             margin: 10px 0;
         }
@@ -133,12 +133,12 @@
      /* 여기서부터 레이어 */
   #modal{
     width:100%;
-    height:185%;
+    height:2020px;
     position:absolute;
     left:0;
     top:0;
     background:rgba(0,0,0,0.5); 
-    z-index:1; 
+    z-index:11; 
     display:none; 
 }
 #modal.active{
@@ -148,9 +148,11 @@
    width:450px;
    height:350px;
    position:fixed;
-   left:40%; 
-   top:35%; 
+   left:50%; 
+    transform: translateX(-50%);
+   top:25%; 
    background-color:#ffffff;
+   z-index:10;
 }
 .uptitle{
    margin-top:30px;
@@ -174,7 +176,7 @@
    font-weight:bold;
    background:#cccccc;
    position:absolute; 
-   right:10px;
+   left:10px;
    bottom:10px;
 }
 .btndong{
@@ -196,24 +198,30 @@
    position: absolute;
    bottom:10px;
 }
+#mainimg {
+	width: 965px;
+	height: 300px;
+    margin:20px auto; 
+}
 
 #mainimg img {
-    width: 1100px;
-    height: 400px;
-    margin: auto; 
+    width: 965px;
+    height: 300px;
+
+    
 }
 
   </style>
 </head>
 <body>
 	<div id="mainimg">
-       <img src="/static/photos/${contentDetail.img}" alt="Image">
+       <img src="/static/main/${contentDetail.img}" alt="Image">
     </div>
   <div class="wrap">
   	
         <div class="content">
             <div class="a">${contentDetail.jinhang}</div>
-            <div class="b">소개</div>
+            <div class="b">${contentDetail.sogae}</div>
             <div class="c">
             <div  align="center"><h2>정보</h2></div>
             	<span class="cimg"><img src="/static/content/car.png" width="40" height="40" valign="middle"> 무료주차	 &nbsp; &nbsp; &nbsp; <img src="/static/content/gender.png" width="40" height="40" valign="middle" style="margin-bottom: 40px"> 성별무관 <p></span>
@@ -233,7 +241,6 @@
                 <li>
                     <ul class="data">
                         <li><img src="img/ic_viewer.svg" alt="ic_viewer"></li>
-                        <li><img src="img/ic_bookmark_filled.svg" alt="ic_bookmark_filled"></li>
                     </ul>
                 </li>
                 <li>
