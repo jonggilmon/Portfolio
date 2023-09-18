@@ -11,7 +11,11 @@
 	<section>
 		<caption><h3>내 문의</h3></caption>
 			<c:forEach items="${ilist }" var="map">
-				<div><a href="inquiry_content?no=${map.no}"> 제목 : ${map.title } | 아이디 : ${map.userid } | 작성일 : ${map.writeday}</a></div>
+				<div><a href="inquiry_content?no=${map.no}"> 제목 : ${map.title } | 아이디 : ${map.userid } | 작성일 : ${map.writeday}</a>
+					<c:if test="${map.seq == 1 }">
+						답변이 완료되었습니다
+					</c:if>
+				</div>
 			</c:forEach>
 	</section>
 </body>

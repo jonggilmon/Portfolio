@@ -60,6 +60,12 @@
 	</select>
 	
 	<insert id="questOk">
-		insert into quest(title,content,writeday)
+		insert into quest(content,userid,writeday)
+		values (#{content},'관리자',now())
 	</insert>
+	
+	<update id="seqUp">
+		update mtm set seq=seq+1 where no=#{no}
+	</update>
+	
 </mapper>

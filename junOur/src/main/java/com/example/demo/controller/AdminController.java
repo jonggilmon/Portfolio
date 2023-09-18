@@ -162,8 +162,8 @@ public class AdminController {
 	}
 	
 	@RequestMapping("/admin/inquiry/questOk")
-	public String questOk(QuestVo qvo)
+	public String questOk(HttpServletRequest request, QuestVo qvo)
 	{
-		return service.questOk(qvo);
+		return service.questOk(request,qvo);
 	}
 }

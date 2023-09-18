@@ -55,9 +55,9 @@ public class MypageController {
 		return service.mtm();
 	}
 	@RequestMapping("/mypage/mtmOk")
-	public String mtmOk(MtmVo mvo,HttpSession session)
+	public String mtmOk(MtmVo mvo,HttpSession session,HttpServletRequest request)
 	{
-		return service.mtmOk(mvo,session);
+		return service.mtmOk(mvo,session,request);
 	}
 	@RequestMapping("/mypage/inquiry_content")
 	public String inquiry_content(Model model,HttpServletRequest request)
@@ -95,4 +95,20 @@ public class MypageController {
 		return service.myreserve(model,session);
 
 	}
+	@RequestMapping("/mypage/inquiryUpdateOk")
+	public String inquiryUpdateOk(MtmVo mvo)
+	{
+		return service.inquiryUpdateOk(mvo);
+	}
+	@RequestMapping("mypage/inquiry_all")
+	public String inquiry_all(Model model)
+	{
+		return service.inquiry_all(model);
+	}
+	@RequestMapping("mypage/inquiry_all_content")
+	public String inquiry_all_content(Model model,HttpServletRequest request)
+	{
+		return service.inquiry_all_content(model,request);
+	}
+	
 }

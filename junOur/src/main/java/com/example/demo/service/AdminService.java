@@ -28,5 +28,5 @@ public interface AdminService {
 	public boolean banMember(String userid);
 	public String list(Model model);
 	public String answer(HttpServletRequest request,Model model);
-	public String questOk(QuestVo qvo);
+	public String questOk(HttpServletRequest request,QuestVo qvo);
 }
