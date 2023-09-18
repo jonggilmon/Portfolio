@@ -66,6 +66,7 @@
 
  <select id="isjjim" resultType="boolean">
      select count(*) from jjim where no=#{no} and userid=#{userid}
-  </select>
+ </select>
+
 
 </mapper>

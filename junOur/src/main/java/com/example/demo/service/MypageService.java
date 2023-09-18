@@ -40,7 +40,11 @@ public interface MypageService {
 
 	public String myreserve(Model model,HttpSession session);
 
-	public String myjjim();
+	public String myjjim(HttpSession session, Model model);
+
+	public String jjimDel(HttpServletRequest request);
+
+	public String selectDel(HttpServletRequest request);
 
 
 }

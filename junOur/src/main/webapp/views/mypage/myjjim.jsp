@@ -10,7 +10,7 @@
 		background: #F2F5F7;
 	}
 	section{
-		width: 1100px;
+		width: 1200px;
 		height: 600px;
 		margin: 0 auto;
 	}
@@ -40,7 +40,7 @@
       background:#333;
       color:white;
       border:1px solid #333;
-      margin-left: 970px; 
+      margin-left: 1080px; 
     }
      section #btn2 {
       width:150px;
@@ -53,7 +53,8 @@
     }
 </style>
 <script>
-function mainClick(my, n) {
+function mainClick(my, n) 
+{
     var sub = document.getElementsByClassName("sub");
     var len = sub.length;
     var mainElements = document.getElementsByClassName("main");
@@ -87,6 +88,27 @@ function subClick()
 		main[0].checked=false;
 	}	
 }
+function selectDel()
+{
+	var sub=document.getElementsByClassName("sub");
+	var len=sub.length;
+	
+	var delsub="";   // 삭제할 찜의 no필드값을 ,로 구분하여 저장하는 변수
+	for(i=0;i<len;i++)
+	{
+		if(sub[i].checked)
+		{
+			delsub=delsub+sub[i].value+",";
+		}	
+	}	
+	
+	location="jjimDel?nos="+delsub;
+}
+
+function jjimDel(nos)
+{
+	location="jjimDel?nos="+nos; 
+}
 
 </script>
 </head>
@@ -99,18 +121,22 @@ function subClick()
           <td width="120"> <input type="checkbox" class="main" onclick="mainClick(this,1)"> 전체선택 </td>
   		   <td>종목</td>
   		   <td>날짜</td>
+  		   <td>인원</td>
   		   <td>시간</td>
   		   <td>장소</td>
   		</tr>
+  		<c:forEach items="${mapall}" var="map">
   		<tr>
   		   <td><input type="checkbox" class="sub" value="0" onclick="subClick()"></td>
-  		   <td>축구</td>
-  		   <td>23/09/18</td>
-  		   <td>10:00</td>
-  		   <td>고양 충장운동장</td>
+  		   <td>${map.jongmok_id}</td> <!-- 종목 -->
+  		   <td>${map.rsdate}</td> <!-- 날짜 -->
+  		   <td>${map.inwon}</td> <!-- 인원 -->
+  		   <td>${map.rstime}</td> <!-- 시간 -->
+   		   <td>${map.address}</td> <!-- 장소 -->
   		</tr>
+  		</c:forEach>
   		<tr>
-  		   <td colspan="5"><input type="button" id="btn" value="삭제" onclick=""></td>
+  		   <td colspan="6"><input type="button" id="btn" value="삭제" onclick="selectDel()"></td>
   		</tr>
   	</table>
   	<div align="center"><input type="button" id="btn2" value="메인으로" onclick="location='/main/main'"></div>
