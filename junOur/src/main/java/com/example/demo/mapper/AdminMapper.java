@@ -40,4 +40,7 @@ public interface AdminMapper {
 	public MtmVo answer(String no);
 	
 	public void questOk(QuestVo qvo);
+	
+	public void seqUp(QuestVo qvo);
+	
 }

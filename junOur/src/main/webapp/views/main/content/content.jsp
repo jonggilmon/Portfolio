@@ -8,123 +8,137 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
  <style>
-     section {
-       width: 1100px;
-       margin: auto;
-     }
-     
- section #first #mainimg {
-    text-align: center;
-}
+		body{
+			background: #F2F5F7;
+		}
 
-section #first #mainimg img {
-   
-    width: 1100px;
-    height: 400px;
-    margin: auto; 
-}
-    section #first #simg {
-      display: inline-block;
-      width: 1100px;
-      height: 300px;
-      border: 1px solid black;
-    }
+        ul {
+            list-style: none;
+        }
 
-    section #first #simg #zimg {
+        .wrap {
+        	margin: 0 auto;
+            display: flex;
+            background: #F2F5F7;
+            width:965px
+        }
 
-      float: right;
-      margin-top: 270px;
-    }
+        .content {
+        	
+            margin-right: 20px;
+        }
 
-    section #second{
-       display: flex;
-       margin-top: 1px;
-       justify-content: space-between;
-       width: 1100px;
-    }
+        /* 진행 */
+        .a {
+            width: 450px;
+            height: 500px;
+            background: #fff;
+            border-bottom: 20px solid #F2F5F7;
+        }
 
-    section #second #jin, section #second #jinhang {
-      width: 680px;
-      height: 500px;
-      border: 1px solid black;
-    }
+        /* 소개 */
+        .b {
+            width: 450px;
+            height: 500px;
+            background: #fff;
+            border-bottom: 20px solid #F2F5F7;
+            /* 간격 */
+        }
 
-    section #second #remenu {
-      position: relative;
-      width: 400px;
-      height: 500px;
-      border: 1px solid black;
-    }
+        /* 경기장 정보 */
+        .c {
+            width: 450px;
+            height: 250px;
+            background: #fff;
+            border-bottom: 20px solid #F2F5F7;
+            
+        
+        }
+        .cimg{
+        	margin-left: 80px;
+        }
 
-    section #second #remenu #reprice, section #second #remenu #title {
-      position: absolute;
-      width: 300px;
-      height: 120px;
-      border: 1px solid black;
-      margin-top: 70px;
-      text-align: center;
-      left: 40px;
-    }
+        /* 예약 하기 */
+        .d {
+            float: right;
+            width: 450px;
+            height: 350px;
+            background: #fff;
+            padding: 25px;
+        }
 
-    section #second #remenu #reday, section #second #remenu #rsdate {
-      width: 400px;
-      height: 80px;
-      border: 1px solid black;
-    }
+        .d > ul > li:first-child {
+            font-weight: bold;
+        }
 
-    section #second #remenu #jangso, section #second #remenu #inwon {
-      width: 400px;
-      height: 80px;
-      border: 1px solid black;
-    }
+        .d > ul > li:nth-child(2) {
+            font-size: 22px;
+            margin: 10px 0;
+        }
 
-    section #second #remenu #juso, section #second #remenu #address {
-      width: 400px;
-      height: 40px;
-      border: 1px solid black;
-    }
+        .d img {
+            width: 16px;
+        }
 
-    section #second #remenu #retime, section #second #remenu #rstime {
-      width: 400px;
-      height: 80px;
-      border: 1px solid black;
-    }
+        .address {
+        padding:0;
+            display: flex;
+        }
 
-    section #third {
-      display: flex;
-      width: 1100px;
-      margin-top: 1px;
-      justify-content: space-between;
-    }
+        .address li {
+        	
+            margin-right: 10px;
+        }
 
-    section #third #sogae{
-      width: 680px;
-      height: 600px;
-      border: 1px solid black;
-    }
 
-    section #third #rebtn {
-      width: 400px;
-      height: 150px;
-      border: 1px solid black;
-    }
+        .data {
+        padding:0;
+            display: flex;
+            margin: 10px 0;
+        }
 
-    section #third #qna {
-      width: 100px;
-      height: 100px;
-      border: 1px solid black;
-      margin-top: 400px;
-      float: right;
-    }
+        .data li {
+            margin-right: 20px;
+        }
+
+        .price {
+            border-top: 1px solid #000;
+            margin: 20px 0;
+            padding-top: 20px;
+        }
+
+        .price li:first-child {
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .price li:last-child {
+            font-size: 12px;
+            color: rgb(255, 77, 55);
+            margin-top: 20px;
+        }
+        
+        .btn2 {
+            width: 100px;
+            height: 50px;
+            line-height: 50px;
+            border-radius: 10px;
+            background: #1570FF;
+            color: #fff;
+            text-align: center;
+            float: right;
+            margin-top: 30px;
+        }
+ 
+
      /* 여기서부터 레이어 */
   #modal{
     width:100%;
-    height:100%;
+    height:2020px;
     position:absolute;
     left:0;
     top:0;
     background:rgba(0,0,0,0.5); 
-    z-index:1; 
+    z-index:11; 
     display:none; 
 }
 #modal.active{
@@ -134,9 +148,11 @@ section #first #mainimg img {
    width:450px;
    height:350px;
    position:fixed;
-   left:40%; 
-   top:35%; 
+   left:50%; 
+    transform: translateX(-50%);
+   top:25%; 
    background-color:#ffffff;
+   z-index:10;
 }
 .uptitle{
    margin-top:30px;
@@ -160,62 +176,8 @@ section #first #mainimg img {
    font-weight:bold;
    background:#cccccc;
    position:absolute; 
-   right:10px;
+   left:10px;
    bottom:10px;
-}
-.ab{
-   margin-left : 130px;
-   height:20px;
-   line-height: 20px;
-   position: absolute;
-   bottom:10px;
-}
-  /* 여기서부터 레이어 */
-  #modal{
-    width:100%;
-    height:100%;
-    position:absolute;
-    left:0;
-    top:0;
-    background:rgba(0,0,0,0.5); 
-    z-index:1; 
-    display:none; 
-}
-#modal.active{
-    display:block;
-}
-.modal_up{   /*레이어 팝업창 스타일*/
-	width:450px;
-	height:350px;
-	position:fixed;
-	left:40%; 
-	top:35%; 
-	background-color:#ffffff;
-}
-.uptitle{
-	margin-top:30px;
-	text-align:center; 
-	line-height:16px; 
-	font-size:20px; 
-	font-weight:bold;
-}
-.upbody{
-	padding:30px;
-	text-align:center;
-	font-size:16px;
-	line-height:30px; 
-}
-.btn{
-	width:80px;
-	height:20px;
-	display:block;
-	text-align:center;
-	font-size:15px;
-	font-weight:bold;
-	background:#cccccc;
-	position:absolute; 
-	left:10px;
-	bottom:10px;
 }
 .btndong{
 	width:80px;
@@ -230,52 +192,70 @@ section #first #mainimg img {
 	bottom:10px;
 }
 .ab{
-	margin-left : 130px;
-	height:20px;
-	line-height: 20px;
-	position: absolute;
-	bottom:10px;
+   margin-left : 130px;
+   height:20px;
+   line-height: 20px;
+   position: absolute;
+   bottom:10px;
+}
+#mainimg {
+	width: 965px;
+	height: 300px;
+    margin:20px auto; 
+}
+
+#mainimg img {
+    width: 965px;
+    height: 300px;
+
+    
 }
 
   </style>
 </head>
 <body>
-<section>
-  <div id="first">
-    <form method="post" action="zoomimg"> 
-     <div id="mainimg">
-       <img src="/static/photos/${contentDetail.img}" alt="Image">
-       <div id="zimg">
-         <input type="submit" value="전체 보기"> 
-       </div>  
-     </div>  
-    </form> 
-  </div> 
-  
-  <div id="second">
-     <div id="jinhang">
-       ${contentDetail.jinhang}
-     </div>  
-     
-     <div id="remenu">  
-       <div id="rsdate">${contentDetail.rsdate}</div>
-       <div id="inwon">${contentDetail.inwon}</div>
-       <div id="address">${contentDetail.address}</div>
-       <div id="rstime">${contentDetail.rstime}</div>
-       <div id="title">${contentDetail.title}</div> 
-     </div>  
- </div> 
- 
- <div id="third">
-   <div id="sogae">
-     ${contentDetail.sogae}
-   </div> 
-   
-   <div id="rebtn">
-  
-     
-     <input type="button" value="신청하기" id="btn2">
-    <div id="modal"> <!— 레이어 팝업창 영역 —>
+	<div id="mainimg">
+       <img src="/static/main/${contentDetail.img}" alt="Image">
+    </div>
+  <div class="wrap">
+  	
+        <div class="content">
+            <div class="a">${contentDetail.jinhang}</div>
+            <div class="b">${contentDetail.sogae}</div>
+            <div class="c">
+            <div  align="center"><h2>정보</h2></div>
+            	<span class="cimg"><img src="/static/content/car.png" width="40" height="40" valign="middle"> 무료주차	 &nbsp; &nbsp; &nbsp; <img src="/static/content/gender.png" width="40" height="40" valign="middle" style="margin-bottom: 40px"> 성별무관 <p></span>
+            	<span class="cimg"><img src="/static/content/inwon.png" width="40" height="40" valign="middle"> ${contentDetail.inwon} 명  &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;<img src="/static/content/toil.png" width="40" height="40" valign="middle"> 남/녀 화장실	<p></span>
+            	<span class="cimg"></span>
+            </div>
+        </div><!--content-->
+        <div class="d">
+            <ul>
+                <li>${contentDetail.rsdate} ${contentDetail.rstime}</li>
+                <li>${contentDetail.title}</li>
+                <li>
+                    <ul class="address">
+                        <li>${contentDetail.address}</li>
+                    </ul>
+                </li>
+                <li>
+                    <ul class="data">
+                        <li><img src="img/ic_viewer.svg" alt="ic_viewer"></li>
+                    </ul>
+                </li>
+                <li>
+                    <ul class="price">
+                     
+                        
+                    </ul>
+                </li>
+                
+                <li class="btn2">신청하기</li>
+            </ul>
+        </div>
+    </div><!--wrap -->
+
+    <div id="modal"> <!-- <!— 레이어 팝업창 영역 —> -->
   	<div class="modal_up">
     <div class="uptitle">※신청하기 전 주의사항※</div>
     <div class="upbody">
@@ -293,7 +273,7 @@ section #first #mainimg img {
  
   <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
 <script>
-$("#btn2").click(function(
+$(".btn2").click(function(
   ){
 	$("#modal").addClass("active");
   });
@@ -315,9 +295,7 @@ $("#btn2").click(function(
      <div id="qna">
 
      </div>
-   </div> 
- </div>
- </section>
+
 </body>
 </html>
 <%@ include file="../top_bottom/footer.jsp" %>

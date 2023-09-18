@@ -28,6 +28,8 @@ public interface MypageMapper {
 	
 	public void mtmOk(MtmVo mvo);
 	
+	public void mtmOk2(MtmVo mvo);
+	
 	public MtmVo inquiry_content(String no);
 	
 	public ArrayList<MtmVo> inquiry_list(String userid);
@@ -41,8 +43,11 @@ public interface MypageMapper {
 
 	public ArrayList<ReserveInfoVo> myreserve(String userid);
 
+	public void inquiryUpdateOk(MtmVo mvo);
 	
-
-
-
+	public ArrayList<MtmVo> inquiry_all();
+	
+	public MtmVo inquiry_all_content(String no);
+	
+	public void hideUp(MtmVo mvo);
 }

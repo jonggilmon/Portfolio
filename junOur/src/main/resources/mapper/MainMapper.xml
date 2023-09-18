@@ -9,6 +9,6 @@
    </select>
    
    <select id="glist" resultType="com.example.demo.vo.GongjiVo">
-	  select * from gongji
+	  select * from gongji order by writeday desc limit 3
 	</select>
 </mapper>

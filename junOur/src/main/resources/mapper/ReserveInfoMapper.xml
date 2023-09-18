@@ -4,8 +4,8 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.example.demo.mapper.ReserveInfoMapper">
     <insert id="insertReserveInfo" parameterType="com.example.demo.vo.ReserveInfoVo">
-        INSERT INTO reserve_info(reserve_id, reserve_no, user_id, user_name, reserve_date)
-        VALUES (#{reserve_id}, #{reserve_no}, #{user_id}, #{user_name}, #{reserve_date})
+        INSERT INTO reserve_info(reserve_id, reserve_no, user_id, user_name, reserve_date, rs_date, title_info, add_ress, rs_time)
+        VALUES (#{reserve_id}, #{reserve_no}, #{user_id}, #{user_name}, #{reserve_date}, #{rs_date}, #{title_info}, #{add_ress}, #{rs_time})
     </insert>
     <select id="getReserveById" resultType="com.example.demo.vo.ReserveInfoVo">
         SELECT * FROM reserve_info WHERE reserve_id = #{reserve_id}

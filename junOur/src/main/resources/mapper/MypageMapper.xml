@@ -31,6 +31,11 @@
     values (#{title},#{content},#{answer},#{userid},now())
   </insert>
   
+  <insert id="mtmOk2" parameterType="com.example.demo.vo.MtmVo">
+  	    insert into mtm(title,content,answer,userid,writeday,hide)
+    values (#{title},#{content},#{answer},#{userid},now(),1)
+  </insert>
+  
   <select id="inquiry_content" resultType="com.example.demo.vo.MtmVo">
   	 select * from mtm where no=#{no}
   </select>
@@ -55,5 +60,19 @@
   	select * from reserve_info where user_id=#{userid} order by reserve_date asc
   </select>
   
-
+  <update id="inquiryUpdateOk" parameterType="com.example.demo.vo.MtmVo">
+  	update mtm set title=#{title},content=#{content} where no=#{no}
+  </update>
+  
+  <select id="inquiry_all" resultType="com.example.demo.vo.MtmVo">
+		select * from mtm order by writeday asc
+  </select>
+  
+  <select id="inquiry_all_content" resultType="com.example.demo.vo.MtmVo">
+  	 select * from mtm where no=#{no}
+  </select>
+  
+  <update id="hideUp" parameterType="com.example.demo.vo.MtmVo">
+  	 update mtm set hide=hide+1 where no=#{no}
+  </update>
   </mapper>
