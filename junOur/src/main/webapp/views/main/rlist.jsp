@@ -222,6 +222,7 @@ function updateTableWithData(data) {
     if (Array.isArray(data)) {
         var table = document.getElementById('aa');
         table.innerHTML = ''; 
+        const today = new Date();
         data.forEach(item => {
             var row = table.insertRow();
             row.insertCell(0).innerText = item.rsdate;
@@ -230,9 +231,19 @@ function updateTableWithData(data) {
             row.insertCell(3).innerText = item.inwon;
             row.insertCell(4).innerText = item.readnum;
             
-            
+            const rsDate = new Date(item.rsdate); // 아이템의 날짜를 Date 객체로 변환
+
             const btnCell = row.insertCell(5);
-            if (item.currentCount < item.inwon) {
+            
+            // 기간 만료 판단
+            if (rsDate < today) {
+                const expiredBtn = document.createElement("a");
+                expiredBtn.classList.add("myButton");
+                expiredBtn.style.opacity = "0.5";
+                expiredBtn.style.pointerEvents = "none";
+                expiredBtn.innerText = "기간 만료";
+                btnCell.appendChild(expiredBtn);
+            } else if (item.currentCount < item.inwon) {
                 const btnLink = document.createElement("a");
                 btnLink.href = "/main/content/content?no=" + item.no;
                 btnLink.classList.add("myButton");
@@ -251,6 +262,7 @@ function updateTableWithData(data) {
         console.error('The response data is not an array:', data);
     }
 }
+
 </script>
 
 

@@ -31,7 +31,7 @@
   <div id="section">  
     <form method="post" action="freeadd_ok">
 	  <div> 제목 <input type="text" name="title"> </div>
-	  <div> 이름 <input type="text" name="userid" value="admin123"> </div>
+	  <div> 이름 <input type="text" name="userid"> </div>
 	  <div> 내용 <textarea name="content"> </textarea> </div>
 	  <div> <input type="submit" value="글 등록"> </div>
     </form>
