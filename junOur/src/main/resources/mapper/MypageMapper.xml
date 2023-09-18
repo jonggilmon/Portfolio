@@ -55,5 +55,8 @@
   	select * from reserve_info where user_id=#{userid} order by reserve_date asc
   </select>
   
+ 
+  
+  
 
   </mapper>

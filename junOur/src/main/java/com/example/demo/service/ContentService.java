@@ -3,6 +3,9 @@ package com.example.demo.service;
 
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
 import org.springframework.ui.Model;
 
 import com.example.demo.vo.ContentVo;
@@ -32,6 +35,12 @@ public interface ContentService {
 
 
 	public void increaseReadNum(int no);
+
+
+	public String addjjim(HttpServletRequest request, HttpSession session);
+
+
+	public String deljjim(HttpServletRequest request, HttpSession session);
 
 	
 

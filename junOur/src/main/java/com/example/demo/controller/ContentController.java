@@ -17,11 +17,13 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.sql.Date;
 import java.util.List;
 import java.util.Random;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 
@@ -40,6 +42,9 @@ public class ContentController {
 	 
 	 @Autowired
 	    private ReserveInfoMapper reserveInfoMapper;
+	 
+	 @Autowired
+	    private ContentMapper mapper;
 
 	 @GetMapping("/main/content/content")
 	 public String view(@RequestParam("no") int no, Model model, HttpSession session) {
@@ -50,6 +55,20 @@ public class ContentController {
 	     session.setAttribute("no", no);
 	     System.out.println(contentDetail);
 	     model.addAttribute("contentDetail", contentDetail);
+	     
+	  
+	     String userid="";
+			if(session.getAttribute("userid")!=null)
+			   userid=session.getAttribute("userid").toString();
+			
+			if(mapper.isjjim(no,userid)) // 사용자가 이상품을 찜 했다
+			{
+				model.addAttribute("img","full.png");
+			}
+			else   // 찜을 안했다
+			{
+				model.addAttribute("img","empty.png");
+			}
 
 	     return "/main/content/content"; 
 	 }
@@ -173,6 +192,19 @@ public class ContentController {
 	         return "main/content/pwdAgree";
 	     }
 	 }
+	 @RequestMapping("/main/content/addjjim")
+		public @ResponseBody String addjjim(HttpServletRequest request
+				,HttpSession session)
+		{
+			return service.addjjim(request,session);
+		}
+		
+		@RequestMapping("/main/content/deljjim")
+		public @ResponseBody String deljjim(HttpServletRequest request
+				,HttpSession session)
+		{
+			return service.deljjim(request,session);
+		}
 	 
 	 
 	 

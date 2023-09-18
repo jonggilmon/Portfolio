@@ -27,6 +27,12 @@ public interface ContentMapper {
 
 	public List<ContentVo> findReservesByRsDateAndJongmokId(String rsdate, String jongmok_id);
 
+	public void addjjim(String no, String userid);
+
+	public void deljjim(String no, String userid);
+
+	public boolean isjjim(int no, String userid);
+
 
 	
 
