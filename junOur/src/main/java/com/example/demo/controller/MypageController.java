@@ -95,4 +95,9 @@ public class MypageController {
 		return service.myreserve(model,session);
 
 	}
+	@RequestMapping("/mypage/myjjim")
+	public String myjjim()
+	{
+		return service.myjjim();
+	}
 }

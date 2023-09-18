@@ -135,6 +135,12 @@ public class MypageSerivceImpl implements MypageService{
 		return "/mypage/myreserve";
 
 	}
+
+	@Override
+	public String myjjim() {
+		
+		return "/mypage/myjjim";
+	}
 }
 
 

@@ -240,7 +240,7 @@
                 </li>
                 <li>
                     <ul class="data">
-                        <li><img src="img/ic_viewer.svg" alt="ic_viewer"></li>
+                        <li><img src="/static/product/${img}" id="jjim"  onclick="addjjim(this.src)" valign="middle"></li>
                     </ul>
                 </li>
                 <li>

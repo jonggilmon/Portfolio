@@ -65,7 +65,7 @@ body {
 
 .submenu {
 	width: 115px;
-	height: 120px;
+	height: 160px;
 	background: black;
 	display:none; 
 	padding: 0; /* ^^ val 이거 안주면 서브메뉴에 이상한 공간 생김 개빡가네 */
@@ -105,6 +105,7 @@ body {
 								<li><a href="/mypage/myinfo">내 정보</a></li>
 								<li><a href="/mypage/myreserve">예약내역</a></li>
 								<li><a href="#">1:1 문의하기</a></li>
+								<li><a href="/mypage/myjjim">찜 확인</a></li>
 							</ul>
 						</li>
 
