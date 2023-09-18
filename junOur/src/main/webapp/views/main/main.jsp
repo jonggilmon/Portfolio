@@ -31,29 +31,42 @@
     align-items: center;
     min-height: 100vh;
     background-color: #f4f4f4;
+     overflow: hidden;
+  
  
+}
+#myVideo {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -1; /* 다른 내용 위에 영상이 나타나지 않도록 */
 }
 
 .sports-slider-wrapper  {
    text-align:center;
+   
 }
 
 
 
       
 .sports-grid {
- 
-    width: 100%;         /* 가로 크기를 최대로 */
+    
+    width: 100%;         
     box-sizing: border-box;
      display: inline-block;
     grid-template-columns: repeat(12, 1fr);
     grid-gap: 10px;
     margin: 0 auto;
    
+   
 }
 
 .sport-item {
-    background-color: #fff;
+
+    background-color: transparent;
     padding: 20px;
     text-align: center;
     border: 1px solid #ccc;
@@ -61,6 +74,7 @@
     transition: transform 0.2s ease-in-out;
      position: relative;
      z-index: -1;
+     
     
     
     
@@ -100,19 +114,9 @@
     /* 기본 배경색은 흰색 */
     transition: background-color 0.5s ease-in-out; /* 배경색이 부드럽게 변하도록 설정 */
     overflow: hidden;
+    
 }
-.sport-item.special-effect::before {
-    content: "";
-    position: absolute;
-    bottom: 0; 
-    left: 0;
-    width: 100%;
-    height: 100%; /* 처음에는 높이를 0%로 설정하여 보이지 않게 합니다 */
-    background-color: #D6F0FF; 
-    z-index: -1; 
-     animation: waveEffect 0.5s forwards;
-    animation-play-state: running; 
-}
+
 
 .sport-item.special-effect a::before {
      
@@ -134,12 +138,14 @@
     z-index: -1;
     /* 입체감을 높이기 위한 그림자 추가 */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+ 
 }
 
 
 .sport-item.special-effect:hover a::before {
     opacity: 0.7;
     background-size: 100% 100%; /* 호버 시 100% 높이로 채우기 */
+  
     
 }
 
@@ -210,6 +216,8 @@
         max-width: 800px;
         margin: 0 auto;
         padding: 20px;
+        
+        
     }
 
     .photo-item {
@@ -260,6 +268,7 @@
                 2px -2px 0px #000,   /* right, up */
                 -2px 2px 0px #000;  /* 글씨에 테두리 효과를 줍니다 */
                  white-space: nowrap;
+                
 }
 
 
@@ -297,9 +306,11 @@
     background: radial-gradient(circle, white, black);
     border-radius: 50%;  
     z-index: -2;
+    
 }
 .sport-item.special-effect.soccer:hover a::before {  
     background-size: 100% 100%; 
+  
 }
 
 
@@ -780,6 +791,10 @@
 <body>
    <%@ include file="top_bottom/header.jsp" %>
  
+ <video autoplay muted loop id="myVideo">
+        <source src="/static/content/soccer.mp4" type="video/mp4">
+       
+    </video>
 
 <div class="notice-weather">
          <div class="notice">

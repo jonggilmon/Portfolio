@@ -132,57 +132,73 @@
     justify-content: center;
     align-items: center;
     border:1px solid black;
-    height: 600px; /* 높이는 필요에 따라 조정 */
+    height: 440px;
+    background-color: transparent !important;
+   
 }
 
 .pika-single {
     position: relative !important;
     top: 0 !important;
     left: 0 !important;
-    margin: auto !important;
-      width: 550px !important;  /* 달력의 너비 조정 */
-    height: 480px !important; /* 달력의 높이 조정 */
-     font-size: 1.5em; 
+    margin-left: auto !important; /* 여기서 추가 */
+    margin-right: 0 !important; /* 여기서 추가 */
+    width: 480px !important;  /* 달력의 너비 조정 */
+    height: 400px !important; /* 달력의 높이 조정 */
+    font-size: 1.4em;
+    margin-bottom: 0 !important; 
+    border: none !important;
+    background-color: transparent !important;
+   
 }
+.pika-single .pika-lendar {
+    padding-top: 2em;  /* 여기서 년, 월, 버튼의 높이를 위한 여백을 추가합니다 */
+}
+
 .pika-single th, .pika-single td {
-    padding: 20px !important;
-    font-size: 1.5em !important;  /* 글자 크기 조정 */
+    padding: 11px !important;
+    font-size: 1.05em !important;
+    
+   
 }
 
 .pika-single th {
-    font-size: 1.8em;  /* 헤더 글자 크기 조정 */
-}
-
-.pika-single td.pika-today:before {
-    top: 15px;
-    left: 15px;
-    width: 5px;
-    height: 5px;
-}
-
-.pika-single td.is-today {
-    font-weight: bold;  /* 오늘 날짜를 두껍게 */
-}
-
-.pika-single .pika-prev, .pika-single .pika-next {
-    font-size: 1.5em !important;  /* 이전, 다음 버튼 크기 조정 */
-    margin-top: 5px;
-}
-
-.pika-single .pika-select {
-    display: none;  /* 월/년 변경 드롭다운을 숨김 (선택적으로 사용) */
+    font-size: 1.26em;
 }
 
 .pika-single .pika-title {
-    font-size: 2em;  /* 제목 크기 조정 */
+ font-size: 1.5em;
+    position: absolute;
+    top: 0.8em;  /* 상단 여백을 약간 추가 */
+    left: 50%;
+    transform: translateX(-50%);
+    width: auto;
+    z-index: 5; /* 추가 */
 }
 
+.pika-single .pika-button {
+    width: 28px;    
+    height: 28px;   
+    line-height: 28px;  
+    font-size: 11.2px;
+}
 
 
 #calendar {
-    margin: 0 auto 20px; /* 아래쪽 마진을 추가 */
+    /* 아래쪽 마진을 추가 */
+    margin-bottom: 0;
+    opacity: 0;
 }
 
+#backgroundVideo {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -1; /* 영상이 항상 뒷면에 위치하도록 함 */
+    object-fit: cover; /* 비디오 비율 유지하며 화면에 꽉 차도록 함 */
+}
 
 </style>
  <!-- Pikaday and moment.js library -->
@@ -193,8 +209,11 @@
 <body>
 
 <div id="calendarContainer">
+ <video autoplay muted loop id="backgroundVideo">
+    <source src="/static/content/soccer.mp4" type="video/mp4">  
+</video>
     <input type="text" id="calendar">
-    
+   
 </div>
 <table width="1100" align="center" id="aa" border="0" border-collapse:collapse>
 <c:forEach items="${AllReserves}" var="subReserve">
@@ -219,7 +238,38 @@
 </c:forEach>
 </table>
 <script>
+function getVideoSourceByJongmokId(jongmokId) {
+    var videoBasePath = "/static/content/";
+    switch (parseInt(jongmokId)) {
+        case 1: return videoBasePath + "soccer.mp4";
+        case 2: return videoBasePath + "basketball.mp4";
+        case 3: return videoBasePath + "video3.mp4";
+        case 4: return videoBasePath + "video3.mp4";
+        case 5: return videoBasePath + "video3.mp4";
+        case 6: return videoBasePath + "video3.mp4";
+        case 7: return videoBasePath + "video3.mp4";
+        case 8: return videoBasePath + "video3.mp4";
+        case 9: return videoBasePath + "video3.mp4";
+        case 10: return videoBasePath + "video3.mp4";
+        case 11: return videoBasePath + "video3.mp4";
+        case 12: return videoBasePath + "video12.mp4";
+        default: return videoBasePath + "default.mp4"; // fallback video if needed
+    }
+}
+
+
+var calendarContainer = document.getElementById('calendarContainer');
+calendarContainer.addEventListener('wheel', function(event) {
+    var scrollValue = event.deltaY;
+    calendarContainer.scrollLeft += scrollValue;
+    event.preventDefault();
+}, false);
+
+
 window.onload = function() {
+	
+
+	
 	 var currentDate = new Date();
     var calendar = new Pikaday({
         field: document.getElementById('calendar'),
@@ -245,6 +295,11 @@ window.onload = function() {
     });
     
     fetchDataForDate(moment(currentDate).format('YYYY-MM-DD')); // 페이지 로드 시 현재 날짜의 데이터를 가져옵니다.
+    
+    var videoElement = document.getElementById('backgroundVideo');
+    var sourceElement = videoElement.querySelector('source');
+    sourceElement.src = getVideoSourceByJongmokId('<%= jongmok_id %>');
+    videoElement.load();
 };
 
 function fetchDataForDate(date) {
