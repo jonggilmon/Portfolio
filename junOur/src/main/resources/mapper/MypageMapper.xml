@@ -26,16 +26,21 @@
   </update>
   
 
-  <insert id="mtmOk" parameterType="com.example.demo.vo.MtmVo">
-  	    insert into mtm(title,content,answer,userid,writeday)
-    values (#{title},#{content},#{answer},#{userid},now())
-  </insert>
-  
-  <insert id="mtmOk2" parameterType="com.example.demo.vo.MtmVo">
-  	    insert into mtm(title,content,answer,userid,writeday,hide)
-    values (#{title},#{content},#{answer},#{userid},now(),1)
-  </insert>
-  
+  <!-- 수정된 mtmOk 쿼리 -->
+<insert id="mtmOk" parameterType="com.example.demo.vo.MtmVo">
+    <selectKey keyProperty="no" order="AFTER" resultType="int">
+        SELECT LAST_INSERT_ID() AS no
+    </selectKey>
+    insert into mtm(title, content,  userid, writeday)
+    values (#{title}, #{content}, #{userid}, now())
+</insert>
+ <insert id="mtmOk2" parameterType="com.example.demo.vo.MtmVo">
+    <selectKey keyProperty="no" order="AFTER" resultType="int">
+        SELECT LAST_INSERT_ID() AS no
+    </selectKey>
+    insert into mtm(title, content,  userid, writeday, hide)
+    values (#{title}, #{content}, #{userid}, now(), 1)
+</insert>
   <select id="inquiry_content" resultType="com.example.demo.vo.MtmVo">
   	 select * from mtm where no=#{no}
   </select>

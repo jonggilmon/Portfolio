@@ -44,7 +44,7 @@
        <ul class="nav-links">
             <li><a href="/admin/member/memberView">회원관리</a></li>
             <li><a href="/admin/gongji/gongji_list">공지사항</a></li>
-            <li><a href="/admin/##">날씨정보</a></li>
+            <li><a href="/admin/inquiry/list">문의사항</a></li>
             <li><a href="/admin/action/action_list">활동사진</a></li>
             <li><a href="/admin/free/free_list">자유게시판</a></li>
             <li><a href="/admin/content/contentadd">일정관리</a></li>

@@ -92,7 +92,7 @@ body {
 			<c:if test="${userid==null}">
 				<li><a href="/member/login">로그인</a></li>
 				<li><a href="/member/member">회원가입</a></li>
-				<li>문의사항</li>
+				<li><a href="/mypage/inquiry_all">문의사항</a></li>
 			</c:if>
 			<c:if test="${userid!=null}">
 				<c:choose>
@@ -101,14 +101,14 @@ body {
 					</c:when>
 					<c:otherwise>
 
-						<li><a href="../mypage/inquiry_select">문의사항</a></li>
+						<li><a href="../mypage/inquiry_all">문의사항</a></li>
 
 
 						<li><a href="#">마이페이지</a>
 							<ul class="submenu">
 								<li><a href="/mypage/myinfo">내 정보</a></li>
 								<li><a href="/mypage/myreserve">예약내역</a></li>
-								<li><a href="#">1:1 문의하기</a></li>
+								<li><a href="/mypage/inquiry_select">1:1 문의하기</a></li>
 							</ul>
 						</li>
 
