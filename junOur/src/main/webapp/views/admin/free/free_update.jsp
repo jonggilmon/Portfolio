@@ -30,7 +30,7 @@
   <div id="section">
     <form method="post" action="free_update_ok">
       <input type="hidden" name="no" value="${fvo.no}">
-      <h2> 후기글 </h2>
+      <h2> 자유게시판 </h2>
       <div class="msg"> <input type="text" value="${fvo.userid}" name="userid" placeholder="아이디"> </div>  
       <div class="msg"> <input type="text" value="${fvo.title}" name="title" placeholder="제 목"> </div>  
       <div class="msg"> <textarea name="content" placeholder="내용을 입력하세요">${fvo.content}</textarea> </div>

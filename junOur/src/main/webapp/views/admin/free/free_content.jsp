@@ -6,13 +6,34 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-
-<script>
-function showDeleteButton() {
-  var deleteRow = document.getElementById("del");
-  deleteRow.style.display = "table-row"; // 버튼을 보이게 설정
-}
-</script>
+  <style>
+    #del {
+      display:none;
+    }
+    #section table {
+      border-spacing:0px;
+    }
+    #section table tr:first-child td {
+      border-top:2px solid #999999;
+    }
+    #section table tr:last-child td {
+      border-bottom:2px solid #999999;
+    }
+    #section table td {
+      height:30px;
+      border-bottom:1px solid #cccccc;
+    }
+    #section a {
+      text-decoration:none;
+      color:black;
+    }
+  </style>
+  <script>
+    function showDeleteButton() {
+    var deleteRow = document.getElementById("del");
+    deleteRow.style.display = "table-row"; // 버튼을 보이게 설정
+    }
+  </script>
 
 </head>
 <body>
