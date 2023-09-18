@@ -38,6 +38,8 @@
    text-align:center;
 }
 
+
+
       
 .sports-grid {
  
@@ -47,7 +49,7 @@
     grid-template-columns: repeat(12, 1fr);
     grid-gap: 10px;
     margin: 0 auto;
-    padding:40px;
+   
 }
 
 .sport-item {
@@ -154,27 +156,31 @@
  .notice-weather {
         display: flex;
         justify-content: space-between;
-        max-width: 800px;
+        width:100%;
         margin: 0 auto;
         padding: 20px;
     }
 
     .notice {
        
-        background-color: #fff;
-        padding: 10px;
-        border: 1px solid #ccc;
-        flex: 2;
-        margin-right: 10px;
-    }
-
-    .weather {
-        background-color: #fff;
+        font-size:20px;
+        background-color: #eeeeee;
         padding: 10px;
         border: 1px solid #ccc;
         flex: 1;
-        margin-left: 10px;
-        height:100px;
+        margin-right: 300px;
+        height:120px;
+     
+    }
+
+    .weather {
+        background-color: #eeeeee;
+        padding: 10px;
+        border: 1px solid #ccc;
+        flex: 1;
+        margin-left: 300px;
+        height:120px;
+      
     }
 
    .hugi {
@@ -245,7 +251,7 @@
     transform: translateX(-50%);
     opacity: 0;     /* 처음에는 투명하게 설정 */
     transition: opacity 0.5s ease-in-out;   /* 부드럽게 나타나게 하기 위한 트랜지션 */
-    font-size: 45px; /* 글자 크기 조절 */
+    font-size: 38px; /* 글자 크기 조절 */
     font-weight: bold; /* 글씨를 굵게 만듭니다 */
     z-index: 1;     
     color: white; /* 글씨 색을 흰색으로 변경합니다 */
@@ -253,6 +259,7 @@
                 -2px -2px 0px #000,  /* left, up */
                 2px -2px 0px #000,   /* right, up */
                 -2px 2px 0px #000;  /* 글씨에 테두리 효과를 줍니다 */
+                 white-space: nowrap;
 }
 
 
@@ -269,7 +276,7 @@
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    background: radial-gradient(circle, white, black);
+    background: radial-gradient(circle, white, #A2A2A2);
     background-size: 100% 0%;
     background-repeat: no-repeat;
     background-position: bottom;
@@ -287,7 +294,7 @@
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    background: radial-gradient(circle, white, #A2A2A2);
+    background: radial-gradient(circle, white, black);
     border-radius: 50%;  
     z-index: -2;
 }
@@ -312,7 +319,7 @@
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-     background: radial-gradient(circle, #F29661, #983C07);
+     background: radial-gradient(circle, #FFA873, #983C07);
     background-size: 100% 0%;
     background-repeat: no-repeat;
     background-position: bottom;
@@ -330,7 +337,7 @@
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    background: radial-gradient(circle, white, #A2A2A2);
+    background: radial-gradient(circle, #C2784E, #702802);
     border-radius: 50%;  
     z-index: -2;
 }
@@ -373,7 +380,7 @@
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    background: radial-gradient(circle, white, #A2A2A2);
+    background: radial-gradient(circle,  #A1A1A1, #6B6B6B);
     border-radius: 50%;  
     z-index: -2;
 }
@@ -397,7 +404,7 @@
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-     background: radial-gradient(circle, red, white);
+     background: radial-gradient(circle, #C5C5C5, #FBFBFB);
     background-size: 100% 0%;
     background-repeat: no-repeat;
     background-position: bottom;
@@ -415,7 +422,7 @@
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    background: radial-gradient(circle, white, #A2A2A2);
+    background: radial-gradient(circle,  white, black);
     border-radius: 50%;  
     z-index: -2;
 }
@@ -458,7 +465,7 @@
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    background: radial-gradient(circle, white, #A2A2A2);
+    background: radial-gradient(circle, white, #474747);
     border-radius: 50%;  
     z-index: -2;
 }
@@ -483,10 +490,10 @@
     position: absolute;
     width: 92%;
     height: 92%;
-    left: 50%;
+    left: 50%;    
     top: 50%;
     transform: translate(-50%, -50%);
-     background: radial-gradient(circle, white, black);
+     background: radial-gradient(circle, #B95AFF, #0500A5);
     background-size: 100% 0%;
     background-repeat: no-repeat;
     background-position: bottom;
@@ -505,13 +512,60 @@
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    background: radial-gradient(circle, white, #A2A2A2);
+    background: radial-gradient(circle, #5F00FF, #00006F);
     border-radius: 50%;  
     z-index: -2;
 }
 .sport-item.special-effect.bowling:hover a::before {
     background-size: 100% 100%; 
 }
+
+
+
+
+
+
+.sport-item.special-effect.golf::before {
+            background-color:  #D6F0FF;      
+            z-index:-3; 
+        }      
+  .sport-item.special-effect.golf a::before {
+     content: "";
+    position: absolute;  
+    width: 94%;
+    height: 94%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background: radial-gradient(circle at 30% 30%, #FFFFFF, #F0E1C0 70%, #FAED7D);
+    background-size: 100% 0%;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    opacity: 1;
+    transition: opacity 0.5s, background-size 0.5s ease-in-out;
+    border-radius: 50%;  
+    z-index: -1;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8); 
+}
+.sport-item.special-effect.golf a::after {   
+    content: "";
+    position: absolute;
+    width: 94%;
+    height: 94%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background: radial-gradient(circle at 30% 30%, #F3F3F3, #D0D0D0 70%, #BEBEBE);
+    border-radius: 50%;  
+    z-index: -2;
+}
+.sport-item.special-effect.golf:hover a::before {
+   opacity: 1;
+    background-size: 100% 100%; 
+}
+
+
+
 
 
 
@@ -524,12 +578,12 @@
   .sport-item.special-effect.tennis a::before {
      content: "";
     position: absolute;
-    width: 92%;
-    height: 92%;
+    width: 93%;
+    height: 93%;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-     background: radial-gradient(circle, #E8DB6B, #FAED7D);
+     background: radial-gradient(circle, #CFFF24, #FAED7D);
     background-size: 100% 0%;
     background-repeat: no-repeat;
     background-position: bottom;
@@ -542,12 +596,12 @@
 .sport-item.special-effect.tennis a::after {   
     content: "";
     position: absolute;
-    width: 90%;
-    height: 90%;
+    width: 93%;
+    height: 93%;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    background: radial-gradient(circle, white, #A2A2A2);
+    background: radial-gradient(circle, #D9C582, #FAED7D);
     border-radius: 50%;  
     z-index: -2;
 }
@@ -555,6 +609,163 @@
    opacity: 1;
     background-size: 100% 100%; 
 }
+
+
+
+.sport-item.special-effect.swim::before {
+            background-color:  #D6F0FF;      
+            z-index:-3; 
+        }      
+  .sport-item.special-effect.swim a::before {
+     content: "";
+    position: absolute;
+    width: 93%;    
+    height: 93%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+     background: radial-gradient(circle, #5587ED, #001B81);
+   
+    background-size: 100% 30%;
+    background-repeat: no-repeat;
+    background-position:center bottom;
+    opacity: 1;
+    transition: opacity 0.5s, background-size 0.5s ease-in-out;
+    border-radius: 50%;  
+    z-index: -1;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8); 
+}
+.sport-item.special-effect.swim a::after {   
+    content: "";
+    position: absolute;
+    width: 93%;
+    height: 93%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background: radial-gradient(circle, white, #C6C6C6);
+    border-radius: 50%;  
+    z-index: -2;
+}
+.sport-item.special-effect.swim:hover a::before {
+   opacity: 1;
+    background-size: 100% 100%; 
+}
+
+
+
+
+
+.sport-item.special-effect.badmin::before {
+    background-color:  #D6F0FF;      
+    z-index:-3; 
+}      
+.sport-item.special-effect.badmin a::before {
+    content: "";
+    position: absolute;
+    width: 0%;    
+    height: 0%;
+    left: 45%;     /* 중앙에서 시작하도록 조정 */
+    top: 55%;   /* 중앙에서 시작하도록 조정 */
+    background: linear-gradient(to top right, #E4F7BA, #E5FFFF);
+    opacity: 1;
+    transition: width 0.5s, height 0.5s ease-in-out;
+    z-index: -1;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8); 
+}
+.sport-item.special-effect.badmin a::after {   
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 45%;
+    top: 55%;
+    transform: translate(-50%, -50%);
+    background: radial-gradient(circle, white, #C6C6C6);
+    border-radius: 50%;  
+    z-index: -2;
+}
+.sport-item.special-effect.badmin:hover a::before {
+    width: 100%; 
+   height: 100%;
+}
+
+
+.sport-item.special-effect.tacgu::before {
+    background-color:  #D6F0FF;      
+    z-index:-3; 
+}      
+.sport-item.special-effect.tacgu a::before {
+    content: "";
+    position: absolute;
+    width: 0%;    
+    height: 0%;
+    left: 45%;     /* 중앙에서 시작하도록 조정 */
+    top: 55%;   /* 중앙에서 시작하도록 조정 */
+    background: linear-gradient(to top right, #E4F7BA, #FFC6C6);
+    opacity: 1;
+    transition: width 0.5s, height 0.5s ease-in-out;
+    z-index: -1;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8); 
+}
+.sport-item.special-effect.tacgu a::after {   
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 45%;
+    top: 55%;
+    transform: translate(-50%, -50%);
+    background: radial-gradient(circle, white, #C6C6C6);
+    border-radius: 50%;  
+    z-index: -2;
+}
+.sport-item.special-effect.tacgu:hover a::before {
+    width: 100%; 
+   height: 100%;
+}
+
+
+
+
+ .sport-item.special-effect.joggu::before {
+            background-color:  #D6F0FF; 
+            z-index: -3;      
+        }      
+  .sport-item.special-effect.joggu a::before {   
+     content: "";
+    position: absolute;
+    width: 82%;
+    height: 82%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background: radial-gradient(circle, white, #A2A2A2);
+    background-size: 100% 0%;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    opacity: 1;
+    transition: opacity 0.5s, background-size 0.5s ease-in-out;
+    border-radius: 50%;  
+    z-index: -1;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); 
+}
+.sport-item.special-effect.joggu a::after {   
+    content: "";
+    position: absolute;
+    width: 82%;
+    height: 82%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background: radial-gradient(circle, white, black);
+    border-radius: 50%;  
+    z-index: -2;
+}
+.sport-item.special-effect.joggu:hover a::before {  
+    background-size: 100% 100%; 
+}
+
 
 
   
@@ -573,15 +784,15 @@
 <div class="notice-weather">
          <div class="notice">
             <c:forEach items="${glist }" var="gvo">
-              <div>제목 : ${gvo.title } </div>
-              <div> 이름 : ${gvo.userid } </div>
-              <div> 조회수 : ${gvo.readnum }</div>
-              <div> 작성일 : ${gvo.writeday } </div>
+              <div>${gvo.title } || ${gvo.writeday }</div>                          
+              
               <hr>
             </c:forEach>
         </div>
         <div class="weather">
-           날씨 하지말까 ㅅㅂ
+       <a href="https://www.accuweather.com/ko/kr/seoul/226081/current-weather/226081" target="_blank" class="aw-widget-legal"></a>
+      <div id="awcc" class="aw-widget-current"  data-locationkey="226081" data-unit="c" data-language="ko-kr" data-useip="false" data-uid="awcc..."></div>
+       <script type="text/javascript" src="https://oap.accuweather.com/launch.js"></script>
         </div>
     </div>
 
@@ -591,24 +802,24 @@
         <div class="sport-item special-effect soccer">
             <a href="rlist?jongmok_id=1">
                 <img src="/static/photos/ball.png" alt="Soccer Ball" />
-                <span class="sport-label">Soccer</span>
+                <span class="sport-label">축구</span>
             </a>
         </div>
         <div class="sport-item special-effect basketball">
             <a href="rlist?jongmok_id=2">
                 <img src="/static/photos/ball2.png" alt="BasketBall" />
-                <span class="sport-label">Basketball</span>
+                <span class="sport-label">농구</span>
             </a>
         </div>
         <div class="sport-item special-effect volleyball">
             <a href="rlist?jongmok_id=3">
             <img src="/static/photos/ball3.png" alt="Volleyball" />
-          <span class="sport-label">Volleyball</span></a>
+          <span class="sport-label">배구</span></a>
         </div>     
         <div class="sport-item special-effect baseball">
             <a href="rlist?jongmok_id=4">
             <img src="/static/photos/ball4.png" alt="Baseball" />
-          <span class="sport-label">BaseBall</span></a>
+          <span class="sport-label">야구</span></a>
         </div> 
        <div class="sport-item special-effect dangu">
             <a href="rlist?jongmok_id=5">
@@ -618,36 +829,36 @@
         <div class="sport-item special-effect bowling">
             <a href="rlist?jongmok_id=6">
             <img src="/static/photos/ball6.png" alt="Bowling" />
-          <span class="sport-label">Bowling</span></a>
+          <span class="sport-label">볼링</span></a>
         </div>    
         <div class="sport-item special-effect golf">
             <a href="rlist?jongmok_id=7">
-            <img src="/static/photos/ball3.png" alt="Golf" />
+            <img src="/static/photos/ball7.png" alt="Golf" />
           <span class="sport-label">골프</span></a>
         </div>    
          <div class="sport-item special-effect tennis">
             <a href="rlist?jongmok_id=8">
             <img src="/static/photos/ball8.png" alt="Tennis" />
-          <span class="sport-label">Tennis</span></a>
+          <span class="sport-label">테니스</span></a>
         </div>   
         <div class="sport-item special-effect swim">
             <a href="rlist?jongmok_id=9">
-            <img src="/static/photos/ball3.png" alt="Swim" />
+            <img src="/static/photos/ball9.png" alt="Swim" />
           <span class="sport-label">수영</span></a>
         </div>
         <div class="sport-item special-effect badmin">
             <a href="rlist?jongmok_id=10">
-            <img src="/static/photos/ball3.png" alt="Badmin" />
+            <img src="/static/photos/ball10.png" alt="Badmin" />
           <span class="sport-label">배트민턴</span></a>
         </div>
         <div class="sport-item special-effect tacgu">
             <a href="rlist?jongmok_id=11">
-            <img src="/static/photos/ball3.png" alt="Tacgu" />
+            <img src="/static/photos/ball11.png" alt="Tacgu" />
           <span class="sport-label">탁구</span></a>
         </div>
-        <div class="sport-item special-effect guocgu">
+        <div class="sport-item special-effect joggu">
             <a href="rlist?jongmok_id=12">
-            <img src="/static/photos/ball3.png" alt="Guocgu" />
+            <img src="/static/photos/ball12.png" alt="Joggu" />
           <span class="sport-label">족구</span></a>
         </div>
     </div>

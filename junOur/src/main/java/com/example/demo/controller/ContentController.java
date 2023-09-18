@@ -150,6 +150,15 @@ public class ContentController {
 	         reserveInfo.setUser_name(member.getName());
 	         reserveInfo.setReserve_no(reserveNo); 
 	         reserveInfo.setReserve_date(new Date(System.currentTimeMillis()));
+	         
+	         ContentVo content = service.getContentByNo(reserveNo);
+	         if (content != null) {
+	             reserveInfo.setRs_date(content.getRsdate());
+	             reserveInfo.setTitle_info(content.getTitle());
+	             reserveInfo.setAdd_ress(content.getAddress());
+	             reserveInfo.setRs_time(content.getRstime());
+	         }
+
 
 	         // 8자리 랜덤 값 생성
 	         Random random = new Random();
