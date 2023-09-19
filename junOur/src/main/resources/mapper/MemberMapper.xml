@@ -16,18 +16,7 @@
     select name from member 
     where userid=#{userid} and pwd=#{pwd}
   </select>
-  
-  <update id="increasesido" parameterType="com.example.demo.vo.MemberVo">
-    <!-- 로그인 시도 횟수 증가 -->
-    update member set sido = sido + 1
-    where userid = #{userid}
-</update>
-
-<update id="resetsido" parameterType="com.example.demo.vo.MemberVo">
-    <!-- 로그인 시도 횟수 초기화 -->
-    update member set sido = 0
-    where userid = #{userid}
-</update>
+ 
   
     <select id="getMemberByUserId" resultType="com.example.demo.vo.MemberVo">
         SELECT * FROM member WHERE userid = #{userid}

@@ -50,50 +50,24 @@ public class MemberServiceImpl  implements MemberService{
 
 	@Override
 	public String loginOk(MemberVo mvo, HttpSession session) {
-	    int MaxLogin = 5;
-	    
-	    Integer sido = (Integer) session.getAttribute("sido");
-	    
-	    if (sido == null) 
-	    {
-	        sido = 0;
-	    }
-	    
-	    if (sido >= MaxLogin) 
-	    {
-	        return "redirect:/member/locked"; // 계정이 잠긴 경우 처리할 URL로 리다이렉트
-	    }
-	    
-	    String name = mapper.loginOk(mvo);
-	    
-	    if (name == null) 
-	    {
-	        sido++; // 로그인 시도 횟수 증가
-	        
-	        session.setAttribute("sido", sido); // 세션에 업데이트된 로그인 시도 횟수 저장
-	        
-	        mapper.increasesido(mvo); // 로그인 시도 횟수 증가 메서드 호출
-	        
-	        return "redirect:/member/login?chk=1";
-	    }
-	    else 
-	    {
-	        session.setAttribute("userid", mvo.getUserid());
-	        session.setAttribute("name", name);
-	        
-	        session.removeAttribute("sido"); // 세션에서 로그인 시도 횟수 제거
-	        
-	         if ("admin123".equals(mvo.getUserid())) 
-	         {
-	            return "/admin/menu";
-	         } 
-	         else 
-	         {
-	             mapper.resetsido(mvo); // 로그인 시도 횟수 초기화 메서드 호출
-	             return "redirect:/main/main";
-	         }
-	     }
-	}
+	   String name=mapper.loginOk(mvo);
+	   if(name==null)
+	   {
+		   return "redirect:/member/login?chk=1";
+	   }
+	   else
+	   {
+		   session.setAttribute("userid", mvo.getUserid());
+		   session.setAttribute("name",name);
+		   
+		   if("admin123".equals(mvo.getUserid())) {
+			   return "/admin/menu";
+		   } else {
+			   
+			   return "redirect:/main/main";
+		   }
+	   }
+	   }
 
 
 	@Override
@@ -220,11 +194,7 @@ public class MemberServiceImpl  implements MemberService{
 		return pwd;
 	}
 
-	@Override
-	public String locked() {
-		
-		return "/member/locked";
-	}
+	
 	
 
 	    
