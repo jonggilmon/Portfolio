@@ -8,10 +8,13 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
  <style>
-     section {
-       width: 1100px;
-       margin: auto;
-     }
+ body{
+ 	background: #F6F6F6;
+ }
+ section {
+    width: 1100px;
+    margin: auto;
+ }
      
  section #first #mainimg {
     text-align: center;
@@ -46,7 +49,8 @@ section #first #mainimg img {
     section #second #jin, section #second #jinhang {
       width: 680px;
       height: 500px;
-      border: 1px solid black;
+      border: 0px solid black;
+      background: white;
     }
 
     section #second #remenu {
@@ -56,7 +60,7 @@ section #first #mainimg img {
       border: 1px solid black;
     }
 
-    section #second #remenu #reprice, section #second #remenu #title {
+    section #second #remenu #reprice,  section #second #remenu #title  {
       position: absolute;
       width: 300px;
       height: 120px;
@@ -64,7 +68,7 @@ section #first #mainimg img {
       margin-top: 70px;
       text-align: center;
       left: 40px;
-    }
+    } 
 
     section #second #remenu #reday, section #second #remenu #rsdate {
       width: 400px;
@@ -245,14 +249,12 @@ section #first #mainimg img {
     <form method="post" action="zoomimg"> 
      <div id="mainimg">
        <img src="/static/photos/${contentDetail.img}" alt="Image">
-       <div id="zimg">
-         <input type="submit" value="전체 보기"> 
-       </div>  
      </div>  
     </form> 
   </div> 
   
   <div id="second">
+  	
      <div id="jinhang">
        ${contentDetail.jinhang}
      </div>  
@@ -267,15 +269,16 @@ section #first #mainimg img {
  </div> 
  
  <div id="third">
+ 	
    <div id="sogae">
      ${contentDetail.sogae}
    </div> 
    
    <div id="rebtn">
-  
+    <input type="button" value="신청하기" id="btn2">
      
-     <input type="button" value="신청하기" id="btn2">
-    <div id="modal"> <!— 레이어 팝업창 영역 —>
+   
+    <div id="modal"> <!--  레이어 팝업창 영역 -->
   	<div class="modal_up">
     <div class="uptitle">※신청하기 전 주의사항※</div>
     <div class="upbody">
