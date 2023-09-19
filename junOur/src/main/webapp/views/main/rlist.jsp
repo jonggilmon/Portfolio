@@ -51,6 +51,7 @@
    padding:9px 25px;
    text-decoration:none;
    text-shadow:0px 0px 0px #2b665e;
+  
 }
 .myButton:hover {
    background:linear-gradient(to bottom, #6c7c7c 5%, #768d87 100%);
@@ -243,10 +244,10 @@ function getVideoSourceByJongmokId(jongmokId) {
     switch (parseInt(jongmokId)) {
         case 1: return videoBasePath + "soccer.mp4";
         case 2: return videoBasePath + "basketball.mp4";
-        case 3: return videoBasePath + "video3.mp4";
-        case 4: return videoBasePath + "video3.mp4";
-        case 5: return videoBasePath + "video3.mp4";
-        case 6: return videoBasePath + "video3.mp4";
+        case 3: return videoBasePath + "volleyball.mp4";
+        case 4: return videoBasePath + "baseball.mp4";
+        case 5: return videoBasePath + "dangu.mp4";
+        case 6: return videoBasePath + "bowling.mp4";
         case 7: return videoBasePath + "video3.mp4";
         case 8: return videoBasePath + "video3.mp4";
         case 9: return videoBasePath + "video3.mp4";
