@@ -8,23 +8,9 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
  <style>
-
- body{
- 	background: #F6F6F6;
- }
- section {
-    width: 1100px;
-    margin: auto;
- }
-     
- section #first #mainimg {
-    text-align: center;
-}
-
 		body{
 			background: #F2F5F7;
 		}
-
 
         ul {
             list-style: none;
@@ -50,14 +36,6 @@
             border-bottom: 20px solid #F2F5F7;
         }
 
-
-    section #second #jin, section #second #jinhang {
-      width: 680px;
-      height: 500px;
-      border: 0px solid black;
-      background: white;
-    }
-
         /* 소개 */
         .b {
             width: 450px;
@@ -67,30 +45,17 @@
             /* 간격 */
         }
 
-
         /* 경기장 정보 */
         .c {
             width: 450px;
             height: 250px;
             background: #fff;
             border-bottom: 20px solid #F2F5F7;
-            
         
         }
         .cimg{
         	margin-left: 80px;
         }
-
-
-    section #second #remenu #reprice,  section #second #remenu #title  {
-      position: absolute;
-      width: 300px;
-      height: 120px;
-      border: 1px solid black;
-      margin-top: 70px;
-      text-align: center;
-      left: 40px;
-    } 
 
         /* 예약 하기 */
         .d {
@@ -100,7 +65,6 @@
             background: #fff;
             padding: 25px;
         }
-
 
         .d > ul > li:first-child {
             font-weight: bold;
@@ -247,7 +211,7 @@
 }
 
   </style>
-  <script>
+   <script>
   function addjjim(src)
   {
   	//alert(src.indexOf("full.png"));
@@ -284,43 +248,6 @@
   </script>
 </head>
 <body>
-
-<section>
-  <div id="first">
-    <form method="post" action="zoomimg"> 
-     <div id="mainimg">
-       <img src="/static/photos/${contentDetail.img}" alt="Image">
-     </div>  
-    </form> 
-  </div> 
-  
-  <div id="second">
-  	
-     <div id="jinhang">
-       ${contentDetail.jinhang}
-     </div>  
-     
-     <div id="remenu">  
-       <div id="rsdate">${contentDetail.rsdate}</div>
-       <div id="inwon">${contentDetail.inwon}</div>
-       <div id="address">${contentDetail.address}</div>
-       <div id="rstime">${contentDetail.rstime}</div>
-       <div id="title">${contentDetail.title}</div> 
-     </div>  
- </div> 
- 
- <div id="third">
- 	
-   <div id="sogae">
-     ${contentDetail.sogae}
-   </div> 
-   
-   <div id="rebtn">
-    <input type="button" value="신청하기" id="btn2">
-     
-   
-    <div id="modal"> <!--  레이어 팝업창 영역 -->
-
 	<div id="mainimg">
        <img src="/static/main/${contentDetail.img}" alt="Image">
     </div>
@@ -363,7 +290,6 @@
     </div><!--wrap -->
 
     <div id="modal"> <!-- <!— 레이어 팝업창 영역 —> -->
-
   	<div class="modal_up">
     <div class="uptitle">※신청하기 전 주의사항※</div>
     <div class="upbody">
