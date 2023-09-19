@@ -51,7 +51,6 @@
             height: 250px;
             background: #fff;
             border-bottom: 20px solid #F2F5F7;
-            
         
         }
         .cimg{
@@ -212,6 +211,41 @@
 }
 
   </style>
+   <script>
+  function addjjim(src)
+  {
+  	//alert(src.indexOf("full.png"));
+  	  if (src.indexOf("empty.png") == -1)  
+  	  {
+    	var url = "deljjim?no=${no}";
+    	var img = "/static/content/empty.png";
+  	  } 
+  	  else 
+  	  {
+   		 var url = "addjjim?no=${no}";
+   	  	 var img = "/static/content/full.png";
+ 	  }
+
+  console.log("URL:", url); // URL이 정확한지 확인
+  console.log("Image Path:", img); // 이미지 경로가 정확한지 확인
+      //alert(url);
+  	 
+  	var chk=new XMLHttpRequest();
+      chk.onload=function()
+      {
+      	//alert(chk.responseText);
+      	if(chk.responseText=="1")
+      		alert("잘못된 동작이 발생했습니다");
+      	else if(chk.responseText=="0")
+      		   document.getElementById("jjim").src=img;
+      	else if(chk.responseText=="2")
+      		   location="../member/login?no=${no}";
+      }
+      chk.open("get",url);
+      chk.send();
+       
+  }
+  </script>
 </head>
 <body>
 	<div id="mainimg">
@@ -240,7 +274,7 @@
                 </li>
                 <li>
                     <ul class="data">
-                        <li><img src="img/ic_viewer.svg" alt="ic_viewer"></li>
+                        <li><img src="/static/content/${img}" id="jjim"  onclick="addjjim(this.src)" valign="middle"></li>
                     </ul>
                 </li>
                 <li>

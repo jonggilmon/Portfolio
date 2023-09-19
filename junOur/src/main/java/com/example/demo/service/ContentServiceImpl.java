@@ -4,6 +4,9 @@ import java.util.List;
 import java.util.Map;
 import java.util.Random;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
@@ -76,6 +79,48 @@ public class ContentServiceImpl implements ContentService {
 	        } while (reserveInfoMapper.getReserveById(reserveId) != null);
 	        return reserveInfoMapper.insertReserveInfo(reserveInfo);
 	    }
+
+	@Override
+	public String addjjim(HttpServletRequest request, HttpSession session) {
+		if(session.getAttribute("userid")!=null)
+		{
+		  try
+		  {
+		    String no=request.getParameter("no");
+		    String userid=session.getAttribute("userid").toString();
+		
+		    mapper.addjjim(no,userid);
+		  
+		    return "0"; // 이미지가 바뀌어야 한다.
+		  }
+		  catch(Exception e)
+		  {
+	        return "1";		// 잘못된 동작
+		  }
+		}
+		else
+		{
+			return "2"; // 로그인을 안했을 경우
+		}
+	}
+
+	@Override
+	public String deljjim(HttpServletRequest request, HttpSession session) {
+		try
+		{
+		  String no=request.getParameter("no");
+		  String userid=session.getAttribute("userid").toString();
+		
+		  mapper.deljjim(no,userid);
+		  
+		  return "0";
+		}
+		catch(Exception e)
+		{
+	      return "1";		
+		}
+		
+	}
 	
 	
 	

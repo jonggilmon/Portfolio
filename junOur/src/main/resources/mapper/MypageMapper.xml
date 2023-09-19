@@ -60,6 +60,7 @@
   	select * from reserve_info where user_id=#{userid} order by reserve_date asc
   </select>
   
+
   <update id="inquiryUpdateOk" parameterType="com.example.demo.vo.MtmVo">
   	update mtm set title=#{title},content=#{content} where no=#{no}
   </update>
@@ -75,4 +76,20 @@
   <update id="hideUp" parameterType="com.example.demo.vo.MtmVo">
   	 update mtm set hide=hide+1 where no=#{no}
   </update>
+
+  <select id="myjjim" resultType="HashMap">
+ 	select r.jongmok_id, r.rsdate,r.inwon,r.address,r.rstime,j.no
+ 	from jjim as j inner join reserve as r on j.no=r.no and userid=#{userid}
+ </select>
+ 
+ <delete id="jjimDel">
+     delete from jjim where no=#{no}
+  </delete>
+  
+  <delete id="selectDel">
+     delete from jjim where no=#{no}
+  </delete>
+  
+  
+
   </mapper>
