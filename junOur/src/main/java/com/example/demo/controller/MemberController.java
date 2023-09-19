@@ -62,6 +62,11 @@ public class MemberController {
 	     }
 	 }
 	
+	 @RequestMapping("/member/locked")
+	 public String locked()
+	 {
+		 return service.locked();
+	 }
 
 	 
 	 @RequestMapping("/member/logout")
