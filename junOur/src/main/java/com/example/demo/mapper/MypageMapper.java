@@ -1,7 +1,7 @@
 package com.example.demo.mapper;
 
 import java.util.ArrayList;
-
+import java.util.HashMap;
 
 import com.example.demo.vo.MemberVo;
 import com.example.demo.vo.MtmVo;
@@ -40,6 +40,12 @@ public interface MypageMapper {
 
 
 	public ArrayList<ReserveInfoVo> myreserve(String userid);
+
+	public ArrayList<HashMap> myjjim(String userid);
+
+	public void jjimDel(String no);
+
+	public void selectDel(String no);
 
 	
 

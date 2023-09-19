@@ -55,5 +55,18 @@
     ORDER BY rstime asc
 </select>
 
+ <insert id="addjjim">
+     insert into jjim(no,userid,writeday)
+     values(#{no},#{userid},now())
+  </insert>
+  
+  <delete id="deljjim">
+     delete from jjim where userid=#{userid} and no=#{no}
+  </delete>
+
+ <select id="isjjim" resultType="boolean">
+     select count(*) from jjim where no=#{no} and userid=#{userid}
+ </select>
+
 
 </mapper>

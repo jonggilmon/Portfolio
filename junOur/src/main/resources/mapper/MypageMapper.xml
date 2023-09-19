@@ -55,5 +55,19 @@
   	select * from reserve_info where user_id=#{userid} order by reserve_date asc
   </select>
   
+  <select id="myjjim" resultType="HashMap">
+ 	select r.jongmok_id, r.rsdate,r.inwon,r.address,r.rstime,j.no
+ 	from jjim as j inner join reserve as r on j.no=r.no and userid=#{userid}
+ </select>
+ 
+ <delete id="jjimDel">
+     delete from jjim where no=#{no}
+  </delete>
+  
+  <delete id="selectDel">
+     delete from jjim where no=#{no}
+  </delete>
+  
+  
 
   </mapper>
