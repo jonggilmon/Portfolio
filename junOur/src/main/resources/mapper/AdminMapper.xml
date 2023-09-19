@@ -59,13 +59,18 @@
 		select * from mtm where no=#{no}
 	</select>
 	
-	<insert id="questOk">
-		insert into quest(content,userid,writeday)
-		values (#{content},'관리자',now())
-	</insert>
+<!-- AdminMapper.xml -->
+<insert id="questOk" parameterType="com.example.demo.vo.QuestVo">
+    <selectKey keyProperty="no" order="AFTER" resultType="int">
+        SELECT LAST_INSERT_ID() AS no
+    </selectKey>
+    insert into quest(content, userid, writeday, questnum) 
+    values (#{content}, '관리자', now(), #{no})
+</insert>
+
 	
 	<update id="seqUp">
-		update mtm set seq=seq+1 where no=#{no}
+		update mtm set seq=1 where no=#{no}
 	</update>
 	
 </mapper>
