@@ -7,6 +7,10 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+
+<%
+    int no = Integer.parseInt(request.getParameter("no"));
+%>
  <style>
 		body{
 			background: #F2F5F7;
@@ -249,7 +253,7 @@
 </head>
 <body>
 	<div id="mainimg">
-       <img src="/static/main/${contentDetail.img}" alt="Image">
+       <img src="/static/content/${contentDetail.img}" alt="Image">
     </div>
   <div class="wrap">
   	
