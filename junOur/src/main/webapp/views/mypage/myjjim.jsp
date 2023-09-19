@@ -124,7 +124,44 @@ function selectDel()
   		<c:forEach items="${mapall}" var="map">
   		<tr>
   		   <td><input type="checkbox" class="sub" value="${map.no}" onclick="subClick()"></td>
-  		   <td>${map.jongmok_id}</td> <!-- 종목 -->
+  		   <td>
+  		   	<c:if test="${map.jongmok_id == 1}">
+  		   		축구 
+  		   	</c:if>
+  		   	<c:if test="${map.jongmok_id == 2}">
+  		   		농구 
+  		   	</c:if>
+  		   	<c:if test="${map.jongmok_id == 3}">
+  		   		배구 
+  		   	</c:if>
+  		   	<c:if test="${map.jongmok_id == 4}">
+  		   		야구 
+  		   	</c:if>
+  		   	<c:if test="${map.jongmok_id == 5}">
+  		   		당구 
+  		   	</c:if>
+  		   	<c:if test="${map.jongmok_id == 6}">
+  		   		볼링 
+  		   	</c:if>
+  		   	<c:if test="${map.jongmok_id == 7}">
+  		   		골프 
+  		   	</c:if>
+  		   	<c:if test="${map.jongmok_id == 8}">
+  		   		테니스 
+  		   	</c:if>
+  		   	<c:if test="${map.jongmok_id == 9}">
+  		   		수영
+  		   	</c:if>
+  		   	<c:if test="${map.jongmok_id == 10}">
+  		   		배트민턴 
+  		   	</c:if>
+  		   	<c:if test="${map.jongmok_id == 11}">
+  		   		탁구 
+  		   	</c:if>
+  		   	<c:if test="${map.jongmok_id == 12}">
+  		   		족구 
+  		   	</c:if>
+  		   </td> <!-- 종목 -->
   		   <td>${map.rsdate}</td> <!-- 날짜 -->
   		   <td>${map.inwon}</td> <!-- 인원 -->
   		   <td>${map.rstime}</td> <!-- 시간 -->
