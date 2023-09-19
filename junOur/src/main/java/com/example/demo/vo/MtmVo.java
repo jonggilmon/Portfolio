@@ -4,6 +4,6 @@ import lombok.Data;
 
 @Data
 public class MtmVo {
-	private int no,answer,seq;
-	private String title,content,phone,email,userid,writeday,pwd,hide;
+	private int no,seq;
+	private String title,content,userid,writeday,hide;
 }

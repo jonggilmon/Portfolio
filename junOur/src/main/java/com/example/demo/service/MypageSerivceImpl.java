@@ -108,12 +108,12 @@ public class MypageSerivceImpl implements MypageService{
 
 	@Override
 	public String inquiry_content(Model model,HttpServletRequest request) {
-		String no=request.getParameter("no");
-		MtmVo mvo=mapper.inquiry_content(no);
+		String questnum=request.getParameter("questnum");
+		MtmVo mvo=mapper.inquiry_content(questnum);
 		model.addAttribute("mvo",mvo);
 		
 		
-		QuestVo qvo=mapper.getQuest(no);
+		QuestVo qvo=mapper.getQuest(questnum);
 		model.addAttribute("qvo" ,qvo);
 		return "/mypage/inquiry_content";
 	}
@@ -170,12 +170,12 @@ public class MypageSerivceImpl implements MypageService{
 
 	@Override
 	public String inquiry_all_content(Model model, HttpServletRequest request) {
-		String no=request.getParameter("no");
-		MtmVo mvo=mapper.inquiry_all_content(no);
+		String questnum=request.getParameter("questnum");
+		MtmVo mvo=mapper.inquiry_all_content(questnum);
 		model.addAttribute("mvo",mvo);
 		
 		
-		QuestVo qvo=mapper.getQuest(no);
+		QuestVo qvo=mapper.getQuest(questnum);
 		model.addAttribute("qvo" ,qvo);
 		return "/mypage/inquiry_all_content";
 	}

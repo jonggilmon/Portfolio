@@ -42,11 +42,11 @@
     values (#{title}, #{content}, #{userid}, now(), 1)
 </insert>
   <select id="inquiry_content" resultType="com.example.demo.vo.MtmVo">
-  	 select * from mtm where no=#{no}
+  	 select * from mtm where no=#{questnum}
   </select>
   
   <select id="inquiry_list" resultType="com.example.demo.vo.MtmVo">
-  	select * from mtm where userid=#{userid}
+  	select * from mtm where userid=#{userid} order by writeday desc
   </select>
   
   <select id="inquiryUpdate" resultType="com.example.demo.vo.MtmVo">
@@ -58,9 +58,9 @@
   </delete>
   
   <select id="getQuest" resultType="com.example.demo.vo.QuestVo">
-  	select * from quest where no=#{no}
+  	select * from quest where questnum=#{questnum}
   </select>
-
+	
   <select id="myreserve" resultType="com.example.demo.vo.ReserveInfoVo">
   	select * from reserve_info where user_id=#{userid} order by reserve_date asc
   </select>
@@ -71,11 +71,11 @@
   </update>
   
   <select id="inquiry_all" resultType="com.example.demo.vo.MtmVo">
-		select * from mtm order by writeday asc
+		select * from mtm order by writeday desc
   </select>
   
   <select id="inquiry_all_content" resultType="com.example.demo.vo.MtmVo">
-  	 select * from mtm where no=#{no}
+  	 select * from mtm where no=#{questnum}
   </select>
   
   <update id="hideUp" parameterType="com.example.demo.vo.MtmVo">
