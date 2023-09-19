@@ -15,4 +15,6 @@ public interface MemberMapper {
     public String getUserid(String pnum);
     public String chkUserid(String userid);
     public String PnUchk(String userid);
+	public void increasesido(MemberVo mvo);
+	public void resetsido(MemberVo mvo);
 }
