@@ -39,7 +39,9 @@ public class FreeServiceImpl implements FreeService {
 	}
 
 	@Override
-	public String free_content(Model model, FreeVo fvo) {
+	public String free_content(Model model, FreeVo fvo, HttpServletRequest request) {
+		String no=request.getParameter("no");
+		model.addAttribute("chk",request.getParameter("chk"));
 		model.addAttribute("fvo",mapper.content(fvo));
 		return "/admin/free/free_content";
 	}
@@ -52,13 +54,25 @@ public class FreeServiceImpl implements FreeService {
 	}
 	
 	@Override
-	public String delete(FreeVo fvo) {
-		mapper.delete(fvo);
-		return "redirect:/admin/free/free_list";
+	public String delete(FreeVo fvo ,HttpServletRequest reqeust) {
+		int no=Integer.parseInt(reqeust.getParameter("no"));
+		String pwd=reqeust.getParameter("pwd");
+		if(mapper.isPwd(pwd, no))
+		{
+			mapper.delete(fvo, reqeust, no);
+			return "redirect:/admin/free/free_list?no="+fvo.getNo();
+		}
+		else
+		{
+			return "redirect:/admin/free/free_content?chk=1&no="+no;
+		}
+		
 	}
 	
 	@Override
-	public String free_update(FreeVo fvo, Model model) {
+	public String free_update(FreeVo fvo, Model model, HttpServletRequest request) {
+		String no=request.getParameter("no");
+		model.addAttribute("chk",request.getParameter("chk"));
 		model.addAttribute("fvo",mapper.free_update(fvo));
 		return "/admin/free/free_update";
 	}
@@ -66,8 +80,15 @@ public class FreeServiceImpl implements FreeService {
 	@Override
 	public String free_update_ok(HttpServletRequest request, FreeVo fvo) {
 		String no=request.getParameter("no");
-		mapper.free_update_ok(fvo);
-		return "redirect:/admin/free/free_content?no="+no;
+		if(mapper.isPwd(fvo.getPwd(), fvo.getNo()))
+		{
+		    mapper.free_update_ok(fvo);
+		    return "redirect:/admin/free/free_content?no="+fvo.getNo();
+		}
+		else
+		{
+			return "redirect:/admin/free/free_update?chk=1&no="+fvo.getNo();
+		}
 	}
 	
 	
