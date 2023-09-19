@@ -220,7 +220,7 @@
     <tr>
         <td width="350">${subReserve.title}</td>
         <td>${subReserve.rsdate}</td>
-        <td>${subReserve.inwon}</td>
+        
         <td>${subReserve.writeday}</td>
         <td></td>
         <td>
@@ -320,10 +320,12 @@ function updateTableWithData(data) {
         data.forEach(item => {
             var row = table.insertRow();
             row.insertCell(0).innerText = item.rsdate;
-            row.insertCell(1).innerText = item.rstime;
+            var formattedRstime = item.rstime.slice(0, 2) + ':' + item.rstime.slice(2);
+            row.insertCell(1).innerText = formattedRstime;
             row.insertCell(2).innerText = item.title;
-            row.insertCell(3).innerText = item.inwon;
+            row.insertCell(3).innerText = item.currentCount+ "/" + item.inwon;
             row.insertCell(4).innerText = item.readnum;
+            
             
             const rsDate = new Date(item.rsdate); // 아이템의 날짜를 Date 객체로 변환
 
