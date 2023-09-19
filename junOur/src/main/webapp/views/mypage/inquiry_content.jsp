@@ -19,12 +19,11 @@
 			<div> <a href="inquiry_all">전체 문의사항</a></div>
 		</c:if>
 		
-			 <c:forEach items="${qvo}" var="qvo">
-   				 <div><h3>답변</h3></div>
-   				 ${qvo.writeday }
-   				 <div>내용: ${qvo.content}</div>
-   				 <div><a href="inquiry_all">전체 문의사항</a></div>
-  			</c:forEach>
+		  <div><h3>답변</h3></div>
+          <div>작성일: ${qvo.writeday}</div>
+          <div>내용: ${qvo.content}</div>
+          <div><a href="inquiry_all">전체 문의사항</a></div>
+
 	</section>
 </body>
 </html>
