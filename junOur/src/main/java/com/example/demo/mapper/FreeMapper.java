@@ -12,9 +12,10 @@ public interface FreeMapper {
 	public void freeadd_ok(FreeVo fvo);
 	public FreeVo content(FreeVo fvo);
 	public void readnum(FreeVo fvo);
-	public void delete(FreeVo fvo);
+	public void delete(FreeVo fvo, HttpServletRequest reqeust, int no);
 	public FreeVo free_update(FreeVo fvo);
 	public void free_update_ok(FreeVo fvo);
+	public boolean isPwd(String pwd,int no);
 	
 }
 

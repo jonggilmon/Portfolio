@@ -37,9 +37,9 @@ public class FreeController {
 	}
 	
 	@RequestMapping("/admin/free/free_content")
-	public String free_content(Model model, FreeVo fvo)
+	public String free_content(Model model, FreeVo fvo, HttpServletRequest reqeust)
 	{
-		return service.free_content(model, fvo);
+		return service.free_content(model, fvo, reqeust);
 	}
 	
 	@RequestMapping("/admin/free/readnum")
@@ -49,15 +49,15 @@ public class FreeController {
 	}
 	
 	@RequestMapping("/admin/free/delete")
-	public String delete(FreeVo fvo)
+	public String delete(FreeVo fvo, HttpServletRequest request)
 	{
-		return service.delete(fvo);
+		return service.delete(fvo, request);
 	}
 	
 	@RequestMapping("/admin/free/free_update")
-	public String free_update(FreeVo fvo, Model model)
+	public String free_update(FreeVo fvo, Model model, HttpServletRequest request)
 	{
-		return service.free_update(fvo, model);
+		return service.free_update(fvo, model, request);
 	}
 	
 	@RequestMapping("/admin/free/free_update_ok")
@@ -65,6 +65,7 @@ public class FreeController {
 	{
 		return service.free_update_ok(request, fvo);
 	}
+	
 }
 
 
