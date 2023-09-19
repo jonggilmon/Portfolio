@@ -19,7 +19,6 @@
 		<c:if test="${mvo.seq == 1 }">
 			<div><caption><h3> 답변 </h3></caption></div>
 			<div> 내 용 : ${qvo.content }</div>
-		
 		</c:if>
 		<div> <a href="inquiry_all">전체 문의사항</a></div>		
 			

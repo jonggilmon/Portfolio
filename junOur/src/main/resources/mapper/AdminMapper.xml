@@ -52,7 +52,7 @@
 	</insert>
 	
 	<select id="list" resultType="com.example.demo.vo.MtmVo">
-		select * from mtm order by writeday asc
+		select * from mtm order by writeday desc
 	</select>
 	
 	<select id="answer" resultType="com.example.demo.vo.MtmVo">

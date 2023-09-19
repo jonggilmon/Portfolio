@@ -30,7 +30,7 @@ public interface MypageMapper {
 	
 	public void mtmOk2(MtmVo mvo);
 	
-	public MtmVo inquiry_content(String no);
+	public MtmVo inquiry_content(String questnum);
 	
 	public ArrayList<MtmVo> inquiry_list(String userid);
 	
@@ -38,7 +38,7 @@ public interface MypageMapper {
 	
 	public void inquiryDelete(String no);
 	
-	public QuestVo getQuest(String no);
+	public QuestVo getQuest(String questnum);
 
 
 	public ArrayList<ReserveInfoVo> myreserve(String userid);
@@ -56,7 +56,7 @@ public interface MypageMapper {
 	
 	public ArrayList<MtmVo> inquiry_all();
 	
-	public MtmVo inquiry_all_content(String no);
+	public MtmVo inquiry_all_content(String questnum);
 	
 	public void hideUp(MtmVo mvo);
 }
