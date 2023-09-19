@@ -69,10 +69,7 @@
 </insert>
 
 	
-	<update id="seqUp" parameterType="com.example.demo.vo.QuestVo">
-	<selectKey keyProperty="no" order="AFTER" resultType="int">
-        SELECT LAST_INSERT_ID() AS no
-    </selectKey>
+	<update id="seqUp">
 		update mtm set seq=1 where no=#{no}
 	</update>
 	

@@ -41,6 +41,6 @@ public interface AdminMapper {
 	
 	public void questOk(QuestVo qvo);
 	
-	public void seqUp(QuestVo qvo);
+	public void seqUp(String no);
 	
 }

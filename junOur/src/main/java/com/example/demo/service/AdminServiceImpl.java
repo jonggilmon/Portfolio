@@ -194,7 +194,7 @@ public class AdminServiceImpl implements AdminService{
 		
 		mapper.questOk(qvo);
 		
-		mapper.seqUp(qvo);
+		mapper.seqUp(no);
 		return "redirect:/admin/inquiry/list";
 	}
 
