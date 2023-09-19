@@ -27,12 +27,13 @@
     color: white; /* 헤더 텍스트 색상을 검정색으로 설정 */
   }
 
-  div {
-    border: 1px solid #000; /* 테두리 설정 */
-    padding: 10px;
-    margin: 10px 0;
-    background-color: white; /* 배경색을 검정색으로 설정 */
-  }
+ div {
+  border: 1px solid #000; /* 테두리 설정 */
+  padding: 10px;
+  margin: 10px 0;
+  background-color: white; /* 배경색을 검정색으로 설정 */
+  border-radius: 10px; /* 테두리 모서리를 뭉툭하게 설정 */
+}
 
   a {
     text-decoration: none; /* 링크 밑줄 제거 */
@@ -46,12 +47,20 @@
 
   .links {
     margin-top: 20px;
+    background-color:#5D7687;
+  }
+  #title {
+  	width:400px;
+  	font-size:40px;
+    background-color: black; /* 비밀 글 배경색 설정 */
+  	color:white;
+  	margin:auto;
   }
 </style>
 </head>
 <body>
 <section>
-  <caption><h3>내 문의</h3></caption>
+  <div id="title">내 문의사항</div>
   <c:forEach items="${ilist }" var="map">
     <div>
       <a href="inquiry_content?no=${map.no}">제목 : ${map.title } | 아이디 : ${map.userid } | 작성일 : ${map.writeday}</a>
@@ -61,8 +70,8 @@
     </div>
   </c:forEach>
   <div class="links">
-    <div><a href="inquiry_all">전체 문의 보기</a></div>
-    <div><a href="mtm">문의하기</a></div>
+    <div ><a href="inquiry_all" class="aa">전체 문의 보기</a></div>
+    <div ><a href="mtm" class="aa">문의하기</a></div>
   </div>
 </section>
 </body>

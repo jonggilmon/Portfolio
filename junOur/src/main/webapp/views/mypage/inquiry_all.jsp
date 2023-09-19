@@ -51,11 +51,18 @@
   .links {
     margin-top: 20px;
   }
+  #title {
+  	width:400px;
+  	font-size:40px;
+    background-color: black; /* 비밀 글 배경색 설정 */
+  	color:white;
+  	margin:auto;
+  }
 </style>
 </head>
 <body>
 <section>
-  <caption><h3>모든 문의사항</h3></caption>
+  <div id="title">모든 문의사항</div>
   <c:forEach items="${mlist }" var="mvo">
     <c:choose>
       <c:when test="${mvo.hide == 1 }">

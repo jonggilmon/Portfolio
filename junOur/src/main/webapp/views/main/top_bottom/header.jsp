@@ -32,6 +32,7 @@ body {
 
 .logo {
 	align-items: center;
+	
 }
 
 .logo img {
