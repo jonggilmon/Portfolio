@@ -105,10 +105,6 @@ function selectDel()
 	location="jjimDel?nos="+delsub;
 }
 
-function jjimDel(nos)
-{
-	location="jjimDel?nos="+nos; 
-}
 
 </script>
 </head>
@@ -127,7 +123,7 @@ function jjimDel(nos)
   		</tr>
   		<c:forEach items="${mapall}" var="map">
   		<tr>
-  		   <td><input type="checkbox" class="sub" value="0" onclick="subClick()"></td>
+  		   <td><input type="checkbox" class="sub" value="${map.no}" onclick="subClick()"></td>
   		   <td>${map.jongmok_id}</td> <!-- 종목 -->
   		   <td>${map.rsdate}</td> <!-- 날짜 -->
   		   <td>${map.inwon}</td> <!-- 인원 -->
