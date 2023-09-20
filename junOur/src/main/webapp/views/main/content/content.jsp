@@ -34,27 +34,31 @@
         
         /* 진행 */
         .a {
-            width: 450px;
-            height: 500px;
+            width: 390px;
+            height: 440px;
             background: #fff;
             border-bottom: 20px solid #F2F5F7;
+            padding: 30px;
         }
 
         /* 소개 */
         .b {
-            width: 450px;
-            height: 500px;
+            width: 390px;
+            height: 440px;
             background: #fff;
             border-bottom: 20px solid #F2F5F7;
             /* 간격 */
+            padding: 30px;
         }
 
         /* 경기장 정보 */
         .c {
             width: 450px;
-            height: 250px;
+            height: 260px;
             background: #fff;
             border-bottom: 20px solid #F2F5F7;
+            padding-top: 20px;
+            
         
         }
         .cimg{
@@ -84,11 +88,12 @@
         }
         
         .e {
-            width: 450px;
-            height: 500px;
+            width: 390px;
+            height: 440px;
             background: #fff;
             border-bottom: 20px solid #F2F5F7;
             /* 간격 */
+            padding: 30px;
         }
         
 
