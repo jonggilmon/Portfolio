@@ -105,10 +105,7 @@ body {
   
     <a href="/main/main"><img src="/static/content/logo3.png"></a>
 </div>
-		<!-- <div class="search">
-			<input type="text" placeholder="검색어를 입력하세요" id="searchSub">
-			<button id="searchbutton">검색</button>
-		</div> -->
+		>
 		<ul class="navi">
 			<c:if test="${userid==null}">
 				<li><a href="/mypage/inquiry_all">문의사항</a></li>
@@ -124,11 +121,7 @@ body {
 						<li><a href="/admin/menu">관리자 페이지</a></li> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 					</c:when>
 					<c:otherwise>
-
-						<li><a href="/admin/action/action_list">활동사진</a></li>
-						<li><a href="/free/free_list">자유게시판</a></li>
-						<li><a href="/admin/gongji/gongji_list">공지사항</a></li>
-						<li><a href="../mypage/inquiry_all">문의사항</a></li>						
+						<li><a href="/admin/action/action_list">활동사진</a></li>								
 						<li><a href="#">마이페이지</a>
 							<ul class="submenu">
 								<li><a href="/mypage/myinfo">내 정보</a></li>
@@ -139,7 +132,7 @@ body {
 						</li>
 					</c:otherwise>
 				</c:choose>
-				<li><a href="/admin/free/free_list">자유게시판</a></li>
+				<li><a href="../free/free_list">자유게시판</a></li>
 				<li><a href="/admin/gongji/gongji_list">공지사항</a></li>
 				<li><a href="/mypage/inquiry_all">문의사항</a></li>
 				<li>${sessionScope.name}</li>

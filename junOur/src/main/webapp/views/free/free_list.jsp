@@ -6,7 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<%@ include file="../../main/top_bottom/header.jsp" %>
+<%@ include file="../main/top_bottom/header.jsp" %>
   <style>
     #section {
      width:1100px;
@@ -45,7 +45,6 @@
    }
   </style>
 </head>
-<%@ include file="../main/top_bottom/header.jsp" %>
 <body>
 	<div id="section">
 	  <table width="800" align="center">

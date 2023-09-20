@@ -6,7 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<%@ include file="../../main/top_bottom/header.jsp" %>
+<%@ include file="../main/top_bottom/header.jsp" %>
   <style>
     #del {
       display:none;
@@ -37,7 +37,7 @@
   </script>
 
 </head>
-<%@ include file="../main/top_bottom/header.jsp" %>
+
 <body>
   <div id="section">
     <table width="600" align="center">
