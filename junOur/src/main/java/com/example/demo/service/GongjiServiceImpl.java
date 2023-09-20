@@ -22,7 +22,7 @@ public class GongjiServiceImpl implements GongjiService {
 
 		@Override
 		public String gongji_list(Model model, HttpSession session) {
-			if(session.getAttribute("user_id")==null)
+			if(session.getAttribute("userid")==null)
 			{
 				return "redirect:/member/login";
 			}
