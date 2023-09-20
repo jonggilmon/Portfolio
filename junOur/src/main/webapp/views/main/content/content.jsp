@@ -72,6 +72,9 @@
             height: 350px;
             background: #fff;
             padding: 25px;
+            position: sticky;
+ 		    top: 0; /* 화면 상단에 고정되도록 설정 */
+            z-index: 1; /* 다른 내용 위에 나타나도록 z-index 설정 */
         }
 
         .d > ul > li:first-child {
@@ -150,7 +153,7 @@
      /* 여기서부터 레이어 */
   #modal{
     width:100%;
-    height:2020px;
+    height:2500px;
     position:absolute;
     left:0;
     top:0;
