@@ -31,6 +31,9 @@
     align-items: center;
     min-height: 100vh;
     background-color: #f4f4f4;
+    background-image: url("/static/content/friendship.jpg");
+    background-size: cover;
+	background-position: center;
      
   
  
@@ -789,10 +792,6 @@
 <body>
    <%@ include file="top_bottom/header.jsp" %>
  
- <video autoplay muted loop id="myVideo">
-        <source src="/static/content/soccer.mp4" type="video/mp4">
-       
-    </video>
 
 <div class="notice-weather">
          <div class="notice">
