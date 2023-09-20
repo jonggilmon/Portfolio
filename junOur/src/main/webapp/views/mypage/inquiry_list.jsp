@@ -65,7 +65,7 @@
   <div id="title">내 문의사항</div>
   <c:forEach items="${ilist}" var="map">
     <div class="asd1"> <!-- asd1 클래스 추가 -->
-      <a href="inquiry_content?questnum=${map.no}">제목 : ${map.title } | 아이디 : ${map.userid } | 작성일 : ${map.writeday}</a>
+      <a href="inquiry_content?no=${map.no}">제목 : ${map.title } | 아이디 : ${map.userid } | 작성일 : ${map.writeday}</a>
       <c:if test="${map.seq == 1 }">
         <span class="answer-complete">답변이 완료되었습니다</span>
       </c:if>

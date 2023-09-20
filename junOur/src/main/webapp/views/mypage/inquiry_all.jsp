@@ -74,7 +74,7 @@
       </c:when>
       <c:otherwise>
         <div class="asd1"> <!-- asd1 클래스 추가 -->
-          <a href="inquiry_all_content?questnum=${mvo.no}">제목 : ${mvo.title } | 작성자 : ${mvo.userid } | 작성일 : ${mvo.writeday}</a>
+          <a href="inquiry_all_content?no=${mvo.no}">제목 : ${mvo.title } | 작성자 : ${mvo.userid } | 작성일 : ${mvo.writeday}</a>
           <c:if test="${mvo.seq == 1 }">
             <span class="answer-complete">답변 완료</span>
           </c:if>

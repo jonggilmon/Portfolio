@@ -16,15 +16,14 @@
 		<div> 내 용 : ${mvo.content }</div>
 		<c:if test="${mvo.seq == 0 }">
 			<div> <a href="inquiryUpdate?no=${mvo.no}"> 수정 </a> <a href="inquiryDelete?no=${mvo.no}"> 삭제 </a></div>
-			<div> <a href="inquiry_all">전체 문의사항</a></div>
 		</c:if>
-		
-			 <c:forEach items="${qvo}" var="qvo">
+			<c:if test="${mvo.seq == 1 }">
    				 <div><h3>답변</h3></div>
    				 ${qvo.writeday }
    				 <div>내용: ${qvo.content}</div>
+   		    </c:if>
+   				 
    				 <div><a href="inquiry_all">전체 문의사항</a></div>
-  			</c:forEach>
 	</section>
 </body>
 </html>
