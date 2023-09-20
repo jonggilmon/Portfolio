@@ -6,6 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<%@ include file="../../main/top_bottom/header.jsp" %>
   <style>
     #section table {
       border-spacing:0px;
@@ -96,4 +97,5 @@
     </form>
   </div>
 </body>
+<%@ include file="../../main/top_bottom/footer.jsp" %>
 </html>

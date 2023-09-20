@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ include file="../../main/top_bottom/header.jsp" %>
   <style>
     #section {
     width: 1100px;
@@ -66,6 +67,6 @@
       </c:if>
     </form>
   </div>
-
+<%@ include file="../../main/top_bottom/footer.jsp" %>
 
 
