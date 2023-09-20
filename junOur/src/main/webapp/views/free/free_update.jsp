@@ -28,7 +28,7 @@
       margin-top:20px;
     }
   </style>
-  
+<%@ include file="../main/top_bottom/header.jsp" %>
   <div id="section">
     <form method="post" action="free_update_ok">
       <input type="hidden" name="no" value="${fvo.no}">
@@ -66,6 +66,6 @@
       </c:if>
     </form>
   </div>
-
+<%@ include file="../main/top_bottom/footer.jsp" %>
 
 

@@ -44,6 +44,7 @@
    }
   </style>
 </head>
+<%@ include file="../main/top_bottom/header.jsp" %>
 <body>
 	<div id="section">
 	  <table width="800" align="center">
@@ -73,3 +74,4 @@
 	</div>
 </body>
 </html>
+<%@ include file="../main/top_bottom/footer.jsp" %>

@@ -22,6 +22,7 @@ import com.example.demo.service.AdminService;
 import com.example.demo.service.ContentService;
 import com.example.demo.vo.ActionVo;
 import com.example.demo.vo.AdminVo;
+import com.example.demo.vo.FreeVo;
 import com.example.demo.vo.GongjiVo;
 import com.example.demo.vo.QuestVo;
 
@@ -166,4 +167,29 @@ public class AdminController {
 	{
 		return service.questOk(request,qvo);
 	}
+	
+	@RequestMapping("/admin/free/adfree_list")
+	public String free_list(Model model)
+	{
+		return service.adfree_list(model);
+	}
+	
+	@RequestMapping("/admin/free/adfree_content")
+	public String free_content(Model model, FreeVo fvo, HttpServletRequest reqeust)
+	{
+		return service.adfree_content(model, fvo, reqeust);
+	}
+	
+	@RequestMapping("/admin/free/readnum")
+	public String readnum(FreeVo fvo, HttpServletRequest request)
+	{
+		return service.readnum(fvo, request);
+	}
+	
+	@RequestMapping("/admin/free/delete")
+	public String delete(FreeVo fvo, HttpServletRequest request)
+	{
+		return service.delete(fvo, request);
+	}
+	
 }

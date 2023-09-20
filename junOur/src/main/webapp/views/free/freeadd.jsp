@@ -64,6 +64,7 @@
     }
   </script>
 </head>
+<%@ include file="../main/top_bottom/header.jsp" %>
 <body>
   <div id="section">  
     <form method="post" action="freeadd_ok">
@@ -97,3 +98,4 @@
   </div>
 </body>
 </html>
+<%@ include file="../main/top_bottom/footer.jsp" %>
