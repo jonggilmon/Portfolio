@@ -79,10 +79,5 @@
     </table>
   </div>
 </body>
-<<<<<<< HEAD:junOur/src/main/webapp/views/admin/free/free_content.jsp
-<%@ include file="../../main/top_bottom/footer.jsp" %>
-</html>
-=======
 </html>
 <%@ include file="../main/top_bottom/footer.jsp" %>
->>>>>>> origin/feature/rojoong:junOur/src/main/webapp/views/free/free_content.jsp

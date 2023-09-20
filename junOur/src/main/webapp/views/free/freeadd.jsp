@@ -94,14 +94,9 @@
 	    </td>
 	  </tr>
     </table>
-
     </form>
   </div>
 </body>
-<<<<<<< HEAD:junOur/src/main/webapp/views/admin/free/freeadd.jsp
-<%@ include file="../../main/top_bottom/footer.jsp" %>
-</html>
-=======
 </html>
 <%@ include file="../main/top_bottom/footer.jsp" %>
->>>>>>> origin/feature/rojoong:junOur/src/main/webapp/views/free/freeadd.jsp
+

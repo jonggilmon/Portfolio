@@ -84,4 +84,24 @@
 		update mtm set seq=1 where no=#{no}
 	</update>
 	
+	<select id="flist" resultType="com.example.demo.vo.FreeVo">
+    select * from free order by no desc
+  </select>
+  
+  <select id="content" resultType="com.example.demo.vo.FreeVo">
+    select * from free where no=#{no}
+  </select>
+  
+  <update id="readnum">
+    update free set readnum=readnum+1 where no=#{no}
+  </update>
+  
+  <delete id="delete">
+    delete from free where no=#{no}
+  </delete>
+  
+  <select id="isPwd" resultType="boolean">
+    select count(*) from free where pwd=#{param1} and no=#{param2}
+  </select>
+	
 </mapper>

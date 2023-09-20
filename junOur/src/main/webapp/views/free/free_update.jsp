@@ -67,10 +67,6 @@
       </c:if>
     </form>
   </div>
-<<<<<<< HEAD:junOur/src/main/webapp/views/admin/free/free_update.jsp
-<%@ include file="../../main/top_bottom/footer.jsp" %>
-=======
 <%@ include file="../main/top_bottom/footer.jsp" %>
->>>>>>> origin/feature/rojoong:junOur/src/main/webapp/views/free/free_update.jsp
 
 
