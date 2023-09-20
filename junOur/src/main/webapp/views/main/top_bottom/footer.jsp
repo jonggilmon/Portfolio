@@ -9,6 +9,7 @@
         body {
             margin: 0;
             padding: 0;
+            
         }
 
         ul {
@@ -25,6 +26,8 @@
             width: 100%;
             background: #333;
             height: 200px;
+            background-color:transparent;
+          
             
         }
 
@@ -46,6 +49,7 @@
             padding: 20px 0;
             line-height: 18px;
             background: #333;
+            background-color:transparent;
         }
 
         .left {
@@ -84,10 +88,14 @@
 
 <body>
     <footer>
-        <div class="bottomlogo"><a href="/main/main"><img src="/static/main/mm.png"></a></div>
+      
         <ul class="copyright">
             <li>
                 <ul class="left">
+                   <li>&nbsp;</li>
+                  <li>&nbsp;</li>
+                  <li>&nbsp;</li>
+                  <li>&nbsp;</li>          
                     <li>
                         Company : ㈜ 모션메이트 | Owner : 김종길,이호중,노윤호,이준환 | 10414 경기 고양시 일산동구 중앙로 1193 (마두동) 마두법조빌딩 701호
                     </li>
@@ -103,6 +111,11 @@
             </li>
             <li>
                 <ul class="right">
+                     <li>&nbsp;</li>
+                  <li>&nbsp;</li>
+                  <li>&nbsp;</li>
+                  <li>&nbsp;</li>
+              
                     <li>Copyright © EZ23. All rights reserved.</li>
                     <li>
                         <ul class="link">

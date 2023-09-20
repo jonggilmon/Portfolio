@@ -66,19 +66,21 @@ body {
 	margin-right: 10px;
 	z-index: 10;
 	background-color: transparent;
+	font-size:18px;
 }
 
 .navi li {
 	width: 115px;
 	text-align: center;
+	color: black;
 }
 
 .navi>li:hover {
-	background: #333;
+	/* background: #333; */
 }
 
 .navi li a {
-	color: #fff;
+	color: black;
 	text-decoration: none;
 	
 }
@@ -86,14 +88,14 @@ body {
 .submenu {
 	width: 115px;
 	height: 160px;
-	background: black;
+	background: white;
 	display:none; 
 	padding: 0; /* ^^ val 이거 안주면 서브메뉴에 이상한 공간 생김 개빡가네 */
 
 }
 
 .submenu li:hover {
-	background: #333;
+	background: #eee;
 }
 </style>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script><!-- 이거 제이쿼리 버전 안맞아서 새로 가져옴 최신판으로 이걸로 바꾸니까 돌아감   -->

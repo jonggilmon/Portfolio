@@ -49,6 +49,7 @@
 
 .sports-slider-wrapper  {
    text-align:center;
+   height: 500px;
    
 }
 
@@ -876,18 +877,7 @@
     </div>
    </div>
     
-    <div class="hugi">
-            <a href="../admin/free/free_list">자유게시판</a>
-        </div>
-        
-      <div class="M_photo">
-        <a href="../admin/action/action_list">활동사진</a>
-        <div class="photo-slider">
-            <c:forEach items="${alist}" var="avo">
-                <div class="photo-item"><img src="/static/action/${avo.img}"></div>
-            </c:forEach>
-        </div>
-    </div>
+    
         
    
        <%@ include file="top_bottom/footer.jsp" %>
