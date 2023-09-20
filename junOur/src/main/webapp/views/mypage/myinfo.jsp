@@ -10,6 +10,7 @@
    body{
    	 margin: 0;
    	 padding: 0;
+   	 background: #F2F5F7;
    }
    section #txt {
      display:inline-block;
