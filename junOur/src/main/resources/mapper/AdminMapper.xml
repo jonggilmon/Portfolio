@@ -13,6 +13,17 @@
         FROM member
 	</select>
 	
+	<select id="contentCancel" parameterType="com.example.demo.vo.ReserveInfoVo">
+	 select reserve_id, user_id, user_name, reserve_no, reserve_date,
+	  rs_date, title_info, add_ress, rs_time
+	   from reserve_info
+	</select>
+	
+	<delete id="cancelMemberId" parameterType="int">
+    DELETE FROM reserve_info WHERE reserve_id=#{reserve_id}
+    </delete>
+
+	
  <delete id="banMemberById" parameterType="string">
     DELETE FROM member WHERE userid=#{userid}
 </delete>

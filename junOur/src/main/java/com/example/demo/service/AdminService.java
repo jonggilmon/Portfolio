@@ -11,6 +11,7 @@ import com.example.demo.vo.ActionVo;
 import com.example.demo.vo.AdminVo;
 import com.example.demo.vo.GongjiVo;
 import com.example.demo.vo.QuestVo;
+import com.example.demo.vo.ReserveInfoVo;
 
 public interface AdminService {
 	public String contentadd();
@@ -28,5 +29,8 @@ public interface AdminService {
 	public boolean banMember(String userid);
 	public String list(Model model);
 	public String answer(HttpServletRequest request,Model model);
-	public String questOk(HttpServletRequest request,QuestVo qvo);
+	public String questOk(HttpServletRequest request,QuestVo qvo);	
+	public List<ReserveInfoVo> contentCancel();
+	boolean cancelMember(int reserve_id);
+	
 }

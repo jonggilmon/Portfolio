@@ -29,8 +29,6 @@
             height: 150px;
             background-color:#323232;
             
-          
-            
         }
 
         .bottomlogo {
