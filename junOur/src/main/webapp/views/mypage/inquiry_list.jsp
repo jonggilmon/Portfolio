@@ -38,7 +38,6 @@
 
   .links {
     margin-top: 20px;
-    background-color: #5D7687;
   }
 
   #title {
