@@ -47,8 +47,6 @@ body {
 
 .logo {
 	align-items: center;
-
-
 }
 
 .logo img {
@@ -59,7 +57,7 @@ body {
 
 .navi {
 	width: 360px; /* 로그인 시 주메뉴가 4개니까 한 놈당 100씩 .navi li랑 연동 서브메뉴도 맞춰줘야함 */
-	width: 460px; /* 로그인 시 주메뉴가 4개니까 한 놈당 100씩 .navi li랑 연동 서브메뉴도 맞춰줘야함 */
+	width: 770px; /* 로그인 시 주메뉴가 4개니까 한 놈당 100씩 .navi li랑 연동 서브메뉴도 맞춰줘야함 */
 	height: 40px;
 	line-height: 40px;
 	background: #333;
@@ -71,13 +69,13 @@ body {
 }
 
 .navi li {
-	width: 115px;
+	width: 110px;
 	text-align: center;
 	color: black;
 }
 
 .navi>li:hover {
-	/* background: #333; */
+	/*  background: #333;  */
 }
 
 .navi li a {
@@ -87,10 +85,10 @@ body {
 }
 
 .submenu {
-	width: 115px;
+	width: 110px;
 	height: 160px;
 	background: white;
-	display:none; 
+    display:none;  
 	padding: 0; /* ^^ val 이거 안주면 서브메뉴에 이상한 공간 생김 개빡가네 */
 
 }
@@ -113,9 +111,12 @@ body {
 		</div> -->
 		<ul class="navi">
 			<c:if test="${userid==null}">
+				<li><a href="/mypage/inquiry_all">문의사항</a></li>
+				<li><a href="/admin/action/action_list">활동사진</a></li>
+				<li><a href="/admin/free/free_list">자유게시판</a></li>
+				<li><a href="/admin/gongji/gongji_list">공지사항</a></li>
 				<li><a href="/member/login">로그인</a></li>
 				<li><a href="/member/member">회원가입</a></li>
-				<li><a href="/mypage/inquiry_all">문의사항</a></li>
 			</c:if>
 			<c:if test="${userid!=null}">
 				<c:choose>
@@ -123,22 +124,18 @@ body {
 						<li><a href="/admin/menu">관리자 페이지</a></li>
 					</c:when>
 					<c:otherwise>
-
-						<li><a href="../mypage/inquiry_all">문의사항</a></li>
-
-
+						<li><a href="/admin/action/action_list">활동사진</a></li>
+						<li><a href="/admin/free/free_list">자유게시판</a></li>
+						<li><a href="/admin/gongji/gongji_list">공지사항</a></li>
+						<li><a href="../mypage/inquiry_all">문의사항</a></li>						
 						<li><a href="#">마이페이지</a>
 							<ul class="submenu">
 								<li><a href="/mypage/myinfo">내 정보</a></li>
 								<li><a href="/mypage/myreserve">예약내역</a></li>
-
 								<li><a href="/mypage/myjjim">찜 확인</a></li>
-
 								<li><a href="/mypage/inquiry_select">1:1 문의하기</a></li>
-
 							</ul>
 						</li>
-
 					</c:otherwise>
 				</c:choose>
 				<li>${sessionScope.name}</li>
