@@ -108,12 +108,12 @@ public class MypageSerivceImpl implements MypageService{
 
 	@Override
 	public String inquiry_content(Model model,HttpServletRequest request) {
-		String no=request.getParameter("no");
-		MtmVo mvo=mapper.inquiry_content(no);
+		String questnum=request.getParameter("no");
+		MtmVo mvo=mapper.inquiry_content(questnum);
 		model.addAttribute("mvo",mvo);
 		
 		
-		QuestVo qvo=mapper.getQuest(no);
+		QuestVo qvo=mapper.getQuest(questnum);
 		model.addAttribute("qvo" ,qvo);
 		return "/mypage/inquiry_content";
 	}
@@ -155,6 +155,7 @@ public class MypageSerivceImpl implements MypageService{
 	}
 
 	@Override
+
 	public String inquiryUpdateOk(MtmVo mvo) {
 		mapper.inquiryUpdateOk(mvo);
 		return "redirect:/mypage/inquiry_content?no="+mvo.getNo();
@@ -169,17 +170,64 @@ public class MypageSerivceImpl implements MypageService{
 
 	@Override
 	public String inquiry_all_content(Model model, HttpServletRequest request) {
-		String no=request.getParameter("no");
-		MtmVo mvo=mapper.inquiry_all_content(no);
+		String questnum=request.getParameter("no");
+		MtmVo mvo=mapper.inquiry_all_content(questnum);
 		model.addAttribute("mvo",mvo);
 		
 		
-		QuestVo qvo=mapper.getQuest(no);
+		QuestVo qvo=mapper.getQuest(questnum);
 		model.addAttribute("qvo" ,qvo);
 		return "/mypage/inquiry_all_content";
 	}
 	
-	
+
+	public String myjjim(HttpSession session, Model model) {
+		String userid=session.getAttribute("userid").toString();
+		model.addAttribute("mapall",mapper.myjjim(userid));
+		return "/mypage/myjjim";
+	}
+
+	@Override
+	public String jjimDel(HttpServletRequest request) {
+		try
+		{
+		    String nos=request.getParameter("nos");
+	   	    // ,로 구분된 값을 나눈다.
+		    String[] no=nos.split(",");
+		
+		    for(int i=0;i<no.length;i++)
+		    {
+		     	mapper.jjimDel(no[i]);
+		    }
+		
+
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+		return "redirect:/mypage/myjjim";
+		
+	}
+
+	@Override
+	public String selectDel(HttpServletRequest request) {
+
+		try
+		{
+		    String nos=request.getParameter("nos");
+	   	    // ,로 구분된 값을 나눈다.
+		    String[] no=nos.split(",");
+		
+		    return "0";
+		}
+		catch(Exception e)
+		{
+			return "1";
+		}
+	}
+
+
 	
 }
 

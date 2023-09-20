@@ -16,6 +16,7 @@
     select name from member 
     where userid=#{userid} and pwd=#{pwd}
   </select>
+ 
   
     <select id="getMemberByUserId" resultType="com.example.demo.vo.MemberVo">
         SELECT * FROM member WHERE userid = #{userid}

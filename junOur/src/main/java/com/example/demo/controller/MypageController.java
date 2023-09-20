@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.example.demo.service.MypageService;
 
@@ -95,6 +96,7 @@ public class MypageController {
 		return service.myreserve(model,session);
 
 	}
+
 	@RequestMapping("/mypage/inquiryUpdateOk")
 	public String inquiryUpdateOk(MtmVo mvo)
 	{
@@ -111,4 +113,21 @@ public class MypageController {
 		return service.inquiry_all_content(model,request);
 	}
 	
+
+	@RequestMapping("/mypage/myjjim")
+	public String myjjim(HttpSession session,Model model)
+	{
+		return service.myjjim(session,model);
+	}
+	@RequestMapping("/mypage/selectDel")
+	public @ResponseBody String selectDel(HttpServletRequest request)
+	{
+		return service.selectDel(request);
+	}
+	@RequestMapping("/mypage/jjimDel")
+	public String jjimDel(HttpServletRequest request)
+	{
+		return service.jjimDel(request);
+	}
+
 }

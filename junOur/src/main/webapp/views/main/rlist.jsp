@@ -34,6 +34,10 @@
    }
    td{
       padding: 1rem;
+      color:white;
+      font-weight: 600;
+      font-size: 18px;
+      
    }
    .myButton {
    box-shadow:inset 1px -1px 28px -50px #91b8b3;
@@ -51,6 +55,7 @@
    padding:9px 25px;
    text-decoration:none;
    text-shadow:0px 0px 0px #2b665e;
+  
 }
 .myButton:hover {
    background:linear-gradient(to bottom, #6c7c7c 5%, #768d87 100%);
@@ -132,19 +137,73 @@
     justify-content: center;
     align-items: center;
     border:1px solid black;
-    height: 300px; /* 높이는 필요에 따라 조정 */
+    height: 640px;
+    background-color: transparent !important;
+   
 }
 
 .pika-single {
     position: relative !important;
     top: 0 !important;
     left: 0 !important;
-    margin: auto !important;
+    margin-left: auto !important; /* 여기서 추가 */
+    margin-right: 0 !important; /* 여기서 추가 */
+    width: 480px !important;  /* 달력의 너비 조정 */
+    height: 400px !important; /* 달력의 높이 조정 */
+    font-size: 1.4em;
+    margin-bottom: 0 !important; 
+    border: none !important;
+    background-color: transparent !important;
+   
 }
-#calendar {
-    margin: 0 auto 20px; /* 아래쪽 마진을 추가 */
+.pika-single .pika-lendar {
+    padding-top: 2em;  /* 여기서 년, 월, 버튼의 높이를 위한 여백을 추가합니다 */
 }
 
+.pika-single th, .pika-single td {
+    padding: 11px !important;
+    font-size: 1.05em !important;
+    
+   
+}
+
+.pika-single th {
+    font-size: 1.26em;
+}
+
+.pika-single .pika-title {
+ font-size: 1.5em;
+    position: absolute;
+    top: 0.8em;  /* 상단 여백을 약간 추가 */
+    left: 50%;
+    transform: translateX(-50%);
+    width: auto;
+    z-index: 5; /* 추가 */
+}
+
+.pika-single .pika-button {
+    width: 28px;    
+    height: 28px;   
+    line-height: 28px;  
+    font-size: 11.2px;
+}
+
+
+#calendar {
+    /* 아래쪽 마진을 추가 */
+    margin-bottom: 0;
+    opacity: 0;
+}
+
+#backgroundVideo {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -1; /* 영상이 항상 뒷면에 위치하도록 함 */
+    object-fit: cover; /* 비디오 비율 유지하며 화면에 꽉 차도록 함 */
+}
 
 </style>
  <!-- Pikaday and moment.js library -->
@@ -155,32 +214,50 @@
 <body>
 
 <div id="calendarContainer">
+ <video autoplay muted loop id="backgroundVideo">
+    <source src="/static/content/soccer.mp4" type="video/mp4">  
+</video>
     <input type="text" id="calendar">
+   
 </div>
 <table width="1100" align="center" id="aa" border="0" border-collapse:collapse>
 <c:forEach items="${AllReserves}" var="subReserve">
-    <tr>
-        <td width="350">${subReserve.title}</td>
-        <td>${subReserve.rsdate}</td>
-        <td>${subReserve.inwon}</td>
-        <td>${subReserve.writeday}</td>
-        <td></td>
-        <td>
-          <!-- 예: subReserve 객체에 현재 인원 수를 나타내는 currentCount와 최대 인원 수를 나타내는 maxCount 프로퍼티가 있다고 가정 -->
-        <c:choose>
-    <c:when test="${subReserve.currentCount < subReserve.inwon}">
-        <a href="/main/content/content?no=${subReserve.no}" class="myButton">모집중</a>
-    </c:when>
-    <c:otherwise>
-        <a class="myButton" style="opacity: 0.5; pointer-events: none;">모집마감</a>
-    </c:otherwise>
-</c:choose>
-        </td>
-    </tr>
+    
 </c:forEach>
 </table>
 <script>
+function getVideoSourceByJongmokId(jongmokId) {
+    var videoBasePath = "/static/content/";
+    switch (parseInt(jongmokId)) {
+        case 1: return videoBasePath + "soccer.mp4";
+        case 2: return videoBasePath + "basketball.mp4";
+        case 3: return videoBasePath + "volleyball.mp4";
+        case 4: return videoBasePath + "baseball.mp4";
+        case 5: return videoBasePath + "dangu.mp4";
+        case 6: return videoBasePath + "bowling.mp4";
+        case 7: return videoBasePath + "video3.mp4";
+        case 8: return videoBasePath + "video3.mp4";
+        case 9: return videoBasePath + "video3.mp4";
+        case 10: return videoBasePath + "video3.mp4";
+        case 11: return videoBasePath + "video3.mp4";
+        case 12: return videoBasePath + "video12.mp4";
+        default: return videoBasePath + "default.mp4"; // fallback video if needed
+    }
+}
+
+
+var calendarContainer = document.getElementById('calendarContainer');
+calendarContainer.addEventListener('wheel', function(event) {
+    var scrollValue = event.deltaY;
+    calendarContainer.scrollLeft += scrollValue;
+    event.preventDefault();
+}, false);
+
+
 window.onload = function() {
+	
+
+	
 	 var currentDate = new Date();
     var calendar = new Pikaday({
         field: document.getElementById('calendar'),
@@ -206,6 +283,11 @@ window.onload = function() {
     });
     
     fetchDataForDate(moment(currentDate).format('YYYY-MM-DD')); // 페이지 로드 시 현재 날짜의 데이터를 가져옵니다.
+    
+    var videoElement = document.getElementById('backgroundVideo');
+    var sourceElement = videoElement.querySelector('source');
+    sourceElement.src = getVideoSourceByJongmokId('<%= jongmok_id %>');
+    videoElement.load();
 };
 
 function fetchDataForDate(date) {
@@ -222,17 +304,30 @@ function updateTableWithData(data) {
     if (Array.isArray(data)) {
         var table = document.getElementById('aa');
         table.innerHTML = ''; 
+        const today = new Date();
         data.forEach(item => {
             var row = table.insertRow();
             row.insertCell(0).innerText = item.rsdate;
-            row.insertCell(1).innerText = item.rstime;
+            var formattedRstime = item.rstime.slice(0, 2) + ':' + item.rstime.slice(2);
+            row.insertCell(1).innerText = formattedRstime;
             row.insertCell(2).innerText = item.title;
-            row.insertCell(3).innerText = item.inwon;
+            row.insertCell(3).innerText = item.currentCount+ "/" + item.inwon;
             row.insertCell(4).innerText = item.readnum;
             
             
+            const rsDate = new Date(item.rsdate); // 아이템의 날짜를 Date 객체로 변환
+
             const btnCell = row.insertCell(5);
-            if (item.currentCount < item.inwon) {
+            
+            // 기간 만료 판단
+            if (rsDate < today) {
+                const expiredBtn = document.createElement("a");
+                expiredBtn.classList.add("myButton");
+                expiredBtn.style.opacity = "0.5";
+                expiredBtn.style.pointerEvents = "none";
+                expiredBtn.innerText = "기간 만료";
+                btnCell.appendChild(expiredBtn);
+            } else if (item.currentCount < item.inwon) {
                 const btnLink = document.createElement("a");
                 btnLink.href = "/main/content/content?no=" + item.no;
                 btnLink.classList.add("myButton");
@@ -251,6 +346,7 @@ function updateTableWithData(data) {
         console.error('The response data is not an array:', data);
     }
 }
+
 </script>
 
 

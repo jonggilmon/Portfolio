@@ -11,6 +11,9 @@
    	 margin: 0;
    	 padding: 0;
    }
+   section{
+   	background:#F2F5F7;
+   }
    section #txt {
      display:inline-block;
      width:180px;
@@ -65,7 +68,7 @@
    }
    section table tr:last-child td {
      border-bottom:2px solid gray;
-     background:white;
+     background:#F2F5F7;
    }
    section table #pwd {
      height:140px;

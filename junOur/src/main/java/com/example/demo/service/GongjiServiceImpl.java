@@ -22,10 +22,17 @@ public class GongjiServiceImpl implements GongjiService {
 
 		@Override
 		public String gongji_list(Model model, HttpSession session) {
-			ArrayList<HashMap> glist=mapper.glist();
-			String userid=session.getAttribute("userid").toString();
-			model.addAttribute("glist",glist);
-			return "/admin/gongji/gongji_list";
+			if(session.getAttribute("userid")==null)
+			{
+				return "redirect:/member/login";
+			}
+			else
+			{
+				ArrayList<HashMap> glist=mapper.glist();
+				String userid=session.getAttribute("userid").toString();
+				model.addAttribute("glist",glist);
+				return "/admin/gongji/gongji_list";
+			}
 		}
 
 		@Override

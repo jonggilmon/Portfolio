@@ -1,7 +1,7 @@
 package com.example.demo.mapper;
 
 import java.util.ArrayList;
-
+import java.util.HashMap;
 
 import com.example.demo.vo.MemberVo;
 import com.example.demo.vo.MtmVo;
@@ -30,7 +30,7 @@ public interface MypageMapper {
 	
 	public void mtmOk2(MtmVo mvo);
 	
-	public MtmVo inquiry_content(String no);
+	public MtmVo inquiry_content(String questnum);
 	
 	public ArrayList<MtmVo> inquiry_list(String userid);
 	
@@ -38,16 +38,25 @@ public interface MypageMapper {
 	
 	public void inquiryDelete(String no);
 	
-	public QuestVo getQuest(String no);
+	public QuestVo getQuest(String questnum);
 
 
 	public ArrayList<ReserveInfoVo> myreserve(String userid);
 
+
 	public void inquiryUpdateOk(MtmVo mvo);
+
+	public ArrayList<HashMap> myjjim(String userid);
+
+	public void jjimDel(String no);
+
+	public void selectDel(String no);
+
+
 	
 	public ArrayList<MtmVo> inquiry_all();
 	
-	public MtmVo inquiry_all_content(String no);
+	public MtmVo inquiry_all_content(String questnum);
 	
 	public void hideUp(MtmVo mvo);
 }

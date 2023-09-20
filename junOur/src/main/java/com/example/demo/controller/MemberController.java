@@ -62,7 +62,7 @@ public class MemberController {
 	     }
 	 }
 	
-
+	
 	 
 	 @RequestMapping("/member/logout")
 	 public String logout(HttpSession session)

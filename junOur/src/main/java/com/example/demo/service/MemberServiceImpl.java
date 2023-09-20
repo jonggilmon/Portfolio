@@ -50,27 +50,25 @@ public class MemberServiceImpl  implements MemberService{
 
 	@Override
 	public String loginOk(MemberVo mvo, HttpSession session) {
-		String name=mapper.loginOk(mvo);
-		if(name==null)
-		{
-			return "redirect:/member/login?chk=1";
-		}
-		else
-		{
-			session.setAttribute("userid", mvo.getUserid());
-			session.setAttribute("name", name);
-			
-			
-			 if ("admin123".equals(mvo.getUserid())) {
-				
-	                return "/admin/menu"; 
-	            } else {
-			
-		
-			return "redirect:/main/main";
-		}
-		}
-	}
+	   String name=mapper.loginOk(mvo);
+	   if(name==null)
+	   {
+		   return "redirect:/member/login?chk=1";
+	   }
+	   else
+	   {
+		   session.setAttribute("userid", mvo.getUserid());
+		   session.setAttribute("name",name);
+		   
+		   if("admin123".equals(mvo.getUserid())) {
+			   return "/admin/menu";
+		   } else {
+			   
+			   return "redirect:/main/main";
+		   }
+	   }
+	   }
+
 
 	@Override
 	public String logout(HttpSession session) {
@@ -195,6 +193,8 @@ public class MemberServiceImpl  implements MemberService{
 		String pwd=mapper.PnUchk(userid);
 		return pwd;
 	}
+
+	
 	
 
 	    

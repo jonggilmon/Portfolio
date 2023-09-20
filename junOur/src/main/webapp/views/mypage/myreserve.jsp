@@ -39,17 +39,24 @@
   <section>
   <table align="center" width="1100">
    <tr align="center">
+         <td> 방 번호 </td>
          <td> 예약번호 </td>
          <td> 예약자 성함 </td>
-         <td> 예약한 날짜 </td>
+         <td> 예약 장소 </td>
+         <td> 예약신청 날짜 </td>
+         <td> 예약 날짜 </td>
        </tr>
   <caption><h1>내 예약현황 보기</h1></caption>
 	<h3>회원님의 현재 예약정보 입니다.</h3><p>
 	<c:forEach items="${rlist}" var="rvo">
-		<tr>
-			<td align="center">${rvo.reserve_id}</td>	
+		<tr> 
+		<td align="center">
+		<a href="../main/content/content?no=${rvo.reserve_no}">${rvo.reserve_no}</a></td>
+			<td align="center">${rvo.reserve_id}</td>
 			<td align="center">${rvo.user_name}</td>
+			<td align="center">${rvo.add_ress}</td>
 			<td align="center">${rvo.reserve_date}</td>
+			<td align="center">${rvo.rs_date}</td>
 		</tr>
 	</c:forEach>
 	</table>

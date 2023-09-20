@@ -22,4 +22,5 @@ public interface MemberService {
      public String pwdfind();
      public String chkUserid(HttpServletRequest request);
      public String PnUchk(HttpServletRequest request);
+
 }

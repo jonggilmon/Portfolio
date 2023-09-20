@@ -67,6 +67,7 @@
 <body>
   <div id="section">  
     <form method="post" action="freeadd_ok">
+
     <table width="600" align="center">
 	  <caption> <h3> 자유게시판 </h3> </caption>
 	  <tr>
@@ -91,6 +92,7 @@
 	    </td>
 	  </tr>
     </table>
+
     </form>
   </div>
 </body>
