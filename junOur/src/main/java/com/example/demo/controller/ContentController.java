@@ -52,11 +52,17 @@ public class ContentController {
 		   service.increaseReadNum(no);  // 조회수 1 증가
 	     
 	     ContentVo contentDetail = service.getContentByNo(no);
+	     
+	     contentDetail.setSogae(contentDetail.getSogae().replace("\r\n", "<br>"));
+	     contentDetail.setJinhang(contentDetail.getJinhang().replace("\r\n", "<br>"));
+	     contentDetail.setRule(contentDetail.getRule().replace("\r\n", "<br>"));
+	     
+	     
 	     session.setAttribute("no", no);
 	     System.out.println(contentDetail);
 	     model.addAttribute("contentDetail", contentDetail);
 	     
-	  
+	     
 	     String userid="";
 			if(session.getAttribute("userid")!=null)
 			   userid=session.getAttribute("userid").toString();

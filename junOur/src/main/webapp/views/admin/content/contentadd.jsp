@@ -35,9 +35,47 @@ function searchAddress() {
 	    <div width="100"> <a href="/../admin/menu">관리자 창</a></div>
 		<div> <input type="file" name="img"> 이미지 </div>
 		<div><input type="date" name="rsdate"> 예약날짜 </div>
-		<div> <textarea name="sogae" rows="15" cols="50"></textarea>소개</div>
-		<div> <textarea name="jinhang" rows="15" cols="50"></textarea>진행</div>
-		<div> <textarea name="rule" rows="15" cols="50"></textarea>룰</div>
+		<div> 
+			<textarea name="sogae" rows="15" cols="50">
+● 오시는 길 : 
+● 주차 :  
+● 흡연 : 흡연 구역 외 절대 금연  
+● 주의사항 :   
+			</textarea>
+		소개</div>
+		<div>
+		 	<textarea name="jinhang" rows="15" cols="50">
+
+● 
+
+● 
+
+●
+ 		 
+		 	</textarea>
+		 진행</div>
+		<div>
+			 <textarea name="rule" rows="15" cols="50">
+매치규칙
+
+● 
+
+● 
+
+● 	
+	 
+
+
+알아두면 좋아요
+
+● 
+
+● 
+
+● 
+
+			 </textarea>
+		 룰</div>
 		<div>
         <label for="inwon">인원:</label>
         <select name="inwon" id="inwon">

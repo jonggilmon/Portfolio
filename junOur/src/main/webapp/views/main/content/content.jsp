@@ -31,30 +31,34 @@
         	
             margin-right: 20px;
         }
-
+        
         /* 진행 */
         .a {
-            width: 450px;
-            height: 500px;
+            width: 390px;
+            height: 440px;
             background: #fff;
             border-bottom: 20px solid #F2F5F7;
+            padding: 30px;
         }
 
         /* 소개 */
         .b {
-            width: 450px;
-            height: 500px;
+            width: 390px;
+            height: 440px;
             background: #fff;
             border-bottom: 20px solid #F2F5F7;
             /* 간격 */
+            padding: 30px;
         }
 
         /* 경기장 정보 */
         .c {
             width: 450px;
-            height: 250px;
+            height: 260px;
             background: #fff;
             border-bottom: 20px solid #F2F5F7;
+            padding-top: 20px;
+            
         
         }
         .cimg{
@@ -82,6 +86,16 @@
         .d img {
             width: 16px;
         }
+        
+        .e {
+            width: 390px;
+            height: 440px;
+            background: #fff;
+            border-bottom: 20px solid #F2F5F7;
+            /* 간격 */
+            padding: 30px;
+        }
+        
 
         .address {
         padding:0;
@@ -258,14 +272,24 @@
   <div class="wrap">
   	
         <div class="content">
-            <div class="a">${contentDetail.jinhang}</div>
-            <div class="b">${contentDetail.sogae}</div>
+            <div class="a">
+            <div  align="center"><h2>진행방식</h2></div>
+            	${contentDetail.jinhang}
+            </div>
+            <div class="b">
+            <div  align="center"><h2>소개</h2></div>
+            	${contentDetail.sogae}
+            </div>
+             <div class="e">
+             <div  align="center"><h2>규칙</h2></div>
+             	${contentDetail.rule}
+             </div>
             <div class="c">
             <div  align="center"><h2>정보</h2></div>
             	<span class="cimg"><img src="/static/content/car.png" width="40" height="40" valign="middle"> 무료주차	 &nbsp; &nbsp; &nbsp; <img src="/static/content/gender.png" width="40" height="40" valign="middle" style="margin-bottom: 40px"> 성별무관 <p></span>
             	<span class="cimg"><img src="/static/content/inwon.png" width="40" height="40" valign="middle"> ${contentDetail.inwon} 명  &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;<img src="/static/content/toil.png" width="40" height="40" valign="middle"> 남/녀 화장실	<p></span>
             	<span class="cimg"></span>
-            </div>
+            </div>           
         </div><!--content-->
         <div class="d">
             <ul>
@@ -291,6 +315,7 @@
                 <li class="btn2">신청하기</li>
             </ul>
         </div>
+       		
     </div><!--wrap -->
 
     <div id="modal"> <!-- <!— 레이어 팝업창 영역 —> -->
