@@ -45,24 +45,35 @@ function searchAddress() {
 		소개</div>
 		<div>
 		 	<textarea name="jinhang" rows="15" cols="50">
-진행방식
-- 
-- 
-- 		 
+
+● 
+
+● 
+
+●
+ 		 
 		 	</textarea>
 		 진행</div>
 		<div>
 			 <textarea name="rule" rows="15" cols="50">
 매치규칙
-- 
-- 
-- 		 
+
+● 
+
+● 
+
+● 	
+	 
 
 
 알아두면 좋아요
-- 
-- 
-- 
+
+● 
+
+● 
+
+● 
+
 			 </textarea>
 		 룰</div>
 		<div>

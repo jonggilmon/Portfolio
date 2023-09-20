@@ -272,9 +272,18 @@
   <div class="wrap">
   	
         <div class="content">
-            <div class="a">${contentDetail.jinhang}</div>
-            <div class="b">${contentDetail.sogae}</div>
-             <div class="e">${contentDetail.rule}</div>
+            <div class="a">
+            <div  align="center"><h2>진행방식</h2></div>
+            	${contentDetail.jinhang}
+            </div>
+            <div class="b">
+            <div  align="center"><h2>소개</h2></div>
+            	${contentDetail.sogae}
+            </div>
+             <div class="e">
+             <div  align="center"><h2>규칙</h2></div>
+             	${contentDetail.rule}
+             </div>
             <div class="c">
             <div  align="center"><h2>정보</h2></div>
             	<span class="cimg"><img src="/static/content/car.png" width="40" height="40" valign="middle"> 무료주차	 &nbsp; &nbsp; &nbsp; <img src="/static/content/gender.png" width="40" height="40" valign="middle" style="margin-bottom: 40px"> 성별무관 <p></span>
