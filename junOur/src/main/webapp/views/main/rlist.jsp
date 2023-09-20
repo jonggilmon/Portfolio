@@ -222,24 +222,7 @@
 </div>
 <table width="1100" align="center" id="aa" border="0" border-collapse:collapse>
 <c:forEach items="${AllReserves}" var="subReserve">
-    <tr>
-        <td width="350">${subReserve.title}</td>
-        <td>${subReserve.rsdate}</td>
-        
-        <td>${subReserve.writeday}</td>
-        <td></td>
-        <td>
-          <!-- 예: subReserve 객체에 현재 인원 수를 나타내는 currentCount와 최대 인원 수를 나타내는 maxCount 프로퍼티가 있다고 가정 -->
-        <c:choose>
-    <c:when test="${subReserve.currentCount < subReserve.inwon}">
-        <a href="/main/content/content?no=${subReserve.no}" class="myButton">모집중</a>
-    </c:when>
-    <c:otherwise>
-        <a class="myButton" style="opacity: 0.5; pointer-events: none;">모집마감</a>
-    </c:otherwise>
-</c:choose>
-        </td>
-    </tr>
+    
 </c:forEach>
 </table>
 <script>
