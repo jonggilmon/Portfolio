@@ -6,7 +6,20 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lobster&display=swap">
+
 <style>
+
+.logo a {
+    font-family: 'Lobster', cursive;
+    font-size: 45px;
+    text-decoration:none;
+    color:white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    /* 기타 스타일들... */
+}
+
 body {
 	list-style: none;
 }
@@ -25,19 +38,22 @@ body {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	background-color: #333;
+	background-color: transparent;
 	color: #fff;
 	height: 150px;
+	
 }
 
 .logo {
 	align-items: center;
-	
+
+
 }
 
 .logo img {
-	width: 180px;
-	height: 140px;
+	width: 260px;
+	height: 150px;
+
 }
 
 .navi {
@@ -49,6 +65,7 @@ body {
 	display: flex;
 	margin-right: 10px;
 	z-index: 10;
+	background-color: transparent;
 }
 
 .navi li {
@@ -63,6 +80,7 @@ body {
 .navi li a {
 	color: #fff;
 	text-decoration: none;
+	
 }
 
 .submenu {
@@ -83,8 +101,9 @@ body {
 <body>
 	<div class="header">
 		<div class="logo">
-			<a href="/main/main"> <img src="/static/main/mm.png"></a>
-		</div>
+  
+    <a href="/main/main"><img src="/static/content/logo3.png"></a>
+</div>
 		<!-- <div class="search">
 			<input type="text" placeholder="검색어를 입력하세요" id="searchSub">
 			<button id="searchbutton">검색</button>

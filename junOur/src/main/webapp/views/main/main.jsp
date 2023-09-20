@@ -878,7 +878,7 @@
    </div>
     
     <div class="hugi">
-            후기글
+            <a href="../admin/free/free_list">자유게시판</a>
         </div>
         
       <div class="M_photo">
