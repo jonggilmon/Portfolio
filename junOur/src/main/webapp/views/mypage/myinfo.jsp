@@ -10,7 +10,9 @@
    body{
    	 margin: 0;
    	 padding: 0;
-   	 background: #F2F5F7;
+   }
+   section{
+   	background:#F2F5F7;
    }
    section #txt {
      display:inline-block;
@@ -66,7 +68,7 @@
    }
    section table tr:last-child td {
      border-bottom:2px solid gray;
-     background:white;
+     background:#F2F5F7;
    }
    section table #pwd {
      height:140px;

@@ -34,6 +34,10 @@
    }
    td{
       padding: 1rem;
+      color:white;
+      font-weight: 600;
+      font-size: 18px;
+      
    }
    .myButton {
    box-shadow:inset 1px -1px 28px -50px #91b8b3;
@@ -133,7 +137,7 @@
     justify-content: center;
     align-items: center;
     border:1px solid black;
-    height: 440px;
+    height: 640px;
     background-color: transparent !important;
    
 }
