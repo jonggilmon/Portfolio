@@ -26,7 +26,7 @@
             width: 100%;
             background: #333;
             height: 200px;
-            background-color:transparent;
+            background-color:#323232;
           
             
         }
