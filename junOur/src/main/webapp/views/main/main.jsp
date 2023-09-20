@@ -50,7 +50,6 @@
 .sports-slider-wrapper  {
    text-align:center;
    height: 500px;
-   
 }
 
 
