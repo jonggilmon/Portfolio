@@ -127,9 +127,17 @@ public class AdminServiceImpl implements AdminService{
 
 	@Override
 	public String action_list(Model model,HttpSession session) {
-		String userid = session.getAttribute("userid").toString();
-		model.addAttribute("list",mapper.action_list());
-		return "/admin/action/action_list";
+		if(session.getAttribute("userid")==null)
+		{
+			return "redirect:/member/login";
+		}
+		else
+		{
+			String userid = session.getAttribute("userid").toString();
+			model.addAttribute("list",mapper.action_list());
+			return "/admin/action/action_list";
+		}
+		
 	}
 
 	@Override

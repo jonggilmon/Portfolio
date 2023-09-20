@@ -882,7 +882,7 @@
         </div>
         
       <div class="M_photo">
-        활동사진
+        <a href="../admin/action/action_list">활동사진</a>
         <div class="photo-slider">
             <c:forEach items="${alist}" var="avo">
                 <div class="photo-item"><img src="/static/action/${avo.img}"></div>
