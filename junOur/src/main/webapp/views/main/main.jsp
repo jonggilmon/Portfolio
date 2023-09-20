@@ -34,7 +34,7 @@
     background-image: url("/static/content/friendship.jpg");
     background-size: cover;
 	background-position: center;
-	/*overflow-x: hidden;*/
+	overflow-x: hidden;
      
   
  

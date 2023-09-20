@@ -62,7 +62,8 @@ body {
 	line-height: 40px;
 	background: #333;
 	display: flex;
-	margin-right: 10px;
+	margin-right: 20px;
+	margin-left: auto; 
 	z-index: 10;
 	background-color: transparent;
 	font-size:18px;
@@ -96,6 +97,8 @@ body {
 .submenu li:hover {
 	background: #eee;
 }
+
+
 </style>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script><!-- 이거 제이쿼리 버전 안맞아서 새로 가져옴 최신판으로 이걸로 바꾸니까 돌아감   -->
 </head>
@@ -118,7 +121,8 @@ body {
 			<c:if test="${userid!=null}">
 				<c:choose>
 					<c:when test="${userid == 'admin123'}">
-						<li><a href="/admin/menu">관리자 페이지</a></li> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						<li><a href="/admin/menu">관리자 페이지</a></li>
+						<li><a href="/member/logout">로그아웃</a></li>
 					</c:when>
 					<c:otherwise>
 						<li><a href="/admin/action/action_list">활동사진</a></li>								
@@ -130,13 +134,13 @@ body {
 								<li><a href="/mypage/inquiry_select">1:1 문의하기</a></li>
 							</ul>
 						</li>
-					</c:otherwise>
-				</c:choose>
-				<li><a href="../free/free_list">자유게시판</a></li>
+			    <li><a href="../free/free_list">자유게시판</a></li>
 				<li><a href="/admin/gongji/gongji_list">공지사항</a></li>
 				<li><a href="/mypage/inquiry_all">문의사항</a></li>
 				<li>${sessionScope.name}</li>
 				<li><a href="/member/logout">로그아웃</a></li>
+					</c:otherwise>
+				</c:choose>
 			</c:if>
 
 
