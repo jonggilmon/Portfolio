@@ -41,6 +41,7 @@ body {
 	background-color: transparent;
 	color: #fff;
 	height: 150px;
+	border-bottom:2px groove #323232;
 	
 }
 
