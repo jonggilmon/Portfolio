@@ -57,7 +57,7 @@ body {
 
 .navi {
 	width: 360px; /* 로그인 시 주메뉴가 4개니까 한 놈당 100씩 .navi li랑 연동 서브메뉴도 맞춰줘야함 */
-	width: 770px; /* 로그인 시 주메뉴가 4개니까 한 놈당 100씩 .navi li랑 연동 서브메뉴도 맞춰줘야함 */
+	width: 800px; /* 로그인 시 주메뉴가 4개니까 한 놈당 100씩 .navi li랑 연동 서브메뉴도 맞춰줘야함 */
 	height: 40px;
 	line-height: 40px;
 	background: #333;
@@ -69,7 +69,7 @@ body {
 }
 
 .navi li {
-	width: 110px;
+	width: 120px;
 	text-align: center;
 	color: black;
 }
@@ -81,11 +81,11 @@ body {
 .navi li a {
 	color: black;
 	text-decoration: none;
-	
+	width: 120px;
 }
 
 .submenu {
-	width: 110px;
+	width: 120px;
 	height: 160px;
 	background: white;
     display:none;  
@@ -121,13 +121,10 @@ body {
 			<c:if test="${userid!=null}">
 				<c:choose>
 					<c:when test="${userid == 'admin123'}">
-						<li><a href="/admin/menu">관리자 페이지</a></li>
+						<li><a href="/admin/menu">관리자 페이지</a></li> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 					</c:when>
 					<c:otherwise>
-						<li><a href="/admin/action/action_list">활동사진</a></li>
-						<li><a href="/admin/free/free_list">자유게시판</a></li>
-						<li><a href="/admin/gongji/gongji_list">공지사항</a></li>
-						<li><a href="../mypage/inquiry_all">문의사항</a></li>						
+						<li><a href="/admin/action/action_list">활동사진</a></li>				
 						<li><a href="#">마이페이지</a>
 							<ul class="submenu">
 								<li><a href="/mypage/myinfo">내 정보</a></li>
@@ -138,6 +135,9 @@ body {
 						</li>
 					</c:otherwise>
 				</c:choose>
+				<li><a href="/admin/free/free_list">자유게시판</a></li>
+				<li><a href="/admin/gongji/gongji_list">공지사항</a></li>
+				<li><a href="../mypage/inquiry_all">문의사항</a></li>
 				<li>${sessionScope.name}</li>
 				<li><a href="/member/logout">로그아웃</a></li>
 			</c:if>
