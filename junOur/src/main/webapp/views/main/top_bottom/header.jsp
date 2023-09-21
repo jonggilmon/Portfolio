@@ -37,7 +37,7 @@ body {
 .header {
 	display: flex;
 	justify-content: space-between;
-	align-items: center;
+	align-items: center; 
 	background-color: transparent;
 	color: #fff;
 	height: 150px;
