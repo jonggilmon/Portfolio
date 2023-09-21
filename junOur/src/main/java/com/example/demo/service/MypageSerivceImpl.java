@@ -1,6 +1,8 @@
 package com.example.demo.service;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -88,8 +90,6 @@ public class MypageSerivceImpl implements MypageService{
 		String userid=session.getAttribute("userid").toString();
 		mvo.setUserid(userid);
 		
-		
-		
 		String hide=request.getParameter("hide");
 		
 		boolean isHide="on".equals(hide);
@@ -122,6 +122,8 @@ public class MypageSerivceImpl implements MypageService{
 	public String inquiry_list(Model model, HttpSession session) {
 		String userid=session.getAttribute("userid").toString();
 		model.addAttribute("ilist",mapper.inquiry_list(userid));
+		model.addAttribute("userid",userid);
+		
 		return "/mypage/inquiry_list";
 	}
 
@@ -162,10 +164,48 @@ public class MypageSerivceImpl implements MypageService{
 	}
 
 	@Override
-	public String inquiry_all(Model model) {
-		ArrayList<MtmVo> mlist=mapper.inquiry_all();
+	public String inquiry_all(Model model,HttpServletRequest request) {
+		
+		 
+		int page=1;
+		if(request.getParameter("page")!=null)
+		{
+			page=Integer.parseInt(request.getParameter("page"));
+		}
+		
+		// 페이지 처리
+		int index=(page-1)*10;
+		String str="";
+		
+	    ArrayList<MtmVo> mlist = mapper.inquiry_all(str, index);
+		
+		
 		model.addAttribute("mlist",mlist);
-		return "/mypage/inquiry_all";
+		
+		// pstart, pend, chong , page 뷰에 전달
+		
+		int pstart=page/10;
+		
+		if(page%10 == 0)
+			pstart--;
+		
+		pstart=pstart*10+1;
+		int pend=pstart+9;
+		
+		int chong=mapper.getChong();
+		
+		if(pend > chong)
+		{
+			pend=chong;
+		}
+		
+		model.addAttribute("pstart",pstart);
+		model.addAttribute("pend",pend);
+		model.addAttribute("chong",chong);
+		model.addAttribute("page",page);
+
+		  
+		    return "/mypage/inquiry_all";
 	}
 
 	@Override

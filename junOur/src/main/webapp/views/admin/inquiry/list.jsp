@@ -32,16 +32,49 @@
   a:hover {
     color: #333333; /* 검은색 링크 텍스트 색상 (호버 상태) */
   }
+  #all {
+  	width:1800px;
+  	height:1000px;
+  	
+  }
 </style>
 </head>
 <body>
   <section>
-    <caption><h3>대기중인 문의사항들</h3></caption>
-    <c:forEach items="${mlist}" var="mvo">
-      <c:if test="${mvo.seq==0}">
-        <div><a href="answer?no=${mvo.no}">제목 : ${mvo.title } | 작성자 : ${mvo.userid } | 작성일 : ${mvo.writeday}</a></div>
-      </c:if>
-    </c:forEach>
+    <caption><h3>예약 관련</h3></caption>
+    <div id="all">
+    	<div id="Rl">
+    		<c:forEach items="${inRlist}" var="mvo">
+      			<c:if test="${mvo.seq==0}">
+        			<div><a href="answer?no=${mvo.no}">제목 : ${mvo.title } | 작성자 : ${mvo.userid } | 작성일 : ${mvo.writeday}</a></div>
+     		 	</c:if>
+    		</c:forEach>
+       </div>
+       <div id="Sl">
+       <caption><h3>서비스 관련</h3></caption>
+    		<c:forEach items="${inSlist}" var="mvo">
+      			<c:if test="${mvo.seq==0}">
+        			<div><a href="answer?no=${mvo.no}">제목 : ${mvo.title } | 작성자 : ${mvo.userid } | 작성일 : ${mvo.writeday}</a></div>
+     		 	</c:if>
+    		</c:forEach>
+       </div>
+       <div id="Jl">
+       <caption><h3>장소문의</h3></caption>
+    		<c:forEach items="${inJlist}" var="mvo">
+      			<c:if test="${mvo.seq==0}">
+        			<div><a href="answer?no=${mvo.no}">제목 : ${mvo.title } | 작성자 : ${mvo.userid } | 작성일 : ${mvo.writeday}</a></div>
+     		 	</c:if>
+    		</c:forEach>
+       </div>
+       <div id="Gl">
+       <caption><h3>기타</h3></caption>
+    		<c:forEach items="${inGlist}" var="mvo">
+      			<c:if test="${mvo.seq==0}">
+        			<div><a href="answer?no=${mvo.no}">제목 : ${mvo.title } | 작성자 : ${mvo.userid } | 작성일 : ${mvo.writeday}</a></div>
+     		 	</c:if>
+    		</c:forEach>
+       </div>
+    </div>
   </section>
 </body>
 </html>

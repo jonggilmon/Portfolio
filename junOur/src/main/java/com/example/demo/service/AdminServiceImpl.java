@@ -201,9 +201,15 @@ public class AdminServiceImpl implements AdminService{
 	}
 
 	@Override
-	public String list(Model model) {
-		ArrayList<MtmVo> mlist=mapper.list();
-		model.addAttribute("mlist",mlist);
+	public String inquiry_list(Model model) {
+		ArrayList<MtmVo> inRlist=mapper.inRlist();
+		model.addAttribute("inRlist",inRlist);
+		ArrayList<MtmVo> inSlist=mapper.inSlist();
+		model.addAttribute("inSlist",inSlist);
+		ArrayList<MtmVo> inJlist=mapper.inJlist();
+		model.addAttribute("inJlist",inJlist);
+		ArrayList<MtmVo> inGlist=mapper.inGlist();
+		model.addAttribute("inGlist",inGlist);
 		return "/admin/inquiry/list";
 	}
 

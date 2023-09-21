@@ -28,7 +28,7 @@ public interface AdminService {
 	public String action_update_ok(HttpServletRequest request, ActionVo avo);
 	public String gongjiAddOk(GongjiVo gvo);
 	public boolean banMember(String userid);
-	public String list(Model model);
+	public String inquiry_list(Model model);
 	public String answer(HttpServletRequest request,Model model);
 	public List<ReserveInfoVo> contentCancel();
 	boolean cancelMember(int reserve_id);	

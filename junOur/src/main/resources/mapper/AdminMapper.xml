@@ -62,8 +62,17 @@
 	  values(#{title},#{userid},#{content},now())
 	</insert>
 	
-	<select id="list" resultType="com.example.demo.vo.MtmVo">
-		select * from mtm order by writeday desc
+	<select id="inRlist" resultType="com.example.demo.vo.MtmVo">
+		select * from mtm where category=0 order by writeday desc
+	</select>
+	<select id="inSlist" resultType="com.example.demo.vo.MtmVo">
+		select * from mtm where category=1 order by writeday desc
+	</select>
+	<select id="inJlist" resultType="com.example.demo.vo.MtmVo">
+		select * from mtm where category=2 order by writeday desc
+	</select>
+	<select id="inGlist" resultType="com.example.demo.vo.MtmVo">
+		select * from mtm where category=3 order by writeday desc
 	</select>
 	
 	<select id="answer" resultType="com.example.demo.vo.MtmVo">
