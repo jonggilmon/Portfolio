@@ -42,9 +42,42 @@
      line-height:30px;
      border:1px solid black;
    }
+   
+   .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px; 
+  }
+   .nav-links {
+    list-style: none;
+    display: flex;
+    margin: 3;
+    padding: 0;
+  }
+  .nav-links li {
+    margin-right: 20px;
+  }
+  .nav-links li a {
+    color: #fff;
+    text-decoration: none;
+  }
   </style>
 </head>
 <body>
+	<div class="header">  
+	  <ul class="nav-links">
+            <li><a href="/admin/member/memberView">회원관리</a></li>
+            <li><a href="/admin/gongji/gongji_list">공지사항</a></li>
+            <li><a href="/admin/inquiry/list">문의사항</a></li>
+            <li><a href="/admin/action/action_list">활동사진</a></li>
+            <li><a href="/admin/free/adfree_list">자유게시판</a></li>
+            <li><a href="/admin/content/contentadd">일정관리</a></li>
+            <li><a href="/main/main">홈화면</a></li>
+       </ul>
+    </div>
 	<div id="section">
 	  <table width="800" align="center">
 	    <caption> <h2> 공지사항 </h2> </caption>

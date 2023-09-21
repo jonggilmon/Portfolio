@@ -92,5 +92,6 @@
   <select id="isPwd" resultType="boolean">
     select count(*) from free where pwd=#{param1} and no=#{param2}
   </select>
+  
 	
 </mapper>

@@ -2,6 +2,7 @@ package com.example.demo.service;
 
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -235,7 +236,7 @@ public class AdminServiceImpl implements AdminService{
 		
 		return "redirect:/admin/free/adfree_list?no="+fvo.getNo();
 		
-	}	
+	}
 
 	
 }

@@ -34,4 +34,5 @@ public interface AdminService {
 	public String adfree_content(Model model, FreeVo fvo, HttpServletRequest reqeust);
 	public String readnum(FreeVo fvo, HttpServletRequest request);
 	public String delete(FreeVo fvo, HttpServletRequest request);
+	
 }
