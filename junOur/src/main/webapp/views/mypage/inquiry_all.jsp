@@ -22,7 +22,7 @@
     padding: 20px;
     text-align: center;
   }
-
+	
   h3 {
     color: white;
   }
@@ -44,7 +44,8 @@
   }
 
   .links {
-    margin-top: 20px;
+  	display:inline-block;
+    left:1000px;
   }
 
   #title {
@@ -61,12 +62,22 @@
     padding: 10px;
     margin: 10px 0;
     background-color: white;
+    border-radius: 10px;
+  }
+  #all {
+  	width:900px;
+  	height:600px;
   }
 </style>
 </head>
 <body>
 <section>
+  <div id="all">
   <div id="title">모든 문의사항</div>
+  <div class="links">
+    <div><a href="inquiry_list">내 문의 보기</a></div>
+    <div><a href="mtm">문의하기</a></div>
+  </div>
   <c:forEach items="${mlist }" var="mvo">
     <c:choose>
       <c:when test="${mvo.hide == 1 }">
@@ -74,7 +85,7 @@
       </c:when>
       <c:otherwise>
         <div class="asd1"> <!-- asd1 클래스 추가 -->
-          <a href="inquiry_all_content?questnum=${mvo.no}">제목 : ${mvo.title } | 작성자 : ${mvo.userid } | 작성일 : ${mvo.writeday}</a>
+          <a href="inquiry_all_content?no=${mvo.no}">제목 : ${mvo.title } | 작성자 : ${mvo.userid } | 작성일 : ${mvo.writeday}</a>
           <c:if test="${mvo.seq == 1 }">
             <span class="answer-complete">답변 완료</span>
           </c:if>
@@ -82,9 +93,7 @@
       </c:otherwise>
     </c:choose>
   </c:forEach>
-  <div class="links">
-    <div><a href="inquiry_list">내 문의 보기</a></div>
-    <div><a href="mtm">문의하기</a></div>
+  
   </div>
 </section>
 </body>

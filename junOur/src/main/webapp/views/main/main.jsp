@@ -34,6 +34,7 @@
     background-image: url("/static/content/friendship.jpg");
     background-size: cover;
 	background-position: center;
+	overflow-x: hidden;
      
   
  
@@ -281,8 +282,8 @@
   .sport-item.special-effect.soccer a::before {   
      content: "";
     position: absolute;
-    width: 90%;
-    height: 90%;
+    width: 91%;
+    height: 91%;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
@@ -326,8 +327,8 @@
   .sport-item.special-effect.basketball a::before {
      content: "";
     position: absolute;
-    width: 94%;
-    height: 96%;
+    width: 98%;
+    height: 98%;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
@@ -344,12 +345,12 @@
 .sport-item.special-effect.basketball a::after {   
     content: "";
     position: absolute;
-    width: 92%;
-    height: 92%;
+    width: 90%;
+    height: 90%;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    background: radial-gradient(circle, #C2784E, #702802);
+    background: radial-gradient(circle, white, black);
     border-radius: 50%;  
     z-index: -2;
 }
@@ -369,8 +370,8 @@
   .sport-item.special-effect.volleyball a::before {
      content: "";
     position: absolute;
-    width: 94%;
-    height: 94%;
+    width: 97%;
+    height: 97%;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
@@ -387,8 +388,8 @@
 .sport-item.special-effect.volleyball a::after {   
     content: "";
     position: absolute;
-    width: 90%;
-    height: 90%;
+    width: 88%;
+    height: 88%;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
@@ -411,8 +412,8 @@
   .sport-item.special-effect.baseball a::before {
      content: "";
     position: absolute;
-    width: 80%;
-    height: 80%;
+    width: 97%;
+    height: 97%;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
@@ -454,8 +455,8 @@
   .sport-item.special-effect.dangu a::before {
      content: "";
     position: absolute;
-    width: 94%;
-    height: 94%;
+    width: 98%;
+    height: 98%;
     left: 49%;
     top: 50%;
     transform: translate(-50%, -50%);
@@ -500,12 +501,12 @@
   .sport-item.special-effect.bowling a::before {
      content: "";
     position: absolute;
-    width: 100%;
-    height: 100%;
+    width: 98%;
+    height: 98%;
     left: 50%;    
     top: 50%;
     transform: translate(-50%, -50%);
-     background: radial-gradient(circle, #B95AFF, #0500A5);
+     background: radial-gradient(circle, white, #A2A2A2);
     background-size: 100% 0%;
     background-repeat: no-repeat;
     background-position: bottom;
@@ -519,8 +520,8 @@
 .sport-item.special-effect.bowling a::after {   
     content: "";
     position: absolute;
-    width: 100%;
-    height: 100%;
+    width: 90%;
+    height: 90%;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
@@ -544,12 +545,12 @@
   .sport-item.special-effect.golf a::before {
      content: "";
     position: absolute;  
-    width: 65%;
-    height: 65%;
+    width: 98%;
+    height: 98%;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    background: radial-gradient(circle at 30% 30%, #FFFFFF, #F0E1C0 70%, #FAED7D);
+    background: radial-gradient(circle, white, #A2A2A2);
     background-size: 100% 0%;
     background-repeat: no-repeat;
     background-position: bottom;
@@ -590,8 +591,8 @@
   .sport-item.special-effect.tennis a::before {
      content: "";
     position: absolute;
-    width: 98%;
-    height: 98%;
+    width: 100%;
+    height: 100%;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
@@ -631,14 +632,14 @@
   .sport-item.special-effect.swim a::before {
      content: "";
     position: absolute;
-    width: 98%;    
-    height: 98%;
+    width: 100%;    
+    height: 100%;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
      background: radial-gradient(circle, white, #A2A2A2);
    
-    background-size: 100% 30%;
+    background-size: 100% 0%;
     background-repeat: no-repeat;
     background-position:center bottom;
     opacity: 1;
@@ -747,8 +748,8 @@
   .sport-item.special-effect.joggu a::before {   
      content: "";
     position: absolute;
-    width: 82%;
-    height: 82%;
+    width: 97%;
+    height: 97%;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);

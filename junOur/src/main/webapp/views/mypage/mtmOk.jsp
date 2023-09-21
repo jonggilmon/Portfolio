@@ -39,3 +39,4 @@
 </section>
 </body>
 </html>
+<%@ include file="../main/top_bottom/footer.jsp" %>
