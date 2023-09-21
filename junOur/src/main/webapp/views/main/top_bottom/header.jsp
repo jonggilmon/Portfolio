@@ -108,7 +108,7 @@ body {
   
     <a href="/main/main"><img src="/static/content/logo3.png"></a>
 </div>
-		>
+		
 		<ul class="navi">
 			<c:if test="${userid==null}">
             <li><a href="/mypage/inquiry_all">문의사항</a></li>
