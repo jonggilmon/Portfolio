@@ -235,10 +235,10 @@ function getVideoSourceByJongmokId(jongmokId) {
         case 4: return videoBasePath + "baseball.mp4";
         case 5: return videoBasePath + "dangu.mp4";
         case 6: return videoBasePath + "bowling.mp4";
-        case 7: return videoBasePath + "video3.mp4";
-        case 8: return videoBasePath + "video3.mp4";
-        case 9: return videoBasePath + "video3.mp4";
-        case 10: return videoBasePath + "video3.mp4";
+        case 7: return videoBasePath + "golf.mp4";
+        case 8: return videoBasePath + "tennis.mp4";
+        case 9: return videoBasePath + "swim.mp4";
+        case 10: return videoBasePath + "badmin.mp4";
         case 11: return videoBasePath + "video3.mp4";
         case 12: return videoBasePath + "video12.mp4";
         default: return videoBasePath + "default.mp4"; // fallback video if needed
