@@ -240,7 +240,7 @@ function getVideoSourceByJongmokId(jongmokId) {
         case 9: return videoBasePath + "video3.mp4";
         case 10: return videoBasePath + "video3.mp4";
         case 11: return videoBasePath + "video3.mp4";
-        case 12: return videoBasePath + "video12.mp4";
+        case 12: return videoBasePath + "footval.jpg";
         default: return videoBasePath + "default.mp4"; // fallback video if needed
     }
 }
