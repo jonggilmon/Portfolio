@@ -111,37 +111,37 @@ body {
 		>
 		<ul class="navi">
 			<c:if test="${userid==null}">
-				<li><a href="/mypage/inquiry_all">문의사항</a></li>
-				<li><a href="/admin/action/action_list">활동사진</a></li>
-				<li><a href="/free/free_list">자유게시판</a></li>
-				<li><a href="/admin/gongji/gongji_list">공지사항</a></li>
-				<li><a href="/member/login">로그인</a></li>
-				<li><a href="/member/member">회원가입</a></li>
-			</c:if>
-			<c:if test="${userid!=null}">
-				<c:choose>
-					<c:when test="${userid == 'admin123'}">
-						<li><a href="/admin/menu">관리자 페이지</a></li>
-						<li><a href="/member/logout">로그아웃</a></li>
-					</c:when>
-					<c:otherwise>
-						<li><a href="/admin/action/action_list">활동사진</a></li>								
-						<li><a href="#">마이페이지</a>
-							<ul class="submenu">
-								<li><a href="/mypage/myinfo">내 정보</a></li>
-								<li><a href="/mypage/myreserve">예약내역</a></li>
-								<li><a href="/mypage/myjjim">찜 확인</a></li>
-								<li><a href="/mypage/inquiry_select">1:1 문의하기</a></li>
-							</ul>
-						</li>
-			    <li><a href="../free/free_list">자유게시판</a></li>
-				<li><a href="/admin/gongji/gongji_list">공지사항</a></li>
-				<li><a href="/mypage/inquiry_all">문의사항</a></li>
-				<li>${sessionScope.name}</li>
-				<li><a href="/member/logout">로그아웃</a></li>
-					</c:otherwise>
-				</c:choose>
-			</c:if>
+            <li><a href="/mypage/inquiry_all">문의사항</a></li>
+            <li><a href="/admin/action/action_list">활동사진</a></li>
+            <li><a href="/admin/free/free_list">자유게시판</a></li>
+            <li><a href="/admin/gongji/gongji_list">공지사항</a></li>
+            <li><a href="/member/login">로그인</a></li>
+            <li><a href="/member/member">회원가입</a></li>
+         </c:if>
+         <c:if test="${userid!=null}">
+            <c:choose>
+               <c:when test="${userid == 'admin123'}">
+                  <li><a href="/admin/menu">관리자 페이지</a></li> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+               </c:when>
+               <c:otherwise>
+                  <li><a href="/admin/action/action_list">활동사진</a></li>            
+                  <li><a href="#">마이페이지</a>
+                     <ul class="submenu">
+                        <li><a href="/mypage/myinfo">내 정보</a></li>
+                        <li><a href="/mypage/myreserve">예약내역</a></li>
+                        <li><a href="/mypage/myjjim">찜 확인</a></li>
+                        <li><a href="/mypage/inquiry_select">1:1 문의하기</a></li>
+                     </ul>
+                  </li>
+               </c:otherwise>
+            </c:choose>
+            <li><a href="/admin/free/free_list">자유게시판</a></li>
+            <li><a href="/admin/gongji/gongji_list">공지사항</a></li>
+            <li><a href="../mypage/inquiry_all">문의사항</a></li>
+            <li>${sessionScope.name}</li>
+            <li><a href="/member/logout">로그아웃</a></li>
+         </c:if>
+
 
 
 			<!-- 세션에 "userid" 키가 없으면 로그아웃 상태로 간주 -->
