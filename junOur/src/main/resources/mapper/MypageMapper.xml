@@ -31,22 +31,22 @@
     <selectKey keyProperty="no" order="AFTER" resultType="int">
         SELECT LAST_INSERT_ID() AS no
     </selectKey>
-    insert into mtm(title, content,  userid, writeday)
-    values (#{title}, #{content}, #{userid}, now())
+    insert into mtm(title, content,  userid, writeday, category)
+    values (#{title}, #{content}, #{userid}, now(), #{category})
 </insert>
  <insert id="mtmOk2" parameterType="com.example.demo.vo.MtmVo">
     <selectKey keyProperty="no" order="AFTER" resultType="int">
         SELECT LAST_INSERT_ID() AS no
     </selectKey>
-    insert into mtm(title, content,  userid, writeday, hide)
-    values (#{title}, #{content}, #{userid}, now(), 1)
+    insert into mtm(title, content,  userid, writeday, hide, category)
+    values (#{title}, #{content}, #{userid}, now(), 1, #{category})
 </insert>
   <select id="inquiry_content" resultType="com.example.demo.vo.MtmVo">
   	 select * from mtm where no=#{questnum}
   </select>
   
   <select id="inquiry_list" resultType="com.example.demo.vo.MtmVo">
-  	select * from mtm where userid=#{userid} order by writeday desc
+  	select * from mtm where userid=#{userid} order by writeday desc limit 7;
   </select>
   
   <select id="inquiryUpdate" resultType="com.example.demo.vo.MtmVo">
@@ -71,7 +71,7 @@
   </update>
   
   <select id="inquiry_all" resultType="com.example.demo.vo.MtmVo">
-		select * from mtm order by writeday desc
+		select * from mtm order by #{str} limit #{index}, 7
   </select>
   
   <select id="inquiry_all_content" resultType="com.example.demo.vo.MtmVo">
@@ -95,6 +95,9 @@
      delete from jjim where no=#{no}
   </delete>
   
+  <select id="getChong" resultType="int">
+    select  ceil( count(*)/10 ) from mtm
+  </select>
   
 
   </mapper>

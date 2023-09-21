@@ -42,8 +42,8 @@ public interface MypageService {
 
 	
 	public String inquiryUpdateOk(MtmVo vo);
-	
-	public String inquiry_all(Model model);
+	 
+	public String inquiry_all(Model model,HttpServletRequest request);
 	
 	public String inquiry_all_content(Model model,HttpServletRequest request);
 

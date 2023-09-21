@@ -62,6 +62,14 @@
 <section>
   <form method="post" action="mtmOk" name="mform">
     <div> 1:1 문의사항 </div>
+    <div>
+    	<select name="category">
+    		<option value="0"> 예약 관련 </option>
+    		<option value="1"> 서비스 관련 </option>
+    		<option value="2"> 장소 문의 </option>
+    		<option value="3"> 기타 </option>
+    	</select>
+    </div>
     <div> <input type="text" name="title" placeholder="문의 제목"> </div>
     <div> <textarea name="content" placeholder="문의 내용"></textarea></div>
     <div> <input type="checkbox" name="hide" id="hide" onclick="pwdClick()">비밀글 체크</div>

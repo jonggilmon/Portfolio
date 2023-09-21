@@ -177,7 +177,7 @@ public class AdminController {
 	@RequestMapping("/admin/inquiry/list")
 	public String admin_inquiry_list(Model model)
 	{
-		return service.list(model);
+		return service.inquiry_list(model);
 	}
 	
 	@RequestMapping("/admin/inquiry/answer")

@@ -39,7 +39,10 @@ public interface AdminMapper {
 
 	public int banMemberById(String userid);
 	
-	public ArrayList<MtmVo> list();
+	public ArrayList<MtmVo> inRlist();
+	public ArrayList<MtmVo> inSlist();
+	public ArrayList<MtmVo> inJlist();
+	public ArrayList<MtmVo> inGlist();
 	
 	public MtmVo answer(String no);
 	

@@ -54,9 +54,11 @@ public interface MypageMapper {
 
 
 	
-	public ArrayList<MtmVo> inquiry_all();
+	public ArrayList<MtmVo> inquiry_all(String str, int index);
 	
 	public MtmVo inquiry_all_content(String questnum);
 	
 	public void hideUp(MtmVo mvo);
+	
+	 public int getChong();
 }
