@@ -168,23 +168,25 @@
         justify-content: space-between;
         width:100%;
         margin: 0 auto;
-        padding: 20px;
+        padding: 0px;
     }
 
     .notice {
-       
-        font-size:20px;
-        
+        font-size:20px;    
         flex: 1;
         margin-right: 300px;
         height:120px;
      
     }
+    
+    .nbsp {
+      flex:1;
+    }
+    
 
     .weather {
         background-color: transparent;
-        padding: 10px;
-       
+        padding: 0px; 
         flex: 1;
         margin-left: 300px;
         height:120px;
@@ -802,6 +804,8 @@
               <hr>
             </c:forEach>
         </div>
+        <div class="nbsp"></div>
+        
         <div class="weather">
        <a href="https://www.accuweather.com/ko/kr/seoul/226081/current-weather/226081" target="_blank" class="aw-widget-legal"></a>
       <div id="awcc" class="aw-widget-current"  data-locationkey="226081" data-unit="c" data-language="ko-kr" data-useip="false" data-uid="awcc..."></div>

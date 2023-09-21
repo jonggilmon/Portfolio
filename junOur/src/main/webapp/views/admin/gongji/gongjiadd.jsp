@@ -17,6 +17,7 @@
     #section input[type=text] {
       width:400px;
       height:30px;
+     
     }
     #section textarea {
       width:400px;
@@ -26,13 +27,16 @@
       width:400px;
       height:30px;
     }
+    #ob {
+    opacity:0;
+    }
   </style>
 </head>
 <body>
   <div id="section">  
     <form method="post" action="gongjiAddOk">
 	  <div> 제목 <input type="text" name="title"> </div>
-	  <div> 이름(userid) <input type="text" name="userid"> </div>
+	  <div id="ob"><input type="text" name="userid" value="admin123"> </div>
 	  <div> 내용 <textarea name="content"> </textarea> </div>
 	  <div> <input type="submit" value="글 등록"> </div>
     </form>

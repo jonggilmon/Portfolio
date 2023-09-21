@@ -137,7 +137,7 @@
     justify-content: center;
     align-items: center;
     border:1px solid black;
-    height: 640px;
+    height: 550px;
     background-color: transparent !important;
    
 }
@@ -158,21 +158,42 @@
 }
 .pika-single .pika-lendar {
     padding-top: 2em;  /* 여기서 년, 월, 버튼의 높이를 위한 여백을 추가합니다 */
+    font-size:25px;
+   
+   
 }
 
 .pika-single th, .pika-single td {
     padding: 11px !important;
     font-size: 1.05em !important;
     
+    
    
 }
+.pika-single th:nth-child(1), /* 일요일 */
+.pika-single th:nth-child(7)  /* 토요일 */
+{
+    color: #FF3636;
+}
+
+.pika-single th:nth-child(2), 
+.pika-single th:nth-child(3),
+.pika-single th:nth-child(4),
+.pika-single th:nth-child(5),
+.pika-single th:nth-child(6) 
+{
+    color: #191919;
+}
+
 
 .pika-single th {
     font-size: 1.26em;
+     
+    
 }
 
 .pika-single .pika-title {
- font-size: 1.5em;
+     font-size: 1.5em;
     position: absolute;
     top: 0.8em;  /* 상단 여백을 약간 추가 */
     left: 50%;
@@ -181,11 +202,17 @@
     z-index: 5; /* 추가 */
 }
 
+
+
 .pika-single .pika-button {
     width: 28px;    
     height: 28px;   
-    line-height: 28px;  
-    font-size: 11.2px;
+    line-height: center;  
+    font-size: 13px;
+    border-radius: 12px;
+    text-align:center;
+    
+    
 }
 
 
@@ -235,11 +262,11 @@ function getVideoSourceByJongmokId(jongmokId) {
         case 4: return videoBasePath + "baseball.mp4";
         case 5: return videoBasePath + "dangu.mp4";
         case 6: return videoBasePath + "bowling.mp4";
-        case 7: return videoBasePath + "video3.mp4";
-        case 8: return videoBasePath + "video3.mp4";
-        case 9: return videoBasePath + "video3.mp4";
-        case 10: return videoBasePath + "video3.mp4";
-        case 11: return videoBasePath + "video3.mp4";
+        case 7: return videoBasePath + "golf.mp4";
+        case 8: return videoBasePath + "tennis.mp4";
+        case 9: return videoBasePath + "swim.mp4";
+        case 10: return videoBasePath + "badmin.mp4";
+        case 11: return videoBasePath + "tacgu.jpg";
         case 12: return videoBasePath + "footval.jpg";
         default: return videoBasePath + "default.mp4"; // fallback video if needed
     }
@@ -255,10 +282,7 @@ calendarContainer.addEventListener('wheel', function(event) {
 
 
 window.onload = function() {
-	
-
-	
-	 var currentDate = new Date();
+    var currentDate = new Date();
     var calendar = new Pikaday({
         field: document.getElementById('calendar'),
         showOn: 'always',
@@ -281,14 +305,36 @@ window.onload = function() {
         },
         firstDay: 0
     });
-    
+
     fetchDataForDate(moment(currentDate).format('YYYY-MM-DD')); // 페이지 로드 시 현재 날짜의 데이터를 가져옵니다.
     
     var videoElement = document.getElementById('backgroundVideo');
     var sourceElement = videoElement.querySelector('source');
-    sourceElement.src = getVideoSourceByJongmokId('<%= jongmok_id %>');
-    videoElement.load();
+    var calendarContainer = document.getElementById('calendarContainer');
+
+    var mediaSource = getVideoSourceByJongmokId('<%= jongmok_id %>');
+
+    if (mediaSource.endsWith('.jpg')) {
+        // 비디오 요소를 숨기고
+        videoElement.style.display = 'none';
+
+        // 이미지를 생성하여 calendarContainer에 추가
+        var imgElement = document.createElement('img');
+        imgElement.src = mediaSource;
+        imgElement.style.position = 'fixed';
+        imgElement.style.right = '0';
+        imgElement.style.bottom = '0';
+        imgElement.style.width = '100%';
+        imgElement.style.height = '100%';
+        imgElement.style.zIndex = '-1';
+        imgElement.style.objectFit = 'cover';
+        calendarContainer.appendChild(imgElement);
+    } else {
+        sourceElement.src = mediaSource;
+        videoElement.load();
+    }
 };
+
 
 function fetchDataForDate(date) {
 	  let jongmokId = '<%= jongmok_id %>';
@@ -315,15 +361,22 @@ function updateTableWithData(data) {
             row.insertCell(4).innerText = item.readnum;
             
             
-            const rsDate = new Date(item.rsdate); // 아이템의 날짜를 Date 객체로 변환
-
+             const rsDate = new Date(item.rsdate);
+            
+            // 아이템의 시간을 설정
+            rsDate.setHours(parseInt(item.rstime.slice(0, 2)));
+            rsDate.setMinutes(parseInt(item.rstime.slice(2)));
+            
+            // 현재 시간과 아이템의 시간 사이의 차이 (밀리초)
+            const timeDiff = rsDate.getTime() - today.getTime();
+            
             const btnCell = row.insertCell(5);
             
-            // 기간 만료 판단
-            if (rsDate < today) {
+            // 2시간 = 2 * 60 * 60 * 1000 밀리초
+            if (rsDate < today || timeDiff <= 2 * 60 * 60 * 1000) {
                 const expiredBtn = document.createElement("a");
                 expiredBtn.classList.add("myButton");
-                expiredBtn.style.opacity = "0.5";
+                expiredBtn.style.opacity = "0.6";
                 expiredBtn.style.pointerEvents = "none";
                 expiredBtn.innerText = "기간 만료";
                 btnCell.appendChild(expiredBtn);
@@ -336,7 +389,7 @@ function updateTableWithData(data) {
             } else {
                 const closedBtn = document.createElement("a");
                 closedBtn.classList.add("myButton");
-                closedBtn.style.opacity = "0.5";
+                closedBtn.style.opacity = "0.6";
                 closedBtn.style.pointerEvents = "none";
                 closedBtn.innerText = "모집마감";
                 btnCell.appendChild(closedBtn);

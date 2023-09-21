@@ -13,20 +13,20 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
+            height: 68vh;
             flex-direction: column;
         }
 
         /* 요소의 크기 2배로 조정 */
         .content-center form {
-            font-size: 2em; /* 텍스트 크기를 2배로 */
+            font-size: 1em; /* 텍스트 크기를 2배로 */
         }
 
         .content-center input[type="password"], 
         .content-center input[type="text"], 
         .content-center input[type="submit"] {
             padding: 10px 20px; /* 패딩을 조금 더 크게 */
-            font-size: 1em; /* 텍스트 크기를 기본 폰트 크기와 동일하게 유지 */
+            font-size: 23px; /* 텍스트 크기를 기본 폰트 크기와 동일하게 유지 */
         }
     </style>
 </head>
