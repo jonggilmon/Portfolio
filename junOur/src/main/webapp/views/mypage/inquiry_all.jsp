@@ -16,6 +16,7 @@
     padding: 20px;
     background-color: #fff;
     font-family: Arial, sans-serif;
+    margin-bottom: 50px;
   }
   h3 {
     color: white;

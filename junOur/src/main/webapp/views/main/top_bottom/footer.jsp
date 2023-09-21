@@ -9,7 +9,6 @@
         body {
             margin: 0;
             padding: 0;
-            
         }
 
         ul {
@@ -26,7 +25,7 @@
         footer {
             width: 100%;
             background: #333;
-            height: 150px;
+            height: 172px;
             background-color:#323232;
             
         }
