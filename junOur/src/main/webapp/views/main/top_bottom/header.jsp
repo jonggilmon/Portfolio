@@ -113,7 +113,7 @@ body {
 			<c:if test="${userid==null}">
             <li><a href="/mypage/inquiry_all">문의사항</a></li>
             <li><a href="/admin/action/action_list">활동사진</a></li>
-            <li><a href="/admin/free/free_list">자유게시판</a></li>
+            <li><a href="../free/free_list">자유게시판</a></li>
             <li><a href="/admin/gongji/gongji_list">공지사항</a></li>
             <li><a href="/member/login">로그인</a></li>
             <li><a href="/member/member">회원가입</a></li>
@@ -135,9 +135,9 @@ body {
                   </li>
                </c:otherwise>
             </c:choose>
-            <li><a href="/admin/free/free_list">자유게시판</a></li>
+            <li><a href="/free/free_list">자유게시판</a></li>
             <li><a href="/admin/gongji/gongji_list">공지사항</a></li>
-            <li><a href="../mypage/inquiry_all">문의사항</a></li>
+            <li><a href="/mypage/inquiry_all">문의사항</a></li>
             <li>${sessionScope.name}</li>
             <li><a href="/member/logout">로그아웃</a></li>
          </c:if>
