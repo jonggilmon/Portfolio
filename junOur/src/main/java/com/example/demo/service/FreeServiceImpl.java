@@ -24,18 +24,18 @@ public class FreeServiceImpl implements FreeService {
 	@Override
 	public String free_list(Model model) {
 		model.addAttribute("flist",mapper.flist());
-		return "/admin/free/free_list";
+		return "/free/free_list";
 	}
 
 	@Override
 	public String freeadd() {
-		return "/admin/free/freeadd";
+		return "/free/freeadd";
 	}
 
 	@Override
 	public String freeadd_ok(FreeVo fvo) {
 		mapper.freeadd_ok(fvo);
-		return "redirect:/admin/free/free_list";
+		return "redirect:/free/free_list";
 	}
 
 	@Override
@@ -43,14 +43,14 @@ public class FreeServiceImpl implements FreeService {
 		String no=request.getParameter("no");
 		model.addAttribute("chk",request.getParameter("chk"));
 		model.addAttribute("fvo",mapper.content(fvo));
-		return "/admin/free/free_content";
+		return "/free/free_content";
 	}
 	
 	@Override
 	public String readnum(FreeVo fvo, HttpServletRequest request) {
 		String no=request.getParameter("no");
 		mapper.readnum(fvo);
-		return "redirect:/admin/free/free_content?no="+no;
+		return "redirect:/free/free_content?no="+no;
 	}
 	
 	@Override
@@ -60,11 +60,11 @@ public class FreeServiceImpl implements FreeService {
 		if(mapper.isPwd(pwd, no))
 		{
 			mapper.delete(fvo, reqeust, no);
-			return "redirect:/admin/free/free_list?no="+fvo.getNo();
+			return "redirect:/free/free_list?no="+fvo.getNo();
 		}
 		else
 		{
-			return "redirect:/admin/free/free_content?chk=1&no="+no;
+			return "redirect:/free/free_content?chk=1&no="+no;
 		}
 		
 	}
@@ -74,7 +74,7 @@ public class FreeServiceImpl implements FreeService {
 		String no=request.getParameter("no");
 		model.addAttribute("chk",request.getParameter("chk"));
 		model.addAttribute("fvo",mapper.free_update(fvo));
-		return "/admin/free/free_update";
+		return "/free/free_update";
 	}
 
 	@Override
@@ -83,11 +83,11 @@ public class FreeServiceImpl implements FreeService {
 		if(mapper.isPwd(fvo.getPwd(), fvo.getNo()))
 		{
 		    mapper.free_update_ok(fvo);
-		    return "redirect:/admin/free/free_content?no="+fvo.getNo();
+		    return "redirect:/free/free_content?no="+fvo.getNo();
 		}
 		else
 		{
-			return "redirect:/admin/free/free_update?chk=1&no="+fvo.getNo();
+			return "redirect:/free/free_update?chk=1&no="+fvo.getNo();
 		}
 	}
 	

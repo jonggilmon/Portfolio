@@ -16,9 +16,11 @@ import org.springframework.util.ResourceUtils;
 import com.example.demo.mapper.AdminMapper;
 import com.example.demo.vo.ActionVo;
 import com.example.demo.vo.AdminVo;
+import com.example.demo.vo.FreeVo;
 import com.example.demo.vo.GongjiVo;
 import com.example.demo.vo.MtmVo;
 import com.example.demo.vo.QuestVo;
+import com.example.demo.vo.ReserveInfoVo;
 import com.oreilly.servlet.MultipartRequest;
 import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 
@@ -82,6 +84,23 @@ public class AdminServiceImpl implements AdminService{
 	    }
 	    return "redirect:/admin/content/contentadd";
 	}
+	
+	
+	
+
+	@Override
+	public List<ReserveInfoVo> contentCancel() {
+		return mapper.contentCancel();
+	}
+	
+	
+	@Override
+	public boolean cancelMember(int reserve_id) {
+	    int result = mapper.cancelMemberId(reserve_id);
+	    return result > 0;
+	}
+
+	
 	@Override
 	public List<AdminVo> memberView() {
 		return mapper.memberView();
@@ -205,6 +224,36 @@ public class AdminServiceImpl implements AdminService{
 		mapper.seqUp(no);
 		return "redirect:/admin/inquiry/list";
 	}
+	
+	@Override
+	public String adfree_list(Model model) {
+		model.addAttribute("flist",mapper.flist());
+		return "/admin/free/adfree_list";
+	}
+
+	@Override
+	public String adfree_content(Model model, FreeVo fvo, HttpServletRequest request) {
+		String no=request.getParameter("no");
+		model.addAttribute("chk",request.getParameter("chk"));
+		model.addAttribute("fvo",mapper.content(fvo));
+		return "/admin/free/adfree_content";
+	}
+	
+	@Override
+	public String readnum(FreeVo fvo, HttpServletRequest request) {
+		String no=request.getParameter("no");
+		mapper.readnum(fvo);
+		return "redirect:/admin/free/adfree_content?no="+no;
+	}
+	
+	@Override
+	public String delete(FreeVo fvo ,HttpServletRequest reqeust) {
+		int no=Integer.parseInt(reqeust.getParameter("no"));
+		mapper.delete(fvo, reqeust, no);
+		
+		return "redirect:/admin/free/adfree_list?no="+fvo.getNo();
+		
+	}	
 
 	
 }

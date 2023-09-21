@@ -72,6 +72,9 @@
             height: 350px;
             background: #fff;
             padding: 25px;
+            position: sticky;
+ 		    top: 0; /* 화면 상단에 고정되도록 설정 */
+            z-index: 1; /* 다른 내용 위에 나타나도록 z-index 설정 */
         }
 
         .d > ul > li:first-child {
@@ -150,7 +153,7 @@
      /* 여기서부터 레이어 */
   #modal{
     width:100%;
-    height:2020px;
+    height:2500px;
     position:absolute;
     left:0;
     top:0;
@@ -325,8 +328,8 @@
     저희 모션메이트에서는 아무런 금전적 보상을
     취하지 않고 장소를 대여해주는 사이트 입니다.
     따라서 사용자의 부주의로 인한 불이익은 해당 사이트에서
-    아무런 보상을 해 줄 수 없습니다. 또한 후기가 좋지 않으신 분들은
-    사이트 차원에서 제재할 수 있으니 그 점 확인 바랍니다.
+    아무런 보상을 해 줄 수 없음을 안내 드립니다. 또한
+    잦은 취소신청 또한 사이트 이용제한이 발생할 수 있음을 안내드리며
     오늘도 저희 모션메이트를 이용해 주셔서 감사합니다.
     </div>
     <div class="btn">닫기</div><div style="color:red; font-size:14px;" class="ab">주의사항을 모두 읽고 닫아 주세요.</div>

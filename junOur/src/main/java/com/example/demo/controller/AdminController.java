@@ -1,6 +1,7 @@
 package com.example.demo.controller;
 
 import java.net.http.HttpRequest;
+
 import java.sql.Date;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -22,8 +23,10 @@ import com.example.demo.service.AdminService;
 import com.example.demo.service.ContentService;
 import com.example.demo.vo.ActionVo;
 import com.example.demo.vo.AdminVo;
+import com.example.demo.vo.FreeVo;
 import com.example.demo.vo.GongjiVo;
 import com.example.demo.vo.QuestVo;
+import com.example.demo.vo.ReserveInfoVo;
 
 @Controller
 public class AdminController {
@@ -75,6 +78,26 @@ public class AdminController {
 	    return service.contentAddOk(request);
 	}
 	
+	@RequestMapping("/admin/content/contentCancel")
+	public String contentCancel(Model model) {
+		List<ReserveInfoVo> contents = service.contentCancel();
+		model.addAttribute("contents",contents);
+		return "/admin/content/contentCancel";
+	}
+	
+	
+	@RequestMapping("/admin/content/cancelMember")
+	public String cancelMember(@RequestParam int reserve_id, RedirectAttributes redirectAttributes) {
+	  
+	    
+		if (service.cancelMember(reserve_id)) {
+	        redirectAttributes.addFlashAttribute("message", "Successfully cancelled reservation with No: " + reserve_id);
+	    } else {
+	        redirectAttributes.addFlashAttribute("errorMessage", "Failed to cancel reservation with No: " + reserve_id);
+	    }
+	    return "redirect:/admin/content/contentCancel";
+	}
+	
 	
 	@RequestMapping("/admin/member/memberView")
 	public String memberview(Model model) {
@@ -96,6 +119,8 @@ public class AdminController {
 	    }
 	    return "redirect:/admin/member/memberView";
 	}
+	
+	
 	@RequestMapping("/admin/action/action_write")
 	public String action_write()
 	{
@@ -166,4 +191,29 @@ public class AdminController {
 	{
 		return service.questOk(request,qvo);
 	}
+	
+	@RequestMapping("/admin/free/adfree_list")
+	public String free_list(Model model)
+	{
+		return service.adfree_list(model);
+	}
+	
+	@RequestMapping("/admin/free/adfree_content")
+	public String free_content(Model model, FreeVo fvo, HttpServletRequest reqeust)
+	{
+		return service.adfree_content(model, fvo, reqeust);
+	}
+	
+	@RequestMapping("/admin/free/readnum")
+	public String readnum(FreeVo fvo, HttpServletRequest request)
+	{
+		return service.readnum(fvo, request);
+	}
+	
+	@RequestMapping("/admin/free/delete")
+	public String delete(FreeVo fvo, HttpServletRequest request)
+	{
+		return service.delete(fvo, request);
+	}
+	
 }

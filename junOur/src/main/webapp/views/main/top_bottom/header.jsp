@@ -37,7 +37,7 @@ body {
 .header {
 	display: flex;
 	justify-content: space-between;
-	align-items: center;
+	align-items: center; 
 	background-color: transparent;
 	color: #fff;
 	height: 150px;
@@ -57,19 +57,20 @@ body {
 
 .navi {
 	width: 360px; /* 로그인 시 주메뉴가 4개니까 한 놈당 100씩 .navi li랑 연동 서브메뉴도 맞춰줘야함 */
-	width: 770px; /* 로그인 시 주메뉴가 4개니까 한 놈당 100씩 .navi li랑 연동 서브메뉴도 맞춰줘야함 */
+	width: 800px; /* 로그인 시 주메뉴가 4개니까 한 놈당 100씩 .navi li랑 연동 서브메뉴도 맞춰줘야함 */
 	height: 40px;
 	line-height: 40px;
 	background: #333;
 	display: flex;
-	margin-right: 10px;
+	margin-right: 20px;
+	margin-left: auto; 
 	z-index: 10;
 	background-color: transparent;
 	font-size:18px;
 }
 
 .navi li {
-	width: 110px;
+	width: 120px;
 	text-align: center;
 	color: black;
 }
@@ -81,11 +82,11 @@ body {
 .navi li a {
 	color: black;
 	text-decoration: none;
-	
+	width: 120px;
 }
 
 .submenu {
-	width: 110px;
+	width: 120px;
 	height: 160px;
 	background: white;
     display:none;  
@@ -96,6 +97,8 @@ body {
 .submenu li:hover {
 	background: #eee;
 }
+
+
 </style>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script><!-- 이거 제이쿼리 버전 안맞아서 새로 가져옴 최신판으로 이걸로 바꾸니까 돌아감   -->
 </head>
@@ -105,42 +108,41 @@ body {
   
     <a href="/main/main"><img src="/static/content/logo3.png"></a>
 </div>
-		<!-- <div class="search">
-			<input type="text" placeholder="검색어를 입력하세요" id="searchSub">
-			<button id="searchbutton">검색</button>
-		</div> -->
+		>
 		<ul class="navi">
 			<c:if test="${userid==null}">
-				<li><a href="/mypage/inquiry_all">문의사항</a></li>
-				<li><a href="/admin/action/action_list">활동사진</a></li>
-				<li><a href="/admin/free/free_list">자유게시판</a></li>
-				<li><a href="/admin/gongji/gongji_list">공지사항</a></li>
-				<li><a href="/member/login">로그인</a></li>
-				<li><a href="/member/member">회원가입</a></li>
-			</c:if>
-			<c:if test="${userid!=null}">
-				<c:choose>
-					<c:when test="${userid == 'admin123'}">
-						<li><a href="/admin/menu">관리자 페이지</a></li>
-					</c:when>
-					<c:otherwise>
-						<li><a href="/admin/action/action_list">활동사진</a></li>
-						<li><a href="/admin/free/free_list">자유게시판</a></li>
-						<li><a href="/admin/gongji/gongji_list">공지사항</a></li>
-						<li><a href="/mypage/inquiry_all">문의사항</a></li>						
-						<li><a href="#">마이페이지</a>
-							<ul class="submenu">
-								<li><a href="/mypage/myinfo">내 정보</a></li>
-								<li><a href="/mypage/myreserve">예약내역</a></li>
-								<li><a href="/mypage/myjjim">찜 확인</a></li>
-								<li><a href="/mypage/inquiry_select">1:1 문의하기</a></li>
-							</ul>
-						</li>
-					</c:otherwise>
-				</c:choose>
-				<li>${sessionScope.name}</li>
-				<li><a href="/member/logout">로그아웃</a></li>
-			</c:if>
+            <li><a href="/mypage/inquiry_all">문의사항</a></li>
+            <li><a href="/admin/action/action_list">활동사진</a></li>
+            <li><a href="../free/free_list">자유게시판</a></li>
+            <li><a href="/admin/gongji/gongji_list">공지사항</a></li>
+            <li><a href="/member/login">로그인</a></li>
+            <li><a href="/member/member">회원가입</a></li>
+         </c:if>
+         <c:if test="${userid!=null}">
+            <c:choose>
+               <c:when test="${userid == 'admin123'}">
+                  <li><a href="/admin/menu">관리자 페이지</a></li> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+               </c:when>
+               <c:otherwise>
+                  <li><a href="/admin/action/action_list">활동사진</a></li>            
+                  <li><a href="#">마이페이지</a>
+                     <ul class="submenu">
+                        <li><a href="/mypage/myinfo">내 정보</a></li>
+                        <li><a href="/mypage/myreserve">예약내역</a></li>
+                        <li><a href="/mypage/myjjim">찜 확인</a></li>
+                        <li><a href="/mypage/inquiry_select">1:1 문의하기</a></li>
+                     </ul>
+                  </li>
+               </c:otherwise>
+            </c:choose>
+            <li><a href="/free/free_list">자유게시판</a></li>
+            <li><a href="/admin/gongji/gongji_list">공지사항</a></li>
+            <li><a href="/mypage/inquiry_all">문의사항</a></li>
+            <li>${sessionScope.name}</li>
+            <li><a href="/member/logout">로그아웃</a></li>
+         </c:if>
+
+
 
 
 			<!-- 세션에 "userid" 키가 없으면 로그아웃 상태로 간주 -->

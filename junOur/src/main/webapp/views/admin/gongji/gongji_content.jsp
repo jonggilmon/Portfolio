@@ -6,7 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-
+<%@ include file="../../main/top_bottom/header.jsp" %>
 <script>
 function showDeleteButton() {
   var deleteRow = document.getElementById("del");
@@ -55,4 +55,5 @@ function showDeleteButton() {
     </table>
   </div>
 </body>
+<%@ include file="../../main/top_bottom/footer.jsp" %>
 </html>

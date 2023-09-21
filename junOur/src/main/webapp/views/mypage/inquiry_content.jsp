@@ -57,8 +57,7 @@
 
 </head>
 <body>
-	<section> <!-- 답변 나오기 쿼리까지 짜놓음 -->
-		
+
     <div class="container">
         <div class="post">
             <div class="post-title">제 목 : ${mvo.title}</div>
@@ -69,16 +68,11 @@
             <c:if test="${mvo.seq == 1 }">
                 <div class="post-title">답변</div>
                 <div class="post-content answer">${qvo.content }</div>
+                <div>작성일: ${qvo.writeday}</div>
             </c:if>
         </div>
 
-        <!-- 다른 게시물들도 동일한 형태로 추가할 수 있습니다. -->
-        <!--
-        <div class="post">
-            <div class="post-title">다른 게시물 제목</div>
-            <div class="post-content">다른 게시물 내용</div>
-        </div>
-        -->
+       
 
         <div><a href="inquiry_all">전체 문의사항</a></div>
     </div>
