@@ -284,9 +284,9 @@ public class AdminServiceImpl implements AdminService{
 	}
 
 	@Override
-	public String adgongjiadd_ok(HttpServletRequest request) {
-		
-		return "redirect:/admin/gongji/adgongjiadd";
+	public String adgongjiadd_ok(GongjiVo gvo) {
+		mapper.gongjiAddOk(gvo);
+		return "redirect:/admin/gongji/adgongji_list";
 	}
 
 	@Override

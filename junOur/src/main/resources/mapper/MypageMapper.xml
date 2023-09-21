@@ -71,7 +71,7 @@
   </update>
   
   <select id="inquiry_all" resultType="com.example.demo.vo.MtmVo">
-		select * from mtm order by #{str} limit #{index}, 7
+		select * from mtm order by writeday desc limit #{index}, 7
   </select>
   
   <select id="inquiry_all_content" resultType="com.example.demo.vo.MtmVo">

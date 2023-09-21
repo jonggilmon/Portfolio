@@ -41,7 +41,7 @@ public interface AdminService {
 	
 	public String adgongji_list(Model model, HttpSession session);
 	public String adgongjiadd();
-	public String adgongjiadd_ok(HttpServletRequest request);
+	public String adgongjiadd_ok(GongjiVo gvo);
 	public String adgongji_content(Model model, GongjiVo gvo);
 	public String greadnum(GongjiVo gvo, HttpServletRequest request);
 	public String gdelete(GongjiVo gvo);

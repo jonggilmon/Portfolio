@@ -162,16 +162,16 @@ public class AdminController {
 		return service.action_update_ok(request,avo);
 	}
 	
-	@RequestMapping("/admin/gongji/gongjiadd")
+	@RequestMapping("/admin/gongji/adgongjiadd")
 	public String gongji()
 	{
-		return "/admin/gongji/gongjiadd";
+		return "/admin/gongji/adgongjiadd";
 	}
 	
-	@RequestMapping("/admin/gongji/gongjiAddOk")
+	@RequestMapping("/admin/gongji/adgongjiaddOk")
 	public String gongjiAddOk(GongjiVo gvo)
 	{
-		return service.gongjiAddOk(gvo);
+		return service.adgongjiadd_ok(gvo);
 	}
 	
 	@RequestMapping("/admin/inquiry/list")

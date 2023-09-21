@@ -18,37 +18,37 @@ public class GongjiController {
 	@Qualifier("gongs")
 	private GongjiService service;
 	
-	@RequestMapping("/admin/gongji/gongji_list")
+	@RequestMapping("/gongji/gongji_list")
 	public String gongji_list(Model model, HttpSession session)
 	{
 		return service.gongji_list(model, session);
 	}
 	
-	@RequestMapping("/admin/gongji/readnum")
+	@RequestMapping("/gongji/readnum")
 	public String readnum(GongjiVo gvo, HttpServletRequest request)
 	{
 		return service.readnum(gvo, request);
 	}
 	
-	@RequestMapping("/admin/gongji/gongji_content")
+	@RequestMapping("/gongji/gongji_content")
 	public String gongji_content(Model model, GongjiVo gvo)
 	{
 		return service.gongji_content(model, gvo);
 	}
 	
-	@RequestMapping("/admin/gongji/delete")
+	@RequestMapping("/gongji/delete")
 	public String delete(GongjiVo gvo)
 	{
 		return service.delete(gvo);
 	}
 	
-	@RequestMapping("/admin/gongji/gongji_update")
+	@RequestMapping("/gongji/gongji_update")
 	public String gongji_update(GongjiVo gvo, Model model)
 	{
 		return service.gongji_update(gvo, model);
 	}
 	
-	@RequestMapping("/admin/gongji/gongji_update_ok")
+	@RequestMapping("/gongji/gongji_update_ok")
 	public String gongji_update_ok(HttpServletRequest request, GongjiVo gvo)
 	{
 		return service.gongji_update_ok(request, gvo);

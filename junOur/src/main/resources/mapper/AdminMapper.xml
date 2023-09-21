@@ -118,7 +118,7 @@
 	</select>
 	
 	<update id="greadnum">
-	  update gongji set greadnum=greadnum+1 where no=#{no}
+	  update gongji set readnum=readnum+1 where no=#{no}
 	</update>
 	
 	<select id="adgongji_content" resultType="com.example.demo.vo.GongjiVo">

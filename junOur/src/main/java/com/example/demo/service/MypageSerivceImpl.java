@@ -175,10 +175,8 @@ public class MypageSerivceImpl implements MypageService{
 		
 		// 페이지 처리
 		int index=(page-1)*10;
-		String str="";
-		
-	    ArrayList<MtmVo> mlist = mapper.inquiry_all(str, index);
-		
+
+	    ArrayList<MtmVo> mlist = mapper.inquiry_all( index);
 		
 		model.addAttribute("mlist",mlist);
 		

@@ -799,7 +799,7 @@
 <div class="notice-weather">
          <div class="notice">
             <c:forEach items="${glist}" var="gvo">
-              <div><a href="../admin/gongji/gongji_content?no=${gvo.no}">${gvo.title } || ${gvo.writeday }</a></div>                          
+              <div><a href="../gongji/gongji_content?no=${gvo.no}">${gvo.title } || ${gvo.writeday }</a></div>                          
               
               <hr>
             </c:forEach>

@@ -31,52 +31,52 @@ public class GongjiServiceImpl implements GongjiService {
 				ArrayList<HashMap> glist=mapper.glist();
 				String userid=session.getAttribute("userid").toString();
 				model.addAttribute("glist",glist);
-				return "/admin/gongji/gongji_list";
+				return "/gongji/gongji_list";
 			}
 		}
 
 		@Override
 		public String gongjiadd() {
 			
-			return "/admin/gongji/gongjiadd";
+			return "/gongji/gongjiadd";
 		}
 
 		@Override
 		public String gongjiadd_ok(HttpServletRequest request) {
 			
-			return "redirect:/admin/gongji/gongjiadd";
+			return "redirect:/gongji/gongjiadd";
 		}
 
 		@Override
 		public String gongji_content(Model model, GongjiVo gvo) {
 			model.addAttribute("gvo",mapper.content(gvo));
-			return "/admin/gongji/gongji_content";
+			return "/gongji/gongji_content";
 		}
 
 		@Override
 		public String readnum(GongjiVo gvo, HttpServletRequest request) {
 			String no=request.getParameter("no");
 			mapper.readnum(gvo);
-			return "redirect:/admin/gongji/gongji_content?no="+no;
+			return "redirect:/gongji/gongji_content?no="+no;
 		}
 
 		@Override
 		public String delete(GongjiVo gvo) {
 			mapper.delete(gvo);
-			return "redirect:/admin/gongji/gongji_list";
+			return "redirect:/gongji/gongji_list";
 		}
 
 		@Override
 		public String gongji_update(GongjiVo gvo, Model model) {
 			model.addAttribute("gvo",mapper.gongji_update(gvo));
-			return "/admin/gongji/gongji_update";
+			return "/gongji/gongji_update";
 		}
 
 		@Override
 		public String gongji_update_ok(HttpServletRequest request, GongjiVo gvo) {
 			String no=request.getParameter("no");
 			mapper.gongji_update_ok(gvo);
-			return "redirect:/admin/gongji/gongji_content?no="+no;
+			return "redirect:/gongji/gongji_content?no="+no;
 		}
 }
 

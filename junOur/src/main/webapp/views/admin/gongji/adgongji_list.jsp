@@ -73,7 +73,7 @@
 	    
 	  <c:forEach items="${glist}" var="map">
 	    <tr>
-	      <td> <a href="readnum?no=${map.no}"> ${map.title} </a> </td>
+	      <td> <a href="greadnum?no=${map.no}"> ${map.title} </a> </td>
 	      <td> ${map.userid} </td>
 	      <td> ${map.readnum} </td>
 	      <td> ${map.writeday} </td>
@@ -82,7 +82,7 @@
 	  
 	    <tr>
 	     <c:if test="${userid eq 'admin123'}"> 
-	       <td colspan="4" align="center"> <a href="../gongji/adgongjiadd"> 글 등록 </a> </td>
+	       <td colspan="4" align="center"> <a href="/admin/gongji/adgongjiadd"> 글 등록 </a> </td>
 	     </c:if>
 	    </tr>
 	  </table>

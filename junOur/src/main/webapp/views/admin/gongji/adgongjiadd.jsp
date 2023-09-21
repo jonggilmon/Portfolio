@@ -53,7 +53,7 @@
   
   
   <div id="section">  
-    <form method="post" action="adgongjiAddOk">
+    <form method="post" action="adgongjiaddOk">
     <caption> <h2> 공지사항 </h2> </caption>
 	  <div> 제목 <input type="text" name="title"> </div>
 	  <div id="ob"><input type="text" name="userid" value="admin123"> </div>
