@@ -239,7 +239,7 @@ function getVideoSourceByJongmokId(jongmokId) {
         case 8: return videoBasePath + "tennis.mp4";
         case 9: return videoBasePath + "swim.mp4";
         case 10: return videoBasePath + "badmin.mp4";
-        case 11: return videoBasePath + "video3.mp4";
+        case 11: return videoBasePath + "tacgu.jpg";
         case 12: return videoBasePath + "footval.jpg";
         default: return videoBasePath + "default.mp4"; // fallback video if needed
     }
@@ -255,10 +255,7 @@ calendarContainer.addEventListener('wheel', function(event) {
 
 
 window.onload = function() {
-	
-
-	
-	 var currentDate = new Date();
+    var currentDate = new Date();
     var calendar = new Pikaday({
         field: document.getElementById('calendar'),
         showOn: 'always',
@@ -281,14 +278,36 @@ window.onload = function() {
         },
         firstDay: 0
     });
-    
+
     fetchDataForDate(moment(currentDate).format('YYYY-MM-DD')); // 페이지 로드 시 현재 날짜의 데이터를 가져옵니다.
     
     var videoElement = document.getElementById('backgroundVideo');
     var sourceElement = videoElement.querySelector('source');
-    sourceElement.src = getVideoSourceByJongmokId('<%= jongmok_id %>');
-    videoElement.load();
+    var calendarContainer = document.getElementById('calendarContainer');
+
+    var mediaSource = getVideoSourceByJongmokId('<%= jongmok_id %>');
+
+    if (mediaSource.endsWith('.jpg')) {
+        // 비디오 요소를 숨기고
+        videoElement.style.display = 'none';
+
+        // 이미지를 생성하여 calendarContainer에 추가
+        var imgElement = document.createElement('img');
+        imgElement.src = mediaSource;
+        imgElement.style.position = 'fixed';
+        imgElement.style.right = '0';
+        imgElement.style.bottom = '0';
+        imgElement.style.width = '100%';
+        imgElement.style.height = '100%';
+        imgElement.style.zIndex = '-1';
+        imgElement.style.objectFit = 'cover';
+        calendarContainer.appendChild(imgElement);
+    } else {
+        sourceElement.src = mediaSource;
+        videoElement.load();
+    }
 };
+
 
 function fetchDataForDate(date) {
 	  let jongmokId = '<%= jongmok_id %>';
