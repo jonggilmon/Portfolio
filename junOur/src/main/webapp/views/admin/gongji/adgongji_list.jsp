@@ -1,12 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>    
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<%@ include file="../../main/top_bottom/header.jsp" %>
+<%@ include file="../../admin/menu.jsp" %>
   <style>
     #section {
      width:1100px;
@@ -43,9 +43,24 @@
      line-height:30px;
      border:1px solid black;
    }
+   
+   .nav-links {
+    list-style: none;
+    display: flex;
+    margin: 3;
+    padding: 0;
+  }
+  .nav-links li {
+    margin-right: 20px;
+  }
+  .nav-links li a {
+    color: #fff;
+    text-decoration: none;
+  }
   </style>
 </head>
 <body>
+  
 	<div id="section">
 	  <table width="800" align="center">
 	    <caption> <h2> 공지사항 </h2> </caption>
@@ -67,11 +82,11 @@
 	  
 	    <tr>
 	     <c:if test="${userid eq 'admin123'}"> 
-	      <td colspan="4" align="center"> <a href="../gongji/gongjiadd"> 글 등록 </a> </td>
+	       <td colspan="4" align="center"> <a href="../gongji/adgongjiadd"> 글 등록 </a> </td>
 	     </c:if>
 	    </tr>
 	  </table>
 	  </div>
 </body>
-<%@ include file="../../main/top_bottom/footer.jsp" %>
 </html>
+<%@ include file="../../main/top_bottom/footer.jsp" %>

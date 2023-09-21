@@ -33,9 +33,18 @@ public interface AdminService {
 	public List<ReserveInfoVo> contentCancel();
 	boolean cancelMember(int reserve_id);	
 	public String questOk(HttpServletRequest request,QuestVo qvo);
+	
 	public String adfree_list(Model model);
 	public String adfree_content(Model model, FreeVo fvo, HttpServletRequest reqeust);
 	public String readnum(FreeVo fvo, HttpServletRequest request);
 	public String delete(FreeVo fvo, HttpServletRequest request);
-
+	
+	public String adgongji_list(Model model, HttpSession session);
+	public String adgongjiadd();
+	public String adgongjiadd_ok(HttpServletRequest request);
+	public String adgongji_content(Model model, GongjiVo gvo);
+	public String greadnum(GongjiVo gvo, HttpServletRequest request);
+	public String gdelete(GongjiVo gvo);
+	public String adgongji_update(GongjiVo gvo, Model model);
+	public String adgongji_update_ok(HttpServletRequest request, GongjiVo gvo);
 }

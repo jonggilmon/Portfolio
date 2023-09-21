@@ -7,6 +7,22 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <%@ include file="../../main/top_bottom/header.jsp" %>
+  <style>
+   .nav-links {
+    list-style: none;
+    display: flex;
+    margin: 3;
+    padding: 0;
+  }
+  .nav-links li {
+    margin-right: 20px;
+  }
+  .nav-links li a {
+    color: #fff;
+    text-decoration: none;
+  }
+  </style>
+
 <script>
 function showDeleteButton() {
   var deleteRow = document.getElementById("del");
@@ -16,6 +32,18 @@ function showDeleteButton() {
 
 </head>
 <body>
+  <c:if test="${gvo.userid eq 'admin123'}">
+	  <ul class="nav-links">
+        <li><a href="/admin/member/memberView">회원관리</a></li>
+        <li><a href="/admin/gongji/gongji_list">공지사항</a></li>
+        <li><a href="/admin/inquiry/list">문의사항</a></li>
+        <li><a href="/admin/action/action_list">활동사진</a></li>
+        <li><a href="/admin/free/adfree_list">자유게시판</a></li>
+        <li><a href="/admin/content/contentadd">일정관리</a></li>
+        <li><a href="/main/main">홈화면</a></li>
+      </ul>
+  </c:if>
+  
   <div id="section">
     <table width="600" align="center">
       <caption> <h2> 공지사항 </h2> </caption>
@@ -38,10 +66,8 @@ function showDeleteButton() {
       <tr>
         <td colspan="2" align="center">
           <a href="gongji_list"> 목록 </a>
-         <c:if test="${gvo.userid==userid}">
-          <a href="gongji_update?no=${gvo.no}"> 수정 </a>
-          <a href="#" onclick="showDeleteButton(); return false;"> 삭제 </a> <!-- return false;는 링크를 클릭했을 때 브라우저가 해당 링크의 기본 동작을 실행하지 않도록 하는 역할을 합니다.  -->
-         </c:if>
+         
+         
         </td>
       </tr>
       <tr id="del" style="display:none;">
@@ -55,5 +81,5 @@ function showDeleteButton() {
     </table>
   </div>
 </body>
-<%@ include file="../../main/top_bottom/footer.jsp" %>
 </html>
+<%@ include file="../../main/top_bottom/footer.jsp" %>

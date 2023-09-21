@@ -2,6 +2,7 @@ package com.example.demo.service;
 
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -253,7 +254,66 @@ public class AdminServiceImpl implements AdminService{
 		
 		return "redirect:/admin/free/adfree_list?no="+fvo.getNo();
 		
-	}	
+	}
+	
+	@Override
+	public String adgongji_list(Model model, HttpSession session) {
+		if(session.getAttribute("userid")==null)
+		{
+			return "redirect:/member/login";
+		}
+		else
+		{
+			ArrayList<HashMap> glist=mapper.glist();
+			String userid=session.getAttribute("userid").toString();
+			model.addAttribute("glist",glist);
+			return "/admin/gongji/adgongji_list";
+		}
+	}
+
+	@Override
+	public String adgongjiadd() {
+		
+		return "/admin/gongji/adgongjiadd";
+	}
+
+	@Override
+	public String adgongjiadd_ok(HttpServletRequest request) {
+		
+		return "redirect:/admin/gongji/adgongjiadd";
+	}
+
+	@Override
+	public String adgongji_content(Model model, GongjiVo gvo) {
+		model.addAttribute("gvo",mapper.adgongji_content(gvo));
+		return "/admin/gongji/adgongji_content";
+	}
+
+	@Override
+	public String greadnum(GongjiVo gvo, HttpServletRequest request) {
+		String no=request.getParameter("no");
+		mapper.greadnum(gvo);
+		return "redirect:/admin/gongji/adgongji_content?no="+no;
+	}
+
+	@Override
+	public String gdelete(GongjiVo gvo) {
+		mapper.gdelete(gvo);
+		return "redirect:/admin/gongji/adgongji_list";
+	}
+
+	@Override
+	public String adgongji_update(GongjiVo gvo, Model model) {
+		model.addAttribute("gvo",mapper.adgongji_update(gvo));
+		return "/admin/gongji/adgongji_update";
+	}
+
+	@Override
+	public String adgongji_update_ok(HttpServletRequest request, GongjiVo gvo) {
+		String no=request.getParameter("no");
+		mapper.adgongji_update_ok(gvo);
+		return "redirect:/admin/gongji/adgongji_content?no="+no;
+	}
 
 	
 }
