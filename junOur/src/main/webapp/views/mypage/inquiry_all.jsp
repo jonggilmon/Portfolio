@@ -14,6 +14,7 @@
     padding: 0;
     background-color: #fff;
     font-family: Arial, sans-serif;
+    margin-bottom: 50px;
   }
 
   section {

@@ -11,7 +11,7 @@
 	}
 	section{
 		width: 1200px;
-		height: 600px;
+		height: 650px;
 		margin: 0 auto;
 	}
 	table{
