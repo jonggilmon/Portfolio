@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
  <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
- <%@ include file="../../main/top_bottom/header.jsp" %>
+<%@ include file="../../admin/menu.jsp" %>
   <style>
     #section {
       width:1100px;
@@ -29,9 +29,9 @@
    
  
   <div id="section">
-    <form method="post" action="gongji_update_ok">
+    <form method="post" action="adgongji_update_ok">
       <input type="hidden" name="no" value="${gvo.no}">
-      <h2> 게시판 글쓰기 </h2>
+      <h2> 공지사항 </h2>
       <div class="msg"> <input type="text" value="${gvo.userid}" name="userid" placeholder="아이디"> </div>  
       <div class="msg"> <input type="text" value="${gvo.title}" name="title" placeholder="제 목"> </div>  
       <div class="msg"> <textarea name="content" placeholder="내용을 입력하세요">${gvo.content}</textarea> </div>

@@ -216,4 +216,39 @@ public class AdminController {
 		return service.delete(fvo, request);
 	}
 	
+	@RequestMapping("/admin/gongji/adgongji_list")
+	public String adgongji_list(Model model, HttpSession session)
+	{
+		return service.adgongji_list(model, session);
+	}
+	
+	@RequestMapping("/admin/gongji/greadnum")
+	public String greadnum(GongjiVo gvo, HttpServletRequest request)
+	{
+		return service.greadnum(gvo, request);
+	}
+	
+	@RequestMapping("/admin/gongji/adgongji_content")
+	public String adgongji_content(Model model, GongjiVo gvo)
+	{
+		return service.adgongji_content(model, gvo);
+	}
+	
+	@RequestMapping("/admin/gongji/gdelete")
+	public String gdelete(GongjiVo gvo)
+	{
+		return service.gdelete(gvo);
+	}
+	
+	@RequestMapping("/admin/gongji/adgongji_update")
+	public String adgongji_update(GongjiVo gvo, Model model)
+	{
+		return service.adgongji_update(gvo, model);
+	}
+	
+	@RequestMapping("/admin/gongji/adgongji_update_ok")
+	public String adgongji_update_ok(HttpServletRequest request, GongjiVo gvo)
+	{
+		return service.adgongji_update_ok(request, gvo);
+	}
 }

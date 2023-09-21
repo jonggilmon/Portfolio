@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<%@ include file="../../main/top_bottom/header.jsp" %>
+<%@ include file="../../admin/menu.jsp" %>
   <style>
     #section {
       width:1100px;
@@ -29,14 +29,6 @@
     }
 
     
-    .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #333;
-    color: #fff;
-    padding: 10px 20px; 
-  }
    .nav-links {
     list-style: none;
     display: flex;
@@ -58,20 +50,11 @@
   </style>
 </head>
 <body>
-  <div class="header">  
-	  <ul class="nav-links">
-            <li><a href="/admin/member/memberView">회원관리</a></li>
-            <li><a href="/admin/gongji/gongji_list">공지사항</a></li>
-            <li><a href="/admin/inquiry/list">문의사항</a></li>
-            <li><a href="/admin/action/action_list">활동사진</a></li>
-            <li><a href="/admin/free/adfree_list">자유게시판</a></li>
-            <li><a href="/admin/content/contentadd">일정관리</a></li>
-            <li><a href="/main/main">홈화면</a></li>
-       </ul>
-    </div>
+  
   
   <div id="section">  
-    <form method="post" action="gongjiAddOk">
+    <form method="post" action="adgongjiAddOk">
+    <caption> <h2> 공지사항 </h2> </caption>
 	  <div> 제목 <input type="text" name="title"> </div>
 	  <div id="ob"><input type="text" name="userid" value="admin123"> </div>
 	  <div> 내용 <textarea name="content"> </textarea> </div>
@@ -79,5 +62,5 @@
     </form>
   </div>  
 </body>
-<%@ include file="../../main/top_bottom/footer.jsp" %>
 </html>
+<%@ include file="../../main/top_bottom/footer.jsp" %>

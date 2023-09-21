@@ -60,5 +60,13 @@ public interface AdminMapper {
 	public void readnum(FreeVo fvo);
 	public void delete(FreeVo fvo, HttpServletRequest reqeust, int no);
 	public boolean isPwd(String pwd,int no);
+
+	public ArrayList<HashMap> glist();
+	public GongjiVo adgongji_content(GongjiVo gvo);
+	public void greadnum(GongjiVo gvo);
+	public void gdelete(GongjiVo gvo);
+	public GongjiVo adgongji_update(GongjiVo gvo);
+	public void adgongji_update_ok(GongjiVo gvo);
+	
 	
 }
