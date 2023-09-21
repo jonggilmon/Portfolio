@@ -7,8 +7,32 @@
 <head>
     <meta charset="UTF-8">
     <title>비밀번호 확인</title>
+     <style>
+     
+      .content-center {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+
+        /* 요소의 크기 2배로 조정 */
+        .content-center form {
+            font-size: 2em; /* 텍스트 크기를 2배로 */
+        }
+
+        .content-center input[type="password"], 
+        .content-center input[type="text"], 
+        .content-center input[type="submit"] {
+            padding: 10px 20px; /* 패딩을 조금 더 크게 */
+            font-size: 1em; /* 텍스트 크기를 기본 폰트 크기와 동일하게 유지 */
+        }
+    </style>
 </head>
 <body>
+
+<div class="content-center">
 <c:if test="${not empty errorMessage}">
     <p style="color: red;">${errorMessage}</p>
 </c:if>
@@ -20,7 +44,7 @@
 </c:if>
 
 <%
-    String captcha = java.util.UUID.randomUUID().toString().substring(0, 6).toUpperCase();
+    String captcha = java.util.UUID.randomUUID().toString().substring(0, 8).toUpperCase();
     session.setAttribute("captcha", captcha);
 %>
 
@@ -33,6 +57,7 @@
     
     <input type="submit" value="확인">
 </form>
+</div>
 </body>
 </html>
 

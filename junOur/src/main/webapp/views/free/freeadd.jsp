@@ -6,6 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<%@ include file="../main/top_bottom/header.jsp" %>
   <style>
     #section table {
       border-spacing:0px;
@@ -64,7 +65,7 @@
     }
   </script>
 </head>
-<%@ include file="../main/top_bottom/header.jsp" %>
+
 <body>
   <div id="section">  
     <form method="post" action="freeadd_ok">
@@ -93,9 +94,9 @@
 	    </td>
 	  </tr>
     </table>
-
     </form>
   </div>
 </body>
 </html>
 <%@ include file="../main/top_bottom/footer.jsp" %>
+

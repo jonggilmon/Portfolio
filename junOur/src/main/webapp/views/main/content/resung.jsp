@@ -18,7 +18,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<table width="700" align="center">
+	<table width="700" height="650" align="center">
 	<caption><h3>최근 예약 정보입니다.</h3></caption>
 	<c:if test="${not empty recentReserveInfo}">
         <tr>

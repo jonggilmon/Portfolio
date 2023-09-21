@@ -21,6 +21,7 @@ import com.example.demo.vo.FreeVo;
 import com.example.demo.vo.GongjiVo;
 import com.example.demo.vo.MtmVo;
 import com.example.demo.vo.QuestVo;
+import com.example.demo.vo.ReserveInfoVo;
 import com.oreilly.servlet.MultipartRequest;
 import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 
@@ -84,6 +85,23 @@ public class AdminServiceImpl implements AdminService{
 	    }
 	    return "redirect:/admin/content/contentadd";
 	}
+	
+	
+	
+
+	@Override
+	public List<ReserveInfoVo> contentCancel() {
+		return mapper.contentCancel();
+	}
+	
+	
+	@Override
+	public boolean cancelMember(int reserve_id) {
+	    int result = mapper.cancelMemberId(reserve_id);
+	    return result > 0;
+	}
+
+	
 	@Override
 	public List<AdminVo> memberView() {
 		return mapper.memberView();

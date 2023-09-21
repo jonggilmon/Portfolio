@@ -6,6 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<%@ include file="../../main/top_bottom/header.jsp" %>
   <style>
     #section {
      width:1100px;
@@ -103,6 +104,7 @@
 	     </c:if>
 	    </tr>
 	  </table>
-  </table>
+	  </div>
 </body>
+<%@ include file="../../main/top_bottom/footer.jsp" %>
 </html>
