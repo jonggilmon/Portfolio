@@ -48,6 +48,7 @@
             <li><a href="/admin/action/action_list">활동사진</a></li>
             <li><a href="/admin/free/adfree_list">자유게시판</a></li>
             <li><a href="/admin/content/contentadd">일정관리</a></li>
+            <li><a href="/admin/content/contentCancel">신청취소</a></li>
             <li><a href="/main/main">홈화면</a></li>
        </ul>
     </div>
