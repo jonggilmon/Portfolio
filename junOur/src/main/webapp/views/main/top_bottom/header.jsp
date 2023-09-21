@@ -123,8 +123,7 @@ body {
                <c:when test="${userid == 'admin123'}">
                   <li><a href="/admin/menu">관리자 페이지</a></li> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                </c:when>
-               <c:otherwise>
-                  <li><a href="/admin/action/action_list">활동사진</a></li>            
+               <c:otherwise>         	
                   <li><a href="#">마이페이지</a>
                      <ul class="submenu">
                         <li><a href="/mypage/myinfo">내 정보</a></li>
@@ -135,6 +134,7 @@ body {
                   </li>
                </c:otherwise>
             </c:choose>
+            <li><a href="/admin/action/action_list">활동사진</a></li>   
             <li><a href="/free/free_list">자유게시판</a></li>
             <li><a href="/admin/gongji/gongji_list">공지사항</a></li>
             <li><a href="/mypage/inquiry_all">문의사항</a></li>

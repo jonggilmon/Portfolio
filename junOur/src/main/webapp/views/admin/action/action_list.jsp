@@ -3,7 +3,6 @@
 <!DOCTYPE html>
 <html>
 <head>
- <%@ include file="../../main/top_bottom/header.jsp" %>
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <style>
@@ -41,8 +40,18 @@
 </style>
 </head>
 <body>
+<c:choose>
+        <c:when test="${userid eq 'admin123'}">
+            <%@ include file="../../admin/menu.jsp" %>
+        </c:when>
+        <c:otherwise>
+            <%@ include file="../../main/top_bottom/header.jsp" %>
+        </c:otherwise>
+ </c:choose>
 <section id="section">
-    	<div><a href="/admin/action/action_write"> 글 등록 </a></div>
+    <c:if test="${userid eq 'admin123'}">
+    <div><a href="/admin/action/action_write"> 글 등록 </a></div>
+    </c:if>
     <div class="line">
         <c:forEach items="${list}" var="avo">
             <div class="item">
@@ -51,8 +60,7 @@
             </div>
         </c:forEach>
     </div>
-    <c:if test="${userid eq 'admin123'}">
-    </c:if>
+  
 </section>
 </body>
 </html>
