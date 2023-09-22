@@ -8,25 +8,49 @@
 <title>Insert title here</title>
 <%@ include file="../main/top_bottom/header.jsp" %>
   <style>
-    #del {
-      display:none;
-    }
     #section table {
-      border-spacing:0px;
+        border-collapse: collapse;
+        margin-top: 0px;
+        border: 1px solid #ccc;
     }
-    #section table tr:first-child td {
-      border-top:2px solid #999999;
+
+    #section td {
+        border: 1px solid #e5e5e5;
+        padding: 10px 15px;
     }
-    #section table tr:last-child td {
-      border-bottom:2px solid #999999;
+
+    /* 제목 행 스타일링 */
+    #section td:first-child {
+        background-color: #f2f2f2;
+        font-weight: bold;
+        text-align: center;
     }
-    #section table td {
-      height:30px;
-      border-bottom:1px solid #cccccc;
+
+    /* 내용 영역 스타일링 */
+    #inner {
+        height:500px;
+        max-height: 200px;
+        background-color: #fdfdfd;
     }
+
+    /* caption 스타일링 */
+    #section caption h2 {
+        margin-bottom:30px;
+        color: #444;
+    }
+
+    /* 링크 스타일링 */
     #section a {
-      text-decoration:none;
-      color:black;
+        color: #000000;
+        text-decoration: none;
+        padding: 5px 15px;
+        border-radius: 4px;
+        transition: background-color 0.2s;
+    }
+
+    #section a:hover {
+        background-color: #000000;
+        color: #fff;
     }
   </style>
   <script>
@@ -40,10 +64,10 @@
 
 <body>
   <div id="section">
-    <table width="600" align="center">
+    <table width="800" align="center">
       <caption> <h2> 자유게시판 </h2> </caption>
       <tr>
-        <td width="100"> 제목 </td> <td> ${fvo.title} </td>
+        <td width="80"> 제목 </td> <td> ${fvo.title} </td>
       </tr>
       <tr>
         <td> 작성자 </td> <td> ${fvo.userid} </td>

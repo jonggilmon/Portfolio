@@ -8,27 +8,74 @@
 <title>Insert title here</title>
 <%@ include file="../main/top_bottom/header.jsp" %>
   <style>
-   .nav-links {
-    list-style: none;
-    display: flex;
-    margin: 3;
-    padding: 0;
-  }
-  .nav-links li {
-    margin-right: 20px;
-  }
-  .nav-links li a {
-    color: #fff;
-    text-decoration: none;
-  }
-  </style>
+    .nav-links {
+      list-style: none;
+      display: flex;
+      margin: 3;
+      padding: 0;
+    }
+    .nav-links li {
+      margin-right: 20px;
+    }
+    .nav-links li a {
+      color: #fff;
+      text-decoration: none;
+    }
+   
+    /* 테이블 스타일링 */
+    #section {
+      width:1100px;
+      height:600px;
+      margin:auto;
+      margin-top:20px;
+    }
+    
+    #section table {
+        border-collapse: collapse;
+        margin-top: 0px;
+        border: 1px solid #ccc;
+    }
 
-<script>
-function showDeleteButton() {
-  var deleteRow = document.getElementById("del");
-  deleteRow.style.display = "table-row"; // 버튼을 보이게 설정
-}
-</script>
+    #section td {
+        border: 1px solid #e5e5e5;
+        padding: 10px 15px;
+    }
+
+    /* 제목 행 스타일링 */
+    #section td:first-child {
+        background-color: #f2f2f2;
+        font-weight: bold;
+        text-align: center;
+    }
+
+    /* 내용 영역 스타일링 */
+    #inner {
+        height:500px;
+        max-height: 200px;
+        background-color: #fdfdfd;
+    }
+
+    /* caption 스타일링 */
+    #section caption h2 {
+        margin-bottom:30px;
+        color: #444;
+    }
+
+    /* 링크 스타일링 */
+    #section a {
+        color: #000000;
+        text-decoration: none;
+        padding: 5px 15px;
+        border-radius: 4px;
+        transition: background-color 0.2s;
+    }
+
+    #section a:hover {
+        background-color: #000000;
+        color: #fff;
+    }
+    
+  </style>
 
 </head>
 <body>
@@ -45,37 +92,27 @@ function showDeleteButton() {
   </c:if>
   
   <div id="section">
-    <table width="600" align="center">
+    <table width="800" align="center">
       <caption> <h2> 공지사항 </h2> </caption>
       <tr>
-        <td width="100"> 제목 </td>
+        <td width="80" align="center"> 제목 </td>
         <td> ${gvo.title} </td>
       </tr>
       <tr>
-        <td> 작성자 </td>
+        <td align="center"> 작성자 </td>
         <td> ${gvo.userid} </td>
       </tr>
       <tr>
-        <td> 조회수 </td>
+        <td align="center"> 조회수 </td>
         <td> ${gvo.readnum} </td>
       </tr>
       <tr>
-        <td> 내용 </td>
+        <td align="center"> 내용 </td>
         <td> <div id="inner"> ${gvo.content} </div> </td>
       </tr>
       <tr>
         <td colspan="2" align="center">
           <a href="gongji_list"> 목록 </a>
-         
-         
-        </td>
-      </tr>
-      <tr id="del" style="display:none;">
-        <td colspan="2" align="center" style="border:none;">
-          <form method="post" action="delete">
-            <input type="hidden" name="no" value="${gvo.no}">
-            <input type="submit" value="삭제">
-          </form>
         </td>
       </tr>
     </table>
