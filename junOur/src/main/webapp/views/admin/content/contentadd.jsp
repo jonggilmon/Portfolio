@@ -34,6 +34,7 @@ function searchAddress() {
 	<form name="cform" method="post" action="contentAddOk" enctype="multipart/form-data">
 	    <div width="100"> <a href="/../admin/menu">관리자 창</a></div>
 		<div> <input type="file" name="img"> 이미지 </div>
+
 		<div><input type="date" name="rsdate"> 예약날짜 </div>
 		<div> 
 			<textarea name="sogae" rows="15" cols="50">
