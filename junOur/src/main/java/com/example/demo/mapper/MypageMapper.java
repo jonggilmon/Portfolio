@@ -32,7 +32,7 @@ public interface MypageMapper {
 	
 	public MtmVo inquiry_content(String questnum);
 	
-	public ArrayList<MtmVo> inquiry_list(String userid);
+	public ArrayList<MtmVo> inquiry_list(int index,String userid);
 	
 	public MtmVo inquiryUpdate(String no);
 	

@@ -46,7 +46,7 @@
   </select>
   
   <select id="inquiry_list" resultType="com.example.demo.vo.MtmVo">
-  	select * from mtm where userid=#{userid} order by writeday desc limit 7;
+  	select * from mtm where userid=#{userid} order by writeday desc limit #{index},7 
   </select>
   
   <select id="inquiryUpdate" resultType="com.example.demo.vo.MtmVo">
