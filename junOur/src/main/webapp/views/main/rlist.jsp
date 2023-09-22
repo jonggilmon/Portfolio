@@ -137,7 +137,7 @@
     justify-content: center;
     align-items: center;
     border:1px solid black;
-    height: 550px;
+    height: 587px;
     background-color: transparent !important;
    
 }
