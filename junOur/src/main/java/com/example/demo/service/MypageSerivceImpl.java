@@ -119,10 +119,43 @@ public class MypageSerivceImpl implements MypageService{
 	}
 
 	@Override
-	public String inquiry_list(Model model, HttpSession session) {
+	public String inquiry_list(Model model, HttpSession session,HttpServletRequest request) {
 		String userid=session.getAttribute("userid").toString();
-		model.addAttribute("ilist",mapper.inquiry_list(userid));
-		model.addAttribute("userid",userid);
+		
+		int page=1;
+		if(request.getParameter("page")!=null)
+		{
+			page=Integer.parseInt(request.getParameter("page"));
+		}
+		
+		// 페이지 처리
+		int index=(page-1)*10;
+
+	    ArrayList<MtmVo> ilist = mapper.inquiry_list(index,userid);
+		
+		model.addAttribute("ilist",ilist);
+		
+		// pstart, pend, chong , page 뷰에 전달
+		
+		int pstart=page/10;
+		
+		if(page%10 == 0)
+			pstart--;
+		
+		pstart=pstart*10+1;
+		int pend=pstart+9;
+		
+		int chong=mapper.getChong();
+		
+		if(pend > chong)
+		{
+			pend=chong;
+		}
+		
+		model.addAttribute("pstart",pstart);
+		model.addAttribute("pend",pend);
+		model.addAttribute("chong",chong);
+		model.addAttribute("page",page);
 		
 		return "/mypage/inquiry_list";
 	}

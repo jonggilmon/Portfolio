@@ -22,6 +22,7 @@
         padding: 20px;
         background-color: white;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        height:600px;
     }
 
     .post {
@@ -68,7 +69,7 @@
             <c:if test="${mvo.seq == 1 }">
                 <div class="post-title">답변</div>
                 <div class="post-content answer">${qvo.content }</div>
-                <div>작성일: ${qvo.writeday}</div>
+                <div>답변일: ${qvo.writeday}</div>
             </c:if>
         </div>
 

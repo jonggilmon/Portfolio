@@ -66,9 +66,9 @@ public class MypageController {
 		return service.inquiry_content(model,request);
 	}
 	@RequestMapping("/mypage/inquiry_list")
-	public String inquiry_list(Model model,HttpSession session)
+	public String inquiry_list(Model model,HttpSession session,HttpServletRequest request)
 	{
-		return service.inquiry_list(model,session);
+		return service.inquiry_list(model,session,request);
 	}
 	@RequestMapping("/mypage/inquiry_select")
 	public String inquiry_select()
@@ -112,8 +112,6 @@ public class MypageController {
 	{
 		return service.inquiry_all_content(model,request);
 	}
-	
-
 	@RequestMapping("/mypage/myjjim")
 	public String myjjim(HttpSession session,Model model)
 	{

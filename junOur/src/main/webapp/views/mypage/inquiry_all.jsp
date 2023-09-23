@@ -176,7 +176,6 @@
   		<div id="userid2">아 이 디</div>
   		<div id="writeday2">작 성 일</div>
   	</div>
-  	<hr width="900">
   <c:forEach items="${mlist }" var="mvo">
     <c:choose>
       <c:when test="${mvo.hide == 1 }">

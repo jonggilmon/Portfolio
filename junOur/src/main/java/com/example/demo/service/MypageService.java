@@ -31,7 +31,7 @@ public interface MypageService {
 	
 	public String inquiry_content(Model model,HttpServletRequest request);
 	
-	public String inquiry_list(Model model, HttpSession session);
+	public String inquiry_list(Model model, HttpSession session,HttpServletRequest request);
 	
 	public String inquiryUpdate(HttpServletRequest request, Model model);
 	
