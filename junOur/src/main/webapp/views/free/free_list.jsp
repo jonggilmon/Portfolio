@@ -9,40 +9,48 @@
 <%@ include file="../main/top_bottom/header.jsp" %>
   <style>
     #section {
-     width:1100px;
-     height:600px;
-     margin:auto;
-     margin-top:50px;
-   }
-   #section a {
-     text-decoration:none;
-     color:black;
-   }
-   #section table {
-     border-spacing:0px;
-   }
-   #section table td {
-     height:30px;
-   }
-   #section table .cont:hover {
-     background:#eeeeee;
-   }
-   #section table #pkc td {
-     background:#eeeeee;
-   }
-   #section table .pnum {
-     font-size:20px;
-   }
-   #section table #write {
-     text-align:center;
-     color:black;
-     margin-left:20px;
-     display:inline-block;
-     width:100px;
-     height:30px;
-     line-height:30px;
-     border:1px solid black;
-   }
+      width:1100px;
+      height:600px;
+      margin:auto;
+      margin-top:20px;
+    }
+    /* 테이블 스타일링 */
+    #section table {
+        border-collapse: collapse;
+        border: 1px solid #EAEAEA;
+        font-color:#000000;
+    }
+    #section td, #section th {
+        border: 1px solid #EAEAEA;
+        padding: 10px 15px;
+    }
+    /* 제목 행 스타일링 */
+    #pkc {
+        background-color: #f2f2f2;
+        color: #fff;
+    }
+    /* caption 스타일링 */
+    #section caption h2 {
+        margin-bottom:30px;
+        color: #444;
+    }
+    #pkc td {
+      color: black;
+      font-weight: bold;
+    }
+    /* 링크 스타일링 */
+    #section a {
+        color: #000000;
+        text-decoration: none;
+        padding: 5px 15px;
+        border-radius: 4px;
+        transition: background-color 0.2s;
+    }
+
+    #section #aaa a:hover {
+        background-color: #000000;
+        color: #fff;
+    }
   </style>
 </head>
 <body>
@@ -50,10 +58,10 @@
 	  <table width="800" align="center">
 	    <caption> <h2> 자유게시판 </h2> </caption>
 	    <tr align="center" id="pkc">
-	      <td> 제목 </td>
-	      <td> 작성자 </td>
-	      <td> 조회수 </td>
-	      <td> 작성일 </td>
+	      <td width="400"> 제목 </td>
+	      <td width="150"> 작성자 </td>
+	      <td width="100"> 조회수 </td>
+	      <td width="150"> 작성일 </td>
 	    </tr>
 	    
 	  <c:forEach items="${flist}" var="map">
@@ -66,9 +74,7 @@
 	  </c:forEach>
 	  
 	    <tr>
-
-	      <td colspan="4" align="center"> <a href="../free/freeadd"> 글 등록 </a> </td>
-	   
+	      <td colspan="4" align="center" id="aaa"> <a href="../free/freeadd"> 글 등록 </a> </td>
 	    </tr>
 	  </table>
 	</div>

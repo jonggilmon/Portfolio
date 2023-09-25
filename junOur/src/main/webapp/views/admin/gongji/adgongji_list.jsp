@@ -6,7 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<%@ include file="../../admin/menu.jsp" %>
+<%@ include file="../../admin/menu.jsp" %>	
   <style>
     #section {
      width:1100px;
@@ -82,7 +82,7 @@
 	  
 	    <tr>
 	     <c:if test="${userid eq 'admin123'}"> 
-	       <td colspan="4" align="center"> <a href="/admin/gongji/adgongjiadd"> 글 등록 </a> </td>
+	       <td colspan="4" align="center"> <a href="../gongji/adgongjiadd"> 글 등록 </a> </td>
 	     </c:if>
 	    </tr>
 	  </table>

@@ -8,55 +8,54 @@
 <title>Insert title here</title>
 <%@ include file="../main/top_bottom/header.jsp" %>
   <style>
+    .nav-links {
+      list-style: none;
+      display: flex;
+      margin: 3;
+      padding: 0;
+    }
+    .nav-links li {
+      margin-right: 20px;
+    }
+    .nav-links li a {
+      color: #fff;
+      text-decoration: none;
+    }
+    
     #section {
-     width:1100px;
-     height:500px;
-     margin:auto;
-     margin-top:50px;
-   }
-   #section a {
-     text-decoration:none;
-     color:black;
-   }
-   #section table {
-     border-spacing:0px;
-   }
-   #section table td {
-     height:30px;
-   }
-   #section table .cont:hover {
-     background:#eeeeee;
-   }
-   #section table #pkc td {
-     background:#eeeeee;
-   }
-   #section table .pnum {
-     font-size:20px;
-   }
-   #section table #write {
-     text-align:center;
-     color:black;
-     margin-left:20px;
-     display:inline-block;
-     width:100px;
-     height:30px;
-     line-height:30px;
-     border:1px solid black;
-   }
-   
-   .nav-links {
-    list-style: none;
-    display: flex;
-    margin: 3;
-    padding: 0;
-  }
-  .nav-links li {
-    margin-right: 20px;
-  }
-  .nav-links li a {
-    color: #fff;
-    text-decoration: none;
-  }
+      width:1100px;
+      height:600px;
+      margin:auto;
+      margin-top:20px;
+    }
+    /* 테이블 스타일링 */
+    #section table {
+        border-collapse: collapse;
+        border: 1px solid #EAEAEA;
+        font-color:#000000;
+    }
+    #section td, #section th {
+        border: 1px solid #EAEAEA;
+        padding: 10px 15px;
+    }
+    /* 제목 행 스타일링 */
+    #pkc {
+        background-color: #f2f2f2;
+        color: #fff;
+    }
+    /* 행 호버 효과 */
+    #section tr:not(#pkc):hover {
+        background-color: #f5f5f5;
+    }
+    /* caption 스타일링 */
+    #section caption h2 {
+        margin-bottom:30px;
+        color: #444;
+    }
+    #pkc td {
+      color: black;
+      font-weight: bold;
+    }
   </style>
 </head>
 <body>
@@ -77,18 +76,18 @@
 	  <table width="800" align="center">
 	    <caption> <h2> 공지사항 </h2> </caption>
 	    <tr align="center" id="pkc">
-	      <td> 제목 </td>
-	      <td> 작성자 </td>
-	      <td> 조회수 </td>
-	      <td> 작성일 </td>
+	      <td width="400"> 제목 </td>
+	      <td width="150"> 작성자 </td>
+	      <td width="100"> 조회수 </td>
+	      <td width="150"> 작성일 </td>
 	    </tr>
 	    
 	  <c:forEach items="${glist}" var="map">
 	    <tr>
 	      <td> <a href="readnum?no=${map.no}"> ${map.title} </a> </td>
-	      <td> ${map.userid} </td>
-	      <td> ${map.readnum} </td>
-	      <td> ${map.writeday} </td>
+	      <td align="center"> ${map.userid} </td>
+	      <td align="center"> ${map.readnum} </td>
+	      <td align="center"> ${map.writeday} </td>
 	    </tr>
 	  </c:forEach>
 	  
