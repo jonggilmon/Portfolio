@@ -8,6 +8,10 @@
 <title>Insert title here</title>
 <%@ include file="../main/top_bottom/header.jsp" %>
   <style>
+  	#section{
+  		height: 660px;
+  	}
+  
     #section table {
         border-collapse: collapse;
         margin-top: 0px;

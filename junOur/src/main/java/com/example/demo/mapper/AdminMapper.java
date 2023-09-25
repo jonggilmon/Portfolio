@@ -66,7 +66,7 @@ public interface AdminMapper {
 
 	public ArrayList<HashMap> glist();
 	public GongjiVo adgongji_content(GongjiVo gvo);
-	public void greadnum(GongjiVo gvo, HttpServletRequest request);
+	public void greadnum(GongjiVo gvo);
 	public void gdelete(GongjiVo gvo);
 	public GongjiVo adgongji_update(GongjiVo gvo);
 	public void adgongji_update_ok(GongjiVo gvo);

@@ -10,7 +10,7 @@
   <style>
     #section {
      width:1100px;
-     height:500px;
+     height:668px;
      margin:auto;
      margin-top:50px;
    }

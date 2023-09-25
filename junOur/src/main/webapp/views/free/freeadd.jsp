@@ -52,6 +52,10 @@
         background-color: #000000;
         color: #fff;
     }
+    
+    #form{
+    	height: 660px;
+    }
   </style>
   <script>
     var pchk=0;
@@ -99,7 +103,7 @@
 
 <body>
   <div id="section">  
-    <form method="post" action="freeadd_ok">
+    <form method="post" action="freeadd_ok" id="form">
 
     <table width="800" align="center">
 	  <caption> <h3> 자유게시판 </h3> </caption>
