@@ -73,7 +73,7 @@
 	    
 	  <c:forEach items="${glist}" var="map">
 	    <tr>
-	      <td> <a href="readnum?no=${map.no}"> ${map.title} </a> </td>
+	      <td> <a href="greadnum?no=${map.no}"> ${map.title} </a> </td>
 	      <td> ${map.userid} </td>
 	      <td> ${map.readnum} </td>
 	      <td> ${map.writeday} </td>
