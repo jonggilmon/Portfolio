@@ -298,7 +298,7 @@ public class AdminServiceImpl implements AdminService{
 	@Override
 	public String greadnum(GongjiVo gvo, HttpServletRequest request) {
 		String no=request.getParameter("no");
-		mapper.greadnum(gvo, request);
+		mapper.greadnum(gvo);
 		return "redirect:/admin/gongji/adgongji_content?no="+no;
 	}
 
