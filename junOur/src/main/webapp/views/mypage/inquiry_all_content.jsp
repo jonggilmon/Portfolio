@@ -14,6 +14,7 @@
 <style>
     body {
         background-color: #f0f0f0;
+      	
         font-family: Arial, sans-serif;
         margin: 0;
         padding: 0;
@@ -25,6 +26,7 @@
         padding: 20px;
         background-color: white;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        height: 600px;
     }
 
     .post {
@@ -32,6 +34,7 @@
         border: 1px solid #ddd;
         padding: 10px;
         background-color: #fff;
+        margin-top: 100px;
     }
 
     .post:nth-child(even) {
