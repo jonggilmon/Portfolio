@@ -144,6 +144,19 @@
   	margin:auto;
   	
   }
+  #pagechul {
+      width:1100px;
+      height:80px;
+      line-height:80px;
+      text-align:center;
+      margin: 0 auto;
+    }
+    #pagechul a {
+      text-decoration:none;
+      color:black;
+      display:inline-block;
+      width:30px;
+    }
 </style>
 </head>
 <body>
@@ -170,6 +183,49 @@
       </c:if>
     
   </c:forEach>
+  </div>
+  
+    <div id="pagechul" align="center">
+   
+   <!-- 10페이지 이전으로  -->
+   <c:if test="${pstart != 1}">
+    <a href="inquiry_all?page=${pstart-1}"> << </a>
+   </c:if>
+   <c:if test="${pstart == 1}">
+    <<
+   </c:if>   
+   <!-- 1페이지 왼쪽(이전)으로 -->
+   <c:if test="${page != 1}"> 
+    <a href="inquiry_all?page=${page-1}"> < </a>
+   </c:if>
+   <c:if test="${page == 1}"> 
+    <
+   </c:if> 
+   
+     <c:forEach begin="${pstart}" end="${pend}" var="i">
+       <c:set var="nowpage" value=""/>
+       <c:if test="${i==page}"> <!-- 현재페이지는 빨간색 -->
+          <c:set var="nowpage" value="style='color:red'"/>
+       </c:if>
+        <a href="inquiry_all?page=${i}" ${nowpage}> ${i} </a>  
+     </c:forEach>
+     
+     
+   <!-- 1페이지 오른쪽(다음)으로 -->
+   <c:if test="${page != chong}"> 
+    <a href="inquiry_all?page=${page+1}"> > </a>  
+   </c:if>
+   <c:if test="${page == chong}"> 
+    >
+   </c:if> 
+   
+   <!-- 10페이지 다음으로 -->
+   <c:if test="${pend != chong}"> 
+     <a href="inquiry_all?pcode=page=${pend+1}"> >> </a>
+   </c:if>
+   <c:if test="${pend == chong}"> 
+     >>
+   </c:if>  
   </div>
 </section>
 </body>
