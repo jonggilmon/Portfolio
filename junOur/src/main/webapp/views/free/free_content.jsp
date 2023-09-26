@@ -53,12 +53,6 @@
         color: #fff;
     }
   </style>
-  <script>
-    function showDeleteButton() {
-        var deleteRow = document.getElementById("del");
-        deleteRow.style.display = "table-row"; // 버튼을 보이게 설정
-    }
-  </script>
 
 </head>
 
@@ -82,7 +76,6 @@
         <td colspan="2" align="center">
           <a href="free_list"> 목록 </a>
           <a href="free_update?no=${fvo.no}"> 수정 </a>
-          <a href="#" onclick="showDeleteButton(); return false;"> 삭제 </a> <!-- return false;는 링크를 클릭했을 때 브라우저가 해당 링크의 기본 동작을 실행하지 않도록 하는 역할을 합니다.  -->
         </td>
       </tr>
       <tr id="del">

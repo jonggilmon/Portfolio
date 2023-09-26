@@ -8,7 +8,7 @@ import org.springframework.ui.Model;
 import com.example.demo.vo.FreeVo;
 
 public interface FreeService {
-	public String free_list(Model model);
+	public String free_list(Model model, HttpServletRequest request);
 	public String freeadd();
 	public String freeadd_ok(FreeVo fvo);
 	public String free_content(Model model, FreeVo fvo, HttpServletRequest reqeust);
