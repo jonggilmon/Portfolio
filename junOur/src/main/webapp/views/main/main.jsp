@@ -738,6 +738,8 @@
 .sport-item.special-effect.tacgu:hover a::before {
     width: 100%; 
    height: 100%;
+   
+   
 }
 
 
