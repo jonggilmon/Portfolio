@@ -13,8 +13,7 @@
 
 <style>
     body {
-        background-color: #f0f0f0;
-      	
+      	 background:#807979;
         font-family: Arial, sans-serif;
         margin: 0;
         padding: 0;
@@ -24,14 +23,14 @@
         max-width: 800px;
         margin: 0 auto;
         padding: 20px;
-        background-color: white;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        background-color: #807979;
         height:600px;
     }
 
     .post {
         margin-bottom: 20px;
-        border: 1px solid #ddd;
+        border:6px solid #242424;
+    	border-radius:25px;
         padding: 10px;
         background-color: #fff;
         margin-top: 100px;
@@ -56,7 +55,7 @@
     }
 
     a {
-        color: #007bff;
+        color: black;
         text-decoration: none;
     }
 
