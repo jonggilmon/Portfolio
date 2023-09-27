@@ -168,10 +168,10 @@ body {
 
     <ul class="navi">
         <c:if test="${userid==null}">
-            <li><a href="/mypage/inquiry_all">문의사항</a></li>
-            <li><a href="/admin/action/action_list">활동사진</a></li>
-            <li><a href="../free/free_list">자유게시판</a></li>
-            <li><a href="/gongji/gongji_list">공지사항</a></li>
+            <li class="enlarged-text"><a href="/mypage/inquiry_all">문의사항</a></li>
+            <li class="enlarged-text"><a href="/admin/action/action_list">활동사진</a></li>
+            <li class="enlarged-text"><a href="../free/free_list">자유게시판</a></li>
+            <li class="enlarged-text"><a href="/gongji/gongji_list">공지사항</a></li>
             <li><a href="/member/login">로그인</a></li>
             <li><a href="/member/member">회원가입</a></li>
         </c:if>
