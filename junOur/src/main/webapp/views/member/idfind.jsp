@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
+<%@ include file="../main/top_bottom/header.jsp" %>
+
 <html>
 <head>
 <meta charset="UTF-8">
@@ -17,6 +19,8 @@
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    height:600px;
+    
   }
   div {
     margin-bottom: 10px;
@@ -106,7 +110,8 @@
 <body>
 <section>
   <form name="mform">
-    <div> 아이디 찾기 </div>
+    <div> <h2>아이디 찾기</h2> </div> <hr>
+    
     <div> 가입하실 때 입력하셨던 전화번호를 입력해주세요 </div>
     <div id="first">
       전화번호 입력<input type="text" name="userPnum" placeholder="-를 빼고 입력하세요"> 
@@ -124,3 +129,5 @@
 </section>
 </body>
 </html>
+       <%@ include file="../main/top_bottom/footer.jsp" %>
+

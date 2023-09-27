@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ include file="../main/top_bottom/header.jsp" %>
+    
 <!DOCTYPE html>
 <html>
 <head>
@@ -25,6 +27,7 @@
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 10px;
+    height:600px;
   }
   input[type="text"], input[type="button"] {
     width: 100%;
@@ -133,7 +136,7 @@
 <body>
 <section>
   <form name="mform">
-    <div> 비밀번호 찾기 </div> <hr>
+    <div><h2> 비밀번호 찾기 </h2> </div> <hr>
     
     <div> 가입하실 때 입력하셨던 아이디를 입력해주세요 </div>
     <div> <input type="text" name="userid"> </div>
@@ -149,8 +152,12 @@
     <div id="third">
       사용자의 비밀번호는 <div id="pwd"> </div> 입니다
     </div>
+    <div top="-200">
     <a href=../main/main>메인으로</a> <a href="idfind">아이디 찾기</a>
+    </div>
   </form>
 </section>
 </body>
 </html>
+       <%@ include file="../main/top_bottom/footer.jsp" %>
+
