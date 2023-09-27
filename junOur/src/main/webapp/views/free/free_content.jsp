@@ -8,97 +8,119 @@
 <title>Insert title here</title>
 <%@ include file="../main/top_bottom/header.jsp" %>
   <style>
-  	#section{
-  		height: 660px;
-  	}
-  
-    #section table {
-        border-collapse: collapse;
-        margin-top: 0px;
-        border: 1px solid #ccc;
+  	body {
+       background:#807979;
     }
-
-    #section td {
-        border: 1px solid #e5e5e5;
-        padding: 10px 15px;
+    table {
+       width:800px;
+       height:600px;
+       border-radius:25px;
+	   border:6px solid #242424;
+       font-color:#242424;
+       background-color:#242424;
     }
-
-    /* 제목 행 스타일링 */
-    #section td:first-child {
-        background-color: #f2f2f2;
-        font-weight: bold;
-        text-align: center;
+    table tr {
+       border-radius:13px;
+       background-color:#BDBDBD;
     }
-
-    /* 내용 영역 스타일링 */
-    #inner {
-        height:500px;
-        max-height: 200px;
-        background-color: #fdfdfd;
+    table td, table th {
+       border: 1px solid #242424;
     }
-
-    /* caption 스타일링 */
-    #section caption h2 {
-        margin-bottom:30px;
-        color: #444;
+    #page1 a {
+       display:inline-block;
     }
-
-    /* 링크 스타일링 */
-    #section a {
-        color: #000000;
-        text-decoration: none;
-        padding: 5px 15px;
-        border-radius: 4px;
-        transition: background-color 0.2s;
+    td.left_top {
+       border-top-left-radius:13px;
+       background-color:#8C8C8C;
+       font-size:20px;
     }
-
-    #section a:hover {
-        background-color: #000000;
-        color: #fff;
+    td.right_top {
+       border-top-right-radius:13px;
+       padding-left:20px;
+       font-size:17px;
+    }
+    td.mmt_under {
+       border-bottom-left-radius:13px;
+    }
+    td.mmt_title {
+       padding-left:20px;
+    }
+    td.mmt_under {
+       border-bottom-left-radius:13px;
+       border-bottom-right-radius:13px;
+    }
+    td.mmt {
+       background-color:#8C8C8C;
+       font-size:20px;
+    }
+    td.mmt_in {
+       padding-left:20px;
+       font-size:17px;
+    }
+    .button {
+       display: inline-block;
+       padding: 5px 15px;
+       background-color: #8C8C8C;
+       color: #FFFFFF;
+       border: none;
+       border-radius: 5px;
+       cursor: pointer;
+       margin: 5px;
+       width: 70px;
+    }
+    .button:hover {
+       background-color: #242424;
+    }
+    #action-buttons {
+       text-align: center;
+    }
+    #pwdSection {
+        display: none;
+        margin-top: 10px;
     }
   </style>
-
+  <script>
+    function showPasswordPrompt() {
+      var pwdSection = document.getElementById('pwdSection');
+      pwdSection.style.display = 'inline-block'; // 비밀번호 입력 창을 보이게 만들기
+    }
+  </script>
 </head>
-
 <body>
-  <div id="section">
     <table width="800" align="center">
       <caption> <h2> 자유게시판 </h2> </caption>
       <tr>
-        <td width="80"> 제목 </td> <td> ${fvo.title} </td>
+        <td width="100" align="center" class="left_top"> 제목 </td>
+        <td class="right_top"> ${fvo.title} </td>
       </tr>
       <tr>
-        <td> 작성자 </td> <td> ${fvo.userid} </td>
+        <td width="100" align="center" class="mmt"> 작성자 </td>
+        <td class="mmt_in"> ${fvo.userid} </td>
       </tr>
       <tr>
-        <td> 조회수 </td> <td> ${fvo.readnum} </td>
+        <td width="100" align="center" class="mmt"> 조회수 </td>
+        <td class="mmt_in"> ${fvo.readnum} </td>
       </tr>
       <tr>
-        <td> 내용 </td> <td> <div id="inner"> ${fvo.content} </div> </td>
+        <td width="100" align="center" class="mmt"> 내용 </td>
+        <td class="mmt_in"> <div id="inner"> ${fvo.content} </div> </td>
       </tr>
-      <tr>
-        <td colspan="2" align="center">
-          <a href="free_list"> 목록 </a>
-          <a href="free_update?no=${fvo.no}"> 수정 </a>
-        </td>
-      </tr>
-      <tr id="del">
-        <td colspan="2" align="center" style="border:none;">
-          <form method="post" action="delete">
-            <input type="hidden" name="no" value="${fvo.no}">
-            <input type="password" name="pwd" placeholder="비밀번호"> <input type="submit" value="삭제">
-          </form>
-        </td>
-      </tr>
-      <c:if test="${chk == 1}">
-      <tr>
-        <td colspan="2" align="center" style="color:red;">
-          비밀번호가 틀렸습니다
-        </td>
-      </tr>
-      </c:if>
+<tr>
+    <td colspan="2" id="action-buttons" class="mmt_under">
+        <a href="free_list" class="button">목록</a>
+        <a href="free_update?no=${fvo.no}" class="button">수정</a>
+        <button class="button" onclick="showPasswordPrompt()">삭제</button>
+        <span id="pwdSection">
+            <form id="deleteForm" method="post" action="delete" style="display:inline;">
+                <input id="deleteNoInput" type="hidden" name="no" value="${fvo.no}">
+                <input id="deletePwdInput" type="password" name="pwd" placeholder="비밀번호">
+                <button type="button" onclick="checkPasswordAndSubmit()" class="button">확인</button>
+            </form>
+            <span id="errorMsg" style="color:red;"></span>
+        </span>
+    </td>
+</tr>
     </table>
-  </div>
 </body>
 </html>
 <%@ include file="../main/top_bottom/footer.jsp" %>
