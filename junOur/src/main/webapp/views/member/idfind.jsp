@@ -10,15 +10,14 @@
   body {
     font-family: Arial, sans-serif;
     text-align: center;
-    background-color: #f0f0f0;
+    background:#807979;
   }
   section {
     max-width: 400px;
     margin: 0 auto;
-    background-color: #fff;
+    background-color: #807979;
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     height:600px;
     
   }
@@ -29,7 +28,9 @@
     width: 300px;
     padding: 10px;
     margin-bottom: 10px;
-    border: 1px solid #ccc;
+    border-top:1px solid black;
+    border:6px solid #242424;
+    border-radius:25px;
     margin-top: 10px;
     }
    #second {
@@ -40,6 +41,12 @@
    }
    #link1 a {
    	display:inline-block;
+   	padding:10px;
+    margin-left:20px;
+    margin-right:20px;
+    border:6px solid #242424;
+    border-radius:25px;
+    color:black;
    }
  </style>
 <script>
@@ -129,7 +136,7 @@
       사용자의 아이디는 <div id="userid"> </div> 입니다
     </div>
     <div id="link1">
-    <a href=../main/main>메인으로</a> / <a href="pwdfind">비밀번호 찾기</a>
+    <a href=../main/main>메인으로</a>  <a href="pwdfind">비밀번호 찾기</a>
     </div>
   </form>
 </section>

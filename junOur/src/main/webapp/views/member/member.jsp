@@ -14,6 +14,7 @@
     padding: 0;
     height: 100%;
     font-size: 16px;
+    background:#807979;
   }
 
 
@@ -30,9 +31,8 @@
     max-width: 400px;
     margin: 0 auto;
     padding: 20px;
-    border: 1px solid #ccc;
     border-radius: 10px;
-    background-color: #f8f8f8;
+    margin-top:-1px;
   }
 
   section form div {
@@ -49,14 +49,20 @@
     width: 95%;
     padding: 10px;
     border: 1px solid #ccc;
-    border-radius: 5px;
+   
+    border:6px solid #242424;
+    border-radius:25px;
   }
-
+ input[type="button"] {
+ margin-top:10px;
+ border:6px solid #242424;
+    border-radius:25px;
+ }
   section form select {
     width: 100%;
     padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    border:6px solid #242424;
+    border-radius:25px;
   }
 
   section form input[type=submit] {
@@ -64,8 +70,8 @@
     padding: 10px;
     background-color: #333;
     color: white;
-    border: none;
-    border-radius: 5px;
+    border:6px solid #242424;
+    border-radius:25px;
     cursor: pointer;
   }
 
@@ -79,6 +85,9 @@
   }
   #inbtn{
   	visibility:hidden;
+  }
+  form {
+  	background: #807979;
   }
   </style>
   <script >

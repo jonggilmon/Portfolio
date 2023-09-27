@@ -12,6 +12,7 @@
     font-family: Arial, sans-serif;
     text-align: center;
     background-color: #f0f0f0;
+    background:#807979;
   }
   section #second {
     visibility: hidden;
@@ -23,10 +24,9 @@
   section {
     max-width: 400px;
     margin: 0 auto;
-    background-color: #fff;
+    background-color:#807979;
     padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 10px;
+    
     height:600px;
   }
   input[type="text"], input[type="button"] {
@@ -34,8 +34,8 @@
     margin-top: 10px;
     padding: 10px;
     margin-bottom: 10px;
-    border: 1px solid #ccc;
-    }
+ 	border:6px solid #242424;
+    border-radius:25px;    }
     #second {
    	visibility:hidden;
    }
@@ -44,6 +44,13 @@
    }
   #link1 a {
   	display:inline-block;
+  	border:6px solid #242424;
+    border-radius:25px;
+    color:black;
+    padding:10px;
+    margin-left:20px;
+    margin-right:20px;
+  	;
   }
 </style>
 <script>
@@ -139,11 +146,14 @@
 <body>
 <section>
   <form name="mform">
-    <div><h2> 비밀번호 찾기 </h2> </div> <hr>
+    <div><h2> 비밀번호 찾기 </h2> </div> 
+    <hr>
     
-    <div> 가입하실 때 입력하셨던 아이디를 입력해주세요 </div>
+    <div > 가입하실 때 입력하셨던 아이디를 입력해주세요 </div>
     <div> <input type="text" name="userid"> </div>
+   
     <div> 가입하실 때 입력하셨던 전화번호를 입력해주세요 </div>
+    <p>
     <div id="first">
       전화번호 입력<input type="text" name="userPnum" placeholder="-를 빼고 입력하세요"> 
       <input type="button" value="인증번호 보내기" onclick="numSend()">
@@ -157,7 +167,7 @@
     </div>
     <div top="-200">
     <div id="link1">
-    <a href=../main/main>메인으로</a> / <a href="idfind">아이디 찾기</a>
+    <a href=../main/main>메인으로</a><a href="idfind">아이디 찾기</a>
     </div>
     </div>
   </form>
