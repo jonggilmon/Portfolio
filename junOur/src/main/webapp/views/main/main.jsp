@@ -172,10 +172,10 @@
     }
 
     .notice {
-        font-size:20px;    
-        flex: 1;
-        margin-right: 300px;
-        height:120px;
+         white-space: nowrap;
+    overflow: hidden;      /* 내용이 너무 길어서 밖으로 넘치면 숨기기 위한 설정 */
+    text-overflow: ellipsis;  /* 넘치는 텍스트를 ... 으로 표시하기 위한 설정 */
+    display: block; 
      
     }
     

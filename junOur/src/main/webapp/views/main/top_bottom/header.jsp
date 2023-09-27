@@ -7,7 +7,12 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 
+<!-- Lobster Font -->
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lobster&display=swap">
+<!-- Roboto Font -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;700&display=swap">
 
 <style>
 
@@ -17,21 +22,25 @@
     text-decoration:none;
     color:white;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    font-family: 'Oswald', sans-serif;
     /* 기타 스타일들... */
 }
 
 body {
 	list-style: none;
+	
 }
 
 #searchSub {
 	width: 400px;
 	height: 70px;
+	font-family: 'Roboto', sans-serif;
 }
 
 #searchbutton {
 	width: 70px;
 	height: 74px;
+	
 }
 
 .header {
@@ -42,6 +51,7 @@ body {
 	color: #fff;
 	height: 150px;
 	border-bottom:2px groove #323232;
+	
 	
 }
 
@@ -67,12 +77,14 @@ body {
 	z-index: 10;
 	background-color: transparent;
 	font-size:18px;
+	
 }
 
 .navi li {
 	width: 120px;
 	text-align: center;
 	color: black;
+	
 }
 
 .navi>li:hover {
@@ -83,6 +95,7 @@ body {
 	color: black;
 	text-decoration: none;
 	width: 120px;
+	
 }
 
 .submenu {
