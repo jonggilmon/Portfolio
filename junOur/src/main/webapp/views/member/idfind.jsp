@@ -26,10 +26,11 @@
     margin-bottom: 10px;
   }
   input[type="text"], input[type="button"] {
-    width: 100%;
+    width: 300px;
     padding: 10px;
     margin-bottom: 10px;
     border: 1px solid #ccc;
+    margin-top: 10px;
     }
    #second {
    	visibility:hidden;

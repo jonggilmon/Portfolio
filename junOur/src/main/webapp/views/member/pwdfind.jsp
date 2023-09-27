@@ -30,7 +30,8 @@
     height:600px;
   }
   input[type="text"], input[type="button"] {
-    width: 100%;
+    width: 300px;
+    margin-top: 10px;
     padding: 10px;
     margin-bottom: 10px;
     border: 1px solid #ccc;
