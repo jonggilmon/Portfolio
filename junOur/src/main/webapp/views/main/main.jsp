@@ -289,7 +289,7 @@
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    background: radial-gradient(circle, white, #A2A2A2);
+    background: radial-gradient(circle, white, white);
     background-size: 100% 0%;
     background-repeat: no-repeat;
     background-position: bottom;
@@ -334,7 +334,7 @@
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-     background: radial-gradient(circle, white, #A2A2A2);
+     background: radial-gradient(circle, white, white);
     background-size: 100% 0%;
     background-repeat: no-repeat;
     background-position: bottom;
@@ -419,7 +419,7 @@
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-     background: radial-gradient(circle, #C5C5C5, #FBFBFB);
+     background: radial-gradient(circle, #C5C5C5, white);
     background-size: 100% 0%;
     background-repeat: no-repeat;
     background-position: bottom;
@@ -462,7 +462,7 @@
     left: 49%;
     top: 50%;
     transform: translate(-50%, -50%);
-     background: radial-gradient(circle, white, #A2A2A2);
+     background: radial-gradient(circle, white, white);
     background-size: 100% 0%;
     background-repeat: no-repeat;
     background-position: bottom;
@@ -508,7 +508,7 @@
     left: 50%;    
     top: 50%;
     transform: translate(-50%, -50%);
-     background: radial-gradient(circle, white, #A2A2A2);
+     background: radial-gradient(circle, white, white);
     background-size: 100% 0%;
     background-repeat: no-repeat;
     background-position: bottom;
@@ -552,7 +552,7 @@
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    background: radial-gradient(circle, white, #A2A2A2);
+    background: radial-gradient(circle, white, white);
     background-size: 100% 0%;
     background-repeat: no-repeat;
     background-position: bottom;
@@ -598,7 +598,7 @@
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-     background: radial-gradient(circle, white, #A2A2A2);
+     background: radial-gradient(circle, white, white);
     background-size: 100% 0%;
     background-repeat: no-repeat;
     background-position: bottom;
@@ -639,7 +639,7 @@
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-     background: radial-gradient(circle, white, #A2A2A2);
+     background: radial-gradient(circle, white, white);
    
     background-size: 100% 0%;
     background-repeat: no-repeat;
@@ -682,7 +682,7 @@
     height: 0%;
     left: 45%;     /* 중앙에서 시작하도록 조정 */
     top: 55%;   /* 중앙에서 시작하도록 조정 */
-    background: linear-gradient(to top right, #E4F7BA, #E5FFFF);
+    background: linear-gradient(to top right, #E4F7BA, white);
     opacity: 1;
     transition: width 0.5s, height 0.5s ease-in-out;
     z-index: -1;
@@ -717,7 +717,7 @@
     height: 0%;
     left: 45%;     /* 중앙에서 시작하도록 조정 */
     top: 55%;   /* 중앙에서 시작하도록 조정 */
-    background: linear-gradient(to top right, #E4F7BA, #FFC6C6);
+    background: linear-gradient(to top right, #E4F7BA, white);
     opacity: 1;
     transition: width 0.5s, height 0.5s ease-in-out;
     z-index: -1;
@@ -738,6 +738,8 @@
 .sport-item.special-effect.tacgu:hover a::before {
     width: 100%; 
    height: 100%;
+   
+   
 }
 
 
@@ -755,7 +757,7 @@
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    background: radial-gradient(circle, white, #A2A2A2);
+    background: radial-gradient(circle, white, white);
     background-size: 100% 0%;
     background-repeat: no-repeat;
     background-position: bottom;
