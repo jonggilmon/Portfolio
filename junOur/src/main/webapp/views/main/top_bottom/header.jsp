@@ -13,6 +13,9 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap">
 
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;700&display=swap">
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
 
 <style>
 
@@ -22,7 +25,7 @@
     text-decoration:none;
     color:white;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    font-family: 'Oswald', sans-serif;
+   
     /* 기타 스타일들... */
 }
 
@@ -34,7 +37,7 @@ body {
 #searchSub {
 	width: 400px;
 	height: 70px;
-	font-family: 'Roboto', sans-serif;
+	
 }
 
 #searchbutton {
@@ -66,24 +69,24 @@ body {
 }
 
 .navi {
-	width: 360px; /* 로그인 시 주메뉴가 4개니까 한 놈당 100씩 .navi li랑 연동 서브메뉴도 맞춰줘야함 */
-	width: 810px; /* 로그인 시 주메뉴가 4개니까 한 놈당 100씩 .navi li랑 연동 서브메뉴도 맞춰줘야함 */
+	width: 1300px; 
 	height: 40px;
 	line-height: 40px;
 	background: #333;
 	display: flex;
-	margin-right: 20px;
-	margin-left: auto; 
+	margin: 0 auto; /* 여기를 수정했습니다 */
 	z-index: 10;
 	background-color: transparent;
 	font-size:18px;
-	
+	align-items: center;
+	justify-content: space-between;
 }
 
 .navi li {
 	width: 120px;
 	text-align: center;
 	color: black;
+	 font-family: 'Oswald', sans-serif;
 	
 }
 
@@ -91,84 +94,137 @@ body {
 	/*  background: #333;  */
 }
 
+.navi a {
+    font-family: 'Jua', sans-serif;
+    font-size:22px;
+    margin-left: -10px;
+    color: white !important;
+  
+}
+
 .navi li a {
 	color: black;
 	text-decoration: none;
 	width: 120px;
-	
+}
+.navi > li {
+    position: relative;
+    /* 나머지 스타일 */
 }
 
+
 .submenu {
-	width: 120px;
+	width: 110px;
 	height: 160px;
 	background: white;
     display:none;  
 	padding: 0; /* ^^ val 이거 안주면 서브메뉴에 이상한 공간 생김 개빡가네 */
-
+	background-color: rgba(40, 40, 40, 0.8);
+	font-size:22px;
+	    position: absolute; /* 추가 */
+    top: 100%; /* 부모의 높이만큼 아래로 이동 */
+    left: 0;   /* 부모의 왼쪽 경계에 정렬 */
 }
 
 .submenu li:hover {
-	background: #eee;
+	background: black;
 }
+
+.centered-items {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;  
+}
+
+
+.right-menu-items {
+    display: flex;
+    gap: 20px;
+    margin-left: 100px;
+    margin-right: 120px;
+}
+
+.right-menu-items > div {
+    display: flex;
+    gap: 10px;
+}
+
+.enlarged-text a{
+    font-size: 28px !important;
+}
+
+
 
 
 </style>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script><!-- 이거 제이쿼리 버전 안맞아서 새로 가져옴 최신판으로 이걸로 바꾸니까 돌아감   -->
 </head>
 <body>
-	<div class="header">
-		<div class="logo">
-  
-    <a href="/main/main"><img src="/static/content/logo3.png"></a>
-</div>
-		
-		<ul class="navi">
-			<c:if test="${userid==null}">
+  <div class="header">
+    <div class="logo">
+        <a href="/main/main"><img src="/static/content/logo3.png"></a>
+    </div>
+
+    <ul class="navi">
+        <c:if test="${userid==null}">
             <li><a href="/mypage/inquiry_all">문의사항</a></li>
             <li><a href="/admin/action/action_list">활동사진</a></li>
             <li><a href="../free/free_list">자유게시판</a></li>
             <li><a href="/gongji/gongji_list">공지사항</a></li>
             <li><a href="/member/login">로그인</a></li>
             <li><a href="/member/member">회원가입</a></li>
-         </c:if>
-         <c:if test="${userid!=null}">
-            <c:choose>
-               <c:when test="${userid == 'admin123'}">
-                  <li><a href="/admin/menu">관리자 페이지</a></li> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-               </c:when>
-               <c:otherwise>         	
-                  <li><a href="#">마이페이지</a>
-                     <ul class="submenu">
-                        <li><a href="/mypage/myinfo">내 정보</a></li>
-                        <li><a href="/mypage/myreserve">예약내역</a></li>
-                        <li><a href="/mypage/myjjim">찜 확인</a></li>
-                        <li><a href="/mypage/inquiry_select">1:1 문의하기</a></li>
-                     </ul>
-                  </li>
-               </c:otherwise>
-            </c:choose>
-            <li><a href="/admin/action/action_list">활동사진</a></li>   
-            <li><a href="/free/free_list">자유게시판</a></li>
-            <li><a href="/gongji/gongji_list">공지사항</a></li>
-            <li><a href="/mypage/inquiry_all">문의사항</a></li>
-            <li>${sessionScope.name}</li>
-            <li><a href="/member/logout">로그아웃</a></li>
-         </c:if>
-			<!-- 세션에 "userid" 키가 없으면 로그아웃 상태로 간주 -->
-		</ul>
-	</div>
-	<script>
-		$(document).ready(function() { /* 문서 시작 줄 아무런 의미없음 걍 필요한거 */
-			$('.navi>li').mouseover(function() {  
-				$(this).find('.submenu').stop().slideDown(500); 
-				/* this > 주메뉴 하나를 지목 하는 것 우리는 내려오는게 마이페이지뿐이라 this=마이페이지라고 생각하면 됨  */
-				/* this가 없을 시 아무 메뉴에 마우스를 올려도 하위메뉴가 주르륵 내려온다. */
-				/* stop()은 특정효과를 해당 모션이 다 끝마치기전에 정지시켜야 할 때 주로쓰이는 메서드*/
-			}).mouseout(function() {
-				$(this).find('.submenu').stop().slideUp(500);
-			});
-		});
-	</script>
+        </c:if>
 
+        <c:if test="${userid!=null}">
+            <c:choose>
+                <c:when test="${userid == 'admin123'}">
+                    <li><a href="/admin/menu">관리자 페이지</a></li> 
+                </c:when>
+                <c:otherwise>
+                    <li class="enlarged-text"><a href="/mypage/inquiry_all">문의사항</a></li>
+                    <li class="enlarged-text"><a href="/admin/action/action_list">활동사진</a></li>
+                    <li class="enlarged-text"><a href="/free/free_list">자유게시판</a></li>
+                    <li class="enlarged-text"><a href="/gongji/gongji_list">공지사항</a></li>
+                </c:otherwise>
+            </c:choose>
+
+            <!-- 오른쪽에 위치해야하는 메뉴 항목들 -->
+           <li class="right-menu-items">
+    <c:choose>
+        <c:when test="${userid != 'admin123'}">
+            <div> <!-- 추가된 div 시작 -->
+                <a href="#">마이페이지</a>
+                <ul class="submenu">
+                    <li><a href="/mypage/myinfo">내 정보</a></li>
+                    <li><a href="/mypage/myreserve">예약내역</a></li>
+                    <li><a href="/mypage/myjjim">찜 확인</a></li>
+                    <li><a href="/mypage/inquiry_select">1:1 문의하기</a></li>
+                </ul>
+            </div> <!-- 추가된 div 종료 -->
+        </c:when>
+    </c:choose>
+    <div>
+        <a>${sessionScope.name}</a>
+    </div>
+    <div>
+        <a href="/member/logout">로그아웃</a>
+    </div>
+</li>
+    </c:if>
+</ul>
+</div>
+
+
+    <script>
+        $(document).ready(function() { 
+            $('.navi>li').mouseover(function() {  
+                $(this).find('.submenu').stop().slideDown(500); 
+            }).mouseout(function() {
+                $(this).find('.submenu').stop().slideUp(500);
+            });
+        });
+    </script>
 </body>
+
 </html>
