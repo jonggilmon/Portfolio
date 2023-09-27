@@ -6,9 +6,14 @@
 <head>
 <style>
 	body{
-		margin: 0;
-		padding: 0;
-		
+	   margin: 0;
+	   padding: 0;
+	   background:#807979;
+	}
+	table {
+	   border-radius:25px;
+	   border:6px solid #242424;
+	   backgroung:white;
 	}
 
 	
