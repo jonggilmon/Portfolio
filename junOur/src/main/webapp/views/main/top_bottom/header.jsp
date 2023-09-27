@@ -141,13 +141,7 @@ body {
             <li>${sessionScope.name}</li>
             <li><a href="/member/logout">로그아웃</a></li>
          </c:if>
-
-
-
-
 			<!-- 세션에 "userid" 키가 없으면 로그아웃 상태로 간주 -->
-
-
 		</ul>
 	</div>
 	<script>
