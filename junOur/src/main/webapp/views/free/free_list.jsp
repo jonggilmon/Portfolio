@@ -8,71 +8,70 @@
 <title>Insert title here</title>
 <%@ include file="../main/top_bottom/header.jsp" %>
   <style>
-    #section {
-      width:1100px;
-      height:1000px;
-      margin:auto;
-      margin-top:20px;
+    body {
+       background:#807979;
     }
-    /* 테이블 스타일링 */
-    #section table {
-        border-collapse: collapse;
-        border: 1px solid #EAEAEA;
-        font-color:#000000;
+    table {
+       width:800px;
+       height:600px;
+       border-radius:25px;
+	   border:6px solid #242424;
+       font-color:#242424;
+       background-color:#242424;
     }
-    #section td, #section th {
-        border: 1px solid #EAEAEA;
-        padding: 10px 15px;
+    table tr {
+       border-radius:13px;
+       background-color:#BDBDBD;
     }
-    /* 제목 행 스타일링 */
-    #pkc {
-        background-color: #f2f2f2;
-        color: #fff;
+    table td, table th {
+       border: 1px solid #242424;
     }
-    /* caption 스타일링 */
-    #section caption h2 {
-        margin-bottom:30px;
-        color: #444;
-    }
-    #pkc td {
-      color: black;
-      font-weight: bold;
-    }
-    /* 링크 스타일링 */
-    #section a {
-        color: #000000;
-        text-decoration: none;
-        padding: 5px 15px;
-        border-radius: 4px;
-        transition: background-color 0.2s;
-    }
-
-    #section #aaa a:hover {
-        background-color: #000000;
-        color: #fff;
+    #mmt td {
+       background-color:#8C8C8C;
+       height:50px;
+       font-size:20px;
     }
     #page1 a {
-    display:inline-block;
+       display:inline-block;
+    }
+    td.left_top {
+       border-top-left-radius:13px;
+       background-color:#8C8C8C;
+    }
+    td.right_top {
+       border-top-right-radius:13px;
+    }
+    td.mmt_under {
+       border-bottom-left-radius:13px;
+       border-bottom-right-radius:13px;
+    }
+    td.mmt_title {
+       padding-left:20px;
+    }
+    a:hover {
+       background-color:#242424;
+       color:#FFFFFF;
+       text-decoration:none;
+       border-radius:5px;
     }
   </style>
 </head>
 <body>
-	<div id="section">
 	  <table width="800" align="center">
 	    <caption> <h2> 자유게시판 </h2> </caption>
-	    <tr align="center" id="pkc">
-	      <td width="400"> 제목 </td>
+	    <tr align="center" id="mmt">
+	      <td width="400" class="left_top"> 제목 </td>
 	      <td width="150"> 작성자 </td>
 	      <td width="100"> 조회수 </td>
-	      <td width="150"> 작성일 </td>
+	      <td width="150" class="right_top"> 작성일 </td>
 	    </tr>
 	    
 	  <c:forEach items="${flist}" var="map">
 	    <tr>
-	      <td> <a href="readnum?no=${map.no}"> ${map.title} </a> </td>
-	      <td> ${map.userid} </td>
-	      <td> ${map.readnum} </td>
-	      <td> ${map.writeday} </td>
+	      <td class="mmt_title"> <a href="readnum?no=${map.no}"> ${map.title} </a> </td>
+	      <td align="center"> ${map.userid} </td>
+	      <td align="center"> ${map.readnum} </td>
+	      <td align="center"> ${map.writeday} </td>
 	    </tr>
 	  </c:forEach>
 	  
@@ -122,13 +121,11 @@
          </c:if>
        </td>
      </tr>
-	  </div>
 	    <tr>
-	      <td colspan="4" align="center" id="aaa"> <a href="../free/freeadd"> 글 등록 </a> </td>
-	    </tr>
+	      <td colspan="4" align="center" class="mmt_under"> <a href="../free/freeadd"> 글 등록 </a> </td>
+	    </tr>  
 	  </table>
 	  
-	</div>
 </body>
 </html>
 <%@ include file="../main/top_bottom/footer.jsp" %>

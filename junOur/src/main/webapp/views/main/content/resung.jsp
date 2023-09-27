@@ -15,9 +15,9 @@
 	}
 	table {
 	   border-radius:25px;
-	   border:6px solid #5D5D5D;
+	   border:6px solid #242424;
 	   font-size:20px;
-	   background-color:#5D5D5D;
+	   background-color:#242424;
 	}
 	table td, table th {
        border: 1px solid #242424;
@@ -25,9 +25,11 @@
     }
     td.left_top {
        border-top-left-radius:13px;
+       background-color:#8C8C8C;
     }
     td.left_under {
        border-bottom-left-radius:13px;
+       background-color:#8C8C8C;
     }
     td.right_top {
        border-top-right-radius:13px;
@@ -37,7 +39,10 @@
        border-bottom-right-radius:13px;
        padding-left:40px;
     }
-    td.mmt {
+    td.mmt_left {
+       background-color:#8C8C8C;
+    }
+    td.mmt_right {
        padding-left:40px;
     }
 </style>
@@ -51,28 +56,28 @@
             <td class="right_top">${recentReserveInfo.reserve_no}</td>
         </tr>
         <tr>
-            <td align="center">예약번호</td>
-            <td class="mmt">${recentReserveInfo.reserve_id}</td>
+            <td class="mmt_left" align="center">예약번호</td>
+            <td class="mmt_right">${recentReserveInfo.reserve_id}</td>
         </tr>
         <tr>
-            <td align="center">신청자 아이디</td>
-            <td class="mmt">${recentReserveInfo.user_id}</td>
+            <td class="mmt_left" align="center">신청자 아이디</td>
+            <td class="mmt_right">${recentReserveInfo.user_id}</td>
         </tr>
         <tr>
-            <td align="center">신청자 닉네임</td>
-            <td class="mmt">${recentReserveInfo.user_name}</td>
+            <td class="mmt_left" align="center">신청자 닉네임</td>
+            <td class="mmt_right">${recentReserveInfo.user_name}</td>
         </tr>     
         <tr>
-            <td align="center">예약신청한 날짜</td>
-            <td class="mmt">${recentReserveInfo.reserve_date}</td>
+            <td class="mmt_left" align="center">예약신청한 날짜</td>
+            <td class="mmt_right">${recentReserveInfo.reserve_date}</td>
         </tr>
         <tr>
-            <td align="center">예약 날짜</td>
-            <td class="mmt">${recentReserveInfo.rs_date}</td>
+            <td class="mmt_left" align="center">예약 날짜</td>
+            <td class="mmt_right">${recentReserveInfo.rs_date}</td>
         </tr>
         <tr>
-            <td align="center">예약 장소</td>
-            <td class="mmt">${recentReserveInfo.add_ress}</td>
+            <td class="mmt_left" align="center">예약 장소</td>
+            <td class="mmt_right">${recentReserveInfo.add_ress}</td>
         </tr>
         <tr>
             <td class="left_under"  align="center">예약한 시간</td>
