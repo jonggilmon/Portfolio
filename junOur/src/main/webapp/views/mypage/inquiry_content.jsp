@@ -10,7 +10,7 @@
 
 <style>
     body {
-        background-color: #f0f0f0;
+        background:#807979;
         font-family: Arial, sans-serif;
         margin: 0;
         padding: 0;
@@ -20,16 +20,17 @@
         max-width: 800px;
         margin: 0 auto;
         padding: 20px;
-        background-color: white;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+		background:#807979;
         height:600px;
     }
 
     .post {
         margin-bottom: 20px;
-        border: 1px solid #ddd;
+        border:6px solid #242424;
+    	border-radius:25px;
         padding: 10px;
         background-color: #fff;
+        margin-top: 100px;
     }
 
     .post-title {
@@ -47,7 +48,7 @@
     }
 
     a {
-        color: #007bff;
+    	color: black;
         text-decoration: none;
     }
 
@@ -64,6 +65,7 @@
             <div class="post-title">제 목 : ${mvo.title}</div>
             <div class="post-content">내 용 : ${mvo.content }</div>
             <c:if test="${mvo.seq == 0 }">
+            	<hr>
             	<a href="inquiryUpdate?no=${mvo.no }">수정</a>  <a href="inquiryDelete?no=${mvo.no }">삭제</a>
             </c:if>
             <c:if test="${mvo.seq == 1 }">

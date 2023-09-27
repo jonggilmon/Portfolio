@@ -9,7 +9,7 @@
 <style>
   body {
     font-family: Arial, sans-serif;
-    background-color: #fff; /* 배경색을 흰색으로 설정 */
+    background:#807979;
     color: #000; /* 텍스트 색상을 검은색으로 설정 */
     margin: 0;
     padding: 0;
@@ -38,6 +38,7 @@
   a {
     text-decoration: none;
     color: #000; /* 링크 텍스트 색상을 검은색으로 설정 */
+    
   }
 </style>
 </head>
