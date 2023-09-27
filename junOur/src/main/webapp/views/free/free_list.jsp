@@ -10,7 +10,7 @@
   <style>
     #section {
       width:1100px;
-      height:1500px;
+      height:1000px;
       margin:auto;
       margin-top:20px;
     }
@@ -51,6 +51,9 @@
         background-color: #000000;
         color: #fff;
     }
+    #page1 a {
+    display:inline-block;
+    }
   </style>
 </head>
 <body>
@@ -73,10 +76,58 @@
 	    </tr>
 	  </c:forEach>
 	  
+	  <tr>
+       <td colspan="4" align="center" id="pagein">
+         
+         <div id="page1">
+         <!-- 10페이지 왼쪽 이동 -->
+         <c:if test="${pstart != 1}">
+          <a href="free_list?page=${pstart-1}"> << </a>
+         </c:if>
+         <c:if test="${pstart == 1}">
+          <<
+         </c:if>
+       
+         <!-- 1페이지 왼쪽 -->
+         <c:if test="${page != 1}">
+          <a href="free_list?page=${page-1}"> < </a>
+         </c:if>
+         <c:if test="${page == 1}">
+          <
+         </c:if>
+         
+         <c:forEach begin="${pstart}" end="${pend}" var="i">
+           <c:if test="${page != i}">
+            <a href="free_list?page=${i}"> ${i} </a>
+           </c:if>
+           <c:if test="${page == i}">
+            <a href="free_list?page=${i}" style="color:red"> ${i} </a>
+           </c:if>
+         </c:forEach>
+         
+          <!-- 1페이지 오른쪽 -->
+         <c:if test="${page != chong}">
+          <a href="free_list?page=${page+1}"> > </a>
+         </c:if>
+         <c:if test="${page == chong}">
+          >
+         </c:if>
+         
+         <!-- 10페이지 오른쪽 이동 -->
+         <c:if test="${pend != chong}">
+          <a href="free_list?page=${pend+1}"> >> </a>
+         </c:if>
+         <c:if test="${pend == chong}">
+          >>
+         </c:if>
+       </td>
+     </tr>
+	  </div>
 	    <tr>
 	      <td colspan="4" align="center" id="aaa"> <a href="../free/freeadd"> 글 등록 </a> </td>
 	    </tr>
 	  </table>
+	  
 	</div>
 </body>
 </html>
