@@ -37,6 +37,9 @@
    #third {
    	visibility:hidden;
    }
+   #link1 a {
+   	display:inline-block;
+   }
  </style>
 <script>
   var snum; // server 인증번호
@@ -124,7 +127,9 @@
     <div id="third">
       사용자의 아이디는 <div id="userid"> </div> 입니다
     </div>
-    <a href=../main/main>메인으로</a> <a href="pwdfind">비밀번호 찾기</a>
+    <div id="link1">
+    <a href=../main/main>메인으로</a> / <a href="pwdfind">비밀번호 찾기</a>
+    </div>
   </form>
 </section>
 </body>
