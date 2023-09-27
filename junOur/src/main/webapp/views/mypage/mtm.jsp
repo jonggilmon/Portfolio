@@ -21,6 +21,7 @@
     margin: auto;
     padding: 20px;
     text-align: center;
+    height: 700px;
   }
 
   div {

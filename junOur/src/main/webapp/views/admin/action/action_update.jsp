@@ -30,7 +30,7 @@
   <div id="section">
     <form method="post" action="action_update_ok">
       <input type="hidden" name="no" value="${avo.no}">
-      <h2> 게시판 글쓰기 </h2>
+      <h2> 활동사진 수정 </h2>
       <div class="msg"> <input type="file" value="${avo.img}" name="img" placeholder="아이디"> </div>  
       <div class="msg"> <input type="text" value="${avo.title}" name="title" placeholder="제 목"> </div>  
       <div class="msg"> <textarea name="content" placeholder="내용을 입력하세요">${avo.content}</textarea> </div>

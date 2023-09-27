@@ -20,10 +20,19 @@
     margin: auto;
     padding: 20px;
     text-align: center;
+    height: 700px;
   }
 
   div {
     margin-bottom: 10px;
+    font-size: 20px;
+  }
+  
+  #aa{
+  	margin-top: 150px;
+  }
+  #bb{
+  	margin-top: 90px;
   }
 
   a {
@@ -34,8 +43,8 @@
 </head>
 <body>
 <section>
-  <div>${name}님이 문의하신 글이 접수가 되었습니다.</div>
-  <div> <a href="inquiry_list">내 문의 가기</a> </div>
+  <div id="aa">${name}님이 문의하신 글이 접수가 되었습니다.</div>
+  <div id="bb"> <a href="inquiry_list">내 문의 가기</a> </div>
 </section>
 </body>
 </html>
