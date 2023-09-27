@@ -26,16 +26,20 @@
     margin-bottom: 10px;
   }
   input[type="text"], input[type="button"] {
-    width: 100%;
+    width: 300px;
     padding: 10px;
     margin-bottom: 10px;
     border: 1px solid #ccc;
+    margin-top: 10px;
     }
    #second {
    	visibility:hidden;
    }
    #third {
    	visibility:hidden;
+   }
+   #link1 a {
+   	display:inline-block;
    }
  </style>
 <script>
@@ -124,7 +128,9 @@
     <div id="third">
       사용자의 아이디는 <div id="userid"> </div> 입니다
     </div>
-    <a href=../main/main>메인으로</a> <a href="pwdfind">비밀번호 찾기</a>
+    <div id="link1">
+    <a href=../main/main>메인으로</a> / <a href="pwdfind">비밀번호 찾기</a>
+    </div>
   </form>
 </section>
 </body>
