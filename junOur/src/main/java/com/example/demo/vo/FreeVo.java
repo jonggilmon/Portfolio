@@ -4,7 +4,7 @@ import lombok.Data;
 
 @Data
 public class FreeVo {
-	private int readnum,no,param;
+	private int readnum,no;
 	private String userid,title,content,writeday,pwd;
 
 }

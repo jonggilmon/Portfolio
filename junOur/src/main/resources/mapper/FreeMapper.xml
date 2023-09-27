@@ -17,19 +17,19 @@
   </insert>
   
   <select id="content" resultType="com.example.demo.vo.FreeVo">
-    select * from free where no=#{param}
+    select * from free where no=#{no}
   </select>
   
   <update id="readnum">
-    update free set readnum=readnum+1 where no=#{param}
+    update free set readnum=readnum+1 where no=#{no}
   </update>
   
   <delete id="delete">
-    delete from free where no=#{param}
+    delete from free where no=#{no}
   </delete>
   
   <select id="free_update" resultType="com.example.demo.vo.FreeVo">
-    select * from free where no=#{param}
+    select * from free where no=#{no}
   </select>
   
   <update id="free_update_ok">
