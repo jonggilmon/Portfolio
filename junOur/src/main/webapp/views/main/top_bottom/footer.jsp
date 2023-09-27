@@ -26,7 +26,7 @@
             width: 100%;
             background: #333;
             height: 172px;
-            background-color:#323232;
+            background-color: rgba(40, 40, 40, 0.8);
             
         }
 

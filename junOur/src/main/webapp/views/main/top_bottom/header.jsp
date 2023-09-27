@@ -38,7 +38,7 @@ body {
 	display: flex;
 	justify-content: space-between;
 	align-items: center; 
-	background-color: transparent;
+	background-color: rgba(40, 40, 40, 0.8);
 	color: #fff;
 	height: 150px;
 	border-bottom:2px groove #323232;
