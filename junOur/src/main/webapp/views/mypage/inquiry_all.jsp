@@ -9,6 +9,9 @@
 <meta charset="UTF-8">
 <title>모든 문의사항</title>
 <style>
+  body {
+  	background:#807979;
+  }
   section {
     width: 1700px;
     height:1000px;
@@ -29,9 +32,9 @@
   .answer-complete {
   	color:blue;
     font-size: 15px;
-	margin-left:420px;
-	width:1700px;
 	font-weight:bold;
+	width:1700px;
+	margin-left:420px;
 
   }
   .hidden-post {
@@ -186,11 +189,11 @@
           <a href="inquiry_all_content?no=${mvo.no}" id="title1"> ${mvo.title } </a>
            <a href="inquiry_all_content?no=${mvo.no}" id="userid1"> ${mvo.userid } </a>
            <a href="inquiry_all_content?no=${mvo.no}" id="writeday1"> ${mvo.writeday} </a>
-           
+             
         </div>
         <c:if test="${mvo.seq == 1 }">
-            <span class="answer-complete">↳답변 완료</span>
-           </c:if>
+            <div class="answer-complete">↳답변 완료</div>
+           </c:if> 
       </c:otherwise>
       
     </c:choose>
