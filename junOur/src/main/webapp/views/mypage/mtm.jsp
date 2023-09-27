@@ -14,6 +14,8 @@
     color: #000;
     margin: 0;
     padding: 0;
+     background:#807979;
+    
   }
 
   section {
@@ -22,16 +24,26 @@
     padding: 20px;
     text-align: center;
     height: 700px;
+         background:#807979;
+    
   }
 
   div {
     margin-bottom: 10px;
   }
 
-  input, textarea {
-    width: 100%;
+  input {
+    width: 400px;
     padding: 10px;
-    border: 1px solid #000;
+    border:6px solid #242424;
+    border-radius:25px;
+  }
+  textarea {
+ 	width: 400px;
+ 	height:300px;
+    padding: 10px;
+    border:6px solid #242424;
+    border-radius:25px;
   }
 
   input[type="checkbox"] {
@@ -45,7 +57,10 @@
     color: #fff;
     border: none;
     cursor: pointer;
+    margin:auto;
+    width:400px;
   }
+  
 
   a {
     text-decoration: none;
@@ -62,7 +77,7 @@
 <body>
 <section>
   <form method="post" action="mtmOk" name="mform">
-    <div> 1:1 문의사항 </div>
+    <div> <h3>1:1 문의사항</h3> </div>
     <div>
     	<select name="category">
     		<option value="0"> 예약 관련 </option>

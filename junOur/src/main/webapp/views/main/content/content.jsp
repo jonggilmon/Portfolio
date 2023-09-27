@@ -14,6 +14,7 @@
  <style>
 		body{
 			background: #807979;
+			background-image: url("/static/content/allimg.jpg");
 			
 		}
 
@@ -239,6 +240,9 @@
     border-radius:25px;
 
     
+}
+#allimg {
+	display:flex;
 }
 
   </style>

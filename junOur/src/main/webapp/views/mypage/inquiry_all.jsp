@@ -17,7 +17,7 @@
     height:1000px;
     margin: auto;
     padding: 20px;
-    background-color: #807979;
+    background-color:#807979;
     font-family: Arial, sans-serif;
     margin-bottom: 50px;
   }
@@ -30,11 +30,11 @@
     
   }
   .answer-complete {
-  	color:blue;
     font-size: 15px;
-	font-weight:bold;
-	width:1700px;
 	margin-left:420px;
+	width:1700px;
+	font-weight:bold;
+	margin-top:10px;
 
   }
   .hidden-post {
@@ -45,6 +45,9 @@
     padding: 30px;
     font-size:20px;
     border-top:1px solid black;
+    border:6px solid #242424;
+    border-radius:25px;
+    margin-top:10px;
   }
 
   /* .links 클래스의 스타일 */
@@ -58,30 +61,35 @@
     margin-bottom: 20px;
     position: sticky;
     top: 0; /* 화면 상단에 고정되도록 설정 */
-    background-color: #807979; /* 배경색을 원하시는 색으로 지정하세요 */
     z-index: 1; /* 다른 내용 위에 나타나도록 z-index 설정 */
     }
 
   #link1 {
   	width:200px;
   	height:100px;
-  	border:1px solid black;
   	border-bottom: none;
+  	border:6px solid #242424;
+    border-radius:25px;
   }
   #link1 a {
-  	margin-top:35px;
+  	margin-top:33px;
   	font-size:30px;
+  	font-weight:bold;
   }
   #link2 {
   	width:200px;
   	height:100px;
-  	border:1px solid black;
-  }
+	border:6px solid #242424;
+    border-radius:25px;
+    margin-top:30px;  
+    }
   #link2 a {
-  	margin-top:35px;
+  	margin-top:33px;
   	font-size:30px;
+  	font-weight:bold;
   }
   #title {
+      border-radius:25px;
     width: 400px;
     font-size: 40px;
     background-color: black;
@@ -98,6 +106,9 @@
     background-color: white;
     text-align:center;
     border-top:1px solid black;
+    border:6px solid #242424;
+    border-radius:25px;
+    margin-top:10px;
   }
   #title1 {
   	display:inline-block;
@@ -117,12 +128,16 @@
     font-size:20px;
   }  
   #jul1 {
+      border-radius:25px;
+   border:6px solid #242424;
+    border-radius:25px;
   	width: 1000px;
 	display:flex;
     padding: 30px;
    	margin-left:320px;
     background-color: white;
     text-align:center;
+    font-weight:bold;
   }
    #title2 {
   	width:300px;
@@ -189,11 +204,11 @@
           <a href="inquiry_all_content?no=${mvo.no}" id="title1"> ${mvo.title } </a>
            <a href="inquiry_all_content?no=${mvo.no}" id="userid1"> ${mvo.userid } </a>
            <a href="inquiry_all_content?no=${mvo.no}" id="writeday1"> ${mvo.writeday} </a>
-             
+           
         </div>
         <c:if test="${mvo.seq == 1 }">
-            <div class="answer-complete">↳답변 완료</div>
-           </c:if> 
+            <span class="answer-complete">↳답변 완료</span>
+           </c:if>
       </c:otherwise>
       
     </c:choose>
