@@ -19,9 +19,9 @@ public class FreeController {
 	private FreeService service;
 	
 	@RequestMapping("/free/free_list")
-	public String free_list(Model model)
+	public String free_list(Model model, HttpServletRequest request)
 	{
-		return service.free_list(model);
+		return service.free_list(model, request);
 	}
 	
 	@RequestMapping("/free/freeadd")

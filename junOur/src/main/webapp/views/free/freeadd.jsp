@@ -58,6 +58,7 @@
     }
   </style>
   <script>
+  
     var pchk=0;
     function pwdCheck()
     {
@@ -68,8 +69,6 @@
     	{
     		if(pwd==pwd2)
     		{
-    			document.getElementById("pk").innerText="비밀번호가 일치합니다";
-    			document.getElementById("pk").style.color="blue";
     			pchk=1;
     		}
     		else
@@ -81,23 +80,6 @@
     	}
     }
     
-    function pwdLength(my)
-    {
-    	var len=my.length;
-    	
-    	if(len < 8)
-    	{
-    		document.getElementById("pk2").innerText="비밀번호는 8자 이상 입력하세요";
-    		document.getElementById("pk2").style.color="red";
-    		pchk=1;
-    	}
-    	else
-    	{
-    		document.getElementById("pk2").innerText="비밀번호의 길이가 적당합니다";
-    		document.getElementById("pk2").style.color="blue";
-    		pchk=1;
-    	}
-    }
   </script>
 </head>
 
