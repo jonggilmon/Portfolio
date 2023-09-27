@@ -24,7 +24,7 @@
     
     #section {
       width:1100px;
-      height:600px;
+      height:660px;
       margin:auto;
       margin-top:20px;
     }

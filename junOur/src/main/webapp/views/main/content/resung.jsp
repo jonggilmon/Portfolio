@@ -22,7 +22,7 @@
 	<caption><h3>최근 예약 정보입니다.</h3></caption>
 	<c:if test="${not empty recentReserveInfo}">
         <tr>
-            <td>종목</td>
+            <td>방번호</td>
             <td>${recentReserveInfo.reserve_no}</td>
         </tr>
         <tr>
