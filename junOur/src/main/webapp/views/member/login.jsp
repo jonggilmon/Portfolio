@@ -56,6 +56,9 @@
       width:407px;
       height:43px;
     }
+    section #find {
+      margin:auto;
+    }
   </style>
 </head>
 <body> 
@@ -66,6 +69,7 @@
        <div> <input type="text" name="userid" id="userid" placeholder="아이디" > </div>
        <div> <input type="password" name="pwd" id="pwd" placeholder="비밀번호"> </div>
        <div> <input type="submit" value="로그인"> </div> 
+       <div id="find"> <a href="idfind">아이디 찾기</a> <a href="pwdfind">비밀번호 찾기</a> </div>
      </form>
   
   </section>

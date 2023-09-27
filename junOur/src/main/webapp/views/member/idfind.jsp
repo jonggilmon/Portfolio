@@ -1,23 +1,43 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
+<%@ include file="../main/top_bottom/header.jsp" %>
+
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>ID Finder</title>
 <style>
   body {
-    width: 1800px;
-    height: 500px;
+    font-family: Arial, sans-serif;
     text-align: center;
+    background-color: #f0f0f0;
   }
-  section #second {
-    visibility: hidden;
+  section {
+    max-width: 400px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    height:600px;
+    
   }
-  section #third {
-    visibility: hidden;
+  div {
+    margin-bottom: 10px;
   }
-</style>
+  input[type="text"], input[type="button"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    }
+   #second {
+   	visibility:hidden;
+   }
+   #third {
+   	visibility:hidden;
+   }
+ </style>
 <script>
   var snum; // server 인증번호
   var pnum; // 입력받은 핸드폰 비밀번호
@@ -53,7 +73,7 @@
         chk2.onload = function() {
           if (chk2.responseText == "0")
           {
-            alert("오류가 발생했습니다.");
+            alert("오류가 발생했습니다");
           } 
           else
           {
@@ -90,7 +110,8 @@
 <body>
 <section>
   <form name="mform">
-    <div> 아이디 찾기 </div>
+    <div> <h2>아이디 찾기</h2> </div> <hr>
+    
     <div> 가입하실 때 입력하셨던 전화번호를 입력해주세요 </div>
     <div id="first">
       전화번호 입력<input type="text" name="userPnum" placeholder="-를 빼고 입력하세요"> 
@@ -103,7 +124,10 @@
     <div id="third">
       사용자의 아이디는 <div id="userid"> </div> 입니다
     </div>
+    <a href=../main/main>메인으로</a> <a href="pwdfind">비밀번호 찾기</a>
   </form>
 </section>
 </body>
 </html>
+       <%@ include file="../main/top_bottom/footer.jsp" %>
+

@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ include file="../main/top_bottom/header.jsp" %>
+    
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,9 +9,9 @@
 <title>Insert title here</title>
 <style>
   body {
-    width: 1800px;
-    height: 500px;
+    font-family: Arial, sans-serif;
     text-align: center;
+    background-color: #f0f0f0;
   }
   section #second {
     visibility: hidden;
@@ -17,6 +19,29 @@
   section #third {
     visibility: hidden;
   }
+
+  section {
+    max-width: 400px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    height:600px;
+  }
+  input[type="text"], input[type="button"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    }
+    #second {
+   	visibility:hidden;
+   }
+   #third {
+   	visibility:hidden;
+   }
+  
 </style>
 <script>
   var snum; // server 인증번호
@@ -111,7 +136,8 @@
 <body>
 <section>
   <form name="mform">
-    <div> 비밀번호 찾기 </div>
+    <div><h2> 비밀번호 찾기 </h2> </div> <hr>
+    
     <div> 가입하실 때 입력하셨던 아이디를 입력해주세요 </div>
     <div> <input type="text" name="userid"> </div>
     <div> 가입하실 때 입력하셨던 전화번호를 입력해주세요 </div>
@@ -126,7 +152,12 @@
     <div id="third">
       사용자의 비밀번호는 <div id="pwd"> </div> 입니다
     </div>
+    <div top="-200">
+    <a href=../main/main>메인으로</a> <a href="idfind">아이디 찾기</a>
+    </div>
   </form>
 </section>
 </body>
 </html>
+       <%@ include file="../main/top_bottom/footer.jsp" %>
+
