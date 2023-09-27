@@ -22,44 +22,40 @@ public class FreeServiceImpl implements FreeService {
 	private FreeMapper mapper;
 	
 	@Override
-	   public String free_list(Model model,HttpServletRequest request) {
+	public String free_list(Model model,HttpServletRequest request) {
+		
 
-	      int page;
-	       if(request.getParameter("page")==null)
-	         page=1;
-	       else
-	          page=Integer.parseInt(request.getParameter("page"));
+		int page;
+		if(request.getParameter("page")==null)
+			page=1;
+		else
+		    page=Integer.parseInt(request.getParameter("page"));
+		 
+		// 해당페이지의 start위치를 구하기
+		int start=(page-1)*10;
+		
+		// pstart, pend, chong
+		int pstart=page/10;
+		if(page%10 == 0)
+			pstart--;
+		pstart=pstart*10+1;
+		
+		int pend=pstart+9;
+		
+		// 총페이지보다 pend가 클경우는 총페이지의 값을 pend
+		int chong=mapper.getChong();
+		//System.out.println(chong);
+		if(pend > chong)
+			pend=chong;
 	       
-	       // 해당페이지의 start위치를 구하기
-	       int start=(page-1)*10;
-	       
-	       // pstart, pend, chong
-	       int pstart=page/10;
-	       if(page%10 == 0)
-	          pstart--;
-	       pstart=pstart*10+1;
-	       
-	       int pend=pstart+9;
-	       
-	       // 총페이지보다 pend가 클경우는 총페이지의 값을 pend
-	       int chong=mapper.getChong();
-	       //System.out.println(chong);
-	       if(pend > chong)
-	          pend=chong;
-	       
-	       int r=(page-1)*10;
-	       
-	       mapper.setRownum(r);
-	       
-	       model.addAttribute("chong",chong);
-	       model.addAttribute("pstart",pstart);
-	       model.addAttribute("pend",pend);
-	       model.addAttribute("page",page);
-	       model.addAttribute("flist",mapper.flist(start));
-	       
-	       
-	       return "/free/free_list";
-	   }
+	    model.addAttribute("chong",chong);
+	    model.addAttribute("pstart",pstart);
+	    model.addAttribute("pend",pend);
+	    model.addAttribute("page",page);
+	    model.addAttribute("flist",mapper.flist(start));
+	    
+	    return "/free/free_list";
+	}
 	
 	@Override
 	public String freeadd() {
@@ -76,7 +72,7 @@ public class FreeServiceImpl implements FreeService {
 	public String free_content(Model model, FreeVo fvo, HttpServletRequest request) {
 		String no=request.getParameter("no");
 		model.addAttribute("chk",request.getParameter("chk"));
-		model.addAttribute("fvo",mapper.content(fvo)); // content(no)
+		model.addAttribute("fvo",mapper.content(fvo));
 		model.addAttribute("page",request.getParameter("page"));
 		return "/free/free_content";
 	}

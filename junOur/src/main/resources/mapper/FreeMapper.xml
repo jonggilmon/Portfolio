@@ -3,16 +3,12 @@
  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.example.demo.mapper.FreeMapper">
-  <select id="setRownum">
-     set @rownum=(select count(*) from free)-${r}
+  <select id="flist" resultType="com.example.demo.vo.FreeVo">
+    select * from free order by no desc limit #{start} , 10
   </select>
   
   <select id="getChong" resultType="int">
      select ceil( count(*)/10 ) from free
-  </select>
-  
-  <select id="flist" resultType="com.example.demo.vo.FreeVo">
-    select * ,(@rownum := @rownum-1)+1 as rnum from free order by no desc limit #{start} , 10
   </select>
   
   <insert id="freeadd_ok" parameterType="com.example.demo.vo.FreeVo">
@@ -21,19 +17,19 @@
   </insert>
   
   <select id="content" resultType="com.example.demo.vo.FreeVo">
-    select * from free where no=#{no}
+    select * from free where no=#{param}
   </select>
   
   <update id="readnum">
-    update free set readnum=readnum+1 where no=#{no} <!-- #{param} -->
+    update free set readnum=readnum+1 where no=#{param}
   </update>
   
   <delete id="delete">
-    delete from free where no=#{no}
+    delete from free where no=#{param}
   </delete>
   
   <select id="free_update" resultType="com.example.demo.vo.FreeVo">
-    select * from free where no=#{no}
+    select * from free where no=#{param}
   </select>
   
   <update id="free_update_ok">

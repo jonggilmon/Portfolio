@@ -10,7 +10,7 @@
   <style>
     #section {
       width:1100px;
-      height:600px;
+      height:1000px;
       margin:auto;
       margin-top:20px;
     }
@@ -51,6 +51,9 @@
         background-color: #000000;
         color: #fff;
     }
+    #page1 a {
+    display:inline-block;
+    }
   </style>
 </head>
 <body>
@@ -76,6 +79,7 @@
 	  <tr>
        <td colspan="4" align="center" id="pagein">
          
+         <div id="page1">
          <!-- 10페이지 왼쪽 이동 -->
          <c:if test="${pstart != 1}">
           <a href="free_list?page=${pstart-1}"> << </a>
@@ -118,11 +122,12 @@
          </c:if>
        </td>
      </tr>
-	  
+	  </div>
 	    <tr>
 	      <td colspan="4" align="center" id="aaa"> <a href="../free/freeadd"> 글 등록 </a> </td>
 	    </tr>
 	  </table>
+	  
 	</div>
 </body>
 </html>
