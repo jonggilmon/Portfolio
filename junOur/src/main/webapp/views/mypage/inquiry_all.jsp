@@ -14,7 +14,7 @@
     height:1000px;
     margin: auto;
     padding: 20px;
-    background-color: #fff;
+    background-color: #807979;
     font-family: Arial, sans-serif;
     margin-bottom: 50px;
   }
@@ -55,7 +55,7 @@
     margin-bottom: 20px;
     position: sticky;
     top: 0; /* 화면 상단에 고정되도록 설정 */
-    background-color: white; /* 배경색을 원하시는 색으로 지정하세요 */
+    background-color: #807979; /* 배경색을 원하시는 색으로 지정하세요 */
     z-index: 1; /* 다른 내용 위에 나타나도록 z-index 설정 */
     }
 

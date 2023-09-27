@@ -13,7 +13,8 @@
 %>
  <style>
 		body{
-			background: #F2F5F7;
+			background: #807979;
+			
 		}
 
         ul {
@@ -23,12 +24,13 @@
         .wrap {
         	margin: 0 auto;
             display: flex;
-            background: #F2F5F7;
-            width:965px
+            background: grey;
+            width:965px;
+            border:6px solid #242424;
+            border-radius:25px;
         }
 
         .content {
-        	
             margin-right: 20px;
         }
         
@@ -37,7 +39,8 @@
             width: 390px;
             height: 440px;
             background: #fff;
-            border-bottom: 20px solid #F2F5F7;
+            border-bottom: 20px solid #4a4747;
+            border-radius:25px;
             padding: 30px;
         }
 
@@ -46,7 +49,8 @@
             width: 390px;
             height: 440px;
             background: #fff;
-            border-bottom: 20px solid #F2F5F7;
+            border-bottom: 20px solid #4a4747;
+            border-radius:25px;
             /* 간격 */
             padding: 30px;
         }
@@ -56,7 +60,8 @@
             width: 450px;
             height: 260px;
             background: #fff;
-            border-bottom: 20px solid #F2F5F7;
+            border-bottom: 20px solid #4a4747;
+            border-radius:25px;
             padding-top: 20px;
             
         
@@ -71,6 +76,7 @@
             width: 450px;
             height: 350px;
             background: #fff;
+            border-radius:25px;
             padding: 25px;
             position: sticky;
  		    top: 0; /* 화면 상단에 고정되도록 설정 */
@@ -94,7 +100,8 @@
             width: 390px;
             height: 440px;
             background: #fff;
-            border-bottom: 20px solid #F2F5F7;
+            border-bottom: 20px solid #4a4747;
+            border-radius:25px;
             /* 간격 */
             padding: 30px;
         }
@@ -222,11 +229,14 @@
 	width: 965px;
 	height: 300px;
     margin:20px auto; 
+    border:6px solid #242424;
+    border-radius:25px;
 }
 
 #mainimg img {
     width: 965px;
     height: 300px;
+    border-radius:25px;
 
     
 }
