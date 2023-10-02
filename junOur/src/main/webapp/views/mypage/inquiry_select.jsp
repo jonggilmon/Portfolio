@@ -17,7 +17,7 @@
   }
 
   section {
-  background:#807979;
+  	background:#807979;
     display: flex;
     width: 1100px;
     height: 700px;
@@ -37,6 +37,7 @@
 	padding: 20px; /* 내용과 테두리 간격 설정 */
     border-radius:25px;
     margin-bottom:70px;
+    background:grey;
   }
 
   #mymun a, #mun a {
@@ -47,7 +48,8 @@
     color: #fff; /* 링크 텍스트 색상을 흰색으로 설정 */
     font-weight: bold; /* 링크 텍스트 굵게 설정 */
     font-size: 18px; /* 링크 텍스트 크기 설정 */
-    margin-top:35px;
+    margin-top:31px;
+    font-size:30px;
   }
 	</style>
 </head>
