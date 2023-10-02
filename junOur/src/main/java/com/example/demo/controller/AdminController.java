@@ -23,6 +23,7 @@ import com.example.demo.service.AdminService;
 import com.example.demo.service.ContentService;
 import com.example.demo.vo.ActionVo;
 import com.example.demo.vo.AdminVo;
+import com.example.demo.vo.ContentVo;
 import com.example.demo.vo.FreeVo;
 import com.example.demo.vo.GongjiVo;
 import com.example.demo.vo.QuestVo;
@@ -98,7 +99,26 @@ public class AdminController {
 	    return "redirect:/admin/content/contentCancel";
 	}
 	
-	
+	@RequestMapping("/admin/content/placeCancel")
+	public String placeCancel(Model model)
+	{
+		List<ContentVo> rlist = service.placeCancel();
+		model.addAttribute("rlist",rlist);
+		return "/admin/content/placeCancel";
+	}
+	@RequestMapping("/admin/content/cancelplace")
+	public String cancelplace (@RequestParam int no , RedirectAttributes redirectAttributes)
+	{
+		if (service.cancelplace(no)) 
+		{
+	        redirectAttributes.addFlashAttribute("message", "Successfully cancelled place with No: " + no);
+	    }
+		else 
+		{
+	        redirectAttributes.addFlashAttribute("errorMessage", "Failed to cancel place with No: " + no);
+	    }
+	    return "redirect:/admin/content/placeCancel";
+	}
 	@RequestMapping("/admin/member/memberView")
 	public String memberview(Model model) {
 		  System.out.println("memberview method is called!");

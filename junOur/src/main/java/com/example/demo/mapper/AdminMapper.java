@@ -10,6 +10,7 @@ import org.apache.ibatis.annotations.Mapper;
 
 import com.example.demo.vo.ActionVo;
 import com.example.demo.vo.AdminVo;
+import com.example.demo.vo.ContentVo;
 import com.example.demo.vo.FreeVo;
 import com.example.demo.vo.GongjiVo;
 import com.example.demo.vo.MtmVo;
@@ -70,6 +71,10 @@ public interface AdminMapper {
 	public void gdelete(GongjiVo gvo);
 	public GongjiVo adgongji_update(GongjiVo gvo);
 	public void adgongji_update_ok(GongjiVo gvo);
+
+	public List<ContentVo> placeCancel();
+
+	public int cancelplace(int no);
 	
 	
 }

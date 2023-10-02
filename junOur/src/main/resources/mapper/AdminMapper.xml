@@ -137,4 +137,12 @@
 	  update gongji set title=#{title}, userid=#{userid}, content=#{content} where no=#{no}
 	</update>
 	
+	<select id="placeCancel" parameterType="com.example.demo.vo.ContentVo">
+		select jongmok_id,title,address,rsdate,rstime,no from reserve order by jongmok_id,rstime asc
+	</select>
+	
+	<delete id="cancelplace" parameterType="int">
+  	  DELETE FROM reserve WHERE no=#{no}
+    </delete>
+	
 </mapper>
