@@ -61,6 +61,8 @@
    align-items:end;
    padding-bottom:40px;
    box-sizing:border-box;
+   background-image: url("/static/content/jogging-4211946_1920.jpg");
+   background-position:bottom;
 }
 
 
