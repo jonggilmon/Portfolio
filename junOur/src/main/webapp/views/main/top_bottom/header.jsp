@@ -90,7 +90,7 @@ body {
 }
 
 .navi li {
-	width: 120px;
+	width: 110px;
 	text-align: center;
 	color: black;
 
@@ -112,7 +112,7 @@ body {
 .navi li a {
 	color: black;
 	text-decoration: none;
-	width: 120px;
+	width: 130px;
 }
 .navi > li {
     position: relative;
@@ -128,7 +128,7 @@ body {
 	padding: 0; /* ^^ val 이거 안주면 서브메뉴에 이상한 공간 생김 개빡가네 */
 	background-color: rgba(40, 40, 40, 0.8);
 	font-size:22px;
-	    position: absolute; /* 추가 */
+	position: absolute; /* 추가 */
     top: 100%; /* 부모의 높이만큼 아래로 이동 */
     left: 0;   /* 부모의 왼쪽 경계에 정렬 */
 }
