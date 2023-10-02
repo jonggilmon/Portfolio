@@ -21,17 +21,21 @@
   
   <style>
   
- 
+ @font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
    
     body {
-    font-family: Arial, sans-serif;
+    font-family:  'Pretendard-Regular', sans-serif;
     margin: 0;
     padding: 0;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
     background-color: #f4f4f4;
-    background-image: url("/static/content/friendship.jpg");
     background-size: cover;
 	background-position: center;
 	overflow-x: hidden;
@@ -50,7 +54,13 @@
 
 .sports-slider-wrapper  {
    text-align:center;
-   height: 600px;
+   height:calc(100vh - 172px);
+   background-color: #333;
+   display:flex;
+   justifi-content:center;
+   align-items:end;
+   padding-bottom:40px;
+   box-sizing:border-box;
 }
 
 
@@ -167,8 +177,12 @@
         display: flex;
         justify-content: space-between;
         width:100%;
+        height: calc(100vh - 150px);
         margin: 0 auto;
         padding: 0px;
+        background-image: url("/static/content/friendship.jpg");
+        background-size: cover;
+	    background-position: center;
     }
 
     .notice {
