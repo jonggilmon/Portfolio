@@ -22,39 +22,44 @@
       text-decoration: none;
     }
     
+    body {
+       background:#807979;
+    }
     #section {
-      width:1100px;
-      height:660px;
-      margin:auto;
-      margin-top:20px;
+       height:650px;
     }
-    /* 테이블 스타일링 */
-    #section table {
-        border-collapse: collapse;
-        border: 1px solid #EAEAEA;
-        font-color:#000000;
+    table {
+       width:800px;
+       height:400px;
+       border-radius:25px;
+	   border:6px solid #242424;
+       font-color:#242424;
+       background-color:#242424;
     }
-    #section td, #section th {
-        border: 1px solid #EAEAEA;
-        padding: 10px 15px;
+    table tr {
+       border-radius:13px;
+       background-color:#BDBDBD;
     }
-    /* 제목 행 스타일링 */
-    #pkc {
-        background-color: #f2f2f2;
-        color: #fff;
+    table td, table th {
+       border: 1px solid #242424;
     }
-    /* 행 호버 효과 */
-    #section tr:not(#pkc):hover {
-        background-color: #f5f5f5;
+    #mmt td {
+       background-color:#8C8C8C;
+       height:50px;
+       font-size:20px;
     }
-    /* caption 스타일링 */
-    #section caption h2 {
-        margin-bottom:30px;
-        color: #444;
+    td.left_top {
+       border-top-left-radius:13px;
+       background-color:#8C8C8C;
     }
-    #pkc td {
-      color: black;
-      font-weight: bold;
+    td.right_top {
+       border-top-right-radius:13px;
+    }
+    td.mmt_under_left {
+       border-bottom-left-radius:13px;
+    }
+    td.mmt_under_right {
+       border-bottom-right-radius:13px;
     }
   </style>
 </head>
@@ -71,23 +76,23 @@
         <li><a href="/main/main">홈화면</a></li>
       </ul>
     </div>
-  </c:if>  
-	<div id="section">
+  </c:if>
+  <div id="section">
 	  <table width="800" align="center">
 	    <caption> <h2> 공지사항 </h2> </caption>
-	    <tr align="center" id="pkc">
-	      <td width="400"> 제목 </td>
+	    <tr align="center" id="mmt">
+	      <td width="400" class="left_top"> 제목 </td>
 	      <td width="150"> 작성자 </td>
 	      <td width="100"> 조회수 </td>
-	      <td width="150"> 작성일 </td>
+	      <td width="150" class="right_top"> 작성일 </td>
 	    </tr>
 	    
 	  <c:forEach items="${glist}" var="map">
 	    <tr>
-	      <td> <a href="readnum?no=${map.no}"> ${map.title} </a> </td>
+	      <td class="mmt_under_left"> <a href="readnum?no=${map.no}"> ${map.title} </a> </td>
 	      <td align="center"> ${map.userid} </td>
 	      <td align="center"> ${map.readnum} </td>
-	      <td align="center"> ${map.writeday} </td>
+	      <td align="center" class="mmt_under_right"> ${map.writeday} </td>
 	    </tr>
 	  </c:forEach>
 	  
@@ -97,7 +102,7 @@
 	     </c:if>
 	    </tr>
 	  </table>
-	  </div>
+	</div>
 </body>
 </html>
 <%@ include file="../main/top_bottom/footer.jsp" %>

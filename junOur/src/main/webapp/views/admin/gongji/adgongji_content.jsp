@@ -8,23 +8,29 @@
 <title>Insert title here</title>
 <%@ include file="../../admin/menu.jsp" %>
   <style>
-   .nav-links {
-    list-style: none;
-    display: flex;
-    margin: 3;
-    padding: 0;
-  }
-  .nav-links li {
-    margin-right: 20px;
-  }
-  .nav-links li a {
-    color: #fff;
-    text-decoration: none;
-  }
-  #section{
-  	height: 730px;
-  }
-  
+    #section{
+  	  height: 650px;
+    }
+    table {
+        width: 700px;
+        border-collapse: collapse;
+        margin-top: 20px;
+        margin: auto;
+    }
+    th, td {
+        border: 1px solid #ddd;
+        padding: 15px;
+    }
+    th {
+        background-color: #f2f2f2;
+        color: black;
+    }
+    caption {
+        margin-bottom: 15px;
+    }
+    a {
+        text-decoration: none;
+    }
   </style>
 
 <script>
@@ -39,23 +45,23 @@ function showDeleteButton() {
   
   
   <div id="section">
-    <table width="600" align="center">
+    <table width="700" align="center">
       <caption> <h2> 공지사항 </h2> </caption>
       <tr>
-        <td width="100"> 제목 </td>
+        <th width="100"> 제목 </th>
         <td> ${gvo.title} </td>
       </tr>
       <tr>
-        <td> 작성자 </td>
+        <th> 작성자 </th>
         <td> ${gvo.userid} </td>
       </tr>
       <tr>
-        <td> 조회수 </td>
+        <th> 조회수 </th>
         <td> ${gvo.readnum} </td>
       </tr>
       <tr>
-        <td> 내용 </td>
-        <td> <div id="inner"> ${gvo.content} </div> </td>
+        <th> 내용 </th>
+        <td> ${gvo.content} </div> </td>
       </tr>
       <tr>
         <td colspan="2" align="center">
@@ -80,3 +86,5 @@ function showDeleteButton() {
 </body>
 </html>
 <%@ include file="../../main/top_bottom/footer.jsp" %>
+
+

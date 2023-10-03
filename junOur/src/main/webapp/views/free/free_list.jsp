@@ -12,7 +12,7 @@
        background:#807979;
     }
     table {
-       width:800px;
+       width:900px;
        height:600px;
        border-radius:25px;
 	   border:6px solid #242424;
@@ -57,7 +57,7 @@
   </style>
 </head>
 <body>
-	  <table width="800" align="center">
+	  <table width="900" align="center">
 	    <caption> <h2> 자유게시판 </h2> </caption>
 	    <tr align="center" id="mmt">
 	      <td width="400" class="left_top"> 제목 </td>

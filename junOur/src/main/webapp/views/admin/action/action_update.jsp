@@ -1,52 +1,69 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
- <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-  <style>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ include file="../../admin/menu.jsp" %>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
     #section {
-      width:1100px;
-      height:500px;
-      margin:auto;
-      margin-top:50px;
-      text-align:center;
+        height: 650px;
     }
-    #section input[type=text] {
-      width:400px;
-      height:30px;
+    table {
+        width: 700px;
+        border-collapse: collapse;
+        margin: auto;
     }
-    #section textarea {
-      width:400px;
-      height:200px;
+    th, td {
+        border: 1px solid #ddd;
+        padding: 15px;
     }
-    #section input[type=submit] {
-      width:406px;
-      height:33px;
+    th {
+        background-color: #f2f2f2;
+        color: black;
     }
-    #section .msg {
-      margin-top:20px;
+    caption {
+        margin-bottom: 15px;
     }
-  </style>
-   
- 
-  <div id="section">
-    <form method="post" action="action_update_ok">
-      <input type="hidden" name="no" value="${avo.no}">
-      <h2> 활동사진 수정 </h2>
-      <div class="msg"> <input type="file" value="${avo.img}" name="img" placeholder="아이디"> </div>  
-      <div class="msg"> <input type="text" value="${avo.title}" name="title" placeholder="제 목"> </div>  
-      <div class="msg"> <textarea name="content" placeholder="내용을 입력하세요">${avo.content}</textarea> </div>
-      
-  <div class="msg"> <input type="submit" value="글 수정"> </div> 
-    </form>  
-  </div>
-
-
-
-
-
-
-
-
-
-
-
-
+    a {
+        text-decoration: none;
+    }
+    input[type=text], textarea, input[type=file] {
+        width: 100%;
+        box-sizing: border-box;
+    }
+    textarea {
+        height: 200px;
+    }
+</style>
+</head>
+<body>
+<div id="section">
+    <table width="700" align="center">
+        <caption><h2>활동사진 수정</h2></caption>
+        <form method="post" action="action_update_ok" enctype="multipart/form-data">
+            <tr>
+                <th width="100">제목</th>
+                <td><input type="text" value="${avo.title}" name="title"></td>
+            </tr>
+            <tr>
+                <th>이미지</th>
+                <td><input type="file" name="img" value="${avo.img}"></td>
+            </tr>
+            <tr>
+                <th>내용</th>
+                <td><textarea name="content">${avo.content}</textarea></td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center">
+                    <input type="hidden" name="no" value="${avo.no}">
+                    <input type="submit" value="글 수정">
+                </td>
+            </tr>
+        </form>
+    </table>
+</div>
+<%@ include file="../../main/top_bottom/footer.jsp" %>
+</body>
+</html>
