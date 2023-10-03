@@ -17,6 +17,7 @@ import org.springframework.util.ResourceUtils;
 import com.example.demo.mapper.AdminMapper;
 import com.example.demo.vo.ActionVo;
 import com.example.demo.vo.AdminVo;
+import com.example.demo.vo.ContentVo;
 import com.example.demo.vo.FreeVo;
 import com.example.demo.vo.GongjiVo;
 import com.example.demo.vo.MtmVo;
@@ -319,6 +320,17 @@ public class AdminServiceImpl implements AdminService{
 		String no=request.getParameter("no");
 		mapper.adgongji_update_ok(gvo);
 		return "redirect:/admin/gongji/adgongji_content?no="+no;
+	}
+
+	@Override
+	public List<ContentVo> placeCancel() {
+		return mapper.placeCancel();
+	}
+
+	@Override
+	public boolean cancelplace(int no) {
+		int result = mapper.cancelplace(no);
+	    return result > 0;
 	}
 
 	

@@ -18,6 +18,13 @@
 <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
 
 <style>
+ @font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
 
 .logo a {
     font-family: 'Lobster', cursive;
@@ -83,10 +90,10 @@ body {
 }
 
 .navi li {
-	width: 120px;
+	width: 110px;
 	text-align: center;
 	color: black;
-	 font-family: 'Oswald', sans-serif;
+
 	
 }
 
@@ -95,7 +102,7 @@ body {
 }
 
 .navi a {
-    font-family: 'Jua', sans-serif;
+    font-family: 'Pretendard-Regular', sans-serif;
     font-size:22px;
     margin-left: -10px;
     color: white !important;
@@ -105,7 +112,7 @@ body {
 .navi li a {
 	color: black;
 	text-decoration: none;
-	width: 120px;
+	width: 130px;
 }
 .navi > li {
     position: relative;
@@ -121,7 +128,7 @@ body {
 	padding: 0; /* ^^ val 이거 안주면 서브메뉴에 이상한 공간 생김 개빡가네 */
 	background-color: rgba(40, 40, 40, 0.8);
 	font-size:22px;
-	    position: absolute; /* 추가 */
+	position: absolute; /* 추가 */
     top: 100%; /* 부모의 높이만큼 아래로 이동 */
     left: 0;   /* 부모의 왼쪽 경계에 정렬 */
 }
@@ -151,7 +158,7 @@ body {
 }
 
 .enlarged-text a{
-    font-size: 28px !important;
+    font-size: 26px !important;
 }
 
 

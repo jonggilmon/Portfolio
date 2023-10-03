@@ -9,6 +9,7 @@ import org.springframework.ui.Model;
 
 import com.example.demo.vo.ActionVo;
 import com.example.demo.vo.AdminVo;
+import com.example.demo.vo.ContentVo;
 import com.example.demo.vo.FreeVo;
 import com.example.demo.vo.GongjiVo;
 import com.example.demo.vo.QuestVo;
@@ -47,4 +48,6 @@ public interface AdminService {
 	public String gdelete(GongjiVo gvo);
 	public String adgongji_update(GongjiVo gvo, Model model);
 	public String adgongji_update_ok(HttpServletRequest request, GongjiVo gvo);
+	public List<ContentVo> placeCancel();
+	public boolean cancelplace(int no);
 }
