@@ -88,7 +88,7 @@
     </div>
     <div> <input type="text" name="title" placeholder="문의 제목"> </div>
     <div> <textarea name="content" placeholder="문의 내용"></textarea></div>
-    <div> <input type="checkbox" name="hide" id="hide" onclick="pwdClick()">비밀글 체크</div>
+    <div> <input type="checkbox" name="hide" id="hide">비밀글 체크</div>
     <div id="pwd"> <input type="password" name="password" placeholder="비밀번호"> </div>
     <div> <input type="submit" value="문의하기"> </div>
   </form>
