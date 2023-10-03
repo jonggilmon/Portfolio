@@ -8,50 +8,51 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
   <style>
-    #del {
-      
+    table {
+        width: 700px;
+        border-collapse: collapse;
+        margin-top: 20px;
+        margin:auto;
     }
-    #section table {
-      border-spacing:0px;
+    td {
+        border: 1px solid #ddd;
+        padding: 15px;
     }
-    #section table tr:first-child td {
-      border-top:2px solid #999999;
+    th {
+        background-color: #f2f2f2;
+        color: black;
     }
-    #section table tr:last-child td {
-      border-bottom:2px solid #999999;
+    caption {
+        margin-bottom: 15px;
     }
-    #section table td {
-      height:30px;
-      border-bottom:1px solid #cccccc;
+    a {
+        text-decoration:none;
     }
-    #section a {
-      text-decoration:none;
-      color:black;
-    }
-  </style>
-  
-
+</style>
 </head>
 <body>
-  <div id="section">
-    <table width="600" align="center">
+
+    <table width="700" align="center">
       <caption> <h2> 자유게시판 </h2> </caption>
       <tr>
-        <td width="100"> 제목 </td> <td> ${fvo.title} </td>
+        <th width="100" align="center"> 제목 </th>
+        <td> ${fvo.title} </td>
       </tr>
       <tr>
-        <td> 작성자 </td> <td> ${fvo.userid} </td>
+        <th align="center"> 작성자 </th>
+        <td> ${fvo.userid} </td>
       </tr>
       <tr>
-        <td> 조회수 </td> <td> ${fvo.readnum} </td>
+        <th align="center"> 조회수 </th>
+        <td> ${fvo.readnum} </td>
+      </tr>
+      <tr height="200">
+        <th align="center"> 내용 </th>
+        <td> ${fvo.content} </td>
       </tr>
       <tr>
-        <td> 내용 </td> <td> <div id="inner"> ${fvo.content} </div> </td>
-      </tr>
-      <tr>
-        <td colspan="2" align="center">
+        <td colspan="2" align="center" style="border:none;">
           <a href="adfree_list"> 목록 </a>
-          
         </td>
       </tr>
       <tr id="del">
@@ -66,3 +67,5 @@
   </div>
 </body>
 </html>
+
+

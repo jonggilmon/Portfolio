@@ -120,7 +120,7 @@
         </span>
     </td>
 </tr>
-    </table>
+    </table> 
 </body>
 </html>
 <%@ include file="../main/top_bottom/footer.jsp" %>

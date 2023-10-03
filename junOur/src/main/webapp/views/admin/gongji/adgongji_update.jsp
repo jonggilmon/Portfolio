@@ -1,54 +1,65 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
- <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ include file="../../admin/menu.jsp" %>
-  <style>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
     #section {
-      width:1100px;
-      height:500px;
-      margin:auto;
-      margin-top:50px;
-      text-align:center;
+        height: 650px;
     }
-    #section input[type=text] {
-      width:400px;
-      height:30px;
+    table {
+        width: 700px;
+        border-collapse: collapse;
+        margin-top: 20px;
+        margin: auto;
     }
-    #section textarea {
-      width:400px;
-      height:200px;
+    th, td {
+        border: 1px solid #ddd;
+        padding: 15px;
     }
-    #section input[type=submit] {
-      width:406px;
-      height:33px;
+    th {
+        background-color: #f2f2f2;
+        color: black;
     }
-    #section .msg {
-      margin-top:20px;
+    caption {
+        margin-bottom: 15px;
     }
-  </style>
-   
- 
-  <div id="section">
-    <form method="post" action="adgongji_update_ok">
-      <input type="hidden" name="no" value="${gvo.no}">
-      <h2> 공지사항 </h2>
-      <div class="msg"> <input type="text" value="${gvo.userid}" name="userid" placeholder="아이디"> </div>  
-      <div class="msg"> <input type="text" value="${gvo.title}" name="title" placeholder="제 목"> </div>  
-      <div class="msg"> <textarea name="content" placeholder="내용을 입력하세요">${gvo.content}</textarea> </div>
-      
-  <div class="msg"> <input type="submit" value="글 수정"> </div>
-    </form>  
-  </div>
-  <%@ include file="../../main/top_bottom/footer.jsp" %>
-
-
-
-
-
-
-
-
-
-
+    a {
+        text-decoration: none;
+    }
+</style>
+</head>
+<body>
+<div id="section">
+    <table width="700" align="center">
+        <caption><h2>공지사항 수정</h2></caption>
+        <form method="post" action="adgongji_update_ok">
+            <tr>
+                <th width="100">제목</th>
+                <td><input type="text" value="${gvo.title}" name="title" placeholder="제 목" style="width:100%;"></td>
+            </tr>
+            <tr>
+                <th>작성자</th>
+                <td><input type="text" value="${gvo.userid}" name="userid" placeholder="아이디" style="width:100%;"></td>
+            </tr>
+            <tr>
+                <th>내용</th>
+                <td><textarea name="content" placeholder="내용을 입력하세요" style="width:100%; height:200px;">${gvo.content}</textarea></td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center">
+                    <input type="hidden" name="no" value="${gvo.no}">
+                    <input type="submit" value="글 수정">
+                </td>
+            </tr>
+        </form>
+    </table>
+</div>
+<%@ include file="../../main/top_bottom/footer.jsp" %>
+</body>
+</html>
 
 

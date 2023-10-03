@@ -36,7 +36,6 @@
         th {
             width: 150px;
             font-weight: normal;
-            text-align: left;
             background: #eee;
             padding-left: 10px;
         }
@@ -84,19 +83,19 @@
             <div class="adminlink"><a href="/../admin/menu">관리자 창으로 이동</a></div>
             <table align="center">
                 <tr>
-                    <th>아이디</th>
+                    <th align="center">아이디</th>
                     <td><input type="text" name="userid" value="admin123"></td>
                 </tr>
                 <tr>
-                    <th>제목</th>
+                    <th align="center">제목</th>
                     <td><input type="text" name="title"></td>
                 </tr>
                 <tr>
-                    <th>이미지 등록</th>
+                    <th align="center">이미지 등록</th>
                     <td><input type="file" name="img"></td>
                 </tr>
                 <tr>
-                    <th>내용(최대 200자)</th>
+                    <th align="center">내용(최대 200자)</th>
                     <td><textarea name="content"></textarea></td>
                 </tr>
             </table>
@@ -104,5 +103,4 @@
         </form>
     </section>
 </body>
-
 </html>

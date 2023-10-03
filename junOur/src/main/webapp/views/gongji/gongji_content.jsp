@@ -21,98 +21,95 @@
       color: #fff;
       text-decoration: none;
     }
-   
-    /* 테이블 스타일링 */
-    #section {
-      width:1100px;
-      height:600px;
-      margin:auto;
-      margin-top:20px;
+    body {
+       background:#807979;
     }
-    
-    #section table {
-        border-collapse: collapse;
-        margin-top: 0px;
-        border: 1px solid #ccc;
+    table {
+       width:800px;
+       height:600px;
+       border-radius:25px;
+	   border:6px solid #242424;
+       font-color:#242424;
+       background-color:#242424;
     }
-
-    #section td {
-        border: 1px solid #e5e5e5;
-        padding: 10px 15px;
+    table tr {
+       border-radius:13px;
+       background-color:#BDBDBD;
     }
-
-    /* 제목 행 스타일링 */
-    #section td:first-child {
-        background-color: #f2f2f2;
-        font-weight: bold;
-        text-align: center;
+    table td, table th {
+       border: 1px solid #242424;
     }
-
-    /* 내용 영역 스타일링 */
-    #inner {
-        height:500px;
-        max-height: 200px;
-        background-color: #fdfdfd;
+    #page1 a {
+       display:inline-block;
     }
-
-    /* caption 스타일링 */
-    #section caption h2 {
-        margin-bottom:30px;
-        color: #444;
+    td.left_top {
+       border-top-left-radius:13px;
+       background-color:#8C8C8C;
+       font-size:20px;
     }
-
-    /* 링크 스타일링 */
-    #section a {
-        color: #000000;
-        text-decoration: none;
-        padding: 5px 15px;
-        border-radius: 4px;
-        transition: background-color 0.2s;
+    td.right_top {
+       border-top-right-radius:13px;
+       padding-left:20px;
+       font-size:17px;
     }
-
-    #section a:hover {
-        background-color: #000000;
-        color: #fff;
+    td.mmt_under {
+       border-bottom-left-radius:13px;
     }
-    
+    td.mmt_title {
+       padding-left:20px;
+    }
+    td.mmt_under {
+       border-bottom-left-radius:13px;
+       border-bottom-right-radius:13px;
+    }
+    td.mmt {
+       background-color:#8C8C8C;
+       font-size:20px;
+    }
+    td.mmt_in {
+       padding-left:20px;
+       font-size:17px;
+    }
+    .button {
+       display: inline-block;
+       padding: 5px 15px;
+       background-color: #8C8C8C;
+       color: #FFFFFF;
+       border: none;
+       border-radius: 5px;
+       cursor: pointer;
+       margin: 5px;
+       width: 70px;
+    }
+    .button:hover {
+       background-color: #242424;
+    }
   </style>
 
 </head>
 <body>
-  <c:if test="${gvo.userid eq 'admin123'}">
-	  <ul class="nav-links">
-        <li><a href="/admin/member/memberView">회원관리</a></li>
-        <li><a href="/admin/gongji/gongji_list">공지사항</a></li>
-        <li><a href="/admin/inquiry/list">문의사항</a></li>
-        <li><a href="/admin/action/action_list">활동사진</a></li>
-        <li><a href="/admin/free/adfree_list">자유게시판</a></li>
-        <li><a href="/admin/content/contentadd">일정관리</a></li>
-        <li><a href="/main/main">홈화면</a></li>
-      </ul>
-  </c:if>
   
-  <div id="section">
     <table width="800" align="center">
       <caption> <h2> 공지사항 </h2> </caption>
       <tr>
-        <td width="80" align="center"> 제목 </td>
-        <td> ${gvo.title} </td>
+        <td width="80" align="center" class="left_top"> 제목 </td>
+        <td class="right_top"> ${gvo.title} </td>
       </tr>
       <tr>
-        <td align="center"> 작성자 </td>
-        <td> ${gvo.userid} </td>
+        <td align="center" class="mmt"> 작성자 </td>
+        <td class="mmt_in"> ${gvo.userid} </td>
       </tr>
       <tr>
-        <td align="center"> 조회수 </td>
-        <td> ${gvo.readnum} </td>
+        <td align="center" class="mmt"> 조회수 </td>
+        <td class="mmt_in"> ${gvo.readnum} </td>
       </tr>
       <tr>
-        <td align="center"> 내용 </td>
-        <td> <div id="inner"> ${gvo.content} </div> </td>
+        <td align="center" class="mmt"> 내용 </td>
+        <td class="mmt_in"> ${gvo.content} </div> </td>
       </tr>
       <tr>
-        <td colspan="2" align="center">
-          <a href="gongji_list"> 목록 </a>
+        <td colspan="2" align="center" class="mmt_under">
+          <a href="gongji_list" class="button"> 목록 </a>
         </td>
       </tr>
     </table>
