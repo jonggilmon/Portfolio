@@ -33,6 +33,7 @@
 </style>
 </head>
 <body>
+<c:if test="${userid == 'admin123'}">
 <div id="section">
     <table width="700" align="center">
         <caption><h2>공지사항 수정</h2></caption>
@@ -59,6 +60,10 @@
     </table>
 </div>
 <%@ include file="../../main/top_bottom/footer.jsp" %>
+</c:if>
+  <c:if test="${userid != 'admin123'}">
+        
+      </c:if>
 </body>
 </html>
 

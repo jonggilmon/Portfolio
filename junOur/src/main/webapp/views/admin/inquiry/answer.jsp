@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
- <%@ include file="../../main/top_bottom/header.jsp" %>    
+  
 <!DOCTYPE html>
 <html>
 <head>
@@ -35,10 +35,16 @@
   input[type="submit"]:hover {
     background-color: #333333; /* 검은색 배경색 (호버 상태) */
   }
-  
+  .access-denied {
+           display: block;
+            color: red; /* 메시지 색상 설정 (옵션) */
+            font-weight: bold;
+        }
 </style>
 </head>
 <body>
+<c:if test="${userid == 'admin123'}">
+ <%@ include file="../../main/top_bottom/header.jsp" %>  
   <section>
     <div> 제 목 : ${mvo.title} </div>
     <div> 내 용 : ${mvo.content } </div>
@@ -52,6 +58,11 @@
     </form>
 	
   </section>
+  <%@ include file="../../main/top_bottom/footer.jsp" %>
+  </c:if>
+  <c:if test="${userid != 'admin123'}">
+        <div class="access-denied">해당화면의 접근 권한이 없습니다.</div>
+      </c:if>
 </body>
 </html>
-<%@ include file="../../main/top_bottom/footer.jsp" %>
+

@@ -31,6 +31,7 @@ function searchAddress() {
 </head>
 <body>
   <section>
+   <c:if test="${userid == 'admin123'}">
 	<form name="cform" method="post" action="contentAddOk" enctype="multipart/form-data">
 	    <div width="100"> <a href="/../admin/menu">관리자 창</a></div>
 		<div> <input type="file" name="img"> 이미지 </div>
@@ -128,6 +129,10 @@ function searchAddress() {
    </select>
 </div>
 	</form>
+	</c:if>
+	 <c:if test="${userid != 'admin123'}">
+        
+      </c:if>
   </section>
 </body>
 </html>

@@ -28,6 +28,7 @@
     }
 </style>
 <body>
+<c:if test="${userid == 'admin123'}">
 <h2 align="center">일정 등록 정보</h2>
 <table>
     <tr>
@@ -87,6 +88,10 @@
     </c:forEach>
     
 </table>
+</c:if>
+ <c:if test="${userid != 'admin123'}">
+        
+      </c:if>
 <script>
 function cancelplace(no) {
     if(confirm("정말로 이 장소를 삭제 하시겠습니까?")) {

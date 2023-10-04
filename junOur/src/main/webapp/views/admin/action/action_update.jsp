@@ -36,10 +36,16 @@
     textarea {
         height: 200px;
     }
+           .access-denied {
+           display: block;
+            color: red; /* 메시지 색상 설정 (옵션) */
+            font-weight: bold;
+        }
 </style>
 </head>
 <body>
 <div id="section">
+ <c:if test="${userid == 'admin123'}">
     <table width="700" align="center">
         <caption><h2>활동사진 수정</h2></caption>
         <form method="post" action="action_update_ok" enctype="multipart/form-data">
@@ -62,8 +68,12 @@
                 </td>
             </tr>
         </form>
-    </table>
+    </table> 
 </div>
 <%@ include file="../../main/top_bottom/footer.jsp" %>
+ </c:if>
+<c:if test="${userid != 'admin123'}">
+        <div class="access-denied"></div>
+      </c:if>
 </body>
 </html>
