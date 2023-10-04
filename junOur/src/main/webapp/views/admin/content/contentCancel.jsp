@@ -27,7 +27,7 @@
 </style>
 </head>
 <body>
-
+<c:if test="${userid == 'admin123'}">
 <h2 align="center">예약 정보</h2>
 <table>
     <tr>
@@ -58,6 +58,10 @@
     </c:forEach>
 
 </table>
+</c:if>
+ <c:if test="${userid != 'admin123'}">
+        
+      </c:if>
 <script>
 function cancelMember(reserve_id) {
     if(confirm("정말로 이 예약신청을 취소하시겠습니까?")) {

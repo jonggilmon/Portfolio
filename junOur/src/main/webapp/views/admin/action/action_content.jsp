@@ -83,9 +83,16 @@
         function del() {
             document.getElementById("del").style.display = "table-row";
         }
+        // JavaScript를 사용하여 스타일 조작
+        // 접근 권한이 없는 경우 스타일을 표시하고, 그 외의 경우 스타일을 숨김
+        var accessDeniedElement = document.getElementById('access-denied');
+        if (accessDeniedElement) {
+          accessDeniedElement.style.display = 'block';
+        }
     </script>
 </head>
 <body>
+
     <div class="container">
         <div class="head">
             <h3>${avo.title}</h3>
@@ -111,6 +118,7 @@
             </form>
         </div>	
     </div>
+ 
 </body>
 </html>
    <%@ include file="../../main/top_bottom/footer.jsp" %>
