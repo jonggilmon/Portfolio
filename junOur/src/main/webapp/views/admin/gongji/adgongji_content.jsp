@@ -42,7 +42,7 @@ function showDeleteButton() {
 
 </head>
 <body>
-  
+  <c:if test="${userid == 'admin123'}">
   
   <div id="section">
     <table width="700" align="center">
@@ -82,8 +82,13 @@ function showDeleteButton() {
       </tr>
     </table>
   </div>
+  <%@ include file="../../main/top_bottom/footer.jsp" %>
+  </c:if>
+  <c:if test="${userid != 'admin123'}">
+        
+      </c:if>
 </body>
 </html>
-<%@ include file="../../main/top_bottom/footer.jsp" %>
+
 
 

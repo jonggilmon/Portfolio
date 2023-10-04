@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
     <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
     
-     <%@ include file="../../admin/menu.jsp" %>
+     
 <!DOCTYPE html>
 <html>
 <head>
@@ -24,10 +24,16 @@
         background-color: #f2f2f2;
         color: black;
     }
+     .access-denied {
+           display: block;
+            color: red; /* 메시지 색상 설정 (옵션) */
+            font-weight: bold;
+        }
 </style>
 </head>
 <body>
-
+<c:if test="${userid == 'admin123'}">
+<%@ include file="../../admin/menu.jsp" %>
 <h2 align="center">회원 정보</h2>
 <table>
     <tr>
@@ -58,6 +64,10 @@
     </c:forEach>
 
 </table>
+</c:if>
+<c:if test="${userid != 'admin123'}">
+        <div class="access-denied">해당화면의 접근 권한이 없습니다.</div>
+      </c:if>
 <script>
     function banMember(userid) {
         if(confirm("정말로 이 회원을 추방하시겠습니까?")) {

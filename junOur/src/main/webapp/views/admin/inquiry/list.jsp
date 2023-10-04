@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>    
 <!DOCTYPE html>
-<%@ include file="../../admin/menu.jsp" %>
+
 
 <html>
 <head>
@@ -37,9 +37,17 @@
   	height:1000px;
   	
   }
+  
+          .access-denied {
+           display: block;
+            color: red; /* 메시지 색상 설정 (옵션) */
+            font-weight: bold;
+        }
 </style>
 </head>
 <body>
+<c:if test="${userid == 'admin123'}">
+<%@ include file="../../admin/menu.jsp" %>
   <section>
     <caption><h3>예약 관련</h3></caption>
     <div id="all">
@@ -76,6 +84,11 @@
        </div>
     </div>
   </section>
+  <%@ include file="../../main/top_bottom/footer.jsp" %>
+  </c:if>
+  <c:if test="${userid != 'admin123'}">
+        <div class="access-denied">해당화면의 접근 권한이 없습니다.</div>
+      </c:if>
 </body>
 </html>
-<%@ include file="../../main/top_bottom/footer.jsp" %>
+

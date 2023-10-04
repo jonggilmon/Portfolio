@@ -353,24 +353,60 @@
  
   <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
 <script>
-$(".btn2").click(function(
-  ){
-	$("#modal").addClass("active");
+$(".btn2").click(function () {
+    var btn = document.querySelector(".btn2");
+    var currentDate = getCurrentDate();
+    var rsDate = "${contentDetail.rsdate}"; // rsdate 변수를 가져오세요 (예: "2023-12-31" 형식)
+
+    // 현재 날짜와 rsdate를 비교
+    if (currentDate > rsDate) {
+      // 만료된 경우 아무 동작도 하지 않도록 중단
+      return false;
+    }
+
+    // 아직 유효한 경우 레이어 팝업 열기
+    $("#modal").addClass("active");
   });
-  $(".btn").click(function(
-  ){
-	$("#modal").removeClass("active");
-  }); 
-  
+
+  $(".btn").click(function () {
+    $("#modal").removeClass("active");
+  });
+
   function redirectToCorrectPage() {
-	    var userId = "${sessionScope.userid}";
-	    if (userId) { 
-	      window.location.href = "pwdAgree";
-	    } else {
-	      window.location.href = "../../member/login";
-	    }
-	  }
-  
+    var userId = "${sessionScope.userid}";
+    if (userId) {
+      window.location.href = "pwdAgree";
+    } else {
+      window.location.href = "../../member/login";
+    }
+  }
+
+  function getCurrentDate() {
+    var today = new Date();
+    var dd = String(today.getDate()).padStart(2, '0');
+    var mm = String(today.getMonth() + 1).padStart(2, '0'); // January is 0!
+    var yyyy = today.getFullYear();
+    return yyyy + '-' + mm + '-' + dd;
+  }
+
+  // 페이지 로드 시 버튼 상태를 업데이트
+  window.addEventListener("load", updateButtonStatus);
+
+  function updateButtonStatus() {
+    var currentDate = getCurrentDate();
+    var rsDate = "${contentDetail.rsdate}"; // rsdate 변수를 가져오세요 (예: "2023-12-31" 형식)
+
+    // 현재 날짜와 rsdate를 비교
+    if (currentDate > rsDate) {
+      // 만료된 경우 버튼을 비활성화하고 스타일 변경
+      var btn = document.querySelector(".btn2");
+      btn.disabled = true;
+      btn.textContent = "만료됨";
+      btn.style.backgroundColor = "gray"; // 배경색 회색으로 변경
+      btn.style.color = "white"; // 글자색 흰색으로 변경
+      btn.style.cursor = "not-allowed"; // 클릭 비활성화
+    }
+  }
 </script>
      <div id="qna">
 

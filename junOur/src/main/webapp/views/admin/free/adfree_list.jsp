@@ -29,6 +29,7 @@
   </style>
 </head>
 <body>
+    <c:if test="${userid == 'admin123'}">
 	  <table width="700" align="center">
 	    <caption> <h2> 자유게시판 </h2> </caption>
 	    <tr align="center">
@@ -47,6 +48,11 @@
 	    </tr>
 	  </c:forEach>
 	  </table>
+	</div>
+	</c:if>
+	 <c:if test="${userid != 'admin123'}">
+        
+      </c:if>
 </body>
 </html>
 <%@ include file="../../main/top_bottom/footer.jsp" %>
