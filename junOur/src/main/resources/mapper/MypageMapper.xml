@@ -28,16 +28,12 @@
 
   <!-- 수정된 mtmOk 쿼리 -->
 <insert id="mtmOk" parameterType="com.example.demo.vo.MtmVo">
-    <selectKey keyProperty="no" order="AFTER" resultType="int">
-        SELECT LAST_INSERT_ID() AS no
-    </selectKey>
+    
     insert into mtm(title, content,  userid, writeday, category)
     values (#{title}, #{content}, #{userid}, now(), #{category})
 </insert>
  <insert id="mtmOk2" parameterType="com.example.demo.vo.MtmVo">
-    <selectKey keyProperty="no" order="AFTER" resultType="int">
-        SELECT LAST_INSERT_ID() AS no
-    </selectKey>
+    
     insert into mtm(title, content,  userid, writeday, hide, category)
     values (#{title}, #{content}, #{userid}, now(), 1, #{category})
 </insert>
