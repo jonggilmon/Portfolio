@@ -18,6 +18,13 @@
 <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
 
 <style>
+ @font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
 
 .logo a {
     font-family: 'Lobster', cursive;
@@ -86,7 +93,7 @@ body {
 	width: 110px;
 	text-align: center;
 	color: black;
-	 font-family: 'Oswald', sans-serif;
+
 	
 }
 
@@ -95,7 +102,7 @@ body {
 }
 
 .navi a {
-    font-family: 'Jua', sans-serif;
+    font-family: 'Pretendard-Regular', sans-serif;
     font-size:22px;
     margin-left: -10px;
     color: white !important;
@@ -151,7 +158,7 @@ body {
 }
 
 .enlarged-text a{
-    font-size: 28px !important;
+    font-size: 26px !important;
 }
 
 

@@ -1,66 +1,68 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ include file="../../admin/menu.jsp" %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<%@ include file="../../admin/menu.jsp" %>
-  <style>
+<style>
     #section {
-      width:1100px;
-      height:500px;
-      margin:auto;
-      margin-top:50px;
-      text-align:center;
+        height: 650px;
     }
-    #section input[type=text] {
-      width:400px;
-      height:30px;
-     
+    table {
+        width: 700px;
+        border-collapse: collapse;
+        margin: auto;
     }
-    #section textarea {
-      width:400px;
-      height:200px;
+    th, td {
+        border: 1px solid #ddd;
+        padding: 15px;
     }
-    #section input[type=submit] {
-      width:400px;
-      height:30px;
+    th {
+        background-color: #f2f2f2;
+        color: black;
     }
-
-    
-   .nav-links {
-    list-style: none;
-    display: flex;
-    margin: 3;
-    padding: 0;
-  }
-  .nav-links li {
-    margin-right: 20px;
-  }
-  .nav-links li a {
-    color: #fff;
-    text-decoration: none;
-  }
-
-    #ob {
-    opacity:0;
+    caption {
+        margin-bottom: 15px;
     }
-
-  </style>
+    a {
+        text-decoration: none;
+    }
+    input[type=text], textarea {
+        width: 100%;
+        box-sizing: border-box;
+    }
+    textarea {
+       height:200px;
+    }
+</style>
 </head>
 <body>
-  
-  
-  <div id="section">  
-    <form method="post" action="adgongjiaddOk">
-    <caption> <h2> 공지사항 </h2> </caption>
-	  <div> 제목 <input type="text" name="title"> </div>
-	  <div id="ob"><input type="text" name="userid" value="admin123"> </div>
-	  <div> 내용 <textarea name="content"> </textarea> </div>
-	  <div> <input type="submit" value="글 등록"> </div>
-    </form>
-  </div>  
+<div id="section">
+    <table align="center">
+        <caption><h2>공지사항 글쓰기</h2></caption>
+        <form method="post" action="adgongjiaddOk">
+            <tr>
+                <th width="100">제목</th>
+                <td><input type="text" name="title"></td>
+            </tr>
+            <tr>
+                <th>작성자</th>
+                <td><input type="text" name="userid" value="admin123"></td>
+            </tr>
+            <tr>
+                <th>내용</th>
+                <td><textarea name="content"></textarea></td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center">
+                    <input type="submit" value="글 등록">
+                </td>
+            </tr>
+        </form>
+    </table>
+</div>
+<%@ include file="../../main/top_bottom/footer.jsp" %>
 </body>
 </html>
-<%@ include file="../../main/top_bottom/footer.jsp" %>

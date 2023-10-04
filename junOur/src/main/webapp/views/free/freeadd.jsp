@@ -8,54 +8,49 @@
 <title>Insert title here</title>
 <%@ include file="../main/top_bottom/header.jsp" %>
   <style>
-    #section table {
-        border-collapse: collapse;
-        margin-top: 0px;
-        border: 1px solid #ccc;
-    }
-
-    #section td {
-        border: 1px solid #e5e5e5;
-        padding: 10px 15px;
-    }
-
-    /* 제목 행 스타일링 */
-    #section td:first-child {
-        background-color: #f2f2f2;
-        font-weight: bold;
-        text-align: center;
-    }
-
-    /* 내용 영역 스타일링 */
-    #inner {
-        height:500px;
-        max-height: 200px;
-        background-color: #fdfdfd;
-    }
-
-    /* caption 스타일링 */
-    #section caption h2 {
-        margin-bottom:30px;
-        color: #444;
-    }
-
-    /* 링크 스타일링 */
-    #section a {
-        color: #000000;
-        text-decoration: none;
-        padding: 5px 15px;
-        border-radius: 4px;
-        transition: background-color 0.2s;
-    }
-
-    #section a:hover {
-        background-color: #000000;
-        color: #fff;
-    }
-    
-    #form{
-    	height: 660px;
-    }
+    body {
+            background: #807979;
+        }
+        table {
+            width: 900px;
+            border-radius: 25px;
+            border: 6px solid #242424;
+            background-color: #242424;
+            margin: auto;
+        }
+        th, td {
+            border: 1px solid #242424;
+            padding: 15px;
+            background-color:#8C8C8C;
+        }
+        th {
+            background-color: #f2f2f2;
+            color: black;
+        }
+        caption {
+            margin-bottom: 15px;
+        }
+        a {
+            text-decoration: none;
+        }
+        input[type=text], textarea {
+            width: 100%;
+            box-sizing: border-box;
+        }
+        textarea {
+            height: 200px;
+        }
+        td.left_top {
+           border-top-left-radius:13px;
+           background-color:#8C8C8C;
+        }
+        td.right_top {
+           border-top-right-radius:13px;
+        }
+        td.mmt_under {
+           border-bottom-left-radius:13px;
+           border-bottom-right-radius:13px;
+        }
   </style>
   <script>
   
@@ -84,35 +79,35 @@
 </head>
 
 <body>
-  <div id="section">  
+
     <form method="post" action="freeadd_ok" id="form">
 
     <table width="800" align="center">
 	  <caption> <h3> 자유게시판 </h3> </caption>
 	  <tr>
-	    <td width="80"> 아이디 </td>
-	    <td> <input type="text" name="userid"> </td>
+	    <td width="80" class="left_top" align="center"> 아이디 </td>
+	    <td class="right_top"> <input type="text" name="userid"> </td>
 	  </tr>
 	  <tr>
-	    <td> 제목 </td>
+	    <td align="center"> 제목 </td>
 	    <td> <input type="text" name="title"> </td>
 	  </tr>
 	  <tr>
-	    <td> 내용 </td>
+	    <td align="center"> 내용 </td>
 	    <td> <textarea cols="70" rows="20" name="content"></textarea> </td>
 	  </tr>
 	  <tr>
-	    <td> 비밀번호 </td>
+	    <td align="center"> 비밀번호 </td>
 	    <td> <input type="password" name="pwd"> </td>
 	  </tr>
 	  <tr>
-	    <td colspan="2" align="center">
+	    <td colspan="2" align="center" class="mmt_under">
 	      <input type="submit" value="글쓰기">
 	    </td>
 	  </tr>
     </table>
     </form>
-  </div>
+
 </body>
 </html>
 <%@ include file="../main/top_bottom/footer.jsp" %>

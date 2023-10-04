@@ -21,17 +21,21 @@
   
   <style>
   
- 
+ @font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
    
     body {
-    font-family: Arial, sans-serif;
+    font-family:  'Pretendard-Regular', sans-serif;
     margin: 0;
     padding: 0;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
     background-color: #f4f4f4;
-    background-image: url("/static/content/friendship.jpg");
     background-size: cover;
 	background-position: center;
 	overflow-x: hidden;
@@ -50,7 +54,18 @@
 
 .sports-slider-wrapper  {
    text-align:center;
-   height: 600px;
+   height:calc(100vh - 172px);
+   background-color: #333;
+   display:flex;
+   justifi-content:center;
+   align-items:end;
+   padding-bottom:40px;
+   box-sizing:border-box;
+   background-image: url("/static/content/jogging-4211946_1920.jpg");
+   background-position:bottom;
+   background-size: cover; /* 배경 이미지 크기 조정을 추가합니다. */
+   transition: transform 0.5s;
+   transform: scale(0.3);
 }
 
 
@@ -167,30 +182,42 @@
         display: flex;
         justify-content: space-between;
         width:100%;
+        height: calc(100vh - 150px);
         margin: 0 auto;
         padding: 0px;
-    }
-
-    .notice {
-         white-space: nowrap;
-    overflow: hidden;      /* 내용이 너무 길어서 밖으로 넘치면 숨기기 위한 설정 */
-    text-overflow: ellipsis;  /* 넘치는 텍스트를 ... 으로 표시하기 위한 설정 */
-    display: block; 
-     
+        background-image: url("/static/content/friendship.jpg");
+        background-size: cover;
+	    background-position: center;
+	   
     }
     
+    #notice {
+     padding-top:20px;
+     font-size:20px;
+      
+    }
+   #notice a {
+  text-decoration: none; /* 밑줄 제거 */
+  color: white; /* 링크 색상을 부모 요소로 상속 */
+}
+
+   
+    
     .nbsp {
-      flex:1;
+      flex:2.5;
     }
     
 
     .weather {
-        background-color: transparent;
+        background-color: rgba(40, 40, 40, 0.8);;
         padding: 0px; 
         flex: 1;
         margin-left: 300px;
-        height:120px;
-      
+        font-size:18px;
+        height:814px;
+        white-space: nowrap;
+        overflow: hidden;     
+        text-overflow: ellipsis; 
     }
 
    .hugi {
@@ -743,8 +770,6 @@
 }
 
 
-
-
  .sport-item.special-effect.joggu::before {
             background-color:  #D6F0FF; 
             z-index: -3;      
@@ -783,9 +808,42 @@
     background-size: 100% 100%; 
 }
 
+#awcc {
+    margin-bottom: 70px; /* 원하는 간격을 설정하세요 */
+}
 
+#notice-title{
+font-size:32px;
+text-align:center;
+}
+ #move-reserve{
+ padding-top:10px;
+ padding-bottom:10px;
+ margin-top:250px;
+ margin-left:20px;
+ margin-right:20px;
+ font-size:40px;
+ text-align:center;
+ border:3px solid black;
+ border-radius:15px;
+ color:black;
+ background-color:#eee;
+ font-family: 'Pretendard-Regular', sans-serif;
+ 
 
-  
+ }  
+ 
+.sports-header {
+  font-size: 45px;
+  color: white;
+  position: absolute;
+  top: 200px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  text-shadow: -2px -2px 0 black, 2px -2px 0 black, -2px 2px 0 black, 2px 2px 0 black;
+}
+
   </style>
 
 
@@ -799,24 +857,29 @@
  
 
 <div class="notice-weather">
-         <div class="notice">
-            <c:forEach items="${glist}" var="gvo">
-              <div><a href="../gongji/gongji_content?no=${gvo.no}">${gvo.title } || ${gvo.writeday }</a></div>                          
-              
-              <hr>
-            </c:forEach>
-        </div>
+        
         <div class="nbsp"></div>
         
         <div class="weather">
        <a href="https://www.accuweather.com/ko/kr/seoul/226081/current-weather/226081" target="_blank" class="aw-widget-legal"></a>
       <div id="awcc" class="aw-widget-current"  data-locationkey="226081" data-unit="c" data-language="ko-kr" data-useip="false" data-uid="awcc..."></div>
        <script type="text/javascript" src="https://oap.accuweather.com/launch.js"></script>
+        
+       
+          <div id="notice-title">공지사항</div>
+         <c:forEach items="${glist}" var="gvo">
+              <div id="notice">           
+              <a href="../gongji/gongji_content?no=${gvo.no}">${gvo.title } || ${gvo.writeday }</a>
+              </div>                                   
+              <hr>    
+            </c:forEach>
+              <a href="#" onclick="scrollToSportsSlider()" id="move-reserve"> 예약하러가기</a>
         </div>
     </div>
 
 
 <div class="sports-slider-wrapper">
+<h2 class="sports-header">원하는 종목을 선택하세요</h2>
     <div class="sports-grid">
         <div class="sport-item special-effect soccer">
             <a href="rlist?jongmok_id=1">
@@ -895,6 +958,36 @@
    
    
      <script>
+     var sportsSliderWrapper = document.querySelector(".sports-slider-wrapper");
+     var isImageExpanded = false;
+
+     // 사용자의 스크롤 이벤트를 감지하고 이미지 크기 조정 함수 호출
+     window.addEventListener("scroll", handleScroll);
+
+     function handleScroll() {
+       var scrollY = window.scrollY;
+       var threshold = window.innerHeight / 2; // 중앙 위치로 조정
+
+       if (scrollY >= threshold && !isImageExpanded) {
+         // 스크롤 위치가 임계값 이상이고 이미지가 확대되지 않은 경우
+         sportsSliderWrapper.style.transform = "scale(1)"; // 배경 이미지 확대
+         isImageExpanded = true;
+       } else if (scrollY < threshold && isImageExpanded) {
+         // 스크롤 위치가 임계값 미만이고 이미지가 확대된 경우
+         sportsSliderWrapper.style.transform = "scale(0.3)"; // 배경 이미지 축소
+         isImageExpanded = false;
+       }
+     }
+
+   
+     
+     function scrollToSportsSlider() {
+    	    var sportsSliderWrapper = document.querySelector(".sports-slider-wrapper");
+    	    
+    	    // sports-slider-wrapper로 스크롤 이동
+    	    sportsSliderWrapper.scrollIntoView({ behavior: "smooth" });
+    	}
+     
 $(document).ready(function(){
     $('.photo-slider').slick({
         infinite: true,
