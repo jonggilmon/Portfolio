@@ -11,13 +11,17 @@
   	body {
        background:#807979;
     }
+    #section {
+       height:700px;
+    }
     table {
-       width:800px;
-       height:600px;
+       width:900px;
+       height:500px;
        border-radius:25px;
 	   border:6px solid #242424;
        font-color:#242424;
        background-color:#242424;
+       font-size:20px;
     }
     table tr {
        border-radius:13px;
@@ -73,6 +77,7 @@
     }
     #action-buttons {
        text-align: center;
+       height:50px;
     }
     #pwdSection {
         display: none;
@@ -87,22 +92,23 @@
   </script>
 </head>
 <body>
-    <table width="800" align="center">
+  <div id="section">  
+    <table width="900" align="center">
       <caption> <h2> 자유게시판 </h2> </caption>
       <tr>
-        <td width="100" align="center" class="left_top"> 제목 </td>
+        <td width="150" align="center" class="left_top"> 제목 </td>
         <td class="right_top"> ${fvo.title} </td>
       </tr>
       <tr>
-        <td width="100" align="center" class="mmt"> 작성자 </td>
+        <td width="150" align="center" class="mmt"> 작성자 </td>
         <td class="mmt_in"> ${fvo.userid} </td>
       </tr>
       <tr>
-        <td width="100" align="center" class="mmt"> 조회수 </td>
+        <td width="150" align="center" class="mmt"> 조회수 </td>
         <td class="mmt_in"> ${fvo.readnum} </td>
       </tr>
       <tr>
-        <td width="100" align="center" class="mmt"> 내용 </td>
+        <td width="150" align="center" class="mmt"> 내용 </td>
         <td class="mmt_in"> <div id="inner"> ${fvo.content} </div> </td>
       </tr>
 <tr>
@@ -120,7 +126,8 @@
         </span>
     </td>
 </tr>
-    </table> 
+    </table>
+  </div>  
 </body>
 </html>
 <%@ include file="../main/top_bottom/footer.jsp" %>

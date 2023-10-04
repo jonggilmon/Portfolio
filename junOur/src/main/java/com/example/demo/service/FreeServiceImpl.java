@@ -24,7 +24,6 @@ public class FreeServiceImpl implements FreeService {
 	@Override
 	public String free_list(Model model,HttpServletRequest request) {
 		
-
 		int page;
 		if(request.getParameter("page")==null)
 			page=1;
@@ -93,7 +92,7 @@ public class FreeServiceImpl implements FreeService {
 		if(mapper.isPwd(pwd, no))
 		{
 			mapper.delete(fvo, request, no);
-			return "redirect:/free/free_list?no="+fvo.getNo()+"&page="+page;  // return "redirect:/list?page="+page;
+			return "redirect:/free/free_list?no="+fvo.getNo()+"&page="+page;
 		}
 		else
 		{
@@ -106,7 +105,7 @@ public class FreeServiceImpl implements FreeService {
 	public String free_update(FreeVo fvo, Model model, HttpServletRequest request) {
 		String no=request.getParameter("no");
 		model.addAttribute("chk",request.getParameter("chk"));
-		model.addAttribute("fvo",mapper.free_update(fvo));  // free_content(no)
+		model.addAttribute("fvo",mapper.free_update(fvo));
 		model.addAttribute("page",request.getParameter("page"));
 		return "/free/free_update";
 	}

@@ -9,48 +9,52 @@
 <%@ include file="../main/top_bottom/header.jsp" %>
   <style>
     body {
-            background: #807979;
-        }
-        table {
-            width: 900px;
-            border-radius: 25px;
-            border: 6px solid #242424;
-            background-color: #242424;
-            margin: auto;
-        }
-        th, td {
-            border: 1px solid #242424;
-            padding: 15px;
-            background-color:#8C8C8C;
-        }
-        th {
-            background-color: #f2f2f2;
-            color: black;
-        }
-        caption {
-            margin-bottom: 15px;
-        }
-        a {
-            text-decoration: none;
-        }
-        input[type=text], textarea {
-            width: 100%;
-            box-sizing: border-box;
-        }
-        textarea {
-            height: 200px;
-        }
-        td.left_top {
-           border-top-left-radius:13px;
-           background-color:#8C8C8C;
-        }
-        td.right_top {
-           border-top-right-radius:13px;
-        }
-        td.mmt_under {
-           border-bottom-left-radius:13px;
-           border-bottom-right-radius:13px;
-        }
+       background: #807979;
+    }
+    #section {
+       height:700px;
+    }
+    table {
+       width: 900px;
+       border-radius: 25px;
+       border: 6px solid #242424;
+       background-color: #242424;
+       margin: auto;
+       font-size:20px;
+    }
+    th, td {
+       border: 1px solid #242424;
+       padding: 15px;
+       background-color:#8C8C8C;
+    }
+    th {
+       background-color: #f2f2f2;
+       color: black;
+    }
+    caption {
+       margin-bottom: 15px;
+    }
+    a {
+       text-decoration: none;
+    }
+    input[type=text], textarea {
+       width: 100%;
+       box-sizing: border-box;
+    }
+    textarea {
+       height: 200px;
+    }
+    td.left_top {
+       border-top-left-radius:13px;
+       background-color:#8C8C8C;
+    }
+    td.right_top {
+       border-top-right-radius:13px;
+    }
+    td.mmt_under {
+       border-bottom-left-radius:13px;
+       border-bottom-right-radius:13px;
+    }
   </style>
   <script>
   
@@ -79,9 +83,8 @@
 </head>
 
 <body>
-
+  <div id="section">
     <form method="post" action="freeadd_ok" id="form">
-
     <table width="800" align="center">
 	  <caption> <h3> 자유게시판 </h3> </caption>
 	  <tr>
@@ -107,7 +110,7 @@
 	  </tr>
     </table>
     </form>
-
+  </div>
 </body>
 </html>
 <%@ include file="../main/top_bottom/footer.jsp" %>
