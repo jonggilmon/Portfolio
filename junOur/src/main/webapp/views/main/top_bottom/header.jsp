@@ -61,6 +61,9 @@ body {
 	color: #fff;
 	height: 150px;
 	border-bottom:2px groove #323232;
+	 position: sticky;
+ 	top: 0; /* 화면 상단에 고정되도록 설정 */
+    z-index: 1; /* 다른 내용 위에 나타나도록 z-index 설정 */
 	
 	
 }
