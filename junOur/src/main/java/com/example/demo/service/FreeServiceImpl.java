@@ -33,7 +33,6 @@ public class FreeServiceImpl implements FreeService {
 		}
 		
 		int start=(page-1)*10;
-		System.out.println(start);
 		int pstart=page/10;
 		if(page%10==0)
 			pstart--;
@@ -91,13 +90,11 @@ public class FreeServiceImpl implements FreeService {
 		String pwd2=mapper.isPwd(no);
 		if(pwd.equals(pwd2))
 		{
-			System.out.print("true");
 			mapper.delete(fvo);
 			return "redirect:/free/free_list?&page="+page;
 		}
 		else
 		{
-			System.out.print("false");
 			return "redirect:/free/free_content?chk=1&no="+fvo.getNo()+"&page="+page;
 		}
 		
