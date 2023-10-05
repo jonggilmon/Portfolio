@@ -11,7 +11,7 @@
 	}
 	section{
 		width: 1200px;
-		height: 650px;
+		height: 700px;
 		margin: 0 auto;
 	}
 	table{
@@ -19,12 +19,17 @@
 		border-top: 1px solid #333;
 		border-collapse: collapse;
 		border-spacing: 2px;
+		  white-space: nowrap;
+        overflow: hidden;     
+        text-overflow: ellipsis; 
+        border:1px solid black;
 	}
 	tr td{
 		border-bottom: 1px solid #333;
 		border-left: 1px solid #333;
 		padding: 5px;
 		text-align: center;
+		border:1px solid black;
 	}
 	tr:first-child{
 		text-align: center;
@@ -35,7 +40,7 @@
     border-left: none;
   }
    section #btn {
-      width:100px;
+      width:160px;
       height:26px;
       background:#333;
       color:white;
@@ -120,6 +125,7 @@ function selectDel()
   		   <td>인원</td>
   		   <td>시간</td>
   		   <td>장소</td>
+  		   <td>이동</td>
   		</tr>
   		<c:forEach items="${mapall}" var="map">
   		<tr>
@@ -166,9 +172,11 @@ function selectDel()
   		   <td>${map.inwon}</td> <!-- 인원 -->
   		   <td>${map.rstime}</td> <!-- 시간 -->
    		   <td>${map.address}</td> <!-- 장소 -->
+		<td><a href="../main/content/content?no=${map.no}">바로가기</a></td>
   		</tr>
   		</c:forEach>
   		<tr>
+  		   <td></td>
   		   <td colspan="6"><input type="button" id="btn" value="삭제" onclick="selectDel()"></td>
   		</tr>
   	</table>
