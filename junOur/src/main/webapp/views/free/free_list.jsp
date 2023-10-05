@@ -73,7 +73,7 @@
 	    
 	  <c:forEach items="${flist}" var="map">
 	    <tr>
-	      <td class="mmt_title"> <a href="readnum?no=${map.no}"> ${map.title} </a> </td>
+	      <td class="mmt_title"> <a href="readnum?no=${map.no}&page=${page}"> ${map.title} </a> </td>
 	      <td align="center"> ${map.userid} </td>
 	      <td align="center"> ${map.readnum} </td>
 	      <td align="center"> ${map.writeday} </td>

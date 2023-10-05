@@ -59,6 +59,8 @@
     <table align="center">
         <caption><h2>자유게시판 수정</h2></caption>
         <form method="post" action="free_update_ok">
+        <input type="hidden" name="page" value="${page}">
+      	<input type="hidden" name="no" value="${fvo.no}">
             <tr>
                 <th class="left_top" width="150">이름</th>
                 <td class="right_top"><input type="text" name="userid" value="${fvo.userid}"></td>
@@ -83,9 +85,9 @@
             </tr>
             <c:if test='${chk == 1}'>
             <tr>
-                <td colspan="2" align="center" style="color:red;">
-                    비밀번호가 틀렸습니다
-                </td>
+              <td colspan="2" align="center" style="color:red;">
+                비밀번호가 틀렸습니다
+              </td>
             </tr>
             </c:if>
         </form>
