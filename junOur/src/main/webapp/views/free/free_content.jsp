@@ -117,8 +117,8 @@
       <tr>
         <td colspan="2" id="action-buttons" class="mmt_under">
           <a href="free_list" class="button">목록</a>
-          <a href="free_update?no=${fvo.no}" class="button">수정</a>
-          <a href="#" onclick="del()"> 삭제 </a>
+          <a href="free_update?no=${fvo.no}&page=${page}" class="button">수정</a>
+          <a href="#" onclick="del()" class="button"> 삭제 </a>
         </td>
       </tr>
       <tr id="del">
