@@ -39,9 +39,9 @@
      .access-denied {
            display: block; 
            color: red;
-          font-weight: bold;
-     
+          font-weight: bold; 
         }
+        
  <c:if test="${userid != 'admin123'}">
     .header {
       background-color: transparent; /* 'admin123'가 아닐 때 배경색을 투명하게 설정 */
