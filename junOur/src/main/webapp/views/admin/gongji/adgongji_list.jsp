@@ -9,7 +9,7 @@
 <%@ include file="../../admin/menu.jsp" %>	
   <style>
     #section {
-       height:650px;
+       height:700px;
     }
     table {
         width: 700px;

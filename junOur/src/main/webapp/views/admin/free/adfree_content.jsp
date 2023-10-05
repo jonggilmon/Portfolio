@@ -8,6 +8,9 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
   <style>
+    #section {
+       height:650px;
+    }
     table {
         width: 700px;
         border-collapse: collapse;
@@ -31,6 +34,7 @@
 </style>
 </head>
 <body>
+  <div id="section">
     <c:if test="${userid == 'admin123'}">
     <table width="700" align="center">
       <caption> <h2> 자유게시판 </h2> </caption>
@@ -71,5 +75,5 @@
       </c:if>
 </body>
 </html>
-
+<%@ include file="../../main/top_bottom/footer.jsp" %>
 

@@ -9,7 +9,7 @@
 <%@ include file="../../admin/menu.jsp" %>
   <style>
     #section{
-  	  height: 650px;
+  	  height: 700px;
     }
     table {
         width: 700px;
@@ -70,7 +70,6 @@ function showDeleteButton() {
           <a href="adgongji_update?no=${gvo.no}"> 수정 </a>
           <a href="#" onclick="showDeleteButton(); return false;"> 삭제 </a> <!-- return false;는 링크를 클릭했을 때 브라우저가 해당 링크의 기본 동작을 실행하지 않도록 하는 역할을 합니다.  -->
          </c:if>
-         
         </td>
       </tr>
       <tr id="del" style="display:none;">

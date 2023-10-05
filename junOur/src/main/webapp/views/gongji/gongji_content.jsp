@@ -24,6 +24,9 @@
     body {
        background:#807979;
     }
+    #section {
+       height:700px;
+    }
     table {
        width:800px;
        height:600px;
@@ -31,6 +34,7 @@
 	   border:6px solid #242424;
        font-color:#242424;
        background-color:#242424;
+       font-size:20px;
     }
     table tr {
        border-radius:13px;
@@ -61,6 +65,7 @@
     td.mmt_under {
        border-bottom-left-radius:13px;
        border-bottom-right-radius:13px;
+       height:50px;
     }
     td.mmt {
        background-color:#8C8C8C;
@@ -88,7 +93,7 @@
 
 </head>
 <body>
-  
+  <div id="section">
     <table width="800" align="center">
       <caption> <h2> 공지사항 </h2> </caption>
       <tr>

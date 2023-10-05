@@ -26,15 +26,16 @@
        background:#807979;
     }
     #section {
-       height:650px;
+       height:700px;
     }
     table {
-       width:800px;
+       width:900px;
        height:400px;
        border-radius:25px;
 	   border:6px solid #242424;
        font-color:#242424;
        background-color:#242424;
+       font-size:20px;
     }
     table tr {
        border-radius:13px;
@@ -42,6 +43,8 @@
     }
     table td, table th {
        border: 1px solid #242424;
+       font-size:20px;
+       padding-left:10px;
     }
     #mmt td {
        background-color:#8C8C8C;
@@ -78,7 +81,7 @@
     </div>
   </c:if>
   <div id="section">
-	  <table width="800" align="center">
+	  <table width="900" align="center">
 	    <caption> <h2> 공지사항 </h2> </caption>
 	    <tr align="center" id="mmt">
 	      <td width="400" class="left_top"> 제목 </td>

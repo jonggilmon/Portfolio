@@ -11,6 +11,9 @@
     body {
        background:#807979;
     }
+    #section {
+       height:700px;
+    }
     table {
        width:900px;
        height:600px;
@@ -18,6 +21,7 @@
 	   border:6px solid #242424;
        font-color:#242424;
        background-color:#242424;
+       font-size:20px;
     }
     table tr {
        border-radius:13px;
@@ -57,6 +61,7 @@
   </style>
 </head>
 <body>
+	<div id="section">  
 	  <table width="900" align="center">
 	    <caption> <h2> 자유게시판 </h2> </caption>
 	    <tr align="center" id="mmt">
@@ -68,7 +73,7 @@
 	    
 	  <c:forEach items="${flist}" var="map">
 	    <tr>
-	      <td class="mmt_title"> <a href="readnum?no=${map.no}"> ${map.title} </a> </td>
+	      <td class="mmt_title"> <a href="readnum?no=${map.no}&page=${page}"> ${map.title} </a> </td>
 	      <td align="center"> ${map.userid} </td>
 	      <td align="center"> ${map.readnum} </td>
 	      <td align="center"> ${map.writeday} </td>
@@ -125,7 +130,7 @@
 	      <td colspan="4" align="center" class="mmt_under"> <a href="../free/freeadd"> 글 등록 </a> </td>
 	    </tr>  
 	  </table>
-	  
+	</div>  
 </body>
 </html>
 <%@ include file="../main/top_bottom/footer.jsp" %>

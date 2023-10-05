@@ -12,8 +12,8 @@
   </select>
   
   <insert id="freeadd_ok" parameterType="com.example.demo.vo.FreeVo">
-    insert into free (userid,title,content,writeday,pwd)
-    values(#{userid},#{title},#{content},now(),#{pwd})
+    insert into free (userid,title,content,readnum,writeday,pwd)
+    values(#{userid},#{title},#{content},#{readnum},now(),#{pwd})
   </insert>
   
   <select id="content" resultType="com.example.demo.vo.FreeVo">
@@ -33,11 +33,11 @@
   </select>
   
   <update id="free_update_ok">
-    update free set title=#{title}, userid=#{userid}, content=#{content} where no=#{no}
+    update free set title=#{title}, userid=#{userid}, content=#{content}, pwd=#{pwd} where no=#{no}
   </update>
   
-  <select id="isPwd" resultType="boolean">
-    select count(*) from free where pwd=#{param1} and no=#{param2}
+  <select id="isPwd" resultType="String">
+    select pwd from free where no=#{no}
   </select>
 </mapper>
 

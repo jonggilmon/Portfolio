@@ -10,14 +10,14 @@ import org.apache.ibatis.annotations.Param;
 import com.example.demo.vo.FreeVo;
 
 public interface FreeMapper {
-	public ArrayList<FreeVo> flist(@Param("start") int start);
+	public ArrayList<FreeVo> flist(int start);
 	public void freeadd_ok(FreeVo fvo);
-	public FreeVo content(FreeVo no);
+	public FreeVo content(FreeVo fvo);
 	public void readnum(FreeVo fvo);
-	public void delete(FreeVo fvo, HttpServletRequest reqeust, int no);
+	public void delete(FreeVo fvo);
 	public FreeVo free_update(FreeVo fvo);
 	public void free_update_ok(FreeVo fvo);
-	public boolean isPwd(String pwd,int no);
+	public String isPwd(int no); 
 	public int getChong();
 	
 }
